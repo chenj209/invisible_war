@@ -1,48 +1,39 @@
-﻿using UnityEngine;
-using System.Collections;
-
-// The GameObject is made to bounce using the space key.
-// Also the GameOject can be moved forward/backward and left/right.
-// Add a Quad to the scene so this GameObject can collider with a floor.
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    public float speed = 6.0f;
-    public float jumpSpeed = 8.0f;
-    public float gravity = 20.0f;
+    public float moveForce;
+    public float rotSpeed;
 
-    private Vector3 moveDirection = Vector3.zero;
-    private CharacterController controller;
+    private Rigidbody playerBody;
 
+    // Start is called before the first frame update
     void Start()
     {
-        controller = GetComponent<CharacterController>();
-
-        // let the gameObject fall down
-        gameObject.transform.position = new Vector3(0, 5, 0);
+        playerBody = this.GetComponent<Rigidbody>();
     }
 
+    // Update is called once per frame
     void Update()
     {
-        if (controller.isGrounded)
-        {
-            // We are grounded, so recalculate
-            // move direction directly from axes
+        
+    }
 
-            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
-            moveDirection = transform.TransformDirection(moveDirection);
-            moveDirection = moveDirection * speed;
+    private void FixedUpdate()
+    {
+        //Vector3 move = playerBody.velocity;
+        float xMove = Input.GetAxis("Horizontal");
+        float zMove = Input.GetAxis("Vertical");
+        //playerBody.AddForce(this.transform.right * xMove * moveForce);
+        //playerBody.AddForce(this.transform.forward * zMove * moveForce);
+        Vector3 move = this.transform.right * xMove * moveForce;
+        move += this.transform.forward * zMove * moveForce;
+        playerBody.velocity = move;
 
-            if (Input.GetButton("Jump"))
-            {
-                moveDirection.y = jumpSpeed;
-            }
-        }
-
-        // Apply gravity
-        moveDirection.y = moveDirection.y - (gravity * Time.deltaTime);
-
-        // Move the controller
-        controller.Move(moveDirection * Time.deltaTime);
+        // Y-axis respect rotation.
+        float yRot = Input.GetAxis("Mouse X");
+        this.transform.Rotate(Vector3.up, yRot * rotSpeed);
     }
 }
