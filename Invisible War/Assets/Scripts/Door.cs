@@ -4,12 +4,41 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void OnCollisionEnter(Collision col)
+    public Canvas text;
+    private Animator animator;
+    private void Start()
     {
-        if (col.gameObject.tag == "player")
+        text.gameObject.SetActive(false);
+        animator = GetComponent<Animator>();
+        animator.SetBool("opened", false);
+    }
+    void OnTriggerStay(Collider col)
+    {
+        if (col.gameObject.tag == "Player")
         {
-            Debug.Log("Ding Ding Ding");
+            text.gameObject.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("pressed");
+                animator.SetBool("opened", true);
+            }
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            text.gameObject.SetActive(false);
+        }
+    }
+
+    void Update()
+    {
+        bool opened = animator.GetBool("opened");
+        if (opened)
+        {
+            text.gameObject.SetActive(false);
         }
     }
 }

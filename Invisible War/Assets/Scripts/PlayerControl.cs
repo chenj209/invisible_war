@@ -5,7 +5,7 @@ using System.Collections;
 // Also the GameOject can be moved forward/backward and left/right.
 // Add a Quad to the scene so this GameObject can collider with a floor.
 
-public class ExampleScript : MonoBehaviour
+public class PlayerControl : MonoBehaviour
 {
     public float speed = 6.0f;
     public float jumpSpeed = 8.0f;
