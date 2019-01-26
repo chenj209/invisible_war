@@ -12,12 +12,12 @@ public class PlayerControl : MonoBehaviour
     };
     public MovePattern moveMode;
 
-    public float moveForce;
+    public float moveForce = 10;
 
     private Rigidbody playerBody;
 
     public bool isGround;
-    public float jumpSpeed;
+    public float jumpSpeed = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +35,7 @@ public class PlayerControl : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetButton("Running02"))
         {
             moveMode = MovePattern.Running;
         }
@@ -49,10 +49,14 @@ public class PlayerControl : MonoBehaviour
         }
         move();
 
-        isGround = Physics.Raycast(transform.position, -transform.up, 1.5f);
-        if (isGround && Input.GetKeyDown(KeyCode.Space))
+        isGround = Physics.Raycast(transform.position, -transform.up, 2.0f);
+        if (isGround && Input.GetButton("Jump02"))
         {
-            playerBody.velocity += transform.up * jumpSpeed;
+            //playerBody.velocity += transform.up * jumpSpeed;
+            //playerBody.AddRelativeForce(Vector3.up * jumpSpeed);
+            Vector3 vel = playerBody.velocity;
+            vel.y = jumpSpeed;
+            playerBody.velocity = vel;
         }
     }
 
@@ -72,8 +76,8 @@ public class PlayerControl : MonoBehaviour
         }
 
         //Vector3 move = playerBody.velocity;
-        float xMove = Input.GetAxis("Horizontal");
-        float zMove = Input.GetAxis("Vertical");
+        float xMove = Input.GetAxis("Horizontal02");
+        float zMove = Input.GetAxis("Vertical02");
         //playerBody.AddForce(this.transform.right * xMove * moveForce);
         //playerBody.AddForce(this.transform.forward * zMove * moveForce);
         Vector3 move = this.transform.right * xMove * moveSpeed;

@@ -251,9 +251,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99ca04198ffec4ad5bb847e13b9bc4e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveMode: 0
   moveForce: 5
-  rotSpeed: 50
-  yRot: 0
+  isGround: 0
+  jumpSpeed: 2000
 --- !u!54 &8256369720806058881
 Rigidbody:
   m_ObjectHideFlags: 0
