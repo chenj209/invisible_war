@@ -14,7 +14,7 @@ public class PlayerControl : MonoBehaviour
     };
     public MovePattern moveMode;
 
-    public float moveForce = 10;
+    public float moveForce = 5;
 
     private Rigidbody playerBody;
     HealthBar healthbar;

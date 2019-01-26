@@ -9,21 +9,31 @@ public class shooting : MonoBehaviour
     public float Bullet_Forward_Force;
     private bool Press_and_Hold;
     private int counter;
+
+    private string playerID;
     // Start is called before the first frame update
     void Start()
     {
+        PlayerControl pc = gameObject.GetComponent("PlayerControl") as PlayerControl;
+        playerID = pc.playerID;
         counter = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        PlayerControl pc = gameObject.GetComponent("PlayerControl") as PlayerControl;
-        if (Input.GetButtonDown("Fire" + pc.playerID))
+        //if (Input.GetButtonDown("Fire" + playerID))
+        //{
+        //    Press_and_Hold = true;
+        //}
+        //if (Input.GetButtonUp("Fire" + playerID))
+        //{
+        //    Press_and_Hold = false;
+        //}
+        if (Input.GetButton("Fire" + playerID))
         {
             Press_and_Hold = true;
-        }
-        if (Input.GetButtonUp("Fire" + pc.playerID))
+        } else
         {
             Press_and_Hold = false;
         }
