@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -306,6 +306,11 @@ PrefabInstance:
       propertyPath: moveForce
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8256369720806058887, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: playerID
+      value: 01
+      objectReference: {fileID: 0}
     - target: {fileID: 8256369720747086074, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -376,6 +381,11 @@ PrefabInstance:
       propertyPath: m_AngularDrag
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 8256369720747086072, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 0.49
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53519003647cd3c43bd13748a3b93880, type: 3}
 --- !u!1 &1363691999
@@ -392,7 +402,7 @@ GameObject:
   - component: {fileID: 1363692000}
   m_Layer: 0
   m_Name: Plane01
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -576,7 +586,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 122
   m_CollisionDetection: 0
 --- !u!1 &1834838613
 GameObject:
@@ -742,12 +752,17 @@ PrefabInstance:
     - target: {fileID: 8256369720806058887, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: jumpSpeed
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8256369720806058887, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: moveForce
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8256369720806058887, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: playerID
+      value: 02
       objectReference: {fileID: 0}
     - target: {fileID: 8256369720747086074, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
@@ -818,6 +833,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AngularDrag
       value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8256369720747086072, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 0.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 8256369720747086072, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0.51
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53519003647cd3c43bd13748a3b93880, type: 3}

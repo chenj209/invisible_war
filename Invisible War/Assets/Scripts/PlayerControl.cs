@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
+    public string playerID;
+
     public enum MovePattern
     {
         Walking,
@@ -17,7 +19,7 @@ public class PlayerControl : MonoBehaviour
     private Rigidbody playerBody;
 
     public bool isGround;
-    public float jumpSpeed = 10;
+    public float jumpSpeed = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -28,14 +30,9 @@ public class PlayerControl : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-
-    }
-
-    private void FixedUpdate()
-    {
-        if (Input.GetButton("Running02"))
+        if (Input.GetButton("Running" + playerID))
         {
             moveMode = MovePattern.Running;
         }
@@ -50,7 +47,7 @@ public class PlayerControl : MonoBehaviour
         move();
 
         isGround = Physics.Raycast(transform.position, -transform.up, 2.0f);
-        if (isGround && Input.GetButton("Jump02"))
+        if (isGround && Input.GetButton("Jump" + playerID))
         {
             //playerBody.velocity += transform.up * jumpSpeed;
             //playerBody.AddRelativeForce(Vector3.up * jumpSpeed);
@@ -76,12 +73,21 @@ public class PlayerControl : MonoBehaviour
         }
 
         //Vector3 move = playerBody.velocity;
-        float xMove = Input.GetAxis("Horizontal02");
-        float zMove = Input.GetAxis("Vertical02");
+        float xMove = Input.GetAxis("Horizontal" + playerID);
+        float zMove = Input.GetAxis("Vertical" + playerID);
+        if (Mathf.Abs(xMove) < .3f)
+        {
+            xMove = 0f;
+        }
+        if (Mathf.Abs(zMove) < .3f)
+        {
+            zMove = 0f;
+        }
         //playerBody.AddForce(this.transform.right * xMove * moveForce);
         //playerBody.AddForce(this.transform.forward * zMove * moveForce);
         Vector3 move = this.transform.right * xMove * moveSpeed;
         move += this.transform.forward * zMove * moveSpeed;
+        move.y += playerBody.velocity.y;
         playerBody.velocity = move;
     }
 }

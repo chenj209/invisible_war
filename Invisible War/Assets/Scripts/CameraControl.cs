@@ -11,12 +11,16 @@ public class CameraControl : MonoBehaviour
     private float maxRot = 90f;
     private float minRot = -90f;
 
+    private string playerID;
+
     // Start is called before the first frame update
     void Start()
     {
         Cursor.visible = false;
 
         player = this.transform.parent.gameObject;
+        PlayerControl pc = player.GetComponent("PlayerControl") as PlayerControl;
+        playerID = pc.playerID;
     }
 
     // Update is called once per frame
@@ -28,11 +32,19 @@ public class CameraControl : MonoBehaviour
         }
 
         // Y-axis respect rotation.
-        float yRot = Input.GetAxis("Mouse X02");
+        float yRot = Input.GetAxis("Mouse X" + playerID);
+        if (Mathf.Abs(yRot) < .3f)
+        {
+            yRot = 0f;
+        }
         player.transform.Rotate(Vector3.up, Mathf.Lerp(0f, yRot * rotSpeed * Time.deltaTime, .5f));
 
         // X-axis respect rotation.
-        float xRot = -Input.GetAxis("Mouse Y02");
+        float xRot = -Input.GetAxis("Mouse Y" + playerID);
+        if (Mathf.Abs(xRot) < .3f)
+        {
+            xRot = 0f;
+        }
         float curX = this.transform.eulerAngles.x;
         float rotDegree = Mathf.Lerp(0f, xRot * rotSpeed * Time.deltaTime, .5f);
         // this.transform.Rotate(Vector3.right, Mathf.Clamp(Mathf.Lerp(0f, xRot * rotSpeed, Time.deltaTime) + curX, upRotLimit, downRotLimit));
