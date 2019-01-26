@@ -6,21 +6,41 @@ public class Door : MonoBehaviour
 {
     public Canvas text;
     private Animator animator;
+    ShortcutTip shortcutTip;
     private void Start()
     {
-        text.gameObject.SetActive(false);
-        animator = GetComponent<Animator>();
-        animator.SetBool("opened", false);
+        //text.gameObject.SetActive(false);
+        animator = gameObject.GetComponentInParent<Animator>();
+        shortcutTip = gameObject.GetComponent<ShortcutTip>();
+        //Debug.Log(animator.parameters);
+        //animator.SetBool("opening", false);
+        //animator.SetBool("closing", false);
     }
     void OnTriggerStay(Collider col)
     {
         if (col.gameObject.tag == "Player")
         {
-            text.gameObject.SetActive(true);
+            bool opened = animator.GetBool("opened");
+            bool opening = animator.GetBool("opening");
+            bool closing = animator.GetBool("closing");
+            if (opened && !opening && !closing)
+            {
+                shortcutTip.ShowShortcutTip("Press E to Close");
+            }
+            if (!opened && !opening && !closing)
+            {
+                shortcutTip.ShowShortcutTip("Press E to Open");
+            }
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Debug.Log("pressed");
-                animator.SetBool("opened", true);
+                if (opened) {
+                    animator.SetBool("closing", true);
+                }
+                else
+                {
+                    animator.SetBool("opening", true);
+                }
             }
         }
     }
@@ -29,16 +49,16 @@ public class Door : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            text.gameObject.SetActive(false);
+            shortcutTip.ShowShortcutTip("");
         }
     }
 
-    void Update()
-    {
-        bool opened = animator.GetBool("opened");
-        if (opened)
-        {
-            text.gameObject.SetActive(false);
-        }
-    }
+    //void Update()
+    //{
+    //    bool opened = animator.GetBool("opened");
+    //    if (opened)
+    //    {
+    //        shortcutTip.ShowShortcutTip("");
+    //    }
+    //}
 }
