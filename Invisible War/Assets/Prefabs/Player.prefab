@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 8256369720806058884}
   - component: {fileID: 8256369720806058887}
   - component: {fileID: 8256369720806058881}
+  - component: {fileID: 9199124647016558750}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -238,7 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Spawn_Object: {fileID: 8256369721067234630}
   Bullet: {fileID: 3053615388019081161, guid: 72b4a0ef8721e456bb5e263c6a9b251b, type: 3}
-  Bullet_Forward_Force: 1000
+  Bullet_Forward_Force: 500
 --- !u!114 &8256369720806058887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,6 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99ca04198ffec4ad5bb847e13b9bc4e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerID: 
   moveMode: 0
   moveForce: 5
   isGround: 0
@@ -263,7 +265,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8256369720806058886}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -271,6 +273,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &9199124647016558750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8256369720806058886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 823f08a23643f40bfb0d8251ef75a420, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8256369721067234630
 GameObject:
   m_ObjectHideFlags: 0
