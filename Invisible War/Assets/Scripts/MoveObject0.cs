@@ -10,8 +10,6 @@ public class MoveObject0 : MonoBehaviour
     public Transform leftHand;
     //public float distance;
     public float force;
-    private GameObject leftPickup;
-    private GameObject rightPickup;
     private ShortcutTip shortcuttip;
     private float startTime;
     private RaycastTooptip raycasttooltip;
@@ -43,16 +41,14 @@ public class MoveObject0 : MonoBehaviour
     private void PickUp(GameObject target)
     {
         Transform holdPoint;
-        if (rightPickup == null)// pick up with right hand
+        if (rightHand.childCount == 0)// pick up with right hand
         {
             holdPoint = rightHand;
-            rightPickup = target;
             target.GetComponent<MeshRenderer>().enabled = false;//make the object invisible
         }
-        else if(leftPickup == null)// pick up with left hand
+        else if(leftHand.childCount == 0)// pick up with left hand
         {
             holdPoint = leftHand;
-            leftPickup = target;
         }
         else// neither hand is empty
         {
@@ -63,22 +59,20 @@ public class MoveObject0 : MonoBehaviour
         target.GetComponent<Rigidbody>().isKinematic = true;
         target.transform.position = holdPoint.position;
         shortcuttip.ShowShortcutTip("");
-        //target.transform.SetParent(holdPoint);
+        target.transform.SetParent(holdPoint);
     }
 
     private void Throw()
     {
         GameObject item;
         float duration = Time.time - startTime;
-        if (leftPickup != null)// throw or drop object on left hand
+        if (leftHand.childCount == 1)// throw or drop object on left hand
         {
-            item = leftPickup;
-            leftPickup = null;
+            item = leftHand.GetChild(0).gameObject;
         }
-        else if (rightPickup != null)// throw or drop object on right hand
+        else if (rightHand.childCount == 1)// throw or drop object on right hand
         {
-            item = rightPickup;
-            rightPickup = null;
+            item = rightHand.GetChild(0).gameObject;
             item.GetComponent<MeshRenderer>().enabled = true;//make the object visible
         }
         else// both hands are empty
@@ -88,7 +82,7 @@ public class MoveObject0 : MonoBehaviour
         }
         item.GetComponent<Collider>().isTrigger = false;
         item.GetComponent<Rigidbody>().isKinematic = false;
-        //item.transform.parent = null;
+        item.transform.parent = null;
         item.GetComponent<Rigidbody>().AddForce(camPos.forward * force * duration);
     }
 }
