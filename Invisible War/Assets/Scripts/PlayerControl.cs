@@ -8,11 +8,13 @@ public class PlayerControl : MonoBehaviour
     public float rotSpeed;
 
     private Rigidbody playerBody;
+    HealthBar healthbar;
 
     // Start is called before the first frame update
     void Start()
     {
         playerBody = this.GetComponent<Rigidbody>();
+        healthbar = this.GetComponent<HealthBar>();
     }
 
     // Update is called once per frame
@@ -35,5 +37,9 @@ public class PlayerControl : MonoBehaviour
         // Y-axis respect rotation.
         float yRot = Input.GetAxis("Mouse X");
         this.transform.Rotate(Vector3.up, yRot * rotSpeed);
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            healthbar.DecrementHealth(10);
+        }
     }
 }
