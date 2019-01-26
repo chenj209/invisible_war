@@ -5,23 +5,26 @@ using UnityEngine.UI;
 
 public class MoveObject0 : MonoBehaviour
 {
-    public Text pickUpText;
     public Transform camPos;
     public Transform rightHand;
     public Transform leftHand;
-    public float distance;
+    //public float distance;
     public float force;
-
+    private GameObject leftPickup;
+    private GameObject rightPickup;
+    private ShortcutTip shortcuttip;
     private float startTime;
+    private RaycastTooptip raycasttooltip;
 
     void Start()
     {
-        pickUpText.text = "";
+        raycasttooltip = GetComponent<RaycastTooptip>();
+        shortcuttip = GetComponent<ShortcutTip>();
     }
 
     void Update()
     {
-        GameObject item = DetectItem();
+        GameObject item = raycasttooltip.DetectItem();
         if (Input.GetKeyDown(KeyCode.P) && item != null)// pick up
         {
             PickUp(item);
@@ -36,81 +39,46 @@ public class MoveObject0 : MonoBehaviour
         }
     }
 
-    private GameObject DetectItem() 
-    {
-        RaycastHit hit;
-        GameObject target;
-        if (!Physics.Raycast(camPos.position, camPos.TransformDirection(Vector3.forward), out hit, distance))
-        {
-            pickUpText.text = "";
-            //Debug.Log("Cannot detect anything.");
-            return null;
-        }
-        if (hit.rigidbody != null)
-        {
-            pickUpText.text = "";
-            target = hit.rigidbody.gameObject;
-        }
-        else
-        {
-            pickUpText.text = "";
-            //Debug.Log("No movable object is detected.");
-            return null;
-        }
-        if (target.tag != "Item")
-        {
-            pickUpText.text = "";
-            //Debug.Log("The object detected is not movable.");
-            return null;
-        }
-        if (target.transform.parent != null)
-        {
-            pickUpText.text = "";
-            //Debug.Log("The object belongs to another player.");
-            return null;
-        }
-
-        pickUpText.text = @"Press P to pick up
-Press T to throw";
-        //Debug.Log("Find an object.");
-        //Debug.Log(hit.distance);
-        return target;
-    }
 
     private void PickUp(GameObject target)
     {
         Transform holdPoint;
-        if (rightHand.childCount == 0)// pick up with right hand
+        if (rightPickup == null)// pick up with right hand
         {
             holdPoint = rightHand;
+            rightPickup = target;
             target.GetComponent<MeshRenderer>().enabled = false;//make the object invisible
         }
-        else if(leftHand.childCount == 0)// pick up with left hand
+        else if(leftPickup == null)// pick up with left hand
         {
             holdPoint = leftHand;
+            leftPickup = target;
         }
         else// neither hand is empty
         {
             Debug.Log("Neither hand is empty.");
             return;
         }
-        target.GetComponent<BoxCollider>().isTrigger = true;
+        target.GetComponent<Collider>().isTrigger = true;
         target.GetComponent<Rigidbody>().isKinematic = true;
         target.transform.position = holdPoint.position;
-        target.transform.SetParent(holdPoint);
+        shortcuttip.ShowShortcutTip("");
+        //target.transform.SetParent(holdPoint);
     }
 
     private void Throw()
     {
         GameObject item;
         float duration = Time.time - startTime;
-        if (leftHand.childCount == 1)// throw or drop object on left hand
+        if (leftPickup != null)// throw or drop object on left hand
         {
-            item = leftHand.GetChild(0).gameObject;
+            item = leftPickup;
+            leftPickup = null;
         }
-        else if (rightHand.childCount == 1)// throw or drop object on right hand
+        else if (rightPickup != null)// throw or drop object on right hand
         {
-            item = rightHand.GetChild(0).gameObject;
+            item = rightPickup;
+            rightPickup = null;
             item.GetComponent<MeshRenderer>().enabled = true;//make the object visible
         }
         else// both hands are empty
@@ -118,9 +86,9 @@ Press T to throw";
             Debug.Log("Both hands are empty.");
             return;
         }
-        item.GetComponent<BoxCollider>().isTrigger = false;
+        item.GetComponent<Collider>().isTrigger = false;
         item.GetComponent<Rigidbody>().isKinematic = false;
-        item.transform.parent = null;
+        //item.transform.parent = null;
         item.GetComponent<Rigidbody>().AddForce(camPos.forward * force * duration);
     }
 }
