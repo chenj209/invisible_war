@@ -18,11 +18,12 @@ public class shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        PlayerControl pc = gameObject.GetComponent("PlayerControl") as PlayerControl;
+        if (Input.GetButtonDown("Fire" + pc.playerID))
         {
             Press_and_Hold = true;
         }
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetButtonUp("Fire" + pc.playerID))
         {
             Press_and_Hold = false;
         }
