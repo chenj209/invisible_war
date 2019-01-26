@@ -91,13 +91,5 @@ public class PlayerControl : MonoBehaviour
         move += this.transform.forward * zMove * moveSpeed;
         move.y += playerBody.velocity.y;
         playerBody.velocity = move;
-
-        // Y-axis respect rotation.
-        float yRot = Input.GetAxis("Mouse X");
-        this.transform.Rotate(Vector3.up, yRot * rotSpeed);
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            healthbar.DecrementHealth(10);
-        }
     }
 }
