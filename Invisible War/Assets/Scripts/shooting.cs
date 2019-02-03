@@ -6,15 +6,19 @@ public class shooting : MonoBehaviour
 {
 	public GameObject Spawn_Object;
     public GameObject Bullet;
+    public AudioClip Fire_Sound;
     public float Bullet_Forward_Force;
     private bool Pressed = false;
-
+    private AudioSource source;
     private string playerID;
+    private float Fire_CD = 30.0f;
+    private bool On_CoolDown = false;
     // Start is called before the first frame update
     void Start()
     {
         PlayerControl pc = gameObject.GetComponent("PlayerControl") as PlayerControl;
         playerID = pc.playerID;
+        source = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -23,21 +27,42 @@ public class shooting : MonoBehaviour
         if (Input.GetButtonDown("Fire" + playerID) && !Pressed)
         {
             Pressed = true;
-            Shooting();
+            if (!On_CoolDown)
+            {
+                Shooting();
+            }
         } else if (Input.GetButtonUp("Fire" + playerID))
         {
             Pressed = false;
+        }
+
+        if (On_CoolDown)
+        {
+            Fire_CD -= Time.deltaTime;
+            if (Fire_CD <= 0)
+            {
+                On_CoolDown = false;
+                Fire_CD = 30.0f;
+            }
         }
     }
 
     void Shooting()
     {
 
-        Spawn_Bullet(new Vector3(0, 0, 0), new Vector3(0, 0, 0));
-        Spawn_Bullet(new Vector3(-1, 0, 0), new Vector3(-0.1f, 0, 0));
-        Spawn_Bullet(new Vector3(1, 0, 0), new Vector3(0.1f, 0, 0));
-        Spawn_Bullet(new Vector3(0, 1, 0), new Vector3(0, 0.05f, 0));
-  
+        Spawn_Bullet(new Vector3(0, 0.5f, 0), new Vector3(0, 0, 0));
+        Spawn_Bullet(new Vector3(-0.2f, 0.5f, 0), new Vector3(-0.05f, 0, 0));
+        Spawn_Bullet(new Vector3(0.2f, 0.5f, 0), new Vector3(0.05f, 0, 0));
+        Spawn_Bullet(new Vector3(0, 0.7f, 0), new Vector3(0, 0.05f, 0));
+        Spawn_Bullet(new Vector3(0, 0.3f, 0), new Vector3(0, -0.05f, 0));
+        Spawn_Bullet(new Vector3(0.1f, 0.6f, 0), new Vector3(0.05f, 0.05f, 0));
+        Spawn_Bullet(new Vector3(-0.1f, 0.6f, 0), new Vector3(-0.05f, 0.05f, 0));
+        Spawn_Bullet(new Vector3(0.1f, 0.4f, 0), new Vector3(0.05f, -0.05f, 0));
+        Spawn_Bullet(new Vector3(-0.1f, 0.4f, 0), new Vector3(-0.05f, -0.05f, 0));
+
+
+        source.PlayOneShot(Fire_Sound, 1f);
+        On_CoolDown = false;
     }
 
     void Spawn_Bullet(Vector3 position_offset, Vector3 bullet_offset)
