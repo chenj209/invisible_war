@@ -4,52 +4,33 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    public Canvas text;
     private Animator animator;
     ShortcutTip shortcutTip;
     private void Start()
     {
         //text.gameObject.SetActive(false);
-        animator = gameObject.GetComponentInParent<Animator>();
+        animator = gameObject.GetComponent<Animator>();
         shortcutTip = gameObject.GetComponent<ShortcutTip>();
-        //Debug.Log(animator.parameters);
-        //animator.SetBool("opening", false);
-        //animator.SetBool("closing", false);
+        animator.SetBool("Openable", true);
     }
     void OnTriggerStay(Collider col)
     {
         if (col.gameObject.tag == "Player")
         {
-            bool opened = animator.GetBool("opened");
-            bool opening = animator.GetBool("opening");
-            bool closing = animator.GetBool("closing");
-            if (opened && !opening && !closing)
-            {
-                shortcutTip.ShowShortcutTip("Press E to Close");
-            }
-            if (!opened && !opening && !closing)
-            {
-                shortcutTip.ShowShortcutTip("Press E to Open");
-            }
+            //Debug.Log("wtf");
+            bool opened = animator.GetBool("Opened");
+            bool opening = animator.GetBool("Opening");
+            bool closing = animator.GetBool("Closing");
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("pressed");
                 if (opened) {
-                    animator.SetBool("closing", true);
+                    animator.SetBool("Closing", true);
                 }
                 else
                 {
-                    animator.SetBool("opening", true);
+                    animator.SetBool("Opening", true);
                 }
             }
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            shortcutTip.ShowShortcutTip("");
         }
     }
 

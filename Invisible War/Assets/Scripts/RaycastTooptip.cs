@@ -21,7 +21,6 @@ public class RaycastTooptip : MonoBehaviour
         GameObject target = null;
         if (Physics.Raycast(camPos.position, camPos.TransformDirection(Vector3.forward), out hit, distance))
         {
-            Debug.Log(hit.collider.gameObject.tag);
             //pickUpText.text = "";
             //Debug.Log("Cannot detect anything.");
             //if (hit.rigidbody == null)
@@ -37,7 +36,20 @@ public class RaycastTooptip : MonoBehaviour
             }
             if (hit.collider.gameObject.tag == "Door")
             {
+                // execute door animation scirpt
                 shortcuttip.ShowShortcutTip("Press E to Open");
+                Animator animator = hit.collider.gameObject.GetComponentInParent<Animator>();
+                bool opened = animator.GetBool("opened");
+                bool opening = animator.GetBool("opening");
+                bool closing = animator.GetBool("closing");
+                if (opened && !opening && !closing)
+                {
+                    shortcuttip.ShowShortcutTip("Press E to Close");
+                }
+                if (!opened && !opening && !closing)
+                {
+                    shortcuttip.ShowShortcutTip("Press E to Open");
+                }
             }
             if (target != null && !raycastTargetTags.Contains(target.tag))
             {
