@@ -4,21 +4,17 @@ using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour
 {
-    private int health = 100;
+    private ParticleSystem ps;
+ 
+    private void Start()
+    {
+        ps = GetComponentInChildren<ParticleSystem>();
+        ps.Stop();
+    }
 
     public void GetHit()
     {
-        if (health > 0)
-        {
-            health -= 10;
-        }
+        ps.Play();
     }
 
-    private void FixedUpdate()
-    {
-        if (health == 0)
-        {
-            Destroy(gameObject);
-        }
-    }
 }
