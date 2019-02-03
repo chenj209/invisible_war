@@ -21,6 +21,7 @@ public class RaycastTooptip : MonoBehaviour
         GameObject target = null;
         if (Physics.Raycast(camPos.position, camPos.TransformDirection(Vector3.forward), out hit, distance))
         {
+            Debug.Log(hit.collider.gameObject.tag);
             //pickUpText.text = "";
             //Debug.Log("Cannot detect anything.");
             //if (hit.rigidbody == null)
