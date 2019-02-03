@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class shooting : MonoBehaviour
 {
@@ -8,10 +9,11 @@ public class shooting : MonoBehaviour
     public GameObject Bullet;
     public AudioClip Fire_Sound;
     public float Bullet_Forward_Force;
+    public Image cdImage;
     private bool Pressed = false;
     private AudioSource source;
     private string playerID;
-    private float Fire_CD = 30.0f;
+    public float Fire_CD = 30.0f;
     private bool On_CoolDown = false;
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,10 @@ public class shooting : MonoBehaviour
         PlayerControl pc = gameObject.GetComponent("PlayerControl") as PlayerControl;
         playerID = pc.playerID;
         source = gameObject.GetComponent<AudioSource>();
+        if (cdImage != null)
+        {
+            cdImage.fillAmount = 0;
+        }
     }
 
     // Update is called once per frame
@@ -38,11 +44,10 @@ public class shooting : MonoBehaviour
 
         if (On_CoolDown)
         {
-            Fire_CD -= Time.deltaTime;
-            if (Fire_CD <= 0)
+            cdImage.fillAmount -= 1 / Fire_CD * Time.deltaTime;
+            if (cdImage.fillAmount<=0)
             {
                 On_CoolDown = false;
-                Fire_CD = 30.0f;
             }
         }
     }
@@ -60,7 +65,7 @@ public class shooting : MonoBehaviour
         Spawn_Bullet(new Vector3(0.1f, 0.4f, 0), new Vector3(0.05f, -0.05f, 0));
         Spawn_Bullet(new Vector3(-0.1f, 0.4f, 0), new Vector3(-0.05f, -0.05f, 0));
 
-
+        cdImage.fillAmount = 1;
         source.PlayOneShot(Fire_Sound, 1f);
         On_CoolDown = true;
     }

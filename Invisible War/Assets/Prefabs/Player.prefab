@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 8256369720806058880}
   - component: {fileID: 8256369720806058883}
   - component: {fileID: 8256369720806058882}
+  - component: {fileID: 8754578813725495888}
   - component: {fileID: 8256369720806058885}
   - component: {fileID: 8256369720806058884}
   - component: {fileID: 8256369720806058887}
@@ -211,6 +212,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &8754578813725495888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8256369720806058886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ea3677b7dd447309bb368bf1f20f06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 3
+  camPos: {fileID: 0}
 --- !u!136 &8256369720806058885
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -239,7 +254,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Spawn_Object: {fileID: 8256369721067234630}
   Bullet: {fileID: 3053615388019081161, guid: 72b4a0ef8721e456bb5e263c6a9b251b, type: 3}
+  Fire_Sound: {fileID: 0}
   Bullet_Forward_Force: 500
+  cdImage: {fileID: 0}
+  Fire_CD: 30
 --- !u!114 &8256369720806058887
 MonoBehaviour:
   m_ObjectHideFlags: 0
