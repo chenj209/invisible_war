@@ -62,7 +62,7 @@ public class shooting : MonoBehaviour
 
 
         source.PlayOneShot(Fire_Sound, 1f);
-        On_CoolDown = false;
+        On_CoolDown = true;
     }
 
     void Spawn_Bullet(Vector3 position_offset, Vector3 bullet_offset)
