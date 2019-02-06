@@ -54,7 +54,6 @@ public class CatchPlayer : MonoBehaviour
         }
         if (target.name == "Player02")
         {
-            //Debug.Log("Get the hider.");
             return target;
         }
         return null;
