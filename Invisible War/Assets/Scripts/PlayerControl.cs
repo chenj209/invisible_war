@@ -59,6 +59,14 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
+        }
+    }
+
     private void move()
     {
         float moveSpeed = moveForce;
