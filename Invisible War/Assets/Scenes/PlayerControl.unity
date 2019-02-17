@@ -5196,6 +5196,16 @@ PrefabInstance:
       propertyPath: cdImage
       value: 
       objectReference: {fileID: 1719768283}
+    - target: {fileID: 8754578813725495888, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: camPos
+      value: 
+      objectReference: {fileID: 1523925339}
+    - target: {fileID: 8754578813725495888, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: distance
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53519003647cd3c43bd13748a3b93880, type: 3}
 --- !u!4 &621601750 stripped
@@ -5598,6 +5608,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
+--- !u!4 &1523925339 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8256369720747086074, guid: 53519003647cd3c43bd13748a3b93880,
+    type: 3}
+  m_PrefabInstance: {fileID: 532471924}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1719768281
 GameObject:
   m_ObjectHideFlags: 0
@@ -5898,6 +5914,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 03b092de8b638419994a1c9f909e5e48, type: 2}
+    - target: {fileID: 8256369720806058882, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8256369720806058881, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: m_CollisionDetection
