@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     public string playerID;
-
+    public Transform enemy;
+    public Transform indicatorCenter;
     public enum MovePattern
     {
         Walking,
@@ -26,7 +27,9 @@ public class PlayerControl : MonoBehaviour
     {
         playerBody = this.GetComponent<Rigidbody>();
         moveMode = MovePattern.Walking;
-
+        Vector3 difference = enemy.position - transform.position;
+        float rotateDegree = Mathf.Atan2(difference.z, difference.x) * Mathf.Rad2Deg + 90;
+        indicatorCenter.transform.localEulerAngles = new Vector3(0,0,rotateDegree);
     }
 
     // Update is called once per frame
@@ -55,6 +58,9 @@ public class PlayerControl : MonoBehaviour
             vel.y = jumpSpeed;
             playerBody.velocity = vel;
         }
+        Vector3 difference = enemy.position - transform.position;
+        float rotateDegree = Mathf.Atan2(difference.z, difference.x) * Mathf.Rad2Deg + 90;
+        indicatorCenter.transform.localEulerAngles = new Vector3(0, 0, rotateDegree);
     }
 
     private void move()
