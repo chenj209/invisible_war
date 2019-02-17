@@ -27,9 +27,7 @@ public class PlayerControl : MonoBehaviour
     {
         playerBody = this.GetComponent<Rigidbody>();
         moveMode = MovePattern.Walking;
-        Vector3 difference = enemy.position - transform.position;
-        float rotateDegree = Mathf.Atan2(difference.z, difference.x) * Mathf.Rad2Deg + 90;
-        indicatorCenter.transform.localEulerAngles = new Vector3(0,0,rotateDegree);
+        updateIndicator();
     }
 
     // Update is called once per frame
@@ -58,9 +56,7 @@ public class PlayerControl : MonoBehaviour
             vel.y = jumpSpeed;
             playerBody.velocity = vel;
         }
-        Vector3 difference = enemy.position - transform.position;
-        float rotateDegree = Mathf.Atan2(difference.z, difference.x) * Mathf.Rad2Deg + 90;
-        indicatorCenter.transform.localEulerAngles = new Vector3(0, 0, rotateDegree);
+        updateIndicator();
     }
 
     private void move()
@@ -95,5 +91,15 @@ public class PlayerControl : MonoBehaviour
         move += this.transform.forward * zMove * moveSpeed;
         move.y += playerBody.velocity.y;
         playerBody.velocity = move;
+    }
+
+    private void updateIndicator()
+    {
+        Vector3 difference = enemy.position - transform.position;
+        Vector3 faceDirection = transform.forward;
+        Vector2 face2D = new Vector2(faceDirection.x, faceDirection.z);
+        Vector2 difference2D = new Vector2(difference.x, difference.z);
+        float rotateDegree = Vector2.SignedAngle(face2D, difference2D);
+        indicatorCenter.transform.localEulerAngles = new Vector3(0, 0, rotateDegree);
     }
 }

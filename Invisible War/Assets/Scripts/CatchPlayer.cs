@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CatchPlayer : MonoBehaviour
 {
+    public float sphereRadius;
     public float distance;
     public Transform camPos;
 
@@ -38,23 +39,17 @@ public class CatchPlayer : MonoBehaviour
         {
             return null; 
         }
-        if (!Physics.Raycast(camPos.position, camPos.TransformDirection(Vector3.forward), out hit, distance))
+        if (Physics.SphereCast(camPos.position, sphereRadius, camPos.TransformDirection(Vector3.forward), out hit, distance))
         {
-            //Debug.Log("Cannot detect anything.");
-            return null;
-        }
-        if (hit.rigidbody != null)
-        {
-            target = hit.rigidbody.gameObject;
+            target = hit.transform.gameObject;
         }
         else
         {
-            //Debug.Log("No movable object is detected.");
             return null;
         }
         if (target.name == "Player02")
         {
-            //Debug.Log("Get the hider.");
+            Debug.Log("get ghost");
             return target;
         }
         return null;
