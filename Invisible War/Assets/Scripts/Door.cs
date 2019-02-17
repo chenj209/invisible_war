@@ -4,41 +4,42 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    public Canvas text;
     private Animator animator;
+    ShortcutTip shortcutTip;
     private void Start()
     {
-        text.gameObject.SetActive(false);
-        animator = GetComponent<Animator>();
-        animator.SetBool("opened", false);
+        //text.gameObject.SetActive(false);
+        animator = gameObject.GetComponent<Animator>();
+        shortcutTip = gameObject.GetComponent<ShortcutTip>();
+        animator.SetBool("Openable", true);
     }
     void OnTriggerStay(Collider col)
     {
         if (col.gameObject.tag == "Player")
         {
-            text.gameObject.SetActive(true);
+            //Debug.Log("wtf");
+            bool opened = animator.GetBool("Opened");
+            bool opening = animator.GetBool("Opening");
+            bool closing = animator.GetBool("Closing");
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("pressed");
-                animator.SetBool("opened", true);
+                if (opened) {
+                    animator.SetBool("Closing", true);
+                }
+                else
+                {
+                    animator.SetBool("Opening", true);
+                }
             }
         }
     }
 
-    void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            text.gameObject.SetActive(false);
-        }
-    }
-
-    void Update()
-    {
-        bool opened = animator.GetBool("opened");
-        if (opened)
-        {
-            text.gameObject.SetActive(false);
-        }
-    }
+    //void Update()
+    //{
+    //    bool opened = animator.GetBool("opened");
+    //    if (opened)
+    //    {
+    //        shortcutTip.ShowShortcutTip("");
+    //    }
+    //}
 }

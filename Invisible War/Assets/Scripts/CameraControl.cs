@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour
 {
-    public float rotSpeed = 50;
+    public float rotSpeed = 5000;
 
     private GameObject player;
 
@@ -37,7 +37,7 @@ public class CameraControl : MonoBehaviour
         {
             yRot = 0f;
         }
-        player.transform.Rotate(Vector3.up, Mathf.Lerp(0f, yRot * rotSpeed * Time.deltaTime, .5f));
+        player.transform.Rotate(Vector3.up, Mathf.Lerp(0f, yRot * rotSpeed * Time.deltaTime, 1f));
 
         // X-axis respect rotation.
         float xRot = -Input.GetAxis("Mouse Y" + playerID);
@@ -46,7 +46,7 @@ public class CameraControl : MonoBehaviour
             xRot = 0f;
         }
         float curX = this.transform.eulerAngles.x;
-        float rotDegree = Mathf.Lerp(0f, xRot * rotSpeed * Time.deltaTime, .5f);
+        float rotDegree = Mathf.Lerp(0f, xRot * rotSpeed * Time.deltaTime, 1f);
         // this.transform.Rotate(Vector3.right, Mathf.Clamp(Mathf.Lerp(0f, xRot * rotSpeed, Time.deltaTime) + curX, upRotLimit, downRotLimit));
         //if (rotDegree > maxRot - curX)
         //{

@@ -18,6 +18,7 @@ public class PlayerControl : MonoBehaviour
     public float moveForce = 5;
 
     private Rigidbody playerBody;
+    HealthBar healthbar;
 
     public bool isGround;
     public float jumpSpeed = 5;
@@ -26,6 +27,7 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         playerBody = this.GetComponent<Rigidbody>();
+        healthbar = this.GetComponent<HealthBar>();
         moveMode = MovePattern.Walking;
         updateIndicator();
     }
@@ -87,10 +89,57 @@ public class PlayerControl : MonoBehaviour
         }
         //playerBody.AddForce(this.transform.right * xMove * moveForce);
         //playerBody.AddForce(this.transform.forward * zMove * moveForce);
-        Vector3 move = this.transform.right * xMove * moveSpeed;
-        move += this.transform.forward * zMove * moveSpeed;
-        move.y += playerBody.velocity.y;
-        playerBody.velocity = move;
+        Vector3 movement = this.transform.right * xMove * moveSpeed;
+        movement += this.transform.forward * zMove * moveSpeed;
+        movement.y += playerBody.velocity.y;
+        playerBody.velocity = movement;
+    }
+
+    CursorLockMode wantedMode;
+
+    // Apply requested cursor state
+    void SetCursorState()
+    {
+        Cursor.lockState = wantedMode;
+        // Hide cursor when locking
+        Cursor.visible = (CursorLockMode.Locked != wantedMode);
+    }
+
+    void OnGUI()
+    {
+        GUILayout.BeginVertical();
+        // Release cursor on escape keypress
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Cursor.lockState = wantedMode = CursorLockMode.None;
+
+        switch (Cursor.lockState)
+        {
+            case CursorLockMode.None:
+                GUILayout.Label("Cursor is normal");
+                if (GUILayout.Button("Lock cursor"))
+                    wantedMode = CursorLockMode.Locked;
+                if (GUILayout.Button("Confine cursor"))
+                    wantedMode = CursorLockMode.Confined;
+                break;
+            case CursorLockMode.Confined:
+                GUILayout.Label("Cursor is confined");
+                if (GUILayout.Button("Lock cursor"))
+                    wantedMode = CursorLockMode.Locked;
+                if (GUILayout.Button("Release cursor"))
+                    wantedMode = CursorLockMode.None;
+                break;
+            case CursorLockMode.Locked:
+                GUILayout.Label("Cursor is locked");
+                if (GUILayout.Button("Unlock cursor"))
+                    wantedMode = CursorLockMode.None;
+                if (GUILayout.Button("Confine cursor"))
+                    wantedMode = CursorLockMode.Confined;
+                break;
+        }
+
+        GUILayout.EndVertical();
+
+        SetCursorState();
     }
 
     private void updateIndicator()
