@@ -12,10 +12,6 @@ public class Bullet : MonoBehaviour
         {
             PlayerStatus ps = collision.gameObject.GetComponent("PlayerStatus") as PlayerStatus;
             ps.GetHit();
-
-            CameraShootEffect cameraEffect = collision.gameObject.GetComponentInChildren<CameraShootEffect>() as CameraShootEffect;
-
-            StartCoroutine(cameraEffect.Shake(10f, .4f));
         }
         Destroy(gameObject);
     }

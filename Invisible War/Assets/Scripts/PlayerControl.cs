@@ -87,10 +87,10 @@ public class PlayerControl : MonoBehaviour
         }
         //playerBody.AddForce(this.transform.right * xMove * moveForce);
         //playerBody.AddForce(this.transform.forward * zMove * moveForce);
-        Vector3 move = this.transform.right * xMove * moveSpeed;
-        move += this.transform.forward * zMove * moveSpeed;
-        move.y += playerBody.velocity.y;
-        playerBody.velocity = move;
+        Vector3 movement = this.transform.right * xMove * moveSpeed;
+        movement += this.transform.forward * zMove * moveSpeed;
+        movement.y += playerBody.velocity.y;
+        playerBody.velocity = movement;
     }
 
     CursorLockMode wantedMode;
