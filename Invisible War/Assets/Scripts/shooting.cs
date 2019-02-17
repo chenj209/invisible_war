@@ -56,14 +56,14 @@ public class shooting : MonoBehaviour
     {
 
         Spawn_Bullet(new Vector3(0, 0.5f, 0), new Vector3(0, 0, 0));
-        Spawn_Bullet(new Vector3(-0.2f, 0.5f, 0), new Vector3(-0.05f, 0, 0));
-        Spawn_Bullet(new Vector3(0.2f, 0.5f, 0), new Vector3(0.05f, 0, 0));
-        Spawn_Bullet(new Vector3(0, 0.7f, 0), new Vector3(0, 0.05f, 0));
-        Spawn_Bullet(new Vector3(0, 0.3f, 0), new Vector3(0, -0.05f, 0));
-        Spawn_Bullet(new Vector3(0.1f, 0.6f, 0), new Vector3(0.05f, 0.05f, 0));
-        Spawn_Bullet(new Vector3(-0.1f, 0.6f, 0), new Vector3(-0.05f, 0.05f, 0));
-        Spawn_Bullet(new Vector3(0.1f, 0.4f, 0), new Vector3(0.05f, -0.05f, 0));
-        Spawn_Bullet(new Vector3(-0.1f, 0.4f, 0), new Vector3(-0.05f, -0.05f, 0));
+        //Spawn_Bullet(new Vector3(-0.2f, 0.5f, 0), new Vector3(-0.05f, 0, 0));
+        //Spawn_Bullet(new Vector3(0.2f, 0.5f, 0), new Vector3(0.05f, 0, 0));
+        //Spawn_Bullet(new Vector3(0, 0.7f, 0), new Vector3(0, 0.05f, 0));
+        //Spawn_Bullet(new Vector3(0, 0.3f, 0), new Vector3(0, -0.05f, 0));
+        //Spawn_Bullet(new Vector3(0.1f, 0.6f, 0), new Vector3(0.05f, 0.05f, 0));
+        //Spawn_Bullet(new Vector3(-0.1f, 0.6f, 0), new Vector3(-0.05f, 0.05f, 0));
+        //Spawn_Bullet(new Vector3(0.1f, 0.4f, 0), new Vector3(0.05f, -0.05f, 0));
+        //Spawn_Bullet(new Vector3(-0.1f, 0.4f, 0), new Vector3(-0.05f, -0.05f, 0));
 
         cdImage.fillAmount = 1;
         source.PlayOneShot(Fire_Sound, 1f);
