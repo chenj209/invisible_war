@@ -22,6 +22,8 @@ public class PlayerControl : MonoBehaviour
 
     public bool isGround;
     public float jumpSpeed = 5;
+    public Camera playerCamera;
+    [SerializeField] private MouseLook m_MouseLook;
 
     // Start is called before the first frame update
     void Start()
@@ -30,11 +32,13 @@ public class PlayerControl : MonoBehaviour
         healthbar = this.GetComponent<HealthBar>();
         moveMode = MovePattern.Walking;
         updateIndicator();
+        m_MouseLook.Init(transform, playerCamera.transform, playerID);
     }
 
     // Update is called once per frame
     private void Update()
     {
+        RotateView();
         if (Input.GetButton("Running" + playerID))
         {
             moveMode = MovePattern.Running;
@@ -59,6 +63,11 @@ public class PlayerControl : MonoBehaviour
             playerBody.velocity = vel;
         }
         updateIndicator();
+    }
+
+    private void FixedUpdate()
+    {
+        m_MouseLook.UpdateCursorLock();
     }
 
     private void move()
@@ -95,53 +104,6 @@ public class PlayerControl : MonoBehaviour
         playerBody.velocity = movement;
     }
 
-    CursorLockMode wantedMode;
-
-    // Apply requested cursor state
-    void SetCursorState()
-    {
-        Cursor.lockState = wantedMode;
-        // Hide cursor when locking
-        Cursor.visible = (CursorLockMode.Locked != wantedMode);
-    }
-
-    void OnGUI()
-    {
-        GUILayout.BeginVertical();
-        // Release cursor on escape keypress
-        if (Input.GetKeyDown(KeyCode.Escape))
-            Cursor.lockState = wantedMode = CursorLockMode.None;
-
-        switch (Cursor.lockState)
-        {
-            case CursorLockMode.None:
-                GUILayout.Label("Cursor is normal");
-                if (GUILayout.Button("Lock cursor"))
-                    wantedMode = CursorLockMode.Locked;
-                if (GUILayout.Button("Confine cursor"))
-                    wantedMode = CursorLockMode.Confined;
-                break;
-            case CursorLockMode.Confined:
-                GUILayout.Label("Cursor is confined");
-                if (GUILayout.Button("Lock cursor"))
-                    wantedMode = CursorLockMode.Locked;
-                if (GUILayout.Button("Release cursor"))
-                    wantedMode = CursorLockMode.None;
-                break;
-            case CursorLockMode.Locked:
-                GUILayout.Label("Cursor is locked");
-                if (GUILayout.Button("Unlock cursor"))
-                    wantedMode = CursorLockMode.None;
-                if (GUILayout.Button("Confine cursor"))
-                    wantedMode = CursorLockMode.Confined;
-                break;
-        }
-
-        GUILayout.EndVertical();
-
-        SetCursorState();
-    }
-
     private void updateIndicator()
     {
         Vector3 difference = enemy.position - transform.position;
@@ -150,5 +112,9 @@ public class PlayerControl : MonoBehaviour
         Vector2 difference2D = new Vector2(difference.x, difference.z);
         float rotateDegree = Vector2.SignedAngle(face2D, difference2D);
         indicatorCenter.transform.localEulerAngles = new Vector3(0, 0, rotateDegree);
+    }
+    private void RotateView()
+    {
+        m_MouseLook.LookRotation(transform, playerCamera.transform);
     }
 }
