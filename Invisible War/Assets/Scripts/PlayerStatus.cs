@@ -13,8 +13,8 @@ public class PlayerStatus : MonoBehaviour
 
     private void Start()
     {
-        ps = GetComponentInChildren<ParticleSystem>();
-        ps.Stop();
+        //ps = GetComponentInChildren<ParticleSystem>();
+        //ps.Stop();
 
         cameraEffect = GetComponentInChildren<CameraShootEffect>() as CameraShootEffect;
     }
@@ -33,7 +33,6 @@ public class PlayerStatus : MonoBehaviour
                 Hit = false;
                 cameraEffect.start = false;
                 onShoot.gameObject.SetActive(false);
-                ps.Stop();
                 Visible_Time = 5.0f;
             }
         }
@@ -60,7 +59,7 @@ public class PlayerStatus : MonoBehaviour
 
     public void GetHit()
     {
-        ps.Play();
+        //ps.Play();
         Hit = true;
     }
 
