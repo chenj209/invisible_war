@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5431,9 +5431,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &672437515 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 8256369720806058880, guid: 53519003647cd3c43bd13748a3b93880,
+  m_CorrespondingSourceObject: {fileID: 7626078715571165175, guid: df5e172fbfece354e8278c657e781fe5,
     type: 3}
-  m_PrefabInstance: {fileID: 532471924}
+  m_PrefabInstance: {fileID: 1964064955151555587}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &834586708
 GameObject:
@@ -11543,3 +11543,87 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &1964064955151555587
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7626078715571165169, guid: df5e172fbfece354e8278c657e781fe5,
+        type: 3}
+      propertyPath: m_Name
+      value: Player01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7626078715571165175, guid: df5e172fbfece354e8278c657e781fe5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 7626078715571165175, guid: df5e172fbfece354e8278c657e781fe5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 7626078715571165175, guid: df5e172fbfece354e8278c657e781fe5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7626078715571165175, guid: df5e172fbfece354e8278c657e781fe5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7626078715571165175, guid: df5e172fbfece354e8278c657e781fe5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7626078715571165175, guid: df5e172fbfece354e8278c657e781fe5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7626078715571165175, guid: df5e172fbfece354e8278c657e781fe5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7626078715571165175, guid: df5e172fbfece354e8278c657e781fe5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7626078715571165175, guid: df5e172fbfece354e8278c657e781fe5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7626078715571165175, guid: df5e172fbfece354e8278c657e781fe5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7626078715571165175, guid: df5e172fbfece354e8278c657e781fe5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7626078715571165171, guid: df5e172fbfece354e8278c657e781fe5,
+        type: 3}
+      propertyPath: cdImage
+      value: 
+      objectReference: {fileID: 1719768283}
+    - target: {fileID: 7626078715571165168, guid: df5e172fbfece354e8278c657e781fe5,
+        type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 621601750}
+    - target: {fileID: 7626078715571165168, guid: df5e172fbfece354e8278c657e781fe5,
+        type: 3}
+      propertyPath: indicatorCenter
+      value: 
+      objectReference: {fileID: 1884900265}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: df5e172fbfece354e8278c657e781fe5, type: 3}
