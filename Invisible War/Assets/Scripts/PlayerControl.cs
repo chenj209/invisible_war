@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     public string playerID;
-
+    public Transform enemy;
+    public Transform indicatorCenter;
     public enum MovePattern
     {
         Walking,
@@ -21,6 +22,8 @@ public class PlayerControl : MonoBehaviour
 
     public bool isGround;
     public float jumpSpeed = 5;
+    public Camera playerCamera;
+    [SerializeField] private MouseLook m_MouseLook;
 
     // Start is called before the first frame update
     void Start()
@@ -28,12 +31,14 @@ public class PlayerControl : MonoBehaviour
         playerBody = this.GetComponent<Rigidbody>();
         healthbar = this.GetComponent<HealthBar>();
         moveMode = MovePattern.Walking;
-
+        updateIndicator();
+        m_MouseLook.Init(transform, playerCamera.transform, playerID);
     }
 
     // Update is called once per frame
     private void Update()
     {
+        RotateView();
         if (Input.GetButton("Running" + playerID))
         {
             moveMode = MovePattern.Running;
@@ -57,6 +62,12 @@ public class PlayerControl : MonoBehaviour
             vel.y = jumpSpeed;
             playerBody.velocity = vel;
         }
+        updateIndicator();
+    }
+
+    private void FixedUpdate()
+    {
+        m_MouseLook.UpdateCursorLock();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -95,56 +106,23 @@ public class PlayerControl : MonoBehaviour
         }
         //playerBody.AddForce(this.transform.right * xMove * moveForce);
         //playerBody.AddForce(this.transform.forward * zMove * moveForce);
-        Vector3 move = this.transform.right * xMove * moveSpeed;
-        move += this.transform.forward * zMove * moveSpeed;
-        move.y += playerBody.velocity.y;
-        playerBody.velocity = move;
+        Vector3 movement = this.transform.right * xMove * moveSpeed;
+        movement += this.transform.forward * zMove * moveSpeed;
+        movement.y += playerBody.velocity.y;
+        playerBody.velocity = movement;
     }
 
-    CursorLockMode wantedMode;
-
-    // Apply requested cursor state
-    void SetCursorState()
+    private void updateIndicator()
     {
-        Cursor.lockState = wantedMode;
-        // Hide cursor when locking
-        Cursor.visible = (CursorLockMode.Locked != wantedMode);
+        Vector3 difference = enemy.position - transform.position;
+        Vector3 faceDirection = transform.forward;
+        Vector2 face2D = new Vector2(faceDirection.x, faceDirection.z);
+        Vector2 difference2D = new Vector2(difference.x, difference.z);
+        float rotateDegree = Vector2.SignedAngle(face2D, difference2D);
+        indicatorCenter.transform.localEulerAngles = new Vector3(0, 0, rotateDegree);
     }
-
-    void OnGUI()
+    private void RotateView()
     {
-        GUILayout.BeginVertical();
-        // Release cursor on escape keypress
-        if (Input.GetKeyDown(KeyCode.Escape))
-            Cursor.lockState = wantedMode = CursorLockMode.None;
-
-        switch (Cursor.lockState)
-        {
-            case CursorLockMode.None:
-                GUILayout.Label("Cursor is normal");
-                if (GUILayout.Button("Lock cursor"))
-                    wantedMode = CursorLockMode.Locked;
-                if (GUILayout.Button("Confine cursor"))
-                    wantedMode = CursorLockMode.Confined;
-                break;
-            case CursorLockMode.Confined:
-                GUILayout.Label("Cursor is confined");
-                if (GUILayout.Button("Lock cursor"))
-                    wantedMode = CursorLockMode.Locked;
-                if (GUILayout.Button("Release cursor"))
-                    wantedMode = CursorLockMode.None;
-                break;
-            case CursorLockMode.Locked:
-                GUILayout.Label("Cursor is locked");
-                if (GUILayout.Button("Unlock cursor"))
-                    wantedMode = CursorLockMode.None;
-                if (GUILayout.Button("Confine cursor"))
-                    wantedMode = CursorLockMode.Confined;
-                break;
-        }
-
-        GUILayout.EndVertical();
-
-        SetCursorState();
+        m_MouseLook.LookRotation(transform, playerCamera.transform);
     }
 }
