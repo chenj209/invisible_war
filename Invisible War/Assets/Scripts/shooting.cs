@@ -17,7 +17,7 @@ public class shooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerControl pc = gameObject.GetComponent("PlayerControl") as PlayerControl;
+        PlayerControl pc = gameObject.GetComponent<PlayerControl>();
         playerID = pc.playerID;
         source = gameObject.GetComponent<AudioSource>();
         if (cdImage != null)
@@ -51,6 +51,12 @@ public class shooting : MonoBehaviour
             {
                 On_CoolDown = false;
             }
+            // hide paintgun and crosshair
+            crosshair.gameObject.SetActive(false);
+        }
+        else
+        {
+            crosshair.gameObject.SetActive(true);
         }
     }
 
