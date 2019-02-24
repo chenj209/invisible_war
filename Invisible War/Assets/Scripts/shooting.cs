@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class shooting : MonoBehaviour
 {
     public ParticleSystem particleLauncher;
+    public ParticleDecalPool decalPool;
     public AudioClip Fire_Sound;
     public Image cdImage;
     public Image crosshair;
@@ -62,6 +63,7 @@ public class shooting : MonoBehaviour
 
     void Shooting()
     {
+        decalPool.ClearParticles();
         ParticleSystem.MainModule psMain = particleLauncher.main;
         particleLauncher.Emit(10);
         cdImage.fillAmount = 1;

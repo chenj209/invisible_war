@@ -7,7 +7,7 @@ public class Door : MonoBehaviour
     private Animator animator;
     ShortcutTip shortcutTip;
     private bool showCanvas = false;
-    public ParticleSystem decalSystem;
+    public ParticleDecalPool decalPool;
     private void Start()
     {
         //text.gameObject.SetActive(false);
@@ -26,7 +26,7 @@ public class Door : MonoBehaviour
 
             animator = gameObject.GetComponentInChildren<Animator>();
             animator.SetBool("Opening", true);
-            decalSystem.Clear();
+            decalPool.ClearParticles();
 
           
         }
@@ -43,7 +43,7 @@ public class Door : MonoBehaviour
 
             animator = gameObject.GetComponentInChildren<Animator>();
             animator.SetBool("Closing", true);
-            decalSystem.Clear();
+            decalPool.ClearParticles();
 
         }
     }

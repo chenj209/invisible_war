@@ -57,4 +57,15 @@ public class ParticleDecalPool : MonoBehaviour
         }
         decalParticleSystem.SetParticles(particles, particles.Length);
     }
+
+    public void ClearParticles()
+    {
+        particles = new ParticleSystem.Particle[maxDecals];
+        particleData = new ParticleDecalData[maxDecals];
+        for (int i = 0; i < maxDecals; i++)
+        {
+            particleData[i] = new ParticleDecalData();
+        }
+        decalParticleSystem.SetParticles(particles, particles.Length);
+    }
 }

@@ -37,6 +37,7 @@ public class ParticleLauncher : MonoBehaviour
         }
     }
 
+
     //void EmitAtLocation(ParticleCollisionEvent particleCollisionEvent)
     //{
     //    splatterParticles.transform.position = particleCollisionEvent.intersection;
