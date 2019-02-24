@@ -3,14 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameStateController : MonoBehaviour
+/*public class GameStateController : MonoBehaviour
 {
-    public float timeLeft;
-    public float startCD;
-    public Text cdUI1;
-    public Text cdUI2;
-    public Text cdUI3;
-    public Text cdUI4;
+    public static bool HunterTutOne = false;
+    public static bool HunterTutTwo = false;
+    public static bool HunterTutThree = false;
+    public static bool GhostTutOne = false;
+    public static bool GhostTutTwo = false;
+    public static bool GhostTutThree = false;
+    public static bool HunterTutDone = false;
+    public static bool GhostTutDone = false;
+
+    //public float timeLeft;
+    //public float startCD;
+    //public Text cdUI1;
+    //public Text cdUI2;
+    //public Text cdUI3;
+    //public Text cdUI4;
     public Text p1S;
     public Text p2S;
     public float delay;
@@ -21,34 +30,35 @@ public class GameStateController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cdUI1.text = "";
-        cdUI2.text = "";
-        cdUI3.text = "";
-        cdUI4.text = "";
+        //cdUI1.text = "";
+        //cdUI2.text = "";
+        //cdUI3.text = "";
+        //cdUI4.text = "";
         p1S.text = "";
         p2S.text = "";
-        player1State = "start menu";
-        player2State = "start menu";
+        //player1State = "start menu";
+        //player2State = "start menu";
+        StartCoroutine(PopUp("Enter Tutorial1", p1S));
+        player1State = "tutorial1";
+        StartCoroutine(PopUp("Enter Tutorial1", p2S));
+        player2State = "tutorial1";
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))// for player1
-        {
-            if (player1State == "start menu")
-            {
-                StartCoroutine(PopUp("Enter Tutorial1", p1S));
-                player1State = "tutorial1";
-                EnterTutorial1(1);
-            }
-            else if (player1State == "tutorial1")
+        // for player1
+            if (player1State == "tutorial1")
             {
                 StartCoroutine(PopUp("Enter Tutorial2", p1S));
                 player1State = "tutorial2";
-                EnterTutorial2(1);
             }
             else if (player1State == "tutorial2")
+            {
+                StartCoroutine(PopUp("Enter Tutorial3", p1S));
+                player1State = "tutorial3";
+            }
+            else if (player1State == "tutorial3")
             {
                 player1State = "stand by";
                 if (player2State != "stand by")
@@ -56,22 +66,19 @@ public class GameStateController : MonoBehaviour
                     StartCoroutine(PopUp("Stand By", p1S));
                 }
             }
-        }
-        if (Input.GetKeyDown(KeyCode.H))// for player2
-        {
-            if (player2State == "start menu")
-            {
-                StartCoroutine(PopUp("Enter Tutorial1", p2S));
-                player2State = "tutorial1";
-                EnterTutorial1(2);
-            }
-            else if (player2State == "tutorial1")
+
+        // for player2
+            if (player2State == "tutorial1")
             {
                 StartCoroutine(PopUp("Enter Tutorial2", p2S));
                 player2State = "tutorial2";
-                EnterTutorial2(2);
             }
             else if (player2State == "tutorial2")
+            {
+                StartCoroutine(PopUp("Enter Tutorial3", p2S));
+                player2State = "tutorial3";
+            }
+            else if (player2State == "tutorial3")
             {
                 player2State = "stand by";
                 if (player1State != "stand by")
@@ -80,7 +87,7 @@ public class GameStateController : MonoBehaviour
                 }
             }
         }
-        if (startCD >= 0)
+        /*if (startCD >= 0)
         {
             GameStart();
         }
@@ -90,14 +97,11 @@ public class GameStateController : MonoBehaviour
         }
     }
 
-    void EnterTutorial1(int player)
+    IEnumerator PopUp(string state, Text text)
     {
-
-    }
-
-    void EnterTutorial2(int player)
-    {
-
+        text.text = state;
+        yield return new WaitForSeconds(delay);
+        text.text = "";
     }
 
     void GameStart()
@@ -144,11 +148,5 @@ public class GameStateController : MonoBehaviour
         cdUI1.text = "";
         cdUI2.text = "";
     }
-
-    IEnumerator PopUp(string state, Text text)
-    {
-        text.text = state;
-        yield return new WaitForSeconds(delay);
-        text.text = "";
-    }
 }
+*/

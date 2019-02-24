@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6480,6 +6480,10 @@ PrefabInstance:
       propertyPath: decalPool
       value: 
       objectReference: {fileID: 386018595}
+    - target: {fileID: 518654976, guid: cc09b143490fd417a8b7920fac4c1156, type: 3}
+      propertyPath: doorID
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 9093802407050446082, guid: cc09b143490fd417a8b7920fac4c1156,
         type: 3}
       propertyPath: m_Camera
@@ -11642,6 +11646,11 @@ PrefabInstance:
       propertyPath: cdImage
       value: 
       objectReference: {fileID: 836445510}
+    - target: {fileID: 4741706698289614796, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+        type: 3}
+      propertyPath: decalPool
+      value: 
+      objectReference: {fileID: 386018595}
     - target: {fileID: 4741706698289614799, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
         type: 3}
       propertyPath: enemy
@@ -11661,6 +11670,11 @@ PrefabInstance:
         type: 3}
       propertyPath: moveForce
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741706698289614799, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+        type: 3}
+      propertyPath: jumpSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3700104682342672523, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
         type: 3}
@@ -13871,6 +13885,10 @@ PrefabInstance:
       propertyPath: decalPool
       value: 
       objectReference: {fileID: 386018595}
+    - target: {fileID: 518654976, guid: cc09b143490fd417a8b7920fac4c1156, type: 3}
+      propertyPath: doorID
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 9093802407050446082, guid: cc09b143490fd417a8b7920fac4c1156,
         type: 3}
       propertyPath: m_Camera
@@ -13973,6 +13991,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f0e1756e3d41401c916bd4dd4fb1b10, type: 3}
+--- !u!1 &1452842632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1452842634}
+  - component: {fileID: 1452842633}
+  m_Layer: 0
+  m_Name: GameStateController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1452842633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452842632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b2184be6b5bd42f8afb6e2d2e96bde9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  p1S: {fileID: 0}
+  p2S: {fileID: 0}
+  delay: 0
+--- !u!4 &1452842634
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452842632}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 281.5, y: 148, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1462708818 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6095921031363219223, guid: 3f0e1756e3d41401c916bd4dd4fb1b10,
@@ -14491,6 +14557,10 @@ PrefabInstance:
       propertyPath: decalPool
       value: 
       objectReference: {fileID: 386018595}
+    - target: {fileID: 518654976, guid: cc09b143490fd417a8b7920fac4c1156, type: 3}
+      propertyPath: doorID
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 9093802407050446082, guid: cc09b143490fd417a8b7920fac4c1156,
         type: 3}
       propertyPath: m_Camera
@@ -15308,6 +15378,10 @@ PrefabInstance:
       propertyPath: decalPool
       value: 
       objectReference: {fileID: 386018595}
+    - target: {fileID: 518654976, guid: cc09b143490fd417a8b7920fac4c1156, type: 3}
+      propertyPath: doorID
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 9093802407050446082, guid: cc09b143490fd417a8b7920fac4c1156,
         type: 3}
       propertyPath: m_Camera
@@ -15559,6 +15633,10 @@ PrefabInstance:
       propertyPath: decalPool
       value: 
       objectReference: {fileID: 386018595}
+    - target: {fileID: 518654976, guid: cc09b143490fd417a8b7920fac4c1156, type: 3}
+      propertyPath: doorID
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9093802407050446082, guid: cc09b143490fd417a8b7920fac4c1156,
         type: 3}
       propertyPath: m_Camera
@@ -15963,6 +16041,10 @@ PrefabInstance:
       propertyPath: decalPool
       value: 
       objectReference: {fileID: 386018595}
+    - target: {fileID: 518654976, guid: cc09b143490fd417a8b7920fac4c1156, type: 3}
+      propertyPath: doorID
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9093802407050446082, guid: cc09b143490fd417a8b7920fac4c1156,
         type: 3}
       propertyPath: m_Camera
