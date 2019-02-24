@@ -30,7 +30,7 @@ public class Door : MonoBehaviour
             animator.SetBool("Opening", true);
             if (decalPool != null) decalPool.ClearParticles();
 
-            /*if (doorID == 1)
+            if (doorID == 1)
             {
                 GameStateController.HunterTutOne = true;
             }
@@ -55,7 +55,7 @@ public class Door : MonoBehaviour
             {
                 GameStateController.GhostTutThree = true;
                 GameStateController.GhostTutDone = true;
-            }*/
+            }
 
         }
     }
