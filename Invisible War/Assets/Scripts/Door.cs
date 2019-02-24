@@ -8,6 +8,7 @@ public class Door : MonoBehaviour
     ShortcutTip shortcutTip;
     private bool showCanvas = false;
     public ParticleDecalPool decalPool;
+    public int doorID = -1;
     private void Start()
     {
         //text.gameObject.SetActive(false);
