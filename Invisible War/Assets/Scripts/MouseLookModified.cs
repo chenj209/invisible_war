@@ -32,7 +32,8 @@ public class MouseLook
     {
         float yRot = CrossPlatformInputManager.GetAxis("Mouse X" + playerID) * XSensitivity;
         float xRot = CrossPlatformInputManager.GetAxis("Mouse Y" + playerID) * YSensitivity;
-
+        if (Math.Abs(xRot) < 0.2) xRot = 0;
+        if (Math.Abs(yRot) < 0.2) yRot = 0;
         m_CharacterTargetRot *= Quaternion.Euler(0f, yRot, 0f);
         m_CameraTargetRot *= Quaternion.Euler(-xRot, 0f, 0f);
 

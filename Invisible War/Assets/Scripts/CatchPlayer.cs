@@ -47,7 +47,7 @@ public class CatchPlayer : MonoBehaviour
         {
             return null;
         }
-        if (target.name == "Player02")
+        if (target.name == "Player02" || target.name == "HunterCatchBot")
         {
             Debug.Log("get ghost");
             return target;

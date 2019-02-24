@@ -6,31 +6,46 @@ public class Door : MonoBehaviour
 {
     private Animator animator;
     ShortcutTip shortcutTip;
+    private bool showCanvas = false;
+    public ParticleDecalPool decalPool;
+    public int doorID = -1;
     private void Start()
     {
         //text.gameObject.SetActive(false);
-        animator = gameObject.GetComponent<Animator>();
+        animator = gameObject.GetComponentInChildren<Animator>();
         shortcutTip = gameObject.GetComponent<ShortcutTip>();
         animator.SetBool("Openable", true);
     }
-    void OnTriggerStay(Collider col)
+    void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
         {
             //Debug.Log("wtf");
-            bool opened = animator.GetBool("Opened");
-            bool opening = animator.GetBool("Opening");
-            bool closing = animator.GetBool("Closing");
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                if (opened) {
-                    animator.SetBool("Closing", true);
-                }
-                else
-                {
-                    animator.SetBool("Opening", true);
-                }
-            }
+            //bool opened = animator.GetBool("Opened");
+            //bool opening = animator.GetBool("Opening");
+            //bool closing = animator.GetBool("Closing");
+
+            animator = gameObject.GetComponentInChildren<Animator>();
+            animator.SetBool("Opening", true);
+            decalPool.ClearParticles();
+
+          
+        }
+    }
+
+    private void OnTriggerExit(Collider col)
+    {
+        if (col.gameObject.tag == "Player")
+        {
+            Debug.Log("wtf");
+            //bool opened = animator.GetBool("Opened");
+            //bool opening = animator.GetBool("Opening");
+            //bool closing = animator.GetBool("Closing");
+
+            animator = gameObject.GetComponentInChildren<Animator>();
+            animator.SetBool("Closing", true);
+            decalPool.ClearParticles();
+
         }
     }
 

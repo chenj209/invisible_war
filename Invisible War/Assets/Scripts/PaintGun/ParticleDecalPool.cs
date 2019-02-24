@@ -8,8 +8,8 @@ public class ParticleDecalPool : MonoBehaviour
     [SerializeField]
     private ParticleDecalData[] particleData;
     public int index;
-    public float decalSizeMin = .5f;
-    public float decalSizeMax = 1.5f;
+    public float decalSizeMin = 20f;
+    public float decalSizeMax = 60f;
     private ParticleSystem.Particle[] particles;
     public ParticleSystem decalParticleSystem;
 
@@ -54,6 +54,17 @@ public class ParticleDecalPool : MonoBehaviour
             particles[i].rotation3D = particleData[i].rotation;
             particles[i].startSize = particleData[i].size;
             particles[i].startColor = particleData[i].color;
+        }
+        decalParticleSystem.SetParticles(particles, particles.Length);
+    }
+
+    public void ClearParticles()
+    {
+        particles = new ParticleSystem.Particle[maxDecals];
+        particleData = new ParticleDecalData[maxDecals];
+        for (int i = 0; i < maxDecals; i++)
+        {
+            particleData[i] = new ParticleDecalData();
         }
         decalParticleSystem.SetParticles(particles, particles.Length);
     }
