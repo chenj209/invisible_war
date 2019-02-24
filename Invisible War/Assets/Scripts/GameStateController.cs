@@ -122,6 +122,7 @@ public class GameStateController : MonoBehaviour
             text.enabled = true;
             yield return new WaitForSeconds(0.5f);
         }
+        text.text = "";
     }
 
     /*void GameStart()
