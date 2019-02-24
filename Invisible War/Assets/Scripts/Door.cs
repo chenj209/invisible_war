@@ -28,7 +28,7 @@ public class Door : MonoBehaviour
 
             animator = gameObject.GetComponentInChildren<Animator>();
             animator.SetBool("Opening", true);
-            decalPool.ClearParticles();
+            if (decalPool != null) decalPool.ClearParticles();
 
             /*if (doorID == 1)
             {
@@ -71,7 +71,7 @@ public class Door : MonoBehaviour
 
             animator = gameObject.GetComponentInChildren<Animator>();
             animator.SetBool("Closing", true);
-            decalPool.ClearParticles();
+            if (decalPool != null) decalPool.ClearParticles();
 
         }
     }
