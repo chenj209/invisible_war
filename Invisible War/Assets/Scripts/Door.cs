@@ -8,7 +8,8 @@ public class Door : MonoBehaviour
     ShortcutTip shortcutTip;
     private bool showCanvas = false;
     public ParticleDecalPool decalPool;
-    public int doorID = -1;
+    public int doorID;
+
     private void Start()
     {
         //text.gameObject.SetActive(false);
@@ -29,7 +30,33 @@ public class Door : MonoBehaviour
             animator.SetBool("Opening", true);
             decalPool.ClearParticles();
 
-          
+            /*if (doorID == 1)
+            {
+                GameStateController.HunterTutOne = true;
+            }
+            else if (doorID == 2)
+            {
+                GameStateController.HunterTutTwo = true;
+            }
+            else if (doorID == 3)
+            {
+                GameStateController.HunterTutThree = true;
+                GameStateController.HunterTutDone = true;
+            }
+            else if (doorID == 4)
+            {
+                GameStateController.GhostTutOne = true;
+            }
+            else if (doorID == 5)
+            {
+                GameStateController.GhostTutTwo = true;
+            }
+            else if (doorID == 6)
+            {
+                GameStateController.GhostTutThree = true;
+                GameStateController.GhostTutDone = true;
+            }*/
+
         }
     }
 
