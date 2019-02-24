@@ -6,7 +6,6 @@ public class Door : MonoBehaviour
 {
     private Animator animator;
     ShortcutTip shortcutTip;
-    public int doorID = -1;
     private bool showCanvas = false;
     private void Start()
     {
@@ -19,34 +18,42 @@ public class Door : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-       
-            if (doorID == 1 && !showCanvas)
-            {
-                GameObject parent = transform.parent.gameObject;
-                Canvas child = parent.GetComponentInChildren<Canvas>();
-                child.GetComponent<Canvas>().enabled = true;
-                showCanvas = true;
-            }
             //Debug.Log("wtf");
             bool opened = animator.GetBool("Opened");
             bool opening = animator.GetBool("Opening");
             bool closing = animator.GetBool("Closing");
-            if (Input.GetKeyDown(KeyCode.E))
-            {   
-                if (doorID == 1)
-                {
-                    GameObject parent = transform.parent.gameObject;
-                    Canvas child = parent.GetComponentInChildren<Canvas>();
-                    child.GetComponent<Canvas>().enabled = false;
-                }
-                if (opened) {
-                    animator.SetBool("Closing", true);
-                }
-                else
-                {
-                    animator.SetBool("Opening", true);
-                }
+              
+             
+            if (opened) {
+                animator.SetBool("Closing", true);
             }
+            else
+            {
+                animator.SetBool("Opening", true);
+            }
+          
+        }
+    }
+
+    private void OnTriggerExit(Collider col)
+    {
+        if (col.gameObject.tag == "Player")
+        {
+            Debug.Log("wtf");
+            bool opened = animator.GetBool("Opened");
+            bool opening = animator.GetBool("Opening");
+            bool closing = animator.GetBool("Closing");
+
+
+            if (opened)
+            {
+                animator.SetBool("Closing", true);
+            }
+            else
+            {
+                animator.SetBool("Opening", true);
+            }
+
         }
     }
 
