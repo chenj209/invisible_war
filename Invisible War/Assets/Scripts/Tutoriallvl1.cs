@@ -7,11 +7,13 @@ public class Tutoriallvl1 : MonoBehaviour
     public string playerID;
 
     public bool knowMove;
+    private float timer = 0f;
     // Start is called before the first frame update
     void Start()
     {
         knowMove = false;
         this.gameObject.SetActive(true);
+
     }
 
     // Update is called once per frame
@@ -35,7 +37,13 @@ public class Tutoriallvl1 : MonoBehaviour
 
         if (knowMove == true)
         {
-            this.gameObject.SetActive(false);
+            timer += Time.deltaTime;
+            if (timer > 2.5f)
+            {
+                this.gameObject.SetActive(false);
+                timer = 0.0f;
+                knowMove = false;
+            }
         }
     }
 }
