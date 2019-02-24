@@ -7008,6 +7008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167bb0c67d1d44d26bff81ae1ee20f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  decalSystem: {fileID: 0}
 --- !u!64 &685141632
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7040,6 +7041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167bb0c67d1d44d26bff81ae1ee20f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  decalSystem: {fileID: 0}
 --- !u!64 &688035117
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11999,6 +12001,16 @@ PrefabInstance:
       propertyPath: indicatorCenter
       value: 
       objectReference: {fileID: 1121713870}
+    - target: {fileID: 4741706698289614799, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+        type: 3}
+      propertyPath: isGround
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741706698289614799, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+        type: 3}
+      propertyPath: moveForce
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3700104682342672523, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
         type: 3}
       propertyPath: InheritVelocityModule.enabled
@@ -14169,6 +14181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167bb0c67d1d44d26bff81ae1ee20f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  decalSystem: {fileID: 0}
 --- !u!64 &1341796193
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15801,6 +15814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167bb0c67d1d44d26bff81ae1ee20f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  decalSystem: {fileID: 0}
 --- !u!64 &1752124407
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16740,6 +16754,11 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3244744831354006031, guid: 4b34f07ac00804324b6954084f8e5548,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3683726244486252704, guid: 4b34f07ac00804324b6954084f8e5548,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -16749,6 +16768,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_CastShadows
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1852035373835663450, guid: 4b34f07ac00804324b6954084f8e5548,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b34f07ac00804324b6954084f8e5548, type: 3}
@@ -17108,6 +17132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167bb0c67d1d44d26bff81ae1ee20f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  decalSystem: {fileID: 0}
 --- !u!64 &2028111686
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17243,6 +17268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167bb0c67d1d44d26bff81ae1ee20f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  decalSystem: {fileID: 0}
 --- !u!1 &2041201024
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,11 +9,11 @@ public class removeBoxCollider : StateMachineBehaviour
     //{
     //    
     //}
-    private BoxCollider childCollider;
+    private MeshCollider childCollider;
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        childCollider = animator.gameObject.GetComponentInChildren<BoxCollider>();
-        childCollider.isTrigger = true;
+        childCollider = animator.gameObject.GetComponentInChildren<MeshCollider>();
+        //childCollider.enabled = false;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -29,16 +29,16 @@ public class removeBoxCollider : StateMachineBehaviour
     //}
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        childCollider.isTrigger = false;
-        if (stateInfo.IsName("doorRotateOpen"))
+        //childCollider.enabled = true;
+        if (stateInfo.IsName("doorSlidingOpen"))
         {
-            animator.SetBool("opened", true);
-            animator.SetBool("opening", false);
+            animator.SetBool("Opened", true);
+            animator.SetBool("Opening", false);
         }
-        if (stateInfo.IsName("doorRotateClose"))
+        if (stateInfo.IsName("doorSlidingClose"))
         {
-            animator.SetBool("opened", false);
-            animator.SetBool("closing", false);
+            animator.SetBool("Opened", false);
+            animator.SetBool("Closing", false);
         }
     }
 
