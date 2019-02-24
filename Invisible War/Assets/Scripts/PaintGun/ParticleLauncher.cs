@@ -46,5 +46,4 @@ public class ParticleLauncher : MonoBehaviour
     //    splatterParticles.Emit(1);
     //}
 
-    // Update is called once per frame
 }

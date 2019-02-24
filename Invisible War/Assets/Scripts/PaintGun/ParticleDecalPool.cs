@@ -8,8 +8,8 @@ public class ParticleDecalPool : MonoBehaviour
     [SerializeField]
     private ParticleDecalData[] particleData;
     public int index;
-    public float decalSizeMin = .5f;
-    public float decalSizeMax = 1.5f;
+    public float decalSizeMin = 20f;
+    public float decalSizeMax = 60f;
     private ParticleSystem.Particle[] particles;
     public ParticleSystem decalParticleSystem;
 
