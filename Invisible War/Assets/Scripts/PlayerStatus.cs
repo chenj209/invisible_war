@@ -25,14 +25,14 @@ public class PlayerStatus : MonoBehaviour
         if (Hit)
         {
             Visible_Time -= Time.deltaTime;
-            StartCoroutine(cameraEffect.Shake(0.25f, .3f));
-            onShoot.gameObject.SetActive(true);
+            StartCoroutine(cameraEffect.Shake(0.25f, .1f));
+           // onShoot.gameObject.SetActive(true);
 
             if (Visible_Time < 0)
             {
                 Hit = false;
                 cameraEffect.start = false;
-                onShoot.gameObject.SetActive(false);
+            //    onShoot.gameObject.SetActive(false);
                 Visible_Time = 5.0f;
             }
         }
