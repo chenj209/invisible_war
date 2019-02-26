@@ -207,8 +207,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxDecals: 10
   index: 0
-  decalSizeMin: 1.5
-  decalSizeMax: 3.5
+  decalSizeMin: 0.5
+  decalSizeMax: 1.5
   decalParticleSystem: {fileID: 6946106}
 --- !u!198 &6946106
 ParticleSystem:
@@ -5506,6 +5506,12 @@ PrefabInstance:
       propertyPath: splatterDecalPool
       value: 
       objectReference: {fileID: 6946105}
+    - target: {fileID: 3700104682342672516, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+        type: 3}
+      propertyPath: playerDecal
+      value: 
+      objectReference: {fileID: 5052767201693173954, guid: fab37e704e48c4413952d2f4f0a793e6,
+        type: 3}
     - target: {fileID: 4741706698289614794, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
         type: 3}
       propertyPath: m_Enabled
