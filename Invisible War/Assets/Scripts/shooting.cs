@@ -26,8 +26,9 @@ public class shooting : MonoBehaviour
             cdImage.fillAmount = 0;
         }
         // center crosshair
-        Camera playerCamera = gameObject.GetComponentInChildren<Camera>();
-        crosshair.transform.position = new Vector3(Screen.width * 0.25f, Screen.height * 0.4f, 0);
+        RectTransform rectTransform = crosshair.gameObject.GetComponent<RectTransform>();
+        Vector2 oldPosition = rectTransform.anchoredPosition;
+        rectTransform.anchoredPosition = new Vector2(oldPosition.x - Screen.width * 0.25f, oldPosition.y - Screen.height*0.1f);
     }
 
     // Update is called once per frame
