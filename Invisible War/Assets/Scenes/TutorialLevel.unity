@@ -6383,6 +6383,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerID: 01
   knowMove: 0
+--- !u!4 &561894173 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4741706698289614792, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 720517336}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &570262210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7811,7 +7817,7 @@ PrefabInstance:
         type: 3}
       propertyPath: enemy
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 561894173}
     - target: {fileID: 8256369720806058887, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: indicatorCenter
@@ -9111,15 +9117,15 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 9093802407062663940, guid: ecbe96b62cb73fa44ae590c7ea350bf9,
-        type: 3}
-      propertyPath: playerID
-      value: 02
-      objectReference: {fileID: 0}
     - target: {fileID: 9093802407663247191, guid: ecbe96b62cb73fa44ae590c7ea350bf9,
         type: 3}
       propertyPath: m_Text
       value: Hunter
+      objectReference: {fileID: 0}
+    - target: {fileID: 9093802407062663940, guid: ecbe96b62cb73fa44ae590c7ea350bf9,
+        type: 3}
+      propertyPath: playerID
+      value: 02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecbe96b62cb73fa44ae590c7ea350bf9, type: 3}
