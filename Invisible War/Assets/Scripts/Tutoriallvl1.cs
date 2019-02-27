@@ -38,7 +38,7 @@ public class Tutoriallvl1 : MonoBehaviour
         if (knowMove == true)
         {
             timer += Time.deltaTime;
-            if (timer > 2.5f)
+            if (timer > 2f)
             {
                 this.gameObject.SetActive(false);
                 timer = 0.0f;
