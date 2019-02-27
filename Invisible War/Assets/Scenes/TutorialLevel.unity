@@ -9111,15 +9111,15 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 9093802407663247191, guid: ecbe96b62cb73fa44ae590c7ea350bf9,
-        type: 3}
-      propertyPath: m_Text
-      value: Hunter
-      objectReference: {fileID: 0}
     - target: {fileID: 9093802407062663940, guid: ecbe96b62cb73fa44ae590c7ea350bf9,
         type: 3}
       propertyPath: playerID
       value: 02
+      objectReference: {fileID: 0}
+    - target: {fileID: 9093802407663247191, guid: ecbe96b62cb73fa44ae590c7ea350bf9,
+        type: 3}
+      propertyPath: m_Text
+      value: Hunter
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecbe96b62cb73fa44ae590c7ea350bf9, type: 3}
@@ -11656,27 +11656,27 @@ PrefabInstance:
     - target: {fileID: 7587272310780205762, guid: c9b8755a713eec24a836ad102d09de67,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7587272310780205762, guid: c9b8755a713eec24a836ad102d09de67,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7587272310780205762, guid: c9b8755a713eec24a836ad102d09de67,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0000000011324
+      value: -0.087
       objectReference: {fileID: 0}
     - target: {fileID: 7587272310780205762, guid: c9b8755a713eec24a836ad102d09de67,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.000000011412
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7587272310780205762, guid: c9b8755a713eec24a836ad102d09de67,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7587272311221280015, guid: c9b8755a713eec24a836ad102d09de67,
         type: 3}
