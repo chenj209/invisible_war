@@ -8,6 +8,9 @@ public class Freeze : MonoBehaviour
     public Image cdImage;
     public float Freeze_CD = 30.0f;
     private bool On_CoolDown = false;
+    public GameObject freezeEffect;
+    public AudioClip freezeSound;
+    private AudioSource source;
 
     // Start is called before the first frame update
     void Start()
@@ -39,5 +42,7 @@ public class Freeze : MonoBehaviour
     {
         cdImage.fillAmount = 1;
         On_CoolDown = true;
+        freezeEffect.SetActive(false);
+        freezeEffect.SetActive(true);
     }
 }

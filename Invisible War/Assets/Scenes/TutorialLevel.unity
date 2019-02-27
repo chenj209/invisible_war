@@ -11841,13 +11841,18 @@ PrefabInstance:
     - target: {fileID: 7587272310780205762, guid: c9b8755a713eec24a836ad102d09de67,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7587272310780205762, guid: c9b8755a713eec24a836ad102d09de67,
         type: 3}
       propertyPath: m_LocalScale.z
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 7587272310780205762, guid: c9b8755a713eec24a836ad102d09de67,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.14
+      objectReference: {fileID: 0}
     - target: {fileID: 7587272311221280015, guid: c9b8755a713eec24a836ad102d09de67,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -11863,6 +11868,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7587272311221280015, guid: c9b8755a713eec24a836ad102d09de67,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0028
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587272311221280015, guid: c9b8755a713eec24a836ad102d09de67,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0021
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587272311221280015, guid: c9b8755a713eec24a836ad102d09de67,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0026
+      objectReference: {fileID: 0}
     - target: {fileID: 7587272310846904403, guid: c9b8755a713eec24a836ad102d09de67,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -11877,6 +11897,71 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587272310846904403, guid: c9b8755a713eec24a836ad102d09de67,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587272310846904403, guid: c9b8755a713eec24a836ad102d09de67,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0129
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587272310846904403, guid: c9b8755a713eec24a836ad102d09de67,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.003
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587272310780205764, guid: c9b8755a713eec24a836ad102d09de67,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587272310846904405, guid: c9b8755a713eec24a836ad102d09de67,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587272310846904405, guid: c9b8755a713eec24a836ad102d09de67,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587272310846904405, guid: c9b8755a713eec24a836ad102d09de67,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587272310846904405, guid: c9b8755a713eec24a836ad102d09de67,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587272310846904405, guid: c9b8755a713eec24a836ad102d09de67,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587272311221280001, guid: c9b8755a713eec24a836ad102d09de67,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587272311221280001, guid: c9b8755a713eec24a836ad102d09de67,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587272311221280001, guid: c9b8755a713eec24a836ad102d09de67,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587272311221280001, guid: c9b8755a713eec24a836ad102d09de67,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9b8755a713eec24a836ad102d09de67, type: 3}
