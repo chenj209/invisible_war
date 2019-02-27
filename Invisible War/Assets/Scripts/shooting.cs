@@ -21,10 +21,7 @@ public class shooting : MonoBehaviour
         PlayerControl pc = gameObject.GetComponent<PlayerControl>();
         playerID = pc.playerID;
         source = gameObject.GetComponent<AudioSource>();
-        if (cdImage != null)
-        {
-            cdImage.fillAmount = 0;
-        }
+        cdImage.fillAmount = 0;
         // center crosshair
         RectTransform rectTransform = crosshair.gameObject.GetComponent<RectTransform>();
         Vector2 oldPosition = rectTransform.anchoredPosition;
