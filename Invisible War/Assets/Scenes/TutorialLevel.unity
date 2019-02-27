@@ -887,29 +887,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecbe96b62cb73fa44ae590c7ea350bf9, type: 3}
---- !u!224 &324696520 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 9093802407062663944, guid: ecbe96b62cb73fa44ae590c7ea350bf9,
-    type: 3}
-  m_PrefabInstance: {fileID: 1204655353}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &356408196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4741706698861250924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378b9c518b617df409d8defac064369b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particleLauncher: {fileID: 3700104682846875177}
-  decalPool: {fileID: 386018595}
-  Fire_Sound: {fileID: 8300000, guid: 224cb0e5918844f66af6b3e38fc8c56f, type: 3}
-  paintGun: {fileID: 6568582506106177687}
-  shoot: 0
 --- !u!1 &386018593
 GameObject:
   m_ObjectHideFlags: 0
@@ -7867,11 +7844,6 @@ PrefabInstance:
       propertyPath: m_NormalizedViewPortRect.x
       value: 0.51
       objectReference: {fileID: 0}
-    - target: {fileID: 8256369720747086072, guid: 53519003647cd3c43bd13748a3b93880,
-        type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 311
-      objectReference: {fileID: 0}
     - target: {fileID: 8256369720806058884, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: Fire_Sound
@@ -8969,6 +8941,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f0e1756e3d41401c916bd4dd4fb1b10, type: 3}
+<<<<<<< HEAD
 --- !u!1001 &1204655353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9123,6 +9096,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecbe96b62cb73fa44ae590c7ea350bf9, type: 3}
+=======
+>>>>>>> parent of 8a6c9a5... added shoot bot
 --- !u!4 &1219171947 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6095921031363219223, guid: 3f0e1756e3d41401c916bd4dd4fb1b10,
@@ -9495,7 +9470,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 26
+=======
+  m_RootOrder: 25
+>>>>>>> parent of 8a6c9a5... added shoot bot
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1462708818 stripped
 Transform:
@@ -9993,7 +9972,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3980741, guid: cc09b143490fd417a8b7920fac4c1156, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 25
+=======
+      value: 24
+>>>>>>> parent of 8a6c9a5... added shoot bot
       objectReference: {fileID: 0}
     - target: {fileID: 3980741, guid: cc09b143490fd417a8b7920fac4c1156, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10349,6 +10332,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f0e1756e3d41401c916bd4dd4fb1b10, type: 3}
+<<<<<<< HEAD
 --- !u!1 &1659757870
 GameObject:
   m_ObjectHideFlags: 0
@@ -10411,6 +10395,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of 8a6c9a5... added shoot bot
 --- !u!1 &1661691309
 GameObject:
   m_ObjectHideFlags: 0
@@ -10780,7 +10766,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3980741, guid: cc09b143490fd417a8b7920fac4c1156, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 24
+=======
+      value: 23
+>>>>>>> parent of 8a6c9a5... added shoot bot
       objectReference: {fileID: 0}
     - target: {fileID: 3980741, guid: cc09b143490fd417a8b7920fac4c1156, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -12239,12 +12229,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!4 &2059534330 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: 28fb0963db0c244cea2e8e794b333175,
-    type: 3}
-  m_PrefabInstance: {fileID: 8950348845408999202}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2063671217 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8256369720806058886, guid: 53519003647cd3c43bd13748a3b93880,
@@ -12756,36 +12740,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 659399628}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &727333869164364402
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6568582506106177687}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.10243991
-  m_Height: 0.78231937
-  m_Direction: 0
-  m_Center: {x: 0.08133526, y: 0.038703084, z: 0.036786538}
---- !u!4 &1514709281470012855
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6568582506106177687}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.233, y: -0.433, z: 0.978}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2059534330}
-  - {fileID: 3700104682846875179}
-  m_Father: {fileID: 4741706698802295312}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1001 &2246707694203254277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12865,12 +12819,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f0e1756e3d41401c916bd4dd4fb1b10, type: 3}
---- !u!114 &3700104682846875174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!4 &6095921031363219223 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6095921031363219223, guid: 3f0e1756e3d41401c916bd4dd4fb1b10,
+    type: 3}
+  m_PrefabInstance: {fileID: 2246707694203254277}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 3700104682846875178}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -18530,3 +18485,5 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28fb0963db0c244cea2e8e794b333175, type: 3}
+=======
+>>>>>>> parent of 8a6c9a5... added shoot bot
