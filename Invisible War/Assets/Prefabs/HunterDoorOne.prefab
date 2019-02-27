@@ -45,8 +45,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 23.988777, y: 20.01796, z: 44.74432}
-  m_Center: {x: -0.13304901, y: -0.01879311, z: 0.54577446}
+  m_Size: {x: 23.988777, y: 20.017864, z: 32.238243}
+  m_Center: {x: -0.13304853, y: -0.018793106, z: 0.4450035}
 --- !u!114 &518654976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,8 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167bb0c67d1d44d26bff81ae1ee20f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  decalPool: {fileID: 0}
-  doorID: 0
+  decalSystem: {fileID: 0}
 --- !u!1 &2035398875
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,6 +323,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.001499148
       objectReference: {fileID: 0}
+    - target: {fileID: 9093802407062663947, guid: ecbe96b62cb73fa44ae590c7ea350bf9,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9093802407062663947, guid: ecbe96b62cb73fa44ae590c7ea350bf9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9093802407663247191, guid: ecbe96b62cb73fa44ae590c7ea350bf9,
+        type: 3}
+      propertyPath: m_Text
+      value: Press E to Open the door
+      objectReference: {fileID: 0}
+    - target: {fileID: 9093802407663247191, guid: ecbe96b62cb73fa44ae590c7ea350bf9,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 9093802407663247190, guid: ecbe96b62cb73fa44ae590c7ea350bf9,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -349,30 +368,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 412
       objectReference: {fileID: 0}
-    - target: {fileID: 9093802407062663947, guid: ecbe96b62cb73fa44ae590c7ea350bf9,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9093802407062663947, guid: ecbe96b62cb73fa44ae590c7ea350bf9,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9093802407062663940, guid: ecbe96b62cb73fa44ae590c7ea350bf9,
         type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9093802407663247191, guid: ecbe96b62cb73fa44ae590c7ea350bf9,
-        type: 3}
-      propertyPath: m_Text
-      value: Press E to Open the door
-      objectReference: {fileID: 0}
-    - target: {fileID: 9093802407663247191, guid: ecbe96b62cb73fa44ae590c7ea350bf9,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecbe96b62cb73fa44ae590c7ea350bf9, type: 3}
