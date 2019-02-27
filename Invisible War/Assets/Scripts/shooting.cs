@@ -21,14 +21,12 @@ public class shooting : MonoBehaviour
         PlayerControl pc = gameObject.GetComponent<PlayerControl>();
         playerID = pc.playerID;
         source = gameObject.GetComponent<AudioSource>();
-        if (cdImage != null)
-        {
-            cdImage.fillAmount = 0;
-        }
+        cdImage.fillAmount = 0;
         // center crosshair
-        RectTransform rectTransform = crosshair.gameObject.GetComponent<RectTransform>();
+        /*RectTransform rectTransform = crosshair.gameObject.GetComponent<RectTransform>();
         Vector2 oldPosition = rectTransform.anchoredPosition;
-        rectTransform.anchoredPosition = new Vector2(oldPosition.x - Screen.width * 0.25f, oldPosition.y - Screen.height*0.1f);
+        rectTransform.anchoredPosition = new Vector2(oldPosition.x - Screen.width * 0.25f, oldPosition.y - Screen.height*0.1f);*/
+        crosshair.transform.position = new Vector3((float)(Screen.width * 0.49 / 2), Screen.height/2,crosshair.transform.position.z);
     }
 
     // Update is called once per frame
