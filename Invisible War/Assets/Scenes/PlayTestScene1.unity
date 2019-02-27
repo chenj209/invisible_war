@@ -5351,12 +5351,12 @@ PrefabInstance:
         type: 3}
       propertyPath: enemy
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1447882118}
     - target: {fileID: 4741706698289614799, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
         type: 3}
       propertyPath: indicatorCenter
       value: 
-      objectReference: {fileID: 1756032345}
+      objectReference: {fileID: 1811810093}
     - target: {fileID: 3700104682342672523, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
         type: 3}
       propertyPath: EmissionModule.enabled
@@ -6680,7 +6680,7 @@ PrefabInstance:
     - target: {fileID: 8256369720806058886, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: m_Name
-      value: Player02 (1)
+      value: Player02
       objectReference: {fileID: 0}
     - target: {fileID: 8256369720747086074, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
@@ -6821,12 +6821,12 @@ PrefabInstance:
         type: 3}
       propertyPath: enemy
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1597418923}
     - target: {fileID: 8256369720806058887, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: indicatorCenter
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1454879878}
     - target: {fileID: 8256369720806058887, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: m_Enabled
@@ -6897,6 +6897,11 @@ PrefabInstance:
       propertyPath: camPos
       value: 
       objectReference: {fileID: 1293793803}
+    - target: {fileID: 8754578813725495888, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9199124647016558750, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: m_Enabled
@@ -7225,6 +7230,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1488492533}
   m_CullTransparentMesh: 0
+--- !u!4 &1597418923 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4741706698289614792, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 454348557}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1638324862
 GameObject:
   m_ObjectHideFlags: 0
