@@ -11,7 +11,8 @@ public class Freeze : MonoBehaviour
     public GameObject freezeEffect;
     public AudioClip freezeSound;
     private AudioSource source;
-
+    public GameObject catcher;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,6 @@ public class Freeze : MonoBehaviour
     {
         if (Input.GetButton("Fire02"))
         {
-            Debug.Log("WHHHHHAT");
             if (!On_CoolDown)
             {
                 Skill();
@@ -47,5 +47,10 @@ public class Freeze : MonoBehaviour
         source.PlayOneShot(freezeSound, 1f);
         freezeEffect.SetActive(false);
         freezeEffect.SetActive(true);
+        if (Vector3.Distance(catcher.transform.position, transform.position) < 60)
+        {
+            Catcher hunter = catcher.GetComponent<Catcher>();
+            hunter.stopRunning();
+        }
     }
 }
