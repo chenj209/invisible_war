@@ -11,6 +11,7 @@ public class Catcher : MonoBehaviour
     private float count = 0.0f;
     private bool moveToP2 = false;
     private bool moveToP1 = true;
+    public bool freezeBot;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class Catcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Frozen)
+        if (Frozen && freezeBot)
         {
             count += Time.deltaTime;
             speed *= 0.95f;
@@ -64,11 +65,14 @@ public class Catcher : MonoBehaviour
 
     public void stopRunning()
     {
-        Frozen = true;
-        gameObject.layer = 0;
-        foreach (Transform trans in gameObject.GetComponentsInChildren<Transform>(true))
+        if (freezeBot)
         {
-            trans.gameObject.layer = 0;
+            Frozen = true;
+            gameObject.layer = 0;
+            foreach (Transform trans in gameObject.GetComponentsInChildren<Transform>(true))
+            {
+                trans.gameObject.layer = 0;
+            }
         }
     }
 }
