@@ -7365,6 +7365,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 71591486}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &885207533 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7587272311716842222, guid: c9b8755a713eec24a836ad102d09de67,
+    type: 3}
+  m_PrefabInstance: {fileID: 1982543860}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &898120663
 GameObject:
   m_ObjectHideFlags: 0
@@ -11751,7 +11757,7 @@ PrefabInstance:
     - target: {fileID: 7587272311716842222, guid: c9b8755a713eec24a836ad102d09de67,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7587272311716842209, guid: c9b8755a713eec24a836ad102d09de67,
         type: 3}
@@ -12621,7 +12627,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cdImage: {fileID: 923855477}
-  Freeze_CD: 30
+  Freeze_CD: 20
+  freezeEffect: {fileID: 885207533}
+  freezeSound: {fileID: 8300000, guid: d218310b448301d4e9ec417cc6ee3814, type: 3}
 --- !u!1 &2073097244
 GameObject:
   m_ObjectHideFlags: 0

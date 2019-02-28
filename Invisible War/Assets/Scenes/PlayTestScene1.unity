@@ -5374,7 +5374,7 @@ PrefabInstance:
     - target: {fileID: 4741706698289614792, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 52.19
+      value: 21.9
       objectReference: {fileID: 0}
     - target: {fileID: 4741706698289614792, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
         type: 3}
@@ -5384,7 +5384,7 @@ PrefabInstance:
     - target: {fileID: 4741706698289614792, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 23.8
+      value: 42.7
       objectReference: {fileID: 0}
     - target: {fileID: 4741706698289614792, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
         type: 3}
@@ -7163,7 +7163,7 @@ PrefabInstance:
     - target: {fileID: 8256369720806058882, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8256369720806058881, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
@@ -7366,6 +7366,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cdImage: {fileID: 1098793553}
   Freeze_CD: 30
+  freezeEffect: {fileID: 0}
+  freezeSound: {fileID: 0}
 --- !u!82 &1447882109
 AudioSource:
   m_ObjectHideFlags: 0
