@@ -16,13 +16,15 @@ public class Freeze : MonoBehaviour
     void Start()
     {
         cdImage.fillAmount = 0;
+        source = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O))
+        if (Input.GetButton("Fire02"))
         {
+            Debug.Log("WHHHHHAT");
             if (!On_CoolDown)
             {
                 Skill();
@@ -42,6 +44,7 @@ public class Freeze : MonoBehaviour
     {
         cdImage.fillAmount = 1;
         On_CoolDown = true;
+        source.PlayOneShot(freezeSound, 1f);
         freezeEffect.SetActive(false);
         freezeEffect.SetActive(true);
     }
