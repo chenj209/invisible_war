@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6641565718350246168}
+  - component: {fileID: 1852035373835663450}
   m_Layer: 0
   m_Name: testroom_door
   m_TagString: Untagged
@@ -31,6 +32,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1852035373835663450
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6710977619022177006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 23.988777, y: 20.017864, z: 32.238243}
+  m_Center: {x: -0.13304853, y: -0.018793106, z: 0.4450035}
 --- !u!1 &8592786773339184817
 GameObject:
   m_ObjectHideFlags: 0

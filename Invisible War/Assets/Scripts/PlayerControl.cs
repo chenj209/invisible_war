@@ -53,7 +53,7 @@ public class PlayerControl : MonoBehaviour
         }
         move();
 
-        isGround = Physics.Raycast(transform.position, -transform.up, 2.0f);
+        isGround = Physics.Raycast(transform.position, -transform.up, 10.0f);
         if (isGround && Input.GetButton("Jump" + playerID))
         {
             //playerBody.velocity += transform.up * jumpSpeed;

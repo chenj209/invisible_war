@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class shooting : MonoBehaviour
 {
     public ParticleSystem particleLauncher;
+    public ParticleDecalPool decalPool;
     public AudioClip Fire_Sound;
     public Image cdImage;
+    public Image crosshair;
     private bool Pressed = false;
     private AudioSource source;
     private string playerID;
@@ -16,13 +18,15 @@ public class shooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerControl pc = gameObject.GetComponent("PlayerControl") as PlayerControl;
+        PlayerControl pc = gameObject.GetComponent<PlayerControl>();
         playerID = pc.playerID;
         source = gameObject.GetComponent<AudioSource>();
-        if (cdImage != null)
-        {
-            cdImage.fillAmount = 0;
-        }
+        cdImage.fillAmount = 0;
+        // center crosshair
+        /*RectTransform rectTransform = crosshair.gameObject.GetComponent<RectTransform>();
+        Vector2 oldPosition = rectTransform.anchoredPosition;
+        rectTransform.anchoredPosition = new Vector2(oldPosition.x - Screen.width * 0.25f, oldPosition.y - Screen.height*0.1f);*/
+        crosshair.transform.position = new Vector3((float)(Screen.width * 0.49 / 2), Screen.height/2,crosshair.transform.position.z);
     }
 
     // Update is called once per frame
@@ -47,11 +51,18 @@ public class shooting : MonoBehaviour
             {
                 On_CoolDown = false;
             }
+            // hide paintgun and crosshair
+            crosshair.gameObject.SetActive(false);
+        }
+        else
+        {
+            crosshair.gameObject.SetActive(true);
         }
     }
 
     void Shooting()
     {
+        decalPool.ClearParticles();
         ParticleSystem.MainModule psMain = particleLauncher.main;
         particleLauncher.Emit(10);
         cdImage.fillAmount = 1;
