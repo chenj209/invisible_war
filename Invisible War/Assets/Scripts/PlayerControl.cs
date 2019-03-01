@@ -70,14 +70,6 @@ public class PlayerControl : MonoBehaviour
         m_MouseLook.UpdateCursorLock();
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
-        }
-    }
-
     private void move()
     {
         float moveSpeed = moveForce;
@@ -114,12 +106,15 @@ public class PlayerControl : MonoBehaviour
 
     private void updateIndicator()
     {
-        Vector3 difference = enemy.position - transform.position;
-        Vector3 faceDirection = transform.forward;
-        Vector2 face2D = new Vector2(faceDirection.x, faceDirection.z);
-        Vector2 difference2D = new Vector2(difference.x, difference.z);
-        float rotateDegree = Vector2.SignedAngle(face2D, difference2D);
-        indicatorCenter.transform.localEulerAngles = new Vector3(0, 0, rotateDegree);
+        if (enemy != null && indicatorCenter != null)
+        {
+            Vector3 difference = enemy.position - transform.position;
+            Vector3 faceDirection = transform.forward;
+            Vector2 face2D = new Vector2(faceDirection.x, faceDirection.z);
+            Vector2 difference2D = new Vector2(difference.x, difference.z);
+            float rotateDegree = Vector2.SignedAngle(face2D, difference2D);
+            indicatorCenter.transform.localEulerAngles = new Vector3(0, 0, rotateDegree);
+        }
     }
     private void RotateView()
     {

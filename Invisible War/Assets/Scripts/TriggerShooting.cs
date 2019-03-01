@@ -10,7 +10,7 @@ public class TriggerShooting : MonoBehaviour
     public Text instruction;
     public GameObject panel;
     public GameObject cam;
-    private bool firstTime = false;
+    private bool firstTime = true;
     private bool rotate = false;
     // Start is called before the first frame update
     void Start()
@@ -30,7 +30,7 @@ public class TriggerShooting : MonoBehaviour
 
     private IEnumerator OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" && !firstTime)
+        if (other.gameObject.tag == "Player" && firstTime)
         {
             PlayerControl pc = player.GetComponent<PlayerControl>();
             pc.enabled = false;
@@ -45,8 +45,8 @@ public class TriggerShooting : MonoBehaviour
             BotShoot bs = shootBot.GetComponent<BotShoot>();
             bs.shoot = true;
             panel.SetActive(true);
-            instruction.text = "You got hit by Hunter! \n Location exposed! \n Run for life!";
-            firstTime = true;
+            instruction.text = "You Got Hit By Hunter! \n Location Exposed! \n Run For Life!";
+            firstTime = false;
         }
     }
 

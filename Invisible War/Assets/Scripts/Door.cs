@@ -41,6 +41,10 @@ public class Door : MonoBehaviour
             else if (doorID == 3)
             {
                 GameStateController.HunterTutThree = true;
+            }
+            else if (doorID == 7)
+            {
+                GameStateController.HunterTutFour = true;
                 GameStateController.HunterTutDone = true;
             }
             else if (doorID == 4)
@@ -64,7 +68,6 @@ public class Door : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            Debug.Log("wtf");
             //bool opened = animator.GetBool("Opened");
             //bool opening = animator.GetBool("Opening");
             //bool closing = animator.GetBool("Closing");

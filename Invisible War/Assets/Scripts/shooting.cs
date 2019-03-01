@@ -52,11 +52,11 @@ public class shooting : MonoBehaviour
                 On_CoolDown = false;
             }
             // hide paintgun and crosshair
-            crosshair.gameObject.SetActive(false);
+            // crosshair.gameObject.SetActive(false);
         }
         else
         {
-            crosshair.gameObject.SetActive(true);
+            // crosshair.gameObject.SetActive(true);
         }
     }
 
