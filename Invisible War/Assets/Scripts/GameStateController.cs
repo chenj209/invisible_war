@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameStateController : MonoBehaviour
 {
     public static bool HunterTutOne = false;
     public static bool HunterTutTwo = false;
     public static bool HunterTutThree = false;
+    public static bool HunterTutFour = false;
     public static bool GhostTutOne = false;
     public static bool GhostTutTwo = false;
     public static bool GhostTutThree = false;
@@ -72,6 +74,11 @@ public class GameStateController : MonoBehaviour
         }
         else if (player1State == "tutorial3" && HunterTutThree)
         {
+            StartCoroutine(PopUp("Enter Tutorial4", p1S));
+            player1State = "tutorial4";
+        }
+        else if (player1State == "tutorial4" && HunterTutFour)
+        {
             player1State = "stand by";
             if (player2State != "stand by")
             {
@@ -101,7 +108,11 @@ public class GameStateController : MonoBehaviour
                 {
                     StartCoroutine(Flash("Waiting for Player1", p2S));
                 }
-            }
+                else
+                {
+                    isBlinking = false;
+                }
+        }
         
     }
 
@@ -122,7 +133,7 @@ public class GameStateController : MonoBehaviour
             text.enabled = true;
             yield return new WaitForSeconds(0.5f);
         }
-        text.text = "";
+        SceneManager.LoadScene("PlayTestScene1");
     }
 
     /*void GameStart()

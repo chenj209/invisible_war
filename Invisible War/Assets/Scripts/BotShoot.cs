@@ -8,20 +8,11 @@ public class BotShoot : MonoBehaviour
     public ParticleDecalPool decalPool;
     public AudioClip Fire_Sound;
     private AudioSource source;
-    public GameObject paintGun;
-    private Renderer paintGunRender;
     public bool shoot = false;
     // Start is called before the first frame update
     void Start()
     {
         source = gameObject.GetComponent<AudioSource>();
-
-
-       
-        //Fetch the GameObject's Renderer component
-        paintGunRender = paintGun.GetComponent<Renderer>();
-        //Change the GameObject's Material Color to red
-        paintGunRender.enabled = false;
        
 
     }
