@@ -27,7 +27,7 @@ public class CatchPlayer : MonoBehaviour
                 //Debug.Log("You got the hider");
                 if (inTutorial)
                 {
-                    GameStateController.HunterCatchDone = true;
+                    TutorialStateController.HunterCatchDone = true;
                 }
             }
             else{

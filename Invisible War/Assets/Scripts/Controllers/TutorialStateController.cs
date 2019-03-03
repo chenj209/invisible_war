@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameStateController : MonoBehaviour
+public class TutorialStateController : MonoBehaviour
 {
     public static bool HunterTutOne = false;
     public static bool HunterTutTwo = false;
@@ -23,16 +23,13 @@ public class GameStateController : MonoBehaviour
     public Text p2S;
     public float delay;
 
+    public int levelToLoad;
+
     private string player1State;
     private string player2State;
     private bool isBlinking;
 
-    //public float timeLeft;
-    //public float startCD;
-    //public Text cdUI1;
-    //public Text cdUI2;
-    //public Text cdUI3;
-    //public Text cdUI4;
+    private Animator an;
 
     // Start is called before the first frame update
     void Start()
@@ -44,26 +41,12 @@ public class GameStateController : MonoBehaviour
         StartCoroutine(PopUp("Enter Tutorial1", p2S));
         player2State = "tutorial1";
         isBlinking = true;
-        //cdUI1.text = "";
-        //cdUI2.text = "";
-        //cdUI3.text = "";
-        //cdUI4.text = "";
-        //player1State = "start menu";
-        //player2State = "start menu";
+        an = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*if (startCD >= 0)
-        {
-            GameStart();
-        }
-        if (timeLeft >= 0)
-        {
-            CountDown();
-        }*/
-
         // for player1
         if (player1State == "tutorial1" && HunterTutOne)
         { 
@@ -136,51 +119,11 @@ public class GameStateController : MonoBehaviour
             text.enabled = true;
             yield return new WaitForSeconds(0.5f);
         }
-        SceneManager.LoadScene("PlayTestScene1");
+        an.SetTrigger("FadeOut");
     }
 
-    /*void GameStart()
+    public void OnFadeComplete()
     {
-        if (player1State == "stand by" && player2State == "stand by")
-        {
-            startCD -= Time.deltaTime;
-            int tl = (int)(startCD + 1);
-            cdUI3.text = tl.ToString();
-            cdUI4.text = tl.ToString();
-            if (startCD < 0)
-            {
-                cdUI3.text = "";
-                cdUI4.text = "";
-                StartCoroutine(PopUp("Game Start", p1S));
-                StartCoroutine(PopUp("Game Start", p2S));
-                player1State = "Game";
-                player2State = "Game";
-            }
-        }
+        SceneManager.LoadScene(levelToLoad);
     }
-
-    void CountDown()
-    {
-        if (player1State == "Game" && player2State == "Game")
-        {
-            timeLeft -= Time.deltaTime;
-            int tl = (int)(timeLeft + 1);
-            cdUI1.text = tl.ToString();
-            cdUI2.text = tl.ToString();
-            if (timeLeft < 0)
-            {
-                GameOver();
-            }
-        }
-    }
-
-    void GameOver()
-    {
-        StartCoroutine(PopUp("Game Over", p1S));
-        StartCoroutine(PopUp("Game Over", p2S));
-        player1State = "Game Over";
-        player2State = "Game Over";
-        cdUI1.text = "";
-        cdUI2.text = "";
-    }*/
 }

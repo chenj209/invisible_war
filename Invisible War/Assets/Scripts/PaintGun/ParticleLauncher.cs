@@ -36,7 +36,7 @@ public class ParticleLauncher : MonoBehaviour
                 }
                 if (inTutorial)
                 {
-                    GameStateController.HunterShootDone = true;
+                    TutorialStateController.HunterShootDone = true;
                 }
             }
             else
