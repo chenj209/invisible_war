@@ -77,7 +77,10 @@ public class PlayerStatus : MonoBehaviour
         //ps.Play();
         Hit = true;
         PlayerControl pc = GetComponent<PlayerControl>();
-        pc.enabled = true;
+        if (pc != null)
+        {
+            pc.enabled = true;
+        }
     }
 
     public void GetFreezed()
