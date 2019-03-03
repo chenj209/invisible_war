@@ -71,11 +71,11 @@ public class GameStateController : MonoBehaviour
                 CountDown();
             }
         }
-        if (ghost.GetComponent<MeshRenderer>().enabled && !roundOver)
-        {
-            StopAllCoroutines();
-            StartCoroutine(Win(1));
-        }
+        //if (ghost.GetComponent<MeshRenderer>().enabled && !roundOver)
+        //{
+            //StopAllCoroutines();
+            //StartCoroutine(Win(1));
+        //}
     }
 
     private void DisplayScore()
