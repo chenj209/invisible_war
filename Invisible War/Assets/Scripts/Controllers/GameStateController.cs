@@ -7,7 +7,8 @@ using UnityEngine.UI;
 
 public class GameStateController : MonoBehaviour
 {
-    public static int round = 1;
+    public static int round = 3;
+    private static int roundNum = 1;
     public static int p1W = 0;
     public static int p2W = 0;
     public int levelToLoad;
@@ -20,6 +21,7 @@ public class GameStateController : MonoBehaviour
     public Text name;
     public float scoreCD;
     private Animator an;
+    private bool roundOver;
 
     public Text p1S;
     public Text p2S;
@@ -39,6 +41,7 @@ public class GameStateController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        roundOver = false;
         scoreBoard.enabled = false;
         name.enabled = false;
         player1Score.enabled = false;
@@ -68,8 +71,9 @@ public class GameStateController : MonoBehaviour
                 CountDown();
             }
         }
-        if (ghost.GetComponent<MeshRenderer>().enabled)
+        if (ghost.GetComponent<MeshRenderer>().enabled && !roundOver)
         {
+            StopAllCoroutines();
             StartCoroutine(Win(1));
         }
     }
@@ -93,12 +97,12 @@ public class GameStateController : MonoBehaviour
 
     private IEnumerator Win(int winner)
     {
+        roundOver = true;
         if (winner == 1)
         {
             cdBool = false;
             cdUI1.enabled = false;
             cdUI2.enabled = false;
-            StopCoroutine(RoundPlay());
             p1W++;
             yield return StartCoroutine(RoundEnd(1));
         }
@@ -130,8 +134,9 @@ public class GameStateController : MonoBehaviour
         cdBool = false;
         cdUI3.enabled = false;
         cdUI4.enabled = false;
-        StartCoroutine(PopUp("Game Start", p1S));
-        StartCoroutine(PopUp("Game Start", p2S));
+        string roundName = "Round " + roundNum;
+        StartCoroutine(PopUp(roundName, p1S));
+        StartCoroutine(PopUp(roundName, p2S));
     }
 
     private IEnumerator RoundPlay()
@@ -161,6 +166,7 @@ public class GameStateController : MonoBehaviour
             StartCoroutine(PopUp("You Lose", p1S));
         }
         round--;
+        roundNum++;
         yield return new WaitForSeconds(delay);
     }
 
