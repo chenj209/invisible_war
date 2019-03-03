@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7884,7 +7884,7 @@ PrefabInstance:
     - target: {fileID: 8256369720806058887, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: m_MouseLook.YSensitivity
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8256369720806058883, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
@@ -8006,7 +8006,9 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0.0053156214
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8256369720806058884, guid: 53519003647cd3c43bd13748a3b93880, type: 3}
+    - {fileID: 8754578813725495888, guid: 53519003647cd3c43bd13748a3b93880, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 53519003647cd3c43bd13748a3b93880, type: 3}
 --- !u!1 &1356198297
 GameObject:
@@ -8182,6 +8184,8 @@ MonoBehaviour:
   freezeEffect: {fileID: 1624285483}
   freezeSound: {fileID: 8300000, guid: d218310b448301d4e9ec417cc6ee3814, type: 3}
   catcher: {fileID: 1578733160}
+  inTutorial: 0
+  bot: 0
 --- !u!82 &1447882109
 AudioSource:
   m_ObjectHideFlags: 0

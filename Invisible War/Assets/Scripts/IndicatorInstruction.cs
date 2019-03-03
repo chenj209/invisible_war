@@ -6,12 +6,15 @@ using UnityEngine.UI;
 public class IndicatorInstruction : MonoBehaviour
 {
     private bool firstTime = true;
+    private bool noIndicFirstime = true;
     public GameObject panel;
     public GameObject Indicator;
     public Text instruction;
     public bool show;
     private float timer = 0f;
     private bool showText = false;
+    public GameObject ghost;
+    private PlayerControl pc;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,19 +24,19 @@ public class IndicatorInstruction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (showText)
+        if (showText && show)
         {
             timer += Time.deltaTime;
-            if (timer < 3)
+            if (timer < 2)
             {
                 panel.SetActive(true);
-                instruction.text = "A Ghost Location Indicator Showed\n Up On The Topleft Corner!";
+                instruction.text = "A Ghost Location Indicator Showed Up!";
             }
-            else if (timer > 3 && timer < 6)
+            else if (timer > 2 && timer < 5)
             {
                 instruction.text = "It Will Be Activated When\n You Are Far Away From Ghost";
             }
-            else if (timer > 6 && timer < 9)
+            else if (timer > 5 && timer < 8)
             {
                 instruction.text = "The Activation Range Will Keep\n Decreasing Throughout The Game";
             }
@@ -42,8 +45,24 @@ public class IndicatorInstruction : MonoBehaviour
                 panel.SetActive(false);
                 timer = 0f;
                 showText = false;
+                pc.enabled = true;
             }
        
+        }else if (showText && !show)
+        {
+            timer += Time.deltaTime;
+            if (timer < 4)
+            {
+                panel.SetActive(true);
+                instruction.text = "Oops, You Are Freezed By The Ghost!\n Player Two Can Use This \n Ability To Escape From You";
+            }
+            else
+            {
+                panel.SetActive(false);
+                timer = 0f;
+                showText = false;
+                pc.enabled = true;
+            }
         }
 
     }
@@ -57,8 +76,21 @@ public class IndicatorInstruction : MonoBehaviour
 
                 showText = true;
                 firstTime = false;
-
+                pc = other.GetComponent<PlayerControl>();
+                pc.enabled = false;
             }
+        }
+        else
+        {
+            if (noIndicFirstime)
+            {
+                Freeze bot = ghost.GetComponent<Freeze>();
+                bot.Skill();
+                noIndicFirstime = false;
+                pc = other.GetComponent<PlayerControl>();
+                showText = true;
+            }
+         
         }
     }
 
@@ -69,6 +101,15 @@ public class IndicatorInstruction : MonoBehaviour
             Indicator.SetActive(true);
         }
         else
+        {
+            Indicator.SetActive(false);
+            pc = other.GetComponent<PlayerControl>();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (show)
         {
             Indicator.SetActive(false);
         }

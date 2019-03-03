@@ -25,7 +25,7 @@ public class FreezeInstruction : MonoBehaviour
         if (other.gameObject.tag == "Player" && firstTime)
         {
             panel.SetActive(true);
-            instruction.text = "Danger! Hunter Nearby!\n Press R2 To Freeze Him\n It Has 20s Cooldown";
+            instruction.text = "Danger! Hunter Nearby!\n Move Close, Press R2 To Freeze Him\n It Has 20s Cooldown";
             firstTime = false;
         }
     }

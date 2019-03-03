@@ -78,7 +78,7 @@ public class PlayerControl : MonoBehaviour
                 moveSpeed = moveForce;
                 break;
             case MovePattern.Running:
-                moveSpeed = 2 * moveForce;
+                moveSpeed = moveForce;
                 break;
             case MovePattern.Sneaking:
                 moveSpeed = .6f * moveForce;

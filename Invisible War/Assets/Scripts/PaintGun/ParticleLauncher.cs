@@ -9,7 +9,7 @@ public class ParticleLauncher : MonoBehaviour
     public Gradient particleColorGradient;
     public ParticleDecalPool splatterDecalPool;
     public GameObject playerDecal;
-
+    public bool inTutorial;
     List<ParticleCollisionEvent> collisionEvents;
     // Start is called before the first frame update
     void Start()
@@ -27,7 +27,14 @@ public class ParticleLauncher : MonoBehaviour
                 GameObject decal = Instantiate(playerDecal, collisionEvents[i].intersection, Quaternion.LookRotation(-1 * collisionEvents[i].normal));
                 decal.transform.SetParent(other.transform);
                 Destroy(decal, 5);
-                other.GetComponent<PlayerStatus>().GetHit();
+                if (other.GetComponent<PlayerStatus>() != null)
+                {
+                    other.GetComponent<PlayerStatus>().GetHit();
+                }
+                if (inTutorial)
+                {
+                    GameStateController.HunterShootDone = true;
+                }
             }
             else
             {

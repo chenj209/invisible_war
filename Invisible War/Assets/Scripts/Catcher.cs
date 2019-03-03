@@ -72,6 +72,9 @@ public class Catcher : MonoBehaviour
             foreach (Transform trans in gameObject.GetComponentsInChildren<Transform>(true))
             {
                 trans.gameObject.layer = 0;
+                
+                GameStateController.GhostFreezeDone = true;
+                
             }
         }
     }

@@ -15,6 +15,9 @@ public class GameStateController : MonoBehaviour
     public static bool GhostTutThree = false;
     public static bool HunterTutDone = false;
     public static bool GhostTutDone = false;
+    public static bool HunterCatchDone = false;
+    public static bool HunterShootDone = false;
+    public static bool GhostFreezeDone = false;
 
     public Text p1S;
     public Text p2S;

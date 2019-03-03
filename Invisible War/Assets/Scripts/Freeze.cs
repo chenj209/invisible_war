@@ -12,45 +12,83 @@ public class Freeze : MonoBehaviour
     public AudioClip freezeSound;
     private AudioSource source;
     public GameObject catcher;
-   
+    public bool inTutorial;
+    public bool bot;
+    private float timer;
     // Start is called before the first frame update
     void Start()
     {
         cdImage.fillAmount = 0;
+        timer = 0;
         source = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire02"))
+        if (!bot)
         {
-            if (!On_CoolDown)
+            if (Input.GetButton("Fire02"))
             {
-                Skill();
+                if (!On_CoolDown)
+                {
+                    Skill();
+                }
+            
             }
         }
         if (On_CoolDown)
         {
-            cdImage.fillAmount -= 1 / Freeze_CD * Time.deltaTime;
-            if (cdImage.fillAmount <= 0)
+            if (!bot)
             {
-                On_CoolDown = false;
+                cdImage.fillAmount -= 1 / Freeze_CD * Time.deltaTime;
+                if (cdImage.fillAmount < 0.8 && !inTutorial)
+                {
+                    PlayerControl hunter = catcher.GetComponent<PlayerControl>();
+                    hunter.enabled = true;
+                }
+                if (cdImage.fillAmount <= 0)
+                {
+                    On_CoolDown = false;
+                }
+            }
+            else
+            {
+                timer -= 1 / Freeze_CD * Time.deltaTime;
+                if (timer < 0.8)
+                {
+                    PlayerControl hunter = catcher.GetComponent<PlayerControl>();
+                    hunter.enabled = true;
+                }
             }
         }
     }
 
-    void Skill()
+    public void Skill()
     {
-        cdImage.fillAmount = 1;
+        if (!bot)
+        {
+            cdImage.fillAmount = 1;
+        }
+        timer = 1;
         On_CoolDown = true;
         source.PlayOneShot(freezeSound, 1f);
         freezeEffect.SetActive(false);
         freezeEffect.SetActive(true);
-        if (Vector3.Distance(catcher.transform.position, transform.position) < 60)
+        if (inTutorial && !bot)
         {
-            Catcher hunter = catcher.GetComponent<Catcher>();
-            hunter.stopRunning();
+            if (Vector3.Distance(catcher.transform.position, transform.position) < 60)
+            {
+                Catcher hunter = catcher.GetComponent<Catcher>();
+                hunter.stopRunning();
+            }
+        }else if ((inTutorial && bot) || !inTutorial)
+        {
+            if (Vector3.Distance(catcher.transform.position, transform.position) < 90)
+            {
+                PlayerControl hunter = catcher.GetComponent<PlayerControl>();
+                hunter.enabled = false;
+            }
         }
     }
 }

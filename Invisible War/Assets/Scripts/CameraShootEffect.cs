@@ -22,9 +22,9 @@ public class CameraShootEffect : MonoBehaviour
 
                 transform.localPosition = new Vector3(originalPos.x + x, originalPos.y + y, originalPos.z);
 
-                Debug.Log("Shake");
-                Debug.Log(elapsed);
-                Debug.Log(transform.localPosition);
+                //Debug.Log("Shake");
+                //Debug.Log(elapsed);
+                //Debug.Log(transform.localPosition);
 
                 elapsed += Time.deltaTime;
 
@@ -32,7 +32,7 @@ public class CameraShootEffect : MonoBehaviour
             }
 
             transform.localPosition = originalPos;
-            Debug.Log("Return");
+            //Debug.Log("Return");
         }
     }
 }

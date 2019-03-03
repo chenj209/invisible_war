@@ -7,6 +7,7 @@ public class CatchPlayer : MonoBehaviour
     public float sphereRadius;
     public float distance;
     public Transform camPos;
+    public bool inTutorial;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,10 @@ public class CatchPlayer : MonoBehaviour
             {
                 Catch(player);
                 //Debug.Log("You got the hider");
+                if (inTutorial)
+                {
+                    GameStateController.HunterCatchDone = true;
+                }
             }
             else{
                 //Debug.Log("No player is detected");
@@ -49,7 +54,8 @@ public class CatchPlayer : MonoBehaviour
         }
         if (target.tag == "Player")
         {
-            Debug.Log("get ghost");
+            //Debug.Log("get ghost");
+         
             return target;
         }
         return null;
