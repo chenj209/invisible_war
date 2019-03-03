@@ -25,6 +25,9 @@ public class ParticleLauncher : MonoBehaviour
             if (other.tag == "Player")
             {
                 GameObject decal = Instantiate(playerDecal, collisionEvents[i].intersection, Quaternion.LookRotation(-1 * collisionEvents[i].normal));
+                decal.transform.up = collisionEvents[i].normal;
+                decal.transform.Rotate(Vector3.up, Random.Range(0, 360), Space.Self);
+
                 decal.transform.SetParent(other.transform);
                 Destroy(decal, 5);
                 if (other.GetComponent<PlayerStatus>() != null)
@@ -38,7 +41,14 @@ public class ParticleLauncher : MonoBehaviour
             }
             else
             {
-                splatterDecalPool.ParticleHit(collisionEvents[i], particleColorGradient);
+                if (other.layer == 11)
+                {
+                    splatterDecalPool.ParticleHit(collisionEvents[i], particleColorGradient);
+                }
+                else
+                {
+                    Debug.Log(other.layer);
+                }
                 //EmitAtLocation(collisionEvents[i]);
             }
         }

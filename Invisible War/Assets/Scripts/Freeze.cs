@@ -88,6 +88,7 @@ public class Freeze : MonoBehaviour
             {
                 PlayerControl hunter = catcher.GetComponent<PlayerControl>();
                 hunter.enabled = false;
+                catcher.GetComponent<PlayerStatus>().GetFreezed();
             }
         }
     }

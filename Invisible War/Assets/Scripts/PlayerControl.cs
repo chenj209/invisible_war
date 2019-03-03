@@ -96,6 +96,15 @@ public class PlayerControl : MonoBehaviour
         {
             zMove = 0f;
         }
+        Animator animator = GetComponentInChildren<Animator>();
+        if (Mathf.Abs(xMove - 0f) > .3f || Mathf.Abs(zMove - 0f) > .3f)
+        {
+            animator.SetBool("move", true);
+        }
+        else
+        {
+            animator.SetBool("move", false);
+        }
         //playerBody.AddForce(this.transform.right * xMove * moveForce);
         //playerBody.AddForce(this.transform.forward * zMove * moveForce);
         Vector3 movement = this.transform.right * xMove * moveSpeed;
@@ -119,5 +128,13 @@ public class PlayerControl : MonoBehaviour
     private void RotateView()
     {
         m_MouseLook.LookRotation(transform, playerCamera.transform);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.gameObject.tag == "Player")
+        {
+            Physics.IgnoreCollision(collision.collider, this.gameObject.GetComponent<CapsuleCollider>());
+        }
     }
 }
