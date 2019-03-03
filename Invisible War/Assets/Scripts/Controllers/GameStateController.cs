@@ -13,6 +13,12 @@ public class GameStateController : MonoBehaviour
     public int levelToLoad;
     public GameObject hunter;
     public GameObject ghost;
+    public Image crosshair;
+    public Image scoreBoard;
+    public Text player1Score;
+    public Text player2Score;
+    public Text name;
+    public float scoreCD;
     private Animator an;
 
     public Text p1S;
@@ -33,12 +39,16 @@ public class GameStateController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cdUI1.text = "";
-        cdUI2.text = "";
-        cdUI3.text = ""; 
-        cdUI4.text = "";
-        p1S.text = "";
-        p2S.text = "";
+        scoreBoard.enabled = false;
+        name.enabled = false;
+        player1Score.enabled = false;
+        player2Score.enabled = false;
+        cdUI1.enabled = false;
+        cdUI2.enabled = false;
+        cdUI3.enabled = false;
+        cdUI4.enabled = false;
+        p1S.enabled = false;
+        p2S.enabled = false;
         an = gameObject.GetComponent<Animator>();
         cdBool = false;
         StartCoroutine(GameLoop());
@@ -60,12 +70,18 @@ public class GameStateController : MonoBehaviour
         }
         if (ghost.GetComponent<MeshRenderer>().enabled)
         {
-            cdBool = false;
-            cdUI1.text = "";
-            cdUI2.text = "";
-            StopCoroutine(RoundPlay());
             StartCoroutine(Win(1));
         }
+    }
+
+    private void DisplayScore()
+    {
+        scoreBoard.enabled = true;
+        name.enabled = true;
+        player1Score.enabled = true;
+        player2Score.enabled = true;
+        player1Score.text = p1W.ToString();
+        player2Score.text = p2W.ToString();
     }
 
     private IEnumerator GameLoop()
@@ -79,6 +95,10 @@ public class GameStateController : MonoBehaviour
     {
         if (winner == 1)
         {
+            cdBool = false;
+            cdUI1.enabled = false;
+            cdUI2.enabled = false;
+            StopCoroutine(RoundPlay());
             p1W++;
             yield return StartCoroutine(RoundEnd(1));
         }
@@ -94,35 +114,42 @@ public class GameStateController : MonoBehaviour
         }
         else
         {
+            DisplayScore();
+            yield return new WaitForSeconds(scoreCD);
             an.SetTrigger("FadeOut");
         }
     }
 
     private IEnumerator RoundStart()
     {
+        cdUI3.enabled = true;
+        cdUI4.enabled = true;
+        DisablePlayers();
         cdBool = true;
-        yield return new WaitForSeconds(startCD);
+        yield return new WaitForSeconds(startCD-0.1f);
         cdBool = false;
-        cdUI1.text = "";
-        cdUI2.text = "";
-        cdUI3.text = "";
-        cdUI4.text = "";
+        cdUI3.enabled = false;
+        cdUI4.enabled = false;
         StartCoroutine(PopUp("Game Start", p1S));
         StartCoroutine(PopUp("Game Start", p2S));
     }
 
     private IEnumerator RoundPlay()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(delay);
+        cdUI1.enabled = true;
+        cdUI2.enabled = true;
+        ActivePlayers();
         cdBool = true;
         yield return new WaitForSeconds(countdown);
         cdBool = false;
+        cdUI1.enabled = false;
+        cdUI2.enabled = false;
     }
 
     private IEnumerator RoundEnd(int winner)
     {
-        cdUI1.text = "";
-        cdUI2.text = "";
+        DisablePlayers();
         if (winner == 1)
         {
             StartCoroutine(PopUp("You Win", p1S));
@@ -134,7 +161,7 @@ public class GameStateController : MonoBehaviour
             StartCoroutine(PopUp("You Lose", p1S));
         }
         round--;
-        yield return new WaitForSeconds(endCD);
+        yield return new WaitForSeconds(delay);
     }
 
     void StandBy()
@@ -153,11 +180,32 @@ public class GameStateController : MonoBehaviour
         cdUI2.text = tl.ToString();
     }
 
+    private void DisablePlayers()
+    {
+        crosshair.enabled = false;
+        hunter.GetComponent<PlayerControl>().enabled = false;
+        hunter.GetComponent<shooting>().enabled = false;
+        hunter.GetComponent<CatchPlayer>().enabled = false;
+        ghost.GetComponent<PlayerControl>().enabled = false;
+        ghost.GetComponent<Freeze>().enabled = false;
+    }
+
+    private void ActivePlayers()
+    {
+        crosshair.enabled = true;
+        hunter.GetComponent<PlayerControl>().enabled = true;
+        hunter.GetComponent<shooting>().enabled = true;
+        hunter.GetComponent<CatchPlayer>().enabled = true;
+        ghost.GetComponent<PlayerControl>().enabled = true;
+        ghost.GetComponent<Freeze>().enabled = true;
+    }
+
     IEnumerator PopUp(string state, Text text)
     {
         text.text = state;
+        text.enabled = true;
         yield return new WaitForSeconds(delay);
-        text.text = "";
+        text.enabled = false;
     }
 
     public void OnFadeComplete()
