@@ -63,6 +63,6 @@ public class CatchPlayer : MonoBehaviour
 
     private void Catch(GameObject player)
     {
-        player.GetComponent<MeshRenderer>().enabled=true;
+        player.GetComponent<PlayerStatus>().Caught();
     }
 }

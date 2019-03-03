@@ -39,7 +39,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5896183488891861680}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -515,10 +515,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1388203275000411078}
     m_Modifications:
-    - target: {fileID: 100000, guid: 21da7cc5ef2424262b115a950fce4ad3, type: 3}
-      propertyPath: m_Name
-      value: ghostttttttmove
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 21da7cc5ef2424262b115a950fce4ad3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -574,6 +570,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 21da7cc5ef2424262b115a950fce4ad3, type: 3}
       propertyPath: m_LocalScale.y
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 21da7cc5ef2424262b115a950fce4ad3, type: 3}
+      propertyPath: m_Name
+      value: ghostttttttmove
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 21da7cc5ef2424262b115a950fce4ad3, type: 3}
       propertyPath: m_Controller

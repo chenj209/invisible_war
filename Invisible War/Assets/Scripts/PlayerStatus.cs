@@ -11,6 +11,7 @@ public class PlayerStatus : MonoBehaviour
     private bool Hit = false;
     private bool freezed = false;
     private bool showTransparent = false;
+    private bool caught = false;
     public Material iced_material;
     public Material transparent_material;
     public Material ghost_material;
@@ -23,12 +24,13 @@ public class PlayerStatus : MonoBehaviour
     {
         cameraEffect = GetComponentInChildren<CameraShootEffect>() as CameraShootEffect;
         playerRenderer = gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
+        playerRenderer.enabled = false;
     }
 
 
     private void Update()
     {
-        if (Hit || freezed || showTransparent)
+        if (Hit || freezed || showTransparent || caught)
         {
             playerRenderer.enabled = true;
             if (freezed && remaining_freeze_time > 0)
@@ -57,6 +59,10 @@ public class PlayerStatus : MonoBehaviour
                 }
                 Visible_Time = 5.0f;
             }
+            if (caught)
+            {
+                playerRenderer.material = ghost_material;
+            }
         }
         else
         {
@@ -83,5 +89,8 @@ public class PlayerStatus : MonoBehaviour
     {
         showTransparent = flag;
     }
-
+    public void Caught()
+    {
+        caught = true;
+    }
 }
