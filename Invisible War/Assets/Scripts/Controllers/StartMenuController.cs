@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class StartMenuController : MonoBehaviour
 {
-    public int levelToLoad;
-
     private Animator an;
+    private int level;
 
     // Start is called before the first frame update
     void Start()
@@ -16,16 +15,22 @@ public class StartMenuController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    // void Update()
+    // {
+    //    if (Input.GetKeyDown(KeyCode.G))
+    //    {
+    //        an.SetTrigger("FadeOut");
+    //    }
+    // }
+
+    public void transit(int level)
     {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            an.SetTrigger("FadeOut");
-        }
+        this.level = level;
+        an.SetTrigger("FadeOut");
     }
 
     public void OnFadeComplete()
     {
-        SceneManager.LoadScene(levelToLoad);
+        SceneManager.LoadScene(level);
     }
 }
