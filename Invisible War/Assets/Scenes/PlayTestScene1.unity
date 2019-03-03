@@ -149,8 +149,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 416bf53c4372442079e65aebd4bbce7f, type: 2}
-  - {fileID: 2100000, guid: 416bf53c4372442079e65aebd4bbce7f, type: 2}
+  - {fileID: 2100000, guid: e3f4703c814fa402fb41d324ed3f9643, type: 2}
+  - {fileID: 2100000, guid: e3f4703c814fa402fb41d324ed3f9643, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6257,17 +6257,17 @@ PrefabInstance:
     - target: {fileID: 8256369720747086074, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8256369720747086074, guid: 53519003647cd3c43bd13748a3b93880,
-        type: 3}
-      propertyPath: m_LocalRotation.w
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8256369720747086074, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8256369720747086074, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8256369720806058880, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
