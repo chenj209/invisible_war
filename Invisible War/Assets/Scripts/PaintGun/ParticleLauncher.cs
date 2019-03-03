@@ -41,15 +41,7 @@ public class ParticleLauncher : MonoBehaviour
             }
             else
             {
-                if (other.layer == 11)
-                {
-                    splatterDecalPool.ParticleHit(collisionEvents[i], particleColorGradient);
-                }
-                else
-                {
-                    Debug.Log(other.layer);
-                }
-                //EmitAtLocation(collisionEvents[i]);
+                splatterDecalPool.ParticleHit(collisionEvents[i], particleColorGradient);
             }
         }
     }
