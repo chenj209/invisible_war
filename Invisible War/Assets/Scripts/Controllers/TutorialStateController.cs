@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameStateController : MonoBehaviour
+public class TutorialStateController : MonoBehaviour
 {
     public static bool HunterTutOne = false;
     public static bool HunterTutTwo = false;
@@ -23,9 +23,13 @@ public class GameStateController : MonoBehaviour
     public Text p2S;
     public float delay;
 
+    public int levelToLoad;
+
     private string player1State;
     private string player2State;
     private bool isBlinking;
+
+    private Animator an;
 
     //public float timeLeft;
     //public float startCD;
@@ -44,6 +48,7 @@ public class GameStateController : MonoBehaviour
         StartCoroutine(PopUp("Enter Tutorial1", p2S));
         player2State = "tutorial1";
         isBlinking = true;
+        an = gameObject.GetComponent<Animator>();
         //cdUI1.text = "";
         //cdUI2.text = "";
         //cdUI3.text = "";
@@ -136,7 +141,12 @@ public class GameStateController : MonoBehaviour
             text.enabled = true;
             yield return new WaitForSeconds(0.5f);
         }
-        SceneManager.LoadScene("PlayTestScene1");
+        an.SetTrigger("FadeOut");
+    }
+
+    public void OnFadeComplete()
+    {
+        SceneManager.LoadScene(levelToLoad);
     }
 
     /*void GameStart()

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MainGameStateController : MonoBehaviour
+public class GameStateController : MonoBehaviour
 {
     public Text p1S;
     public Text p2S;

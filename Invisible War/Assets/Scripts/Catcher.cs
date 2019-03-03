@@ -73,7 +73,7 @@ public class Catcher : MonoBehaviour
             {
                 trans.gameObject.layer = 0;
                 
-                GameStateController.GhostFreezeDone = true;
+                TutorialStateController.GhostFreezeDone = true;
                 
             }
         }
