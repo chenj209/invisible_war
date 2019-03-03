@@ -31,13 +31,6 @@ public class TutorialStateController : MonoBehaviour
 
     private Animator an;
 
-    //public float timeLeft;
-    //public float startCD;
-    //public Text cdUI1;
-    //public Text cdUI2;
-    //public Text cdUI3;
-    //public Text cdUI4;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -49,26 +42,11 @@ public class TutorialStateController : MonoBehaviour
         player2State = "tutorial1";
         isBlinking = true;
         an = gameObject.GetComponent<Animator>();
-        //cdUI1.text = "";
-        //cdUI2.text = "";
-        //cdUI3.text = "";
-        //cdUI4.text = "";
-        //player1State = "start menu";
-        //player2State = "start menu";
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*if (startCD >= 0)
-        {
-            GameStart();
-        }
-        if (timeLeft >= 0)
-        {
-            CountDown();
-        }*/
-
         // for player1
         if (player1State == "tutorial1" && HunterTutOne)
         { 
@@ -148,49 +126,4 @@ public class TutorialStateController : MonoBehaviour
     {
         SceneManager.LoadScene(levelToLoad);
     }
-
-    /*void GameStart()
-    {
-        if (player1State == "stand by" && player2State == "stand by")
-        {
-            startCD -= Time.deltaTime;
-            int tl = (int)(startCD + 1);
-            cdUI3.text = tl.ToString();
-            cdUI4.text = tl.ToString();
-            if (startCD < 0)
-            {
-                cdUI3.text = "";
-                cdUI4.text = "";
-                StartCoroutine(PopUp("Game Start", p1S));
-                StartCoroutine(PopUp("Game Start", p2S));
-                player1State = "Game";
-                player2State = "Game";
-            }
-        }
-    }
-
-    void CountDown()
-    {
-        if (player1State == "Game" && player2State == "Game")
-        {
-            timeLeft -= Time.deltaTime;
-            int tl = (int)(timeLeft + 1);
-            cdUI1.text = tl.ToString();
-            cdUI2.text = tl.ToString();
-            if (timeLeft < 0)
-            {
-                GameOver();
-            }
-        }
-    }
-
-    void GameOver()
-    {
-        StartCoroutine(PopUp("Game Over", p1S));
-        StartCoroutine(PopUp("Game Over", p2S));
-        player1State = "Game Over";
-        player2State = "Game Over";
-        cdUI1.text = "";
-        cdUI2.text = "";
-    }*/
 }
