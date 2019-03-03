@@ -29,20 +29,20 @@ public class Door : MonoBehaviour
             animator = gameObject.GetComponentInChildren<Animator>();
             if (doorID == 2)
             {
-                if (GameStateController.HunterCatchDone)
+                if (TutorialStateController.HunterCatchDone)
                 {
            
                     animator.SetBool("Opening", true);
                 }
             }else if (doorID == 3)
             {
-                if (GameStateController.HunterShootDone)
+                if (TutorialStateController.HunterShootDone)
                 {
                     animator.SetBool("Opening", true);
                 }
             }else if (doorID == 6)
             {
-                if (GameStateController.GhostFreezeDone)
+                if (TutorialStateController.GhostFreezeDone)
                 {
                     animator.SetBool("Opening", true);
                 }
@@ -55,33 +55,33 @@ public class Door : MonoBehaviour
 
             if (doorID == 1)
             {
-                GameStateController.HunterTutOne = true;
+               TutorialStateController.HunterTutOne = true;
             }
-            else if (doorID == 2 && GameStateController.HunterCatchDone)
+            else if (doorID == 2 && TutorialStateController.HunterCatchDone)
             {
-                GameStateController.HunterTutTwo = true;
+                TutorialStateController.HunterTutTwo = true;
             }
-            else if (doorID == 3 && GameStateController.HunterShootDone)
+            else if (doorID == 3 && TutorialStateController.HunterShootDone)
             {
-                GameStateController.HunterTutThree = true;
+                TutorialStateController.HunterTutThree = true;
             }
             else if (doorID == 7)
             {
-                GameStateController.HunterTutFour = true;
-                GameStateController.HunterTutDone = true;
+                TutorialStateController.HunterTutFour = true;
+                TutorialStateController.HunterTutDone = true;
             }
             else if (doorID == 4)
             {
-                GameStateController.GhostTutOne = true;
+                TutorialStateController.GhostTutOne = true;
             }
             else if (doorID == 5)
             {
-                GameStateController.GhostTutTwo = true;
+                TutorialStateController.GhostTutTwo = true;
             }
-            else if (doorID == 6 && GameStateController.GhostFreezeDone)
+            else if (doorID == 6 && TutorialStateController.GhostFreezeDone)
             {
-                GameStateController.GhostTutThree = true;
-                GameStateController.GhostTutDone = true;
+                TutorialStateController.GhostTutThree = true;
+                TutorialStateController.GhostTutDone = true;
             }
 
         }
