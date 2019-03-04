@@ -22,6 +22,7 @@ public class GameStateController : MonoBehaviour
     public float scoreCD;
     private Animator an;
     private bool roundOver;
+    public static bool caught = false;
 
     public Text p1S;
     public Text p2S;
@@ -41,6 +42,7 @@ public class GameStateController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        caught = false;
         roundOver = false;
         scoreBoard.enabled = false;
         name.enabled = false;
@@ -60,7 +62,7 @@ public class GameStateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (cdBool) 
+        if (cdBool)
         {
             if (startCD >= 0)
             {
@@ -71,11 +73,11 @@ public class GameStateController : MonoBehaviour
                 CountDown();
             }
         }
-        //if (ghost.GetComponent<MeshRenderer>().enabled && !roundOver)
-        //{
-            //StopAllCoroutines();
-            //StartCoroutine(Win(1));
-        //}
+        if (caught && !roundOver)
+        {
+            StopAllCoroutines();
+            StartCoroutine(Win(1));
+        }
     }
 
     private void DisplayScore()
@@ -87,6 +89,8 @@ public class GameStateController : MonoBehaviour
         player1Score.text = p1W.ToString();
         player2Score.text = p2W.ToString();
     }
+
+ 
 
     private IEnumerator GameLoop()
     {

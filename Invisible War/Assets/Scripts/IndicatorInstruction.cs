@@ -61,7 +61,10 @@ public class IndicatorInstruction : MonoBehaviour
                 panel.SetActive(false);
                 timer = 0f;
                 showText = false;
-                pc.enabled = true;
+                if (pc != null)
+                {
+                    pc.enabled = true;
+                }
             }
         }
 
@@ -82,7 +85,7 @@ public class IndicatorInstruction : MonoBehaviour
         }
         else
         {
-            if (noIndicFirstime)
+            if (other.gameObject.tag == "Player" && noIndicFirstime)
             {
                 Freeze bot = ghost.GetComponent<Freeze>();
                 bot.Skill();
@@ -96,11 +99,11 @@ public class IndicatorInstruction : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (show)
+        if (other.gameObject.tag == "Player" && show)
         {
             Indicator.SetActive(true);
         }
-        else
+        else if (other.gameObject.tag == "Player" && !show)
         {
             Indicator.SetActive(false);
             pc = other.GetComponent<PlayerControl>();
@@ -109,7 +112,7 @@ public class IndicatorInstruction : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (show)
+        if (other.gameObject.tag == "Player" && show)
         {
             Indicator.SetActive(false);
         }

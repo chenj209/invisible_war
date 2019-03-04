@@ -84,7 +84,7 @@ public class Freeze : MonoBehaviour
             }
         }else if ((inTutorial && bot) || !inTutorial)
         {
-            if (Vector3.Distance(catcher.transform.position, transform.position) < 90)
+            if (Vector3.Distance(catcher.transform.position, transform.position) < 100)
             {
                 PlayerControl hunter = catcher.GetComponent<PlayerControl>();
                 hunter.enabled = false;

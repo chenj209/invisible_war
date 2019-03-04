@@ -29,6 +29,10 @@ public class CatchPlayer : MonoBehaviour
                 {
                     TutorialStateController.HunterCatchDone = true;
                 }
+                else
+                {
+                    GameStateController.caught = true;
+                }
             }
             else{
                 //Debug.Log("No player is detected");
