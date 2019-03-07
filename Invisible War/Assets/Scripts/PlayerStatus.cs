@@ -9,7 +9,7 @@ public class PlayerStatus : MonoBehaviour
     public float freeze_time = 5.0f;
     private float remaining_freeze_time = 5.0f;
     private bool Hit = false;
-    private bool freezed = false;
+    public bool freezed = false;
     private bool showTransparent = false;
     private bool caught = false;
     public Material iced_material;
@@ -94,6 +94,6 @@ public class PlayerStatus : MonoBehaviour
     }
     public void Caught()
     {
-        caught = true;
+            caught = true;
     }
 }

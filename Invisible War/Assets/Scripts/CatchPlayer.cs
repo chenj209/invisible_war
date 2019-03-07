@@ -70,15 +70,20 @@ public class CatchPlayer : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.F) || Input.GetKey(KeyCode.C))
             {
-                Catch(other.gameObject);
-                if (inTutorial)
+                PlayerStatus ps = GetComponentInParent<PlayerStatus>();
+                if (ps && !ps.freezed)
                 {
-                    TutorialStateController.HunterCatchDone = true;
+                    Catch(other.gameObject);
+                    if (inTutorial)
+                    {
+                        TutorialStateController.HunterCatchDone = true;
+                    }
+                    else
+                    {
+                        GameStateController.caught = true;
+                    }
                 }
-                else
-                {
-                    GameStateController.caught = true;
-                }
+                
             }
         }
     }

@@ -49,6 +49,8 @@ public class Freeze : MonoBehaviour
                 {
                     PlayerControl hunter = catcher.GetComponent<PlayerControl>();
                     hunter.enabled = true;
+                    CatchPlayer catchPlayer = catcher.GetComponent<CatchPlayer>();
+                    //catchPlayer.enabled = true;
                 }
                 if (cdImage.fillAmount <= 0)
                 {
@@ -62,6 +64,8 @@ public class Freeze : MonoBehaviour
                 {
                     PlayerControl hunter = catcher.GetComponent<PlayerControl>();
                     hunter.enabled = true;
+                    CatchPlayer catchPlayer = catcher.GetComponent<CatchPlayer>();
+                    //catchPlayer.enabled = true;
                 }
             }
         }
@@ -92,6 +96,8 @@ public class Freeze : MonoBehaviour
             {
                 PlayerControl hunter = catcher.GetComponent<PlayerControl>();
                 hunter.enabled = false;
+                CatchPlayer catchPlayer = catcher.GetComponentInChildren<CatchPlayer>();
+                catchPlayer.enabled = false;
                 catcher.GetComponent<PlayerStatus>().GetFreezed();
             }
         }else if (!inTutorial)
@@ -100,6 +106,9 @@ public class Freeze : MonoBehaviour
             {
                 PlayerControl hunter = catcher.GetComponent<PlayerControl>();
                 hunter.enabled = false;
+                CatchPlayer catchPlayer = catcher.GetComponentInChildren<CatchPlayer>();
+                catchPlayer.enabled = false;
+                Debug.Log(catchPlayer.enabled);
                 catcher.GetComponent<PlayerStatus>().GetFreezed();
             }
         }
