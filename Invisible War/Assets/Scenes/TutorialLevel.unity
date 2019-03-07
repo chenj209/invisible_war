@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9072,6 +9072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   freeze_time: 5
+  freezed: 0
   iced_material: {fileID: 2100000, guid: e0a483b190dbd4ec8a8a6ed5ed49d88c, type: 2}
   transparent_material: {fileID: 2100000, guid: 920ac673fe41a4d33938634d300e8474,
     type: 2}
@@ -10743,6 +10744,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492804478071444311, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+        type: 3}
+      propertyPath: inTutorial
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5343497416556410392, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
         type: 3}
@@ -34974,6 +34980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   freeze_time: 5
+  freezed: 0
   iced_material: {fileID: 2100000, guid: e0a483b190dbd4ec8a8a6ed5ed49d88c, type: 2}
   transparent_material: {fileID: 2100000, guid: 920ac673fe41a4d33938634d300e8474,
     type: 2}
