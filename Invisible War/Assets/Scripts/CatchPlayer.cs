@@ -16,15 +16,61 @@ public class CatchPlayer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    //void Update()
+    //{
+    //    GameObject player = DetectItem();
+    //    if (Input.GetKeyDown(KeyCode.C))// catch
+    //    {
+    //        if(player != null)
+    //        {
+    //            Catch(player);
+    //            //Debug.Log("You got the hider");
+    //            if (inTutorial)
+    //            {
+    //                TutorialStateController.HunterCatchDone = true;
+    //            }
+    //            else
+    //            {
+    //                GameStateController.caught = true;
+    //            }
+    //        }
+    //        else{
+    //            //Debug.Log("No player is detected");
+    //        }
+    //    }
+    //}
+
+    //private GameObject DetectItem()
+    //{
+    //    RaycastHit hit;
+    //    GameObject target;
+    //    if(camPos == null) 
+    //    {
+    //        return null; 
+    //    }
+    //    if (Physics.SphereCast(camPos.position, sphereRadius, camPos.TransformDirection(Vector3.forward), out hit, distance))
+    //    {
+    //        target = hit.transform.gameObject;
+    //    }
+    //    else
+    //    {
+    //        return null;
+    //    }
+    //    if (target.tag == "Player")
+    //    {
+    //        //Debug.Log("get ghost");
+
+    //        return target;
+    //    }
+    //    return null;
+    //}
+    private void OnTriggerStay(Collider other)
     {
-        GameObject player = DetectItem();
-        if (Input.GetKeyDown(KeyCode.C))// catch
+        if (other.gameObject.tag == "Player")
         {
-            if(player != null)
+            if (Input.GetKey(KeyCode.F) || Input.GetKey(KeyCode.C))
             {
-                Catch(player);
-                //Debug.Log("You got the hider");
+                Catch(other.gameObject);
                 if (inTutorial)
                 {
                     TutorialStateController.HunterCatchDone = true;
@@ -34,35 +80,7 @@ public class CatchPlayer : MonoBehaviour
                     GameStateController.caught = true;
                 }
             }
-            else{
-                //Debug.Log("No player is detected");
-            }
         }
-    }
-
-    private GameObject DetectItem()
-    {
-        RaycastHit hit;
-        GameObject target;
-        if(camPos == null) 
-        {
-            return null; 
-        }
-        if (Physics.SphereCast(camPos.position, sphereRadius, camPos.TransformDirection(Vector3.forward), out hit, distance))
-        {
-            target = hit.transform.gameObject;
-        }
-        else
-        {
-            return null;
-        }
-        if (target.tag == "Player")
-        {
-            //Debug.Log("get ghost");
-         
-            return target;
-        }
-        return null;
     }
 
     private void Catch(GameObject player)
