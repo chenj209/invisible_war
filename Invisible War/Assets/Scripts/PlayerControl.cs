@@ -7,6 +7,7 @@ public class PlayerControl : MonoBehaviour
     public string playerID;
     public Transform enemy;
     public Transform indicatorCenter;
+    public bool inTutorial;
     public enum MovePattern
     {
         Walking,
@@ -52,8 +53,8 @@ public class PlayerControl : MonoBehaviour
             moveMode = MovePattern.Walking;
         }
         move();
-
-        isGround = Physics.Raycast(transform.position, -transform.up, 10.0f);
+        if (inTutorial) isGround = Physics.Raycast(transform.position, -transform.up, 10.0f);
+        else isGround = Physics.Raycast(transform.position, -transform.up, 3.0f);
         if (isGround && Input.GetButton("Jump" + playerID))
         {
             //playerBody.velocity += transform.up * jumpSpeed;

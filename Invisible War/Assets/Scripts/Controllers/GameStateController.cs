@@ -186,8 +186,18 @@ public class GameStateController : MonoBehaviour
     {
         countdown -= Time.deltaTime;
         int tl = (int)(countdown + 1);
-        cdUI1.text = tl.ToString();
-        cdUI2.text = tl.ToString();
+        int min = tl / 60;
+        int sec = tl % 60;
+        if (sec >= 10)
+        {
+            cdUI1.text = min.ToString() + ":" + sec.ToString();
+            cdUI2.text = min.ToString() + ":" + sec.ToString();
+        }
+        else
+        {
+            cdUI1.text = min.ToString() + ":" + "0" + sec.ToString();
+            cdUI2.text = min.ToString() + ":" + "0" + sec.ToString();
+        }
     }
 
     private void DisablePlayers()

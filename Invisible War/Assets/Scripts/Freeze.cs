@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Freeze : MonoBehaviour
 {
     public Image cdImage;
-    public float Freeze_CD = 30.0f;
+    public float Freeze_CD;
     private bool On_CoolDown = false;
     public GameObject freezeEffect;
     public AudioClip freezeSound;
@@ -18,7 +18,10 @@ public class Freeze : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cdImage.fillAmount = 0;
+        if (!bot)
+        {
+            cdImage.fillAmount = 0;
+        }
         timer = 0;
         source = gameObject.GetComponent<AudioSource>();
     }
@@ -81,10 +84,19 @@ public class Freeze : MonoBehaviour
             {
                 Catcher hunter = catcher.GetComponent<Catcher>();
                 hunter.stopRunning();
+                 catcher.GetComponent<PlayerStatus>().GetFreezed();
             }
-        }else if ((inTutorial && bot) || !inTutorial)
+        }else if (inTutorial && bot)
         {
             if (Vector3.Distance(catcher.transform.position, transform.position) < 100)
+            {
+                PlayerControl hunter = catcher.GetComponent<PlayerControl>();
+                hunter.enabled = false;
+                catcher.GetComponent<PlayerStatus>().GetFreezed();
+            }
+        }else if (!inTutorial)
+        {
+            if (Vector3.Distance(catcher.transform.position, transform.position) < 30)
             {
                 PlayerControl hunter = catcher.GetComponent<PlayerControl>();
                 hunter.enabled = false;

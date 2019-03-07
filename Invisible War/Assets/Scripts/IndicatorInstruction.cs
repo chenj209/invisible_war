@@ -34,12 +34,16 @@ public class IndicatorInstruction : MonoBehaviour
             }
             else if (timer > 2 && timer < 5)
             {
-                instruction.text = "It Will Be Activated When\n You Are Far Away From Ghost";
+                instruction.text = "It Will Tell You The Direction Of\n Where The Ghost is";
             }
-            else if (timer > 5 && timer < 8)
-            {
-                instruction.text = "The Activation Range Will Keep\n Decreasing Throughout The Game";
-            }
+            //else if (timer > 2 && timer < 5)
+            //{
+            //    instruction.text = "It Will Be Activated When\n You Are Far Away From Ghost";
+            //}
+            //else if (timer > 5 && timer < 8)
+            //{
+            //    instruction.text = "The Activation Range Will Keep\n Decreasing Throughout The Game";
+            //}
             else
             {
                 panel.SetActive(false);
@@ -76,6 +80,8 @@ public class IndicatorInstruction : MonoBehaviour
         {
             if (other.gameObject.tag == "Player" && firstTime)
             {
+                Freeze bot = ghost.GetComponent<Freeze>();
+                bot.enabled = true;
 
                 showText = true;
                 firstTime = false;
@@ -105,17 +111,17 @@ public class IndicatorInstruction : MonoBehaviour
         }
         else if (other.gameObject.tag == "Player" && !show)
         {
-            Indicator.SetActive(false);
+            //Indicator.SetActive(false);
             pc = other.GetComponent<PlayerControl>();
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player" && show)
-        {
-            Indicator.SetActive(false);
-        }
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Player" && show)
+    //    {
+    //        Indicator.SetActive(false);
+    //    }
+    //}
 
 }

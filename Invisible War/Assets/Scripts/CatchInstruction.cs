@@ -9,6 +9,7 @@ public class CatchInstruction : MonoBehaviour
     public GameObject panel;
     public Text instruction;
     public int tutNum;
+    public GameObject hunter;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class CatchInstruction : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && firstTime)
         {
+
             panel.SetActive(true);
             if (tutNum == 2) {
                 instruction.text = "Look, Ghost!\n Move Close And Press C To Catch It ";
@@ -32,11 +34,15 @@ public class CatchInstruction : MonoBehaviour
             }
             else if (tutNum == 3)
             {
-                instruction.text = "Left Click To Fire Paintballs\n Hit Ghost To Track It!\n It Has 20s Cooldown";
+                shooting st = hunter.GetComponent<shooting>();
+                st.enabled = true;
+                instruction.text = "Left Click To Fire Paintballs\n Hit Ghost To Track It!\n It Has 8s Cooldown";
                 yield return new WaitForSeconds(5);
             }
             firstTime = false;
             panel.SetActive(false);
+
+
         }
     }
 }

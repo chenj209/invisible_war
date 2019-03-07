@@ -8,6 +8,7 @@ public class FreezeInstruction : MonoBehaviour
     private bool firstTime = true;
     public GameObject panel;
     public Text instruction;
+    public GameObject ghost;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +25,10 @@ public class FreezeInstruction : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && firstTime)
         {
+            Freeze fz = ghost.GetComponent<Freeze>();
+            fz.enabled = true;
             panel.SetActive(true);
-            instruction.text = "Danger! Hunter Nearby!\n Move Close, Press R2 To Freeze Him\n It Has 20s Cooldown";
+            instruction.text = "Danger! Hunter Nearby!\n Move Close, Press R2 To Freeze Him\n It Has 25s Cooldown";
             firstTime = false;
         }
     }
