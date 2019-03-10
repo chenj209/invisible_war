@@ -10,7 +10,7 @@ public class Freeze : MonoBehaviour
     private bool On_CoolDown = false;
     public GameObject freezeEffect;
     public AudioClip freezeSound;
-    private AudioSource source;
+    private AudioSource[] sources;
     public GameObject catcher;
     public bool inTutorial;
     public bool bot;
@@ -23,7 +23,7 @@ public class Freeze : MonoBehaviour
             cdImage.fillAmount = 0;
         }
         timer = 0;
-        source = gameObject.GetComponent<AudioSource>();
+        sources = gameObject.GetComponents<AudioSource>();
     }
 
     // Update is called once per frame
@@ -75,7 +75,7 @@ public class Freeze : MonoBehaviour
         }
         timer = 1;
         On_CoolDown = true;
-        source.PlayOneShot(freezeSound, 1f);
+        sources[0].PlayOneShot(freezeSound, 1f);
         freezeEffect.SetActive(false);
         freezeEffect.SetActive(true);
         if (inTutorial && !bot)

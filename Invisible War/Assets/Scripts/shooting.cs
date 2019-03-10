@@ -11,7 +11,7 @@ public class shooting : MonoBehaviour
     public Image cdImage;
     public Image crosshair;
     private bool Pressed = false;
-    private AudioSource source;
+    private AudioSource[] sources;
     private string playerID;
     public float Fire_CD = 30.0f;
     private bool On_CoolDown = false;
@@ -20,7 +20,7 @@ public class shooting : MonoBehaviour
     {
         PlayerControl pc = gameObject.GetComponent<PlayerControl>();
         playerID = pc.playerID;
-        source = gameObject.GetComponent<AudioSource>();
+        sources = gameObject.GetComponents<AudioSource>();
         cdImage.fillAmount = 0;
         // center crosshair
         //RectTransform rectTransform = crosshair.gameObject.GetComponent<RectTransform>();
@@ -66,7 +66,7 @@ public class shooting : MonoBehaviour
         ParticleSystem.MainModule psMain = particleLauncher.main;
         particleLauncher.Emit(10);
         cdImage.fillAmount = 1;
-        source.PlayOneShot(Fire_Sound, 1f);
+        sources[0].PlayOneShot(Fire_Sound, 1f);
         On_CoolDown = true;
     }
 

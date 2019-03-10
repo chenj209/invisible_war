@@ -6553,6 +6553,26 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5544127654832985302, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+        type: 3}
+      propertyPath: freezeEffect
+      value: 
+      objectReference: {fileID: 454348558}
+    - target: {fileID: 5544127654832985302, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+        type: 3}
+      propertyPath: shiveringOne
+      value: 
+      objectReference: {fileID: 8300000, guid: 991e7c3d5a62149489fb59bd09999bd3, type: 3}
+    - target: {fileID: 5544127654832985302, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+        type: 3}
+      propertyPath: shiveringTwo
+      value: 
+      objectReference: {fileID: 8300000, guid: 24eb6944857dabf459b50698bf6f1a81, type: 3}
+    - target: {fileID: 5544127654832985302, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+        type: 3}
+      propertyPath: isHunter
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3700104682342672520, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
         type: 3}
       propertyPath: m_Layer
@@ -6561,15 +6581,41 @@ PrefabInstance:
     - target: {fileID: 727333868661933264, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4741706698289614794, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
         type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 89689253076868818, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Freeze Effect
+      objectReference: {fileID: 0}
+    - target: {fileID: 89689253076868818, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 89689253076868818, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2345828541324895212, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9db4e1a1a9e8845afb745b690f94b0f4, type: 3}
+--- !u!1 &454348558 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 89689253076868818, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 454348557}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &540522410
 GameObject:
   m_ObjectHideFlags: 0
@@ -7385,6 +7431,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587272310780205763, guid: c9b8755a713eec24a836ad102d09de67,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7587272310846904400, guid: c9b8755a713eec24a836ad102d09de67,
         type: 3}
@@ -8674,6 +8725,16 @@ PrefabInstance:
       propertyPath: onShoot
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 9199124647016558750, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: shiveringOne
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9199124647016558750, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: freezeEffect
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8256369720747086075, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: m_Enabled
@@ -8734,15 +8795,15 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8256369721067234630, guid: 53519003647cd3c43bd13748a3b93880,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8736880798937734785, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: MinDistance
       value: 0.80683136
+      objectReference: {fileID: 0}
+    - target: {fileID: 8256369721067234630, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8256369720806058884, guid: 53519003647cd3c43bd13748a3b93880, type: 3}
