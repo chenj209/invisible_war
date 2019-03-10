@@ -41,6 +41,8 @@ public class TutorialStateController : MonoBehaviour
     private bool isBlinking;
     private bool blinking1;
     private bool blinking2;
+    private float timer1;
+    private float timer2;
 
     private Animator an;
 
@@ -51,6 +53,8 @@ public class TutorialStateController : MonoBehaviour
         p2S.text = "";
         p1R.text = "";
         p2R.text = "";
+        timer1 = 0.5f;
+        timer2 = 0.5f;
         isBlinking = true;
         blinking1 = true;
         blinking2 = true;
@@ -59,8 +63,6 @@ public class TutorialStateController : MonoBehaviour
         player2State = "rule1";
         p1R.text = "Welcome to Invisible Tag!";
         p2R.text = "Welcome to Invisible Tag!";
-        StartCoroutine(Blink1());
-        StartCoroutine(Blink2());
         DisablePlayers();
         HideTutorial();
     }
@@ -68,6 +70,28 @@ public class TutorialStateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // for blink1
+        if (blinking1)
+        {
+            timer1 -= Time.deltaTime;
+        }
+        if (timer1<=0)
+        {
+            blink1.enabled = !blink1.enabled;
+            timer1 += 0.5f;
+        }
+
+        // for blink2
+        if (blinking2)
+        {
+            timer2 -= Time.deltaTime;
+        }
+        if (timer2<=0)
+        {
+            blink2.enabled = !blink2.enabled;
+            timer2 += 0.5f;
+        }
+
         // for player1
         if (Input.GetKeyDown(KeyCode.N))
         {
@@ -226,17 +250,19 @@ public class TutorialStateController : MonoBehaviour
          ActivePlayer(player);
          if (player == 1)
          {
+            blinking1 = false;
+            blink1.enabled = false;
             background1.enabled = false;
             p1R.enabled = false;
-            blinking1 = false;
             StartCoroutine(PopUp("Enter Tutorial1", p1S));
             player1State = "tutorial1";
          }
          else if (player == 2)
          {
+            blinking2 = false;
+            blink2.enabled = false;
             background2.enabled = false;
             p2R.enabled = false;
-            blinking2 = false;
             StartCoroutine(PopUp("Enter Tutorial1", p2S));
             player2State = "tutorial1";
          }
@@ -260,30 +286,6 @@ public class TutorialStateController : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
         an.SetTrigger("FadeOut");
-    }
-
-    IEnumerator Blink1()
-    {
-        while (blinking1)
-        {
-            blink1.enabled = false;
-            yield return new WaitForSeconds(0.5f);
-            blink1.enabled = true;
-            yield return new WaitForSeconds(0.5f);
-        }
-        blink1.enabled = false;
-    }
-
-    IEnumerator Blink2()
-    {
-        while (blinking2)
-        {
-            blink2.enabled = false;
-            yield return new WaitForSeconds(0.5f);
-            blink2.enabled = true;
-            yield return new WaitForSeconds(0.5f);
-        }
-        blink2.enabled = false;
     }
 
     public void OnFadeComplete()
