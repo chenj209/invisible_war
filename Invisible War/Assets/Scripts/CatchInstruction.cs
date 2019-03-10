@@ -22,7 +22,7 @@ public class CatchInstruction : MonoBehaviour
 
     }
 
-    private IEnumerator OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player" && firstTime)
         {
@@ -30,17 +30,17 @@ public class CatchInstruction : MonoBehaviour
             panel.SetActive(true);
             if (tutNum == 2) {
                 instruction.text = "Look, Ghost!\n Move Close And Press C To Catch It ";
-                yield return new WaitForSeconds(3);
+             
             }
             else if (tutNum == 3)
             {
                 shooting st = hunter.GetComponent<shooting>();
                 st.enabled = true;
                 instruction.text = "Left Click To Fire Paintballs\n Hit Ghost To Track It!\n It Has 8s Cooldown";
-                yield return new WaitForSeconds(5);
+         
             }
             firstTime = false;
-            panel.SetActive(false);
+           
 
 
         }

@@ -11275,7 +11275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769722086}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 283.1, y: 8.4, z: 215.6}
+  m_LocalPosition: {x: 283.1, y: 8.4, z: 224.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11336,7 +11336,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774120378}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 201.9, y: 8.4, z: 215.6}
+  m_LocalPosition: {x: 201.9, y: 8.4, z: 221.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13469,7 +13469,7 @@ PrefabInstance:
     - target: {fileID: 3334475576896513578, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: Freeze_CD
-      value: 25
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3334475576896513578, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
@@ -17413,8 +17413,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 43.00773, y: 4.7721524, z: 37.33719}
-  m_Center: {x: -8.0616865, y: 0.6918265, z: 1.8794403}
+  m_Size: {x: 43.00773, y: 4.7721524, z: 57.379456}
+  m_Center: {x: -8.0616865, y: 0.6918265, z: 11.900574}
 --- !u!4 &1451263257
 Transform:
   m_ObjectHideFlags: 0
@@ -19172,7 +19172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8490566, g: 0.13940743, b: 0.13216448, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

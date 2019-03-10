@@ -27,14 +27,14 @@ public class IndicatorInstruction : MonoBehaviour
         if (showText && show)
         {
             timer += Time.deltaTime;
-            if (timer < 2)
+            if (timer < 3.5)
             {
                 panel.SetActive(true);
-                instruction.text = "A Ghost Location Indicator Showed Up!";
+                instruction.text = "A Ghost Location Indicator Showed\n Up In the Top Left Corner!";
             }
-            else if (timer > 2 && timer < 5)
+            else if (timer > 3.5 && timer < 6)
             {
-                instruction.text = "It Will Tell You The Direction Of\n Where The Ghost is";
+                instruction.text = "The Pin Tells You The Direction Of\n Where The Ghost is";
             }
             //else if (timer > 2 && timer < 5)
             //{
@@ -55,7 +55,7 @@ public class IndicatorInstruction : MonoBehaviour
         }else if (showText && !show)
         {
             timer += Time.deltaTime;
-            if (timer < 4)
+            if (timer < 6)
             {
                 panel.SetActive(true);
                 instruction.text = "Oops, You Are Freezed By The Ghost!\n Player Two Can Use This \n Ability To Escape From You";

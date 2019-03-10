@@ -32,6 +32,7 @@ public class TriggerShooting : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && firstTime)
         {
+            panel.SetActive(false);
             PlayerControl pc = player.GetComponent<PlayerControl>();
             pc.enabled = false;
         
@@ -45,18 +46,18 @@ public class TriggerShooting : MonoBehaviour
             BotShoot bs = shootBot.GetComponent<BotShoot>();
             bs.shoot = true;
             panel.SetActive(true);
-            instruction.text = "You Got Hit By Hunter! \n Location Exposed! \n Run For Life!";
+            instruction.text = "Got Painted By Hunter's Paintball Gun! \n You Are Visible To The Hunter For 5s \n Run For Life!";
             firstTime = false;
         }
     }
 
-    private IEnumerator OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            yield return new WaitForSeconds(1);
-            panel.SetActive(false);
-        }
+    //private IEnumerator OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Player")
+    //    {
+    //        yield return new WaitForSeconds(1);
+    //        panel.SetActive(false);
+    //    }
 
-    }
+    //}
 }

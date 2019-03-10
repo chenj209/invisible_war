@@ -25,7 +25,7 @@ public class Catcher : MonoBehaviour
         {
             count += Time.deltaTime;
             speed *= 0.95f;
-            if (count > 3)
+            if (count > 5)
             {
                 count = 0.0f;
                 Frozen = false;

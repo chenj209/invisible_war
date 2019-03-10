@@ -28,7 +28,7 @@ public class FreezeInstruction : MonoBehaviour
             Freeze fz = ghost.GetComponent<Freeze>();
             fz.enabled = true;
             panel.SetActive(true);
-            instruction.text = "Danger! Hunter Nearby!\n Move Close, Press R2 To Freeze Him\n It Has 25s Cooldown";
+            instruction.text = "Danger! Hunter Nearby!\n Move Close, Press R2 To Freeze Him\n It Has 20s Cooldown";
             firstTime = false;
         }
     }
@@ -37,7 +37,7 @@ public class FreezeInstruction : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(1.5f);
             panel.SetActive(false);
         }
 

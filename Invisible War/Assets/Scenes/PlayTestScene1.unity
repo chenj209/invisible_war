@@ -8788,7 +8788,7 @@ PrefabInstance:
     - target: {fileID: 3334475576896513578, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: Freeze_CD
-      value: 25
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8256369720802269815, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
