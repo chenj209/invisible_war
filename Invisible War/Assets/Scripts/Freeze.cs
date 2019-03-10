@@ -14,7 +14,8 @@ public class Freeze : MonoBehaviour
     public GameObject catcher;
     public bool inTutorial;
     public bool bot;
-    private float timer;
+    private float timerBot;
+    private float timerNonBot;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,8 @@ public class Freeze : MonoBehaviour
         {
             cdImage.fillAmount = 0;
         }
-        timer = 0;
+        timerBot = 5;
+        timerNonBot = 5;
         sources = gameObject.GetComponents<AudioSource>();
     }
 
@@ -45,10 +47,16 @@ public class Freeze : MonoBehaviour
             if (!bot)
             {
                 cdImage.fillAmount -= 1 / Freeze_CD * Time.deltaTime;
-                if (cdImage.fillAmount < 0.8 && !inTutorial)
+                PlayerControl hunter = catcher.GetComponent<PlayerControl>();
+              
+                if (!hunter.enabled && !inTutorial)
                 {
-                    PlayerControl hunter = catcher.GetComponent<PlayerControl>();
-                    hunter.enabled = true;
+                    timerNonBot -= Time.deltaTime;
+                    if (timerNonBot < 0)
+                    {
+                        hunter.enabled = true;
+                        timerNonBot = 5;
+                    }
                 }
                 if (cdImage.fillAmount <= 0)
                 {
@@ -57,12 +65,17 @@ public class Freeze : MonoBehaviour
             }
             else
             {
-                timer -= 1 / Freeze_CD * Time.deltaTime;
-                if (timer < 0.8)
+                PlayerControl hunter = catcher.GetComponent<PlayerControl>();
+                if (!hunter.enabled)
                 {
-                    PlayerControl hunter = catcher.GetComponent<PlayerControl>();
-                    hunter.enabled = true;
+                    timerBot -= Time.deltaTime;
+                    if (timerBot < 0)
+                    {
+                        hunter.enabled = true;
+                        timerBot = 5;
+                    }
                 }
+                
             }
         }
     }
@@ -73,7 +86,6 @@ public class Freeze : MonoBehaviour
         {
             cdImage.fillAmount = 1;
         }
-        timer = 1;
         On_CoolDown = true;
         sources[0].PlayOneShot(freezeSound, 1f);
         freezeEffect.SetActive(false);
