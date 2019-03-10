@@ -210,12 +210,12 @@ public class TutorialStateController : MonoBehaviour
     {
         if (player == 1)
         {
-            canvas.transform.GetChild(0).gameObject.SetActive(true);
+            canvas.transform.GetChild(1).gameObject.SetActive(true);
             tutorialCanvas.transform.GetChild(0).gameObject.SetActive(true);
         }
         else if (player == 2)
         {
-            canvas.transform.GetChild(1).gameObject.SetActive(true);
+            canvas.transform.GetChild(0).gameObject.SetActive(true);
             tutorialCanvas.transform.GetChild(1).gameObject.SetActive(true);
         }
     }
@@ -234,13 +234,13 @@ public class TutorialStateController : MonoBehaviour
         if (player == 1)
         {
             hunter.GetComponent<PlayerControl>().enabled = true;
-            hunter.GetComponent<shooting>().enabled = true;
+            //hunter.GetComponent<shooting>().enabled = true;
             //hunter.GetComponent<CatchPlayer>().enabled = true;
         }
         else if (player == 2)
         {
             ghost.GetComponent<PlayerControl>().enabled = true;
-            ghost.GetComponent<Freeze>().enabled = true;
+            //ghost.GetComponent<Freeze>().enabled = true;
         }
     }
 
