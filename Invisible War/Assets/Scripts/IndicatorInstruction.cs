@@ -15,10 +15,16 @@ public class IndicatorInstruction : MonoBehaviour
     private bool showText = false;
     public GameObject ghost;
     private PlayerControl pc;
+    public Image arrow;
+    private float blinkTimer;
+    private bool blinking;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        timer = 0;
+        blinkTimer = 0.5f;
+        blinking = false;
     }
 
     // Update is called once per frame
@@ -30,10 +36,13 @@ public class IndicatorInstruction : MonoBehaviour
             if (timer < 3.5)
             {
                 panel.SetActive(true);
+                blinking = true;
+                Blink();
                 instruction.text = "A Ghost Location Indicator Showed\n Up In the Top Left Corner!";
             }
             else if (timer > 3.5 && timer < 6)
             {
+                arrow.enabled = false;
                 instruction.text = "The Pin Tells You The Direction Of\n Where The Ghost is";
             }
             //else if (timer > 2 && timer < 5)
@@ -72,6 +81,19 @@ public class IndicatorInstruction : MonoBehaviour
             }
         }
 
+    }
+
+    private void Blink()
+    {
+        if (blinking)
+        {
+            blinkTimer -= Time.deltaTime;
+            if (blinkTimer <= 0)
+            {
+                arrow.enabled = !arrow.enabled;
+                blinkTimer += 0.5f;
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)

@@ -29,6 +29,7 @@ public class TutorialStateController : MonoBehaviour
     public Text p2R;
     public Text blink1;
     public Text blink2;
+    public Image crosshair;
 
     public Text p1S;
     public Text p2S;
@@ -126,6 +127,7 @@ public class TutorialStateController : MonoBehaviour
         }
         else if (player1State == "tutorial2" && HunterTutTwo)
         {
+            crosshair.enabled = true;
             StartCoroutine(PopUp("Enter Tutorial3", p1S));
             player1State = "tutorial3";
         }

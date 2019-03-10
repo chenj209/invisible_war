@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStatus : MonoBehaviour
 {
     private ParticleSystem ps;
     private float Visible_Time = 5.0f;
     public float freeze_time = 5.0f;
-    public GameObject freezeEffect;
+    //public GameObject freezeEffect;
+    public Image freezeEffect;
     public AudioClip shiveringOne;
     private float remaining_freeze_time = 5.0f;
     private bool Hit = false;
@@ -42,7 +44,8 @@ public class PlayerStatus : MonoBehaviour
             {
                 if (freezeEffect && isHunter)
                 {
-                    freezeEffect.SetActive(true);
+                    //freezeEffect.SetActive(true);
+                    freezeEffect.enabled = true;
                 }
                 if (firstTime && isHunter)
                 {
@@ -56,7 +59,8 @@ public class PlayerStatus : MonoBehaviour
             {
                 if (freezeEffect)
                 {
-                    freezeEffect.SetActive(false);
+                    //freezeEffect.SetActive(false);
+                    freezeEffect.enabled = false;
                 }
                 remaining_freeze_time = freeze_time;
                 playerRenderer.material = transparent_material;
