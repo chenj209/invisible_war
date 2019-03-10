@@ -224,7 +224,7 @@ public class TutorialStateController : MonoBehaviour
     {
         hunter.GetComponent<PlayerControl>().enabled = false;
         hunter.GetComponent<shooting>().enabled = false;
-        hunter.GetComponent<CatchPlayer>().enabled = false;
+        //hunter.GetComponent<CatchPlayer>().enabled = false;
         ghost.GetComponent<PlayerControl>().enabled = false;
         ghost.GetComponent<Freeze>().enabled = false;
     }
@@ -235,7 +235,7 @@ public class TutorialStateController : MonoBehaviour
         {
             hunter.GetComponent<PlayerControl>().enabled = true;
             hunter.GetComponent<shooting>().enabled = true;
-            hunter.GetComponent<CatchPlayer>().enabled = true;
+            //hunter.GetComponent<CatchPlayer>().enabled = true;
         }
         else if (player == 2)
         {
