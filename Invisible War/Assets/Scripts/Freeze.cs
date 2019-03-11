@@ -58,7 +58,7 @@ public class Freeze : MonoBehaviour
                         timerNonBot = 5;
                         shooting huntershoot = catcher.GetComponent<shooting>();
                         huntershoot.enabled = true;
-                        CatchPlayer catchability = catcher.GetComponent<CatchPlayer>();
+                        CatchGhost catchability = catcher.GetComponentInChildren<CatchGhost>();
                         catchability.enabled = true;
                     }
                 }
@@ -78,7 +78,7 @@ public class Freeze : MonoBehaviour
                         hunter.enabled = true;
                         shooting huntershoot = catcher.GetComponent<shooting>();
                         huntershoot.enabled = true;
-                        CatchPlayer catchability = catcher.GetComponent<CatchPlayer>();
+                        CatchGhost catchability = catcher.GetComponentInChildren<CatchGhost>();
                         catchability.enabled = true;
                         timerBot = 5;
                     }
@@ -106,7 +106,7 @@ public class Freeze : MonoBehaviour
                 Catcher hunter = catcher.GetComponent<Catcher>();
                 shooting huntershoot = catcher.GetComponent<shooting>();
                 huntershoot.enabled = false;
-                CatchPlayer catchability = catcher.GetComponent<CatchPlayer>();
+                CatchGhost catchability = catcher.GetComponentInChildren<CatchGhost>();
                 catchability.enabled = false;
                 hunter.stopRunning();
                 catcher.GetComponent<PlayerStatus>().GetFreezed();
@@ -119,7 +119,7 @@ public class Freeze : MonoBehaviour
                 hunter.enabled = false;
                 shooting huntershoot = catcher.GetComponent<shooting>();
                 huntershoot.enabled = false;
-                CatchPlayer catchability = catcher.GetComponent<CatchPlayer>();
+                CatchGhost catchability = catcher.GetComponentInChildren<CatchGhost>();
                 catchability.enabled = false;
                 catcher.GetComponent<PlayerStatus>().GetFreezed();
             }
@@ -131,7 +131,7 @@ public class Freeze : MonoBehaviour
                 hunter.enabled = false;
                 shooting huntershoot = catcher.GetComponent<shooting>();
                 huntershoot.enabled = false;
-                CatchPlayer catchability = catcher.GetComponent<CatchPlayer>();
+                CatchGhost catchability = catcher.GetComponentInChildren<CatchGhost>();
                 catchability.enabled = false;
                 catcher.GetComponent<PlayerStatus>().GetFreezed();
             }
