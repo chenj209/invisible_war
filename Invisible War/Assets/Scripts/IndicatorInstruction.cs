@@ -19,7 +19,7 @@ public class IndicatorInstruction : MonoBehaviour
     private float blinkTimer;
     private bool blinking;
     public GameObject directionArrow;
-
+    public bool isGhost;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,13 +38,29 @@ public class IndicatorInstruction : MonoBehaviour
             {
                 panel.SetActive(true);
                 blinking = true;
-                Blink();
-                instruction.text = "A Ghost Location Indicator Showed\n Up In the Top Left Corner!";
+                
+                if (isGhost)
+                {
+
+                    instruction.text = "A Hunter Location Indicator Showed\n Up In the Top Left Corner!";
+                }
+                else
+                {
+                    Blink();
+                    instruction.text = "A Ghost Location Indicator Showed\n Up In the Top Left Corner!";
+                }
             }
             else if (timer > 3.5 && timer < 6)
             {
                 arrow.enabled = false;
-                instruction.text = "The Pin Tells You The Direction Of\n Where The Ghost is";
+                if (isGhost)
+                {
+                    instruction.text = "The Color Tells You How Close Hunter Is\n Green Means Safe Distance\n Red Means Dangerous Distance";
+                }
+                else
+                {
+                    instruction.text = "The Pin Tells You The Direction Of\n Where The Ghost Is";
+                }
             }
             //else if (timer > 2 && timer < 5)
             //{
@@ -56,7 +72,6 @@ public class IndicatorInstruction : MonoBehaviour
             //}
             else
             {
-                panel.SetActive(false);
                 timer = 0f;
                 showText = false;
                 pc.enabled = true;
@@ -72,7 +87,6 @@ public class IndicatorInstruction : MonoBehaviour
             }
             else
             {
-                panel.SetActive(false);
                 timer = 0f;
                 showText = false;
                 if (pc != null)

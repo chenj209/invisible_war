@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class CatchInstruction : MonoBehaviour
 {
-    private bool firstTime = true;
+    private bool firstTimeOne = true;
+    private bool firstTimeTwo = true;
     public GameObject panel;
     public Text instruction;
     public int tutNum;
@@ -24,25 +25,31 @@ public class CatchInstruction : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" && firstTime)
+        if (other.gameObject.tag == "Player")
         {
 
             panel.SetActive(true);
-            if (tutNum == 2) {
+            if (tutNum == 2 && firstTimeOne) {
                 instruction.text = "Look, Ghost!\n Move Close And Press C To Catch It ";
-             
+                firstTimeOne = false;
             }
-            else if (tutNum == 3)
+            else if (tutNum == 3 && firstTimeTwo)
             {
                 shooting st = hunter.GetComponent<shooting>();
                 st.enabled = true;
                 instruction.text = "Left Click To Fire Paintballs\n Hit Ghost To Track It!\n It Has 8s Cooldown";
-         
+                firstTimeTwo = false;
             }
-            firstTime = false;
            
+        }
+    }
 
-
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            if (tutNum == 3)
+            instruction.text = "Left Click To Fire Paintballs\n Hit Ghost To Track It!\n It Has 8s Cooldown";
         }
     }
 }

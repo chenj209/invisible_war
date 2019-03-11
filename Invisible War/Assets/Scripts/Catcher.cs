@@ -12,6 +12,7 @@ public class Catcher : MonoBehaviour
     private bool moveToP2 = false;
     private bool moveToP1 = true;
     public bool freezeBot;
+    public GameObject directionArrow;
     // Start is called before the first frame update
     void Start()
     {
@@ -72,7 +73,7 @@ public class Catcher : MonoBehaviour
             foreach (Transform trans in gameObject.GetComponentsInChildren<Transform>(true))
             {
                 trans.gameObject.layer = 0;
-                
+                directionArrow.SetActive(true);
                 TutorialStateController.GhostFreezeDone = true;
                 
             }

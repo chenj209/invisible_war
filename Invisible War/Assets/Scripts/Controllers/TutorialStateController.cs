@@ -94,11 +94,11 @@ public class TutorialStateController : MonoBehaviour
         }
 
         // for player1
-        if (Input.GetKeyDown(KeyCode.N))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             if (player1State == "rule1")
             {
-                p1R.text = "This is a player versus player game.\n" +
+                p1R.text = "This is a player versus player game." +
                     "Your goal is to catch the invisible ghost " +
                     "controlled by the other player in the arena " +
                     "within two minutes time limit.";
@@ -150,11 +150,11 @@ public class TutorialStateController : MonoBehaviour
         }
 
         // for player2
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetButtonDown("Continue"))
         {
             if (player2State == "rule1")
             {
-                p2R.text = "This is a player versus player game.\n" +
+                p2R.text = "This is a player versus player game." +
                     "Your goal is to avoid being caught by the invisible hunter " +
                     "controlled by the other player in the arena " +
                     "for two minutes.";

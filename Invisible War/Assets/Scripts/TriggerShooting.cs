@@ -12,6 +12,7 @@ public class TriggerShooting : MonoBehaviour
     public GameObject cam;
     private bool firstTime = true;
     private bool rotate = false;
+    public GameObject directionArrow;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +49,7 @@ public class TriggerShooting : MonoBehaviour
             panel.SetActive(true);
             instruction.text = "Got Painted By Hunter's Paintball Gun! \n You Are Visible To The Hunter For 5s \n Run For Life!";
             firstTime = false;
+            directionArrow.SetActive(true);
         }
     }
 
