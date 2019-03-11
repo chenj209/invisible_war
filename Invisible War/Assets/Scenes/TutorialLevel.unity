@@ -2963,7 +2963,7 @@ PrefabInstance:
     - target: {fileID: 5567942413618826225, guid: e8ac6f6fda66c4973b26031c66041672,
         type: 3}
       propertyPath: m_Name
-      value: TutorialDoorAnimated (4)
+      value: HunterDoor4
       objectReference: {fileID: 0}
     - target: {fileID: 3895026350595324278, guid: e8ac6f6fda66c4973b26031c66041672,
         type: 3}
@@ -10099,7 +10099,7 @@ PrefabInstance:
     - target: {fileID: 5567942413618826225, guid: e8ac6f6fda66c4973b26031c66041672,
         type: 3}
       propertyPath: m_Name
-      value: TutorialDoorAnimated (5)
+      value: HunterDoor3
       objectReference: {fileID: 0}
     - target: {fileID: 3895026350595324278, guid: e8ac6f6fda66c4973b26031c66041672,
         type: 3}
@@ -12862,7 +12862,7 @@ PrefabInstance:
     - target: {fileID: 5567942413618826225, guid: e8ac6f6fda66c4973b26031c66041672,
         type: 3}
       propertyPath: m_Name
-      value: TutorialDoorAnimated (1)
+      value: GhostDoor2
       objectReference: {fileID: 0}
     - target: {fileID: 3895026350595324278, guid: e8ac6f6fda66c4973b26031c66041672,
         type: 3}
@@ -13592,7 +13592,7 @@ PrefabInstance:
     - target: {fileID: 5567942413618826225, guid: e8ac6f6fda66c4973b26031c66041672,
         type: 3}
       propertyPath: m_Name
-      value: TutorialDoorAnimated
+      value: GhostDoor1
       objectReference: {fileID: 0}
     - target: {fileID: 3895026350595324278, guid: e8ac6f6fda66c4973b26031c66041672,
         type: 3}
@@ -16785,7 +16785,7 @@ PrefabInstance:
     - target: {fileID: 5567942413618826225, guid: e8ac6f6fda66c4973b26031c66041672,
         type: 3}
       propertyPath: m_Name
-      value: TutorialDoorAnimated (2)
+      value: GhostDoor3
       objectReference: {fileID: 0}
     - target: {fileID: 3895026350595324278, guid: e8ac6f6fda66c4973b26031c66041672,
         type: 3}
@@ -21907,7 +21907,7 @@ PrefabInstance:
     - target: {fileID: 5567942413618826225, guid: e8ac6f6fda66c4973b26031c66041672,
         type: 3}
       propertyPath: m_Name
-      value: TutorialDoorAnimated (7)
+      value: HunterDoor1
       objectReference: {fileID: 0}
     - target: {fileID: 3895026350595324278, guid: e8ac6f6fda66c4973b26031c66041672,
         type: 3}
@@ -28349,7 +28349,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  splatterDecalPool: {fileID: 0}
+  splatterDecalPool: {fileID: 386018595}
   playerDecal: {fileID: 8597857740776835052, guid: da12e3dc86d8d47aa891000a9baebc57,
     type: 3}
   inTutorial: 0
@@ -31352,7 +31352,7 @@ PrefabInstance:
     - target: {fileID: 5567942413618826225, guid: e8ac6f6fda66c4973b26031c66041672,
         type: 3}
       propertyPath: m_Name
-      value: TutorialDoorAnimated (6)
+      value: HunterDoor2
       objectReference: {fileID: 0}
     - target: {fileID: 3895026350595324278, guid: e8ac6f6fda66c4973b26031c66041672,
         type: 3}

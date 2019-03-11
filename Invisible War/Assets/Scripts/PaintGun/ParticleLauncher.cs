@@ -43,7 +43,8 @@ public class ParticleLauncher : MonoBehaviour
             }
             else
             {
-                splatterDecalPool.ParticleHit(collisionEvents[i], particleColorGradient);
+                if (splatterDecalPool)
+                    splatterDecalPool.ParticleHit(collisionEvents[i], particleColorGradient);
             }
         }
     }
