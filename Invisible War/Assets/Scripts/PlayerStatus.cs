@@ -10,6 +10,7 @@ public class PlayerStatus : MonoBehaviour
     public float freeze_time = 5.0f;
     //public GameObject freezeEffect;
     public Image freezeEffect;
+    public Image hitEffect;
     public AudioClip shiveringOne;
     private float remaining_freeze_time = 5.0f;
     private bool Hit = false;
@@ -72,10 +73,11 @@ public class PlayerStatus : MonoBehaviour
                 Visible_Time -= Time.deltaTime;
                 StartCoroutine(cameraEffect.Shake(0.25f, .1f));
                 playerRenderer.material = ghost_material;
-
+                hitEffect.enabled = true;
             } else
             {
                 Hit = false;
+                hitEffect.enabled = false;
                 if (cameraEffect != null)
                 {
                     cameraEffect.start = false;

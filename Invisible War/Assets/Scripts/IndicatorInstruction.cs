@@ -38,7 +38,8 @@ public class IndicatorInstruction : MonoBehaviour
             {
                 panel.SetActive(true);
                 blinking = true;
-                
+                Blink();
+
                 if (isGhost)
                 {
 
@@ -46,7 +47,6 @@ public class IndicatorInstruction : MonoBehaviour
                 }
                 else
                 {
-                    Blink();
                     instruction.text = "A Ghost Location Indicator Showed\n Up In the Top Left Corner!";
                 }
             }
