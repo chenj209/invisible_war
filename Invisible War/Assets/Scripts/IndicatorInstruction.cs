@@ -72,6 +72,7 @@ public class IndicatorInstruction : MonoBehaviour
             //}
             else
             {
+                panel.SetActive(false);
                 timer = 0f;
                 showText = false;
                 pc.enabled = true;

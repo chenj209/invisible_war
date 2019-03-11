@@ -35,6 +35,7 @@ public class CatchInstruction : MonoBehaviour
             }
             else if (tutNum == 3 && firstTimeTwo)
             {
+                panel.SetActive(true);
                 shooting st = hunter.GetComponent<shooting>();
                 st.enabled = true;
                 instruction.text = "Left Click To Fire Paintballs\n Hit Ghost To Track It!\n It Has 8s Cooldown";
@@ -48,8 +49,13 @@ public class CatchInstruction : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+           
             if (tutNum == 3)
-            instruction.text = "Left Click To Fire Paintballs\n Hit Ghost To Track It!\n It Has 8s Cooldown";
+            {
+                panel.SetActive(true);
+                instruction.text = "Left Click To Fire Paintballs\n Hit Ghost To Track It!\n It Has 8s Cooldown";
+            }
+           
         }
     }
 }

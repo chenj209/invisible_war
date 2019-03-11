@@ -73,10 +73,12 @@ public class PlayerStatus : MonoBehaviour
                 Visible_Time -= Time.deltaTime;
                 StartCoroutine(cameraEffect.Shake(0.25f, .1f));
                 playerRenderer.material = ghost_material;
+                if (hitEffect && !isHunter)
                 hitEffect.enabled = true;
             } else
             {
                 Hit = false;
+                if (hitEffect)
                 hitEffect.enabled = false;
                 if (cameraEffect != null)
                 {
