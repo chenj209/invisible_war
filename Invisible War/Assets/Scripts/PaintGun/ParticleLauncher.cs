@@ -11,6 +11,7 @@ public class ParticleLauncher : MonoBehaviour
     public GameObject playerDecal;
     public bool inTutorial;
     List<ParticleCollisionEvent> collisionEvents;
+    public GameObject directionArrow;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +38,7 @@ public class ParticleLauncher : MonoBehaviour
                 if (inTutorial)
                 {
                     TutorialStateController.HunterShootDone = true;
+                    directionArrow.SetActive(true);
                 }
             }
             else

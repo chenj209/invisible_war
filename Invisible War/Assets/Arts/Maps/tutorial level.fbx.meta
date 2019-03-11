@@ -125,6 +125,27 @@ ModelImporter:
     4300036: polySurface289
     4300038: polySurface179
     4300040: pCube158
+    6400000: pCube158
+    6400002: polySurface105
+    6400004: polySurface123
+    6400006: polySurface179
+    6400008: polySurface183
+    6400010: polySurface195
+    6400012: polySurface207
+    6400014: polySurface209
+    6400016: polySurface228
+    6400018: polySurface233
+    6400020: polySurface242
+    6400022: polySurface261
+    6400024: polySurface282
+    6400026: polySurface283
+    6400028: polySurface284
+    6400030: polySurface285
+    6400032: polySurface286
+    6400034: polySurface287
+    6400036: polySurface288
+    6400038: polySurface289
+    6400040: roof
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -158,7 +179,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1

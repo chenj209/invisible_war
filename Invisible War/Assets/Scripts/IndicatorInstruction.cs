@@ -18,6 +18,7 @@ public class IndicatorInstruction : MonoBehaviour
     public Image arrow;
     private float blinkTimer;
     private bool blinking;
+    public GameObject directionArrow;
 
     // Start is called before the first frame update
     void Start()
@@ -102,9 +103,7 @@ public class IndicatorInstruction : MonoBehaviour
         {
             if (other.gameObject.tag == "Player" && firstTime)
             {
-                Freeze bot = ghost.GetComponent<Freeze>();
-                bot.enabled = true;
-
+    
                 showText = true;
                 firstTime = false;
                 pc = other.GetComponent<PlayerControl>();
@@ -116,10 +115,13 @@ public class IndicatorInstruction : MonoBehaviour
             if (other.gameObject.tag == "Player" && noIndicFirstime)
             {
                 Freeze bot = ghost.GetComponent<Freeze>();
+                bot.enabled = true;
                 bot.Skill();
                 noIndicFirstime = false;
                 pc = other.GetComponent<PlayerControl>();
                 showText = true;
+                if (directionArrow)
+                directionArrow.SetActive(true);
             }
          
         }

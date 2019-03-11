@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour
 {
     public string playerID;
     public Transform enemy;
     public Transform indicatorCenter;
+    public GameObject indicator;
     public bool inTutorial;
     public enum MovePattern
     {
@@ -54,7 +56,7 @@ public class PlayerControl : MonoBehaviour
         }
         move();
         if (inTutorial) isGround = Physics.Raycast(transform.position, -transform.up, 10.0f);
-        else isGround = Physics.Raycast(transform.position, -transform.up, 3.0f);
+        else isGround = Physics.Raycast(transform.position, -transform.up, 10.0f);
         if (isGround && Input.GetButton("Jump" + playerID))
         {
             //playerBody.velocity += transform.up * jumpSpeed;
@@ -118,12 +120,36 @@ public class PlayerControl : MonoBehaviour
     {
         if (enemy != null && indicatorCenter != null)
         {
-            Vector3 difference = enemy.position - transform.position;
-            Vector3 faceDirection = transform.forward;
-            Vector2 face2D = new Vector2(faceDirection.x, faceDirection.z);
-            Vector2 difference2D = new Vector2(difference.x, difference.z);
-            float rotateDegree = Vector2.SignedAngle(face2D, difference2D);
-            indicatorCenter.transform.localEulerAngles = new Vector3(0, 0, rotateDegree);
+            if (playerID == "01")
+            {
+                Vector3 difference = enemy.position - transform.position;
+                Vector3 faceDirection = transform.forward;
+                Vector2 face2D = new Vector2(faceDirection.x, faceDirection.z);
+                Vector2 difference2D = new Vector2(difference.x, difference.z);
+                float rotateDegree = Vector2.SignedAngle(face2D, difference2D);
+                indicatorCenter.transform.localEulerAngles = new Vector3(0, 0, rotateDegree);
+            }
+            else if (playerID == "02")
+            {
+                if (indicator)
+                {
+                    float distance = Vector3.Distance(enemy.position, transform.position);
+                    if (distance > 100)
+                    {
+                        indicator.GetComponent<Image>().color = new Color32(0, 255, 0, 200);
+                    }else if (distance <= 100 && distance >= 50)
+                    {
+                        float value = 100;
+                        float rValue = (value - distance) * 5.1f;
+                        indicator.GetComponent<Image>().color = new Color32((byte)rValue, 255, 0, 200);
+                    }else if (distance < 50)
+                    {
+                        float gValue = distance * 5.1f - 90f;
+                        if (gValue < 0) gValue = 0;
+                        indicator.GetComponent<Image>().color = new Color32(255, (byte)gValue, 0, 200);
+                    }
+                }
+            }
         }
     }
     private void RotateView()

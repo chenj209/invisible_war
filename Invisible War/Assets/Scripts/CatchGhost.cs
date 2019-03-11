@@ -6,7 +6,7 @@ public class CatchGhost : MonoBehaviour
 {
     private GameObject ghost;
     public bool inTutorial;
-
+    public GameObject arrow;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +25,10 @@ public class CatchGhost : MonoBehaviour
                 if (inTutorial)
                 {
                     TutorialStateController.HunterCatchDone = true;
+                    arrow.SetActive(true);
+                    Animator animator = GetComponentInChildren<Animator>();
+                    if (animator)
+                        animator.SetBool("oscillate", true);
                 }
                 else
                 {

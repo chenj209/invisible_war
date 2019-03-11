@@ -9,6 +9,7 @@ public class Tutoriallvl1 : MonoBehaviour
     public bool knowMove;
     private float timer = 0f;
     private bool firstTime = true;
+    public GameObject arrow;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,13 +40,15 @@ public class Tutoriallvl1 : MonoBehaviour
         if (knowMove == true && firstTime)
         {
             timer += Time.deltaTime;
-            if (timer > 2f)
-            {
-               // this.gameObject.SetActive(false);
-                timer = 0.0f;
-                knowMove = false;
-                firstTime = false;
-            }
+            arrow.SetActive(true);
+            Animator animator = GetComponentInChildren<Animator>();
+            if (animator)
+                animator.SetBool("oscillate", true);
+           
+              
+            timer = 0.0f;
+            knowMove = false;
+            firstTime = false;
         }
     }
 }

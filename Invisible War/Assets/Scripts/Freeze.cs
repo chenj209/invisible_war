@@ -87,6 +87,7 @@ public class Freeze : MonoBehaviour
             cdImage.fillAmount = 1;
         }
         On_CoolDown = true;
+        if (sources[0])
         sources[0].PlayOneShot(freezeSound, 1f);
         freezeEffect.SetActive(false);
         freezeEffect.SetActive(true);
