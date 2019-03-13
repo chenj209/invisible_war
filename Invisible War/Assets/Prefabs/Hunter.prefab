@@ -10002,6 +10002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823f08a23643f40bfb0d8251ef75a420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invincible: 0
   freeze_time: 5
   freezeEffect: {fileID: 0}
   hitEffect: {fileID: 0}
@@ -10023,10 +10024,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.44857332
-  m_Height: 2.364476
+  m_Radius: 0.10967481
+  m_Height: 1.7281849
   m_Direction: 1
-  m_Center: {x: -0.22255664, y: 0.16667557, z: -0.083883926}
+  m_Center: {x: -0.14286683, y: 0.121102095, z: -0.083883926}
 --- !u!82 &8401078571960820433
 AudioSource:
   m_ObjectHideFlags: 0
