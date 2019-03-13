@@ -122,7 +122,14 @@ public class PlayerControl : MonoBehaviour
         {
             if (playerID == "01")
             {
-
+                float distance = Vector3.Distance(enemy.position, transform.position);
+                if (distance < 100)
+                {
+                    Debug.Log(distance);
+                    indicatorCenter.gameObject.SetActive(false);
+                } else { 
+                    indicatorCenter.gameObject.SetActive(true);
+                }
                 Vector3 difference = enemy.position - transform.position;
                 Vector3 faceDirection = transform.forward;
                 Vector2 face2D = new Vector2(faceDirection.x, faceDirection.z);
