@@ -10,6 +10,7 @@ public class PlayerControl : MonoBehaviour
     public Transform indicatorCenter;
     public GameObject indicator;
     public bool inTutorial;
+    public Animator moveAnimator;
     public enum MovePattern
     {
         Walking,
@@ -99,14 +100,13 @@ public class PlayerControl : MonoBehaviour
         {
             zMove = 0f;
         }
-        Animator animator = GetComponentInChildren<Animator>();
         if (Mathf.Abs(xMove - 0f) > .3f || Mathf.Abs(zMove - 0f) > .3f)
         {
-            animator.SetBool("move", true);
+            moveAnimator.SetBool("move", true);
         }
         else
         {
-            animator.SetBool("move", false);
+            moveAnimator.SetBool("move", false);
         }
         //playerBody.AddForce(this.transform.right * xMove * moveForce);
         //playerBody.AddForce(this.transform.forward * zMove * moveForce);

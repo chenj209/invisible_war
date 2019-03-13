@@ -4808,8 +4808,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.2893964, z: 1.0046862}
-  m_Center: {x: 0, y: -0.012307021, z: 0.0023425533}
+  m_Size: {x: 1.636886, y: 1.2893964, z: 1.0046862}
+  m_Center: {x: 0.29673085, y: -0.012307021, z: 0.0023425533}
 --- !u!114 &1927212607715009289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9959,6 +9959,7 @@ MonoBehaviour:
   indicatorCenter: {fileID: 0}
   indicator: {fileID: 0}
   inTutorial: 0
+  moveAnimator: {fileID: 584656607546513339}
   moveMode: 1
   moveForce: 5
   isGround: 0
@@ -11432,6 +11433,12 @@ PrefabInstance:
 --- !u!4 &584656607555876955 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 9660a13d85e704aa9b8a23208627aeac,
+    type: 3}
+  m_PrefabInstance: {fileID: 584656607556002523}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &584656607546513339 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: 9660a13d85e704aa9b8a23208627aeac,
     type: 3}
   m_PrefabInstance: {fileID: 584656607556002523}
   m_PrefabAsset: {fileID: 0}

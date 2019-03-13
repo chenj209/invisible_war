@@ -401,6 +401,7 @@ MonoBehaviour:
   indicatorCenter: {fileID: 0}
   indicator: {fileID: 0}
   inTutorial: 0
+  moveAnimator: {fileID: 5896183488884590960}
   moveMode: 0
   moveForce: 5
   isGround: 0
@@ -851,6 +852,12 @@ PrefabInstance:
 --- !u!4 &5896183488891823760 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 21da7cc5ef2424262b115a950fce4ad3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5896183488891960336}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5896183488884590960 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: 21da7cc5ef2424262b115a950fce4ad3,
     type: 3}
   m_PrefabInstance: {fileID: 5896183488891960336}
   m_PrefabAsset: {fileID: 0}
