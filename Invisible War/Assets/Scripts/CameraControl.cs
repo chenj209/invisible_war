@@ -8,8 +8,6 @@ public class CameraControl : MonoBehaviour
 
     private GameObject player;
 
-    private float maxRot = 90f;
-    private float minRot = -90f;
 
     private string playerID;
 
