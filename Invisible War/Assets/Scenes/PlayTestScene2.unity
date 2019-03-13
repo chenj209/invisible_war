@@ -8122,6 +8122,7 @@ MonoBehaviour:
   respawnTime: 5
   powerUpTime: 0
   isPowerUp: 0
+  ghost: {fileID: 1447882107}
 --- !u!1001 &805252408
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10879,6 +10880,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlSystem: {fileID: 796562495}
+  ghost: {fileID: 1447882107}
+  hunter: {fileID: 1578733160}
 --- !u!1001 &1356143679
 PrefabInstance:
   m_ObjectHideFlags: 0
