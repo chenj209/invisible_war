@@ -21,9 +21,10 @@ public class PPSystem : MonoBehaviour
     void Start()
     {
         disablePP();
+        rd = new Random();
+        pointList[rd.Next(0, 4)].SetActive(true);
         curSTime = respawnTime;
         isPowerUp = false;
-        rd = new Random();
 
         ps = ghost.GetComponent<PlayerStatus>();
     }
@@ -69,5 +70,6 @@ public class PPSystem : MonoBehaviour
         isPowerUp = true;
         curPTime = powerUpTime;
         ps.invincible = true;
+        Debug.Log(ps.invincible);
     }
 }
