@@ -27,9 +27,11 @@ public class PowerPoint : MonoBehaviour
         if (collision.gameObject == hunter)
         {
             Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
+            Debug.Log("Collide with hunter.");
         } else if (collision.gameObject == ghost)
         {
             system.pUActivate();
+            Debug.Log("Collide with ghost.");
         }
     }
 }
