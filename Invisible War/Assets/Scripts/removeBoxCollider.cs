@@ -13,9 +13,8 @@ public class removeBoxCollider : StateMachineBehaviour
     private Door doorScript;
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        childCollider = animator.gameObject.GetComponentInChildren<MeshCollider>();
         doorScript = animator.gameObject.GetComponentInParent<Door>();
-        childCollider.enabled = false;
+        doorScript.AnimateStateEnter();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -31,7 +30,6 @@ public class removeBoxCollider : StateMachineBehaviour
     //}
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        childCollider.enabled = true;
         doorScript.AnimateStateExit(stateInfo);
     }
 

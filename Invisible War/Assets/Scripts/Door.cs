@@ -10,6 +10,7 @@ public class Door : MonoBehaviour
     public ParticleDecalPool decalPool;
     public int doorID;
     public bool requireKeyPress = false;
+    public Collider doorCollider;
 
     private void Start()
     {
@@ -160,16 +161,22 @@ public class Door : MonoBehaviour
 
         }
     }
+    public void AnimateStateEnter()
+    {
+        doorCollider.isTrigger = true;
+    }
     public void AnimateStateExit(AnimatorStateInfo stateInfo)
     {
         if (stateInfo.IsName("OpeningPositive") || stateInfo.IsName("OpeningNegative"))
         {
+            Debug.Log("Set Opened");
             SetDoorAnimationStatus("Opened");
         }
         if (stateInfo.IsName("ClosingPositive") || stateInfo.IsName("ClosingNegative"))
         {
             SetDoorAnimationStatus("Closed");
         }
+        doorCollider.isTrigger = false;
 
     }
 }
