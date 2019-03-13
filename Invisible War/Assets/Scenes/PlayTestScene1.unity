@@ -7423,6 +7423,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7636878690794587742, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.28
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9db4e1a1a9e8845afb745b690f94b0f4, type: 3}
 --- !u!1 &540522410
@@ -10770,7 +10775,7 @@ PrefabInstance:
     - target: {fileID: 8256369720747086072, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 3383
+      value: 7479
       objectReference: {fileID: 0}
     - target: {fileID: 8256369720747086072, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
@@ -10931,6 +10936,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5308505546919183148, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.27
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8256369720806058884, guid: 53519003647cd3c43bd13748a3b93880, type: 3}
