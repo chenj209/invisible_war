@@ -11,6 +11,7 @@ public class Door : MonoBehaviour
     public int doorID;
     public bool requireKeyPress = false;
     public Collider doorCollider;
+    private bool openable = true;
 
     private void Start()
     {
@@ -29,53 +30,55 @@ public class Door : MonoBehaviour
             if (doorID == 1)
             {
                 TutorialStateController.HunterTutOne = true;
-                InteractOpen(playerID, direction, requireKeyPress);
             }
             else if (doorID == 2)
             {
                 if (TutorialStateController.HunterCatchDone)
                 {
-                    InteractOpen(playerID, direction, requireKeyPress);
+                    openable = true;
                     TutorialStateController.HunterTutTwo = true;
                 }
-            }else if (doorID == 3)
-            {
-                //if (TutorialStateController.GhostFreezeDone)
-                TutorialStateController.HunterTutThree = true;
-                InteractOpen(playerID, direction, requireKeyPress);
+                else
+                {
+                    openable = false;
+                }
             }
             else if (doorID == 7)
             {
                 if (TutorialStateController.HunterShootDone)
                 {
-                    InteractOpen(playerID, direction, requireKeyPress);
+                    openable = true;
                     TutorialStateController.HunterTutFour = true;
                     TutorialStateController.HunterTutDone = true;
+                }
+                else
+                {
+                    openable = false;
                 }
             }
             else if (doorID == 4)
             {
                 TutorialStateController.GhostTutOne = true;
-                InteractOpen(playerID, direction, requireKeyPress);
             }
             else if (doorID == 5)
             {
                 TutorialStateController.GhostTutTwo = true;
-                InteractOpen(playerID, direction, requireKeyPress);
             }
             else if (doorID == 6)
             {
                 if (TutorialStateController.GhostFreezeDone)
                 {
+                    openable = true;
                     TutorialStateController.GhostTutThree = true;
                     TutorialStateController.GhostTutDone = true;
-                    InteractOpen(playerID, direction, requireKeyPress);
+                }
+                else
+                {
+                    openable = false;
                 }
             }
-            else
-            {
+            if (openable)
                 InteractOpen(playerID, direction, requireKeyPress);
-            }
 
         }
     }
@@ -99,12 +102,14 @@ public class Door : MonoBehaviour
             string playerID = playerControl == null ? "" : playerControl.playerID;
             if (requireKeyPress)
             {
-                InteractOpen(playerID, direction, true);
+                if (openable)
+                    InteractOpen(playerID, direction, true);
                 InteractClose(playerID, direction, true);
             }
             else
             {
-                InteractOpen(playerID, direction, false);
+                if (openable)
+                    InteractOpen(playerID, direction, false);
             }
         }
     }

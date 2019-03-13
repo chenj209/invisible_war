@@ -33,13 +33,13 @@ public class FreezeInstruction : MonoBehaviour
         }
     }
 
-    private IEnumerator OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            yield return new WaitForSeconds(1.5f);
-            panel.SetActive(false);
-        }
+    //private IEnumerator OnTriggerExit(Collider other)
+    //{
+        //if (other.gameObject.tag == "Player")
+        //{
+            //yield return new WaitForSeconds(1.5f);
+            //panel.SetActive(false);
+        //}
 
-    }
+    //}
 }
