@@ -10,18 +10,23 @@ public class PPSystem : MonoBehaviour
     public float respawnTime;
     public float powerUpTime;
     public bool isPowerUp;
+    public GameObject ghost;
 
     private float curSTime;
     private float curPTime;
     private Random rd;
+    private PlayerStatus ps;
     
     // Start is called before the first frame update
     void Start()
     {
         disablePP();
+        rd = new Random();
+        pointList[rd.Next(0, 4)].SetActive(true);
         curSTime = respawnTime;
         isPowerUp = false;
-        rd = new Random();
+
+        ps = ghost.GetComponent<PlayerStatus>();
     }
 
     // Update is called once per frame
@@ -64,5 +69,7 @@ public class PPSystem : MonoBehaviour
         disablePP();
         isPowerUp = true;
         curPTime = powerUpTime;
+        ps.invincible = true;
+        Debug.Log(ps.invincible);
     }
 }

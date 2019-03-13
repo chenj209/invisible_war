@@ -6066,6 +6066,7 @@ GameObject:
   - component: {fileID: 199350372}
   - component: {fileID: 199350371}
   - component: {fileID: 199350370}
+  - component: {fileID: 199350373}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -6145,6 +6146,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 199350368}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &199350373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199350368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acdaf63dd63425f45862f610283b8279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlSystem: {fileID: 796562495}
+  ghost: {fileID: 1447882107}
+  hunter: {fileID: 1578733160}
 --- !u!114 &216253505 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5786811841577171577, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
@@ -6169,6 +6185,7 @@ GameObject:
   - component: {fileID: 237032222}
   - component: {fileID: 237032221}
   - component: {fileID: 237032220}
+  - component: {fileID: 237032223}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -6248,6 +6265,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 237032218}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &237032223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237032218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acdaf63dd63425f45862f610283b8279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlSystem: {fileID: 796562495}
+  ghost: {fileID: 1447882107}
+  hunter: {fileID: 1578733160}
 --- !u!1001 &267118734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8120,8 +8152,9 @@ MonoBehaviour:
   - {fileID: 199350368}
   - {fileID: 1654261457}
   respawnTime: 5
-  powerUpTime: 0
+  powerUpTime: 10
   isPowerUp: 0
+  ghost: {fileID: 1447882107}
 --- !u!1001 &805252408
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10879,6 +10912,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlSystem: {fileID: 796562495}
+  ghost: {fileID: 1447882107}
+  hunter: {fileID: 1578733160}
 --- !u!1001 &1356143679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12687,6 +12722,7 @@ GameObject:
   - component: {fileID: 1654261461}
   - component: {fileID: 1654261460}
   - component: {fileID: 1654261459}
+  - component: {fileID: 1654261462}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Untagged
@@ -12766,6 +12802,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1654261457}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1654261462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654261457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acdaf63dd63425f45862f610283b8279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlSystem: {fileID: 796562495}
+  ghost: {fileID: 1447882107}
+  hunter: {fileID: 1578733160}
 --- !u!1 &1740429408
 GameObject:
   m_ObjectHideFlags: 0
@@ -13379,6 +13430,7 @@ GameObject:
   - component: {fileID: 1882511178}
   - component: {fileID: 1882511177}
   - component: {fileID: 1882511176}
+  - component: {fileID: 1882511179}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -13458,6 +13510,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1882511174}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1882511179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882511174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acdaf63dd63425f45862f610283b8279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlSystem: {fileID: 796562495}
+  ghost: {fileID: 1447882107}
+  hunter: {fileID: 1578733160}
 --- !u!1001 &1885079737
 PrefabInstance:
   m_ObjectHideFlags: 0
