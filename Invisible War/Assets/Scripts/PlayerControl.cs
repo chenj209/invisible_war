@@ -122,6 +122,7 @@ public class PlayerControl : MonoBehaviour
         {
             if (playerID == "01")
             {
+
                 Vector3 difference = enemy.position - transform.position;
                 Vector3 faceDirection = transform.forward;
                 Vector2 face2D = new Vector2(faceDirection.x, faceDirection.z);
@@ -159,10 +160,8 @@ public class PlayerControl : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Ignoring: " + collision.collider.gameObject.tag);
         if (collision.collider.gameObject.tag == "Player")
         {
-            Debug.Log("Ignoring");
             Physics.IgnoreCollision(collision.collider, this.gameObject.GetComponent<CapsuleCollider>());
         }
     }
