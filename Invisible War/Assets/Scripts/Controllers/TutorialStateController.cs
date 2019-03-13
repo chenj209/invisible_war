@@ -150,7 +150,7 @@ public class TutorialStateController : MonoBehaviour
         }
 
         // for player2
-        if (Input.GetButtonDown("Continue"))
+        if (Input.GetButtonDown("Continue") || Input.GetKey(KeyCode.O))
         {
             if (player2State == "rule1")
             {

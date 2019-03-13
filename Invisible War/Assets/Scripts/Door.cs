@@ -11,15 +11,6 @@ public class Door : MonoBehaviour
     public ParticleDecalPool decalPool;
     public int doorID;
     public bool requireKeyPress = false;
-    public string DoorOpeningState;
-    public string DoorClosingState;
-    static readonly Dictionary<string, int> DOOR_STATUS_MAPPING =
-    new Dictionary<string, int>() {
-        {"Closed", 0},
-        {"Opening", 1 },
-        {"Opened", 2},
-        {"Closing", 3},
-    };
 
     private void Start()
     {
@@ -28,36 +19,30 @@ public class Door : MonoBehaviour
         shortcutTip = gameObject.GetComponent<ShortcutTip>();
         SetDoorAnimationStatus("Closed");
     }
-    void OnTriggerEnter(Collider col)
+    public void OnTriggerEnterDirection(Collider col, string direction)
     {
         if (col.gameObject.tag == "Player")
         {
-            //Debug.Log("wtf");
-            //bool opened = animator.GetBool("Opened");
-            //bool opening = animator.GetBool("Opening");
-            //bool closing = animator.GetBool("Closing");
-
-            animator = gameObject.GetComponentInChildren<Animator>();
             string currentDoorAnimationStatus = GetDoorAnimationStatus();
             PlayerControl playerControl = col.gameObject.GetComponent<PlayerControl>();
             string playerID = playerControl == null ? "" : playerControl.playerID;
             if (doorID == 2)
             {
                 if (TutorialStateController.HunterCatchDone)
-                    Interact(playerID, requireKeyPress);
+                    InteractOpen(playerID, direction, requireKeyPress);
             }else if (doorID == 3)
             {
-                if (TutorialStateController.HunterShootDone)
-                    Interact(playerID, requireKeyPress);
+                //if (TutorialStateController.GhostFreezeDone)
+                    InteractOpen(playerID, direction, requireKeyPress);
             }
-            else if (doorID == 6)
+            else if (doorID == 7)
             {
-                if (TutorialStateController.GhostFreezeDone)
-                    Interact(playerID, requireKeyPress);
+                if (TutorialStateController.HunterShootDone)
+                    InteractOpen(playerID, direction, requireKeyPress);
             }
             else
             {
-                Interact(playerID, requireKeyPress);
+                InteractOpen(playerID, direction, requireKeyPress);
             }
 
             if (doorID == 1)
@@ -68,11 +53,11 @@ public class Door : MonoBehaviour
             {
                 TutorialStateController.HunterTutTwo = true;
             }
-            else if (doorID == 3 && TutorialStateController.HunterShootDone)
+            else if (doorID == 3)
             {
                 TutorialStateController.HunterTutThree = true;
             }
-            else if (doorID == 7)
+            else if (doorID == 7 && TutorialStateController.HunterShootDone)
             {
                 TutorialStateController.HunterTutFour = true;
                 TutorialStateController.HunterTutDone = true;
@@ -94,55 +79,58 @@ public class Door : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider col)
+    public void OnTriggerExitDirection(Collider col, string direction)
     {
         if (col.gameObject.tag == "Player")
         {
             PlayerControl playerControl = col.gameObject.GetComponent<PlayerControl>();
             string playerID = playerControl == null ? "" : playerControl.playerID;
-            Interact(playerID, requireKeyPress);
+            InteractClose(playerID, direction, requireKeyPress);
 
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    public void OnTriggerStayDirection(Collider other, string direction)
     {
         if (other.gameObject.tag == "Player")
         {
             PlayerControl playerControl = other.gameObject.GetComponent<PlayerControl>();
             string playerID = playerControl == null ? "" : playerControl.playerID;
-            Interact(playerID, true);
+            InteractOpen(playerID, direction, true);
+            InteractClose(playerID, direction, true);
         }
     }
 
     public void SetDoorAnimationStatus(string statusString)
     {
-        animator = gameObject.GetComponentInChildren<Animator>();
-        int status = DOOR_STATUS_MAPPING[statusString];
-        string statusBinaryString = Convert.ToString(status, 2);
-        if (statusBinaryString.Length == 1)
-            statusBinaryString = "0" + statusBinaryString;
-        animator.SetInteger("StatusBit1", Convert.ToInt32(statusBinaryString[0].ToString()));
-        animator.SetInteger("StatusBit0", Convert.ToInt32(statusBinaryString[1].ToString()));
+        animator.SetBool(statusString, true);
+        if (statusString == "Opened")
+        {
+            animator.SetBool("Opening-positive", false);
+            animator.SetBool("Opening-negative", false);
+            animator.SetBool("Closed", false);
+        }
+        if (statusString == "Closed")
+        {
+            animator.SetBool("Closing", false);
+            animator.SetBool("Opened", false);
+        }
     }
 
     public string GetDoorAnimationStatus()
     {
-        animator = gameObject.GetComponentInChildren<Animator>();
-        string statusBinaryString = animator.GetInteger("StatusBit1").ToString() + animator.GetInteger("StatusBit0").ToString();
-        int statusCode = Convert.ToInt32(statusBinaryString, 2);
-        foreach (string key in DOOR_STATUS_MAPPING.Keys)
-        {
-            if (DOOR_STATUS_MAPPING[key] == statusCode)
-            {
-                return key;
-            }
-        }
-        return "NotFound";
+        if (animator.GetBool("Opened"))
+            return "Opened";
+        if (animator.GetBool("Opening-positive") || animator.GetBool("Opening-negative"))
+            return "Opening";
+        if (animator.GetBool("Closed"))
+            return "Closed";
+        return "Closing";
     }
 
-    public void Interact(string playerID, bool requireKeyPressVal)
+    public void InteractOpen(string playerID, string direction, bool requireKeyPressVal = false)
     {
+        // direction: intereact direction, one of "positive" or "negative"
         if (playerID != "")
         {
             string currentDoorAnimationStatus = GetDoorAnimationStatus();
@@ -150,9 +138,17 @@ public class Door : MonoBehaviour
             {
                 if (!requireKeyPressVal || (Input.GetButton("Interact" + playerID)))
                 {
-                    SetDoorAnimationStatus("Opening");
+                    SetDoorAnimationStatus("Opening-" + direction);
                 }
             }
+        }
+    }
+
+    public void InteractClose(string playerID, string direction, bool requireKeyPressVal = false)
+    { 
+        if (playerID != "")
+        {
+            string currentDoorAnimationStatus = GetDoorAnimationStatus();
             if (currentDoorAnimationStatus == "Opened") 
             {
                 if (!requireKeyPressVal || (Input.GetButton("Interact" + playerID)))
@@ -166,16 +162,14 @@ public class Door : MonoBehaviour
     }
     public void AnimateStateExit(AnimatorStateInfo stateInfo)
     {
-        if (stateInfo.IsName(DoorOpeningState))
+        if (stateInfo.IsName("OpeningPositive") || stateInfo.IsName("OpeningNegative"))
         {
             SetDoorAnimationStatus("Opened");
         }
-        if (stateInfo.IsName(DoorClosingState))
+        if (stateInfo.IsName("ClosingPositive") || stateInfo.IsName("ClosingNegative"))
         {
             SetDoorAnimationStatus("Closed");
         }
 
     }
-
-
 }

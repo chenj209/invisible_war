@@ -159,8 +159,10 @@ public class PlayerControl : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("Ignoring: " + collision.collider.gameObject.tag);
         if (collision.collider.gameObject.tag == "Player")
         {
+            Debug.Log("Ignoring");
             Physics.IgnoreCollision(collision.collider, this.gameObject.GetComponent<CapsuleCollider>());
         }
     }

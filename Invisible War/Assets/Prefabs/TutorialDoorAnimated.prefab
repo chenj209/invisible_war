@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5793029465925642262}
   - component: {fileID: 2535175839560492016}
   m_Layer: 0
-  m_Name: rotateCenter
+  m_Name: rotateCenter1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,7 +104,7 @@ Animator:
   m_GameObject: {fileID: 252981466175829893}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: afeee3fd2c09c4eea9732b25b7758324, type: 2}
+  m_Controller: {fileID: 9100000, guid: 99c72ec2a74234f169978e7ac41088f4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -113,6 +113,63 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1850718930209167083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1426999596445505757}
+  - component: {fileID: 5109959895330510771}
+  - component: {fileID: 6742723007378162418}
+  m_Layer: 0
+  m_Name: negativeTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1426999596445505757
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850718930209167083}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3895026350595324278}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5109959895330510771
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850718930209167083}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2695513, y: 0.37429196, z: 0.3384182}
+  m_Center: {x: 0.1407126, y: -0.0011079609, z: 0.0019949675}
+--- !u!114 &6742723007378162418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850718930209167083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f6ac14eef4b044a19943151e506e80d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2690815700473691783
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,6 +263,63 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300002, guid: 1011c0ab45fc9794faa599c3ba534cd7, type: 3}
+--- !u!1 &4059997892598349556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8669741312558868588}
+  - component: {fileID: 4513449068581528658}
+  - component: {fileID: 6817909847144963934}
+  m_Layer: 0
+  m_Name: positiveTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8669741312558868588
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4059997892598349556}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3895026350595324278}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4513449068581528658
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4059997892598349556}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.26361328, y: 0.380491, z: 0.33513132}
+  m_Center: {x: -0.13861984, y: 0.00031884015, z: 0.000000044703484}
+--- !u!114 &6817909847144963934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4059997892598349556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 514c1360870b141f1b2f02dbbe99abe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5567942413618826225
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,7 +330,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3895026350595324278}
   - component: {fileID: 8586795072051458272}
-  - component: {fileID: 2060282075406851361}
   m_Layer: 0
   m_Name: TutorialDoorAnimated
   m_TagString: Untagged
@@ -236,6 +349,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9090206688518661804}
+  - {fileID: 8669741312558868588}
+  - {fileID: 1426999596445505757}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -254,18 +369,3 @@ MonoBehaviour:
   decalPool: {fileID: 0}
   doorID: 0
   requireKeyPress: 0
-  DoorOpeningState: TutorialDoorOpening
-  DoorClosingState: TutorialDoorClosing
---- !u!65 &2060282075406851361
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5567942413618826225}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.597775, y: 0.38345563, z: 0.2791433}
-  m_Center: {x: 0.009019017, y: -0.002069056, z: 0.0008947998}

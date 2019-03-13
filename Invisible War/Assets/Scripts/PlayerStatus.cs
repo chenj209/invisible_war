@@ -24,6 +24,7 @@ public class PlayerStatus : MonoBehaviour
     private CameraShootEffect cameraEffect;
     public GameObject onShoot;
     private SkinnedMeshRenderer playerRenderer;
+    public GameObject catchEffect;
     public bool isHunter;
     private bool firstTime = true;
     private void Start()
@@ -121,6 +122,9 @@ public class PlayerStatus : MonoBehaviour
     }
     public void Caught()
     {
+        Destroy(gameObject, 1);
+        GameObject effect = Instantiate(catchEffect, this.gameObject.transform.position, Quaternion.Euler(-90, 0, 0));
+        Destroy(effect, 2);
         caught = true;
     }
 }

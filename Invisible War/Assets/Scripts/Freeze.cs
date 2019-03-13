@@ -33,7 +33,7 @@ public class Freeze : MonoBehaviour
     {
         if (!bot)
         {
-            if (Input.GetButton("Fire02"))
+            if (Input.GetButton("Fire02") || Input.GetKey(KeyCode.P))
             {
                 if (!On_CoolDown)
                 {

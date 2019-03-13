@@ -1,0 +1,43 @@
+1. Janica:
+    investigate sound effect
+      a. multiple output channel/play a sound in a position
+      b. player can recognize the direction of the sound relative to his position
+2. Tony:
+    running, moving, sneaking, jump (completed)
+    problem:
+      a. jumping affected by gravity
+      b. smoothness of camera moving
+      c. move control from keyboard to controller
+3. Kinder:
+    script generate world space ui (compeleted)
+    problem:
+      a. colliding box size
+      b. door opening animation not completed
+      c. hp bar not completed
+4. silvia:
+    pickup and drop and throw
+    control left hand and right hand with different key,
+    left hand will make stuff invisible
+    right hand will not
+    (completed)
+    problem:
+        a. when both hands are empty pick with right hand first
+        b. use ray cast to pick up object
+
+5. ken:
+    shooting, destroying enemy (completed)
+    problem:
+      split screen not completed
+
+6. Maria Pola:
+  a. make three type of sound: running, moving, sneaking, jumping
+
+7. Alice:
+  a. room element:
+     1) a 大厅 and two rooms
+  b. minimum features description
+
+8. cici:
+  theme picture
+  a. at least two gun models (overwatch)
+
