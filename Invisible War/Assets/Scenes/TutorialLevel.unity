@@ -8049,7 +8049,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a382928e4a693394b80802d1f6a4f7a4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.21
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -9977,6 +9977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823f08a23643f40bfb0d8251ef75a420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invincible: 0
   freeze_time: 5
   freezeEffect: {fileID: 0}
   hitEffect: {fileID: 0}
@@ -10021,6 +10022,7 @@ MonoBehaviour:
   indicatorCenter: {fileID: 0}
   indicator: {fileID: 0}
   inTutorial: 0
+  moveAnimator: {fileID: 0}
   moveMode: 1
   moveForce: 15
   isGround: 0
@@ -11887,6 +11889,21 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8401078571960820433, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636878690794587742, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 502.52783
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636878690794587742, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.28
+      objectReference: {fileID: 0}
     - target: {fileID: 6752135224384796239, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -11912,11 +11929,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.45
       objectReference: {fileID: 0}
-    - target: {fileID: 7636878690794587742, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+    - target: {fileID: 1927212607715009289, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
         type: 3}
-      propertyPath: MaxDistance
-      value: 502.52783
+      propertyPath: inTutorial
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1927212607715009289, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+        type: 3}
+      propertyPath: arrow
+      value: 
+      objectReference: {fileID: 1018654479}
     - target: {fileID: 4649321622305023112, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
         type: 3}
       propertyPath: m_Size.z
@@ -11976,11 +11998,6 @@ PrefabInstance:
         type: 3}
       propertyPath: MaxDistance
       value: 480.4323
-      objectReference: {fileID: 0}
-    - target: {fileID: 1927212607715009289, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
-        type: 3}
-      propertyPath: inTutorial
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9db4e1a1a9e8845afb745b690f94b0f4, type: 3}
@@ -15019,6 +15036,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hit Effect
       objectReference: {fileID: 0}
+    - target: {fileID: 8736880798937734785, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 5308505546919183148, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 7484013986109600346, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: m_RootOrder
@@ -15038,6 +15065,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2525873806087203755, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1810599643847214945, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
@@ -15048,11 +15080,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2525873806087203755, guid: 53519003647cd3c43bd13748a3b93880,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8256369720806058884, guid: 53519003647cd3c43bd13748a3b93880, type: 3}
@@ -16558,6 +16585,11 @@ PrefabInstance:
     - target: {fileID: 9199124647016558750, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9199124647016558750, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: invincible
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8256369720747086075, guid: 53519003647cd3c43bd13748a3b93880,
@@ -38667,6 +38699,7 @@ MonoBehaviour:
   indicatorCenter: {fileID: 0}
   indicator: {fileID: 0}
   inTutorial: 0
+  moveAnimator: {fileID: 0}
   moveMode: 1
   moveForce: 15
   isGround: 0
@@ -38892,6 +38925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823f08a23643f40bfb0d8251ef75a420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invincible: 0
   freeze_time: 5
   freezeEffect: {fileID: 0}
   hitEffect: {fileID: 0}

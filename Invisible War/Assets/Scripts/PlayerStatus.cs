@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerStatus : MonoBehaviour
 {
     private ParticleSystem ps;
+    public bool invincible = false;
     private float Visible_Time = 5.0f;
     public float freeze_time = 5.0f;
     //public GameObject freezeEffect;
@@ -122,9 +123,12 @@ public class PlayerStatus : MonoBehaviour
     }
     public void Caught()
     {
-        Destroy(gameObject, 1);
-        GameObject effect = Instantiate(catchEffect, this.gameObject.transform.position, Quaternion.Euler(-90, 0, 0));
-        Destroy(effect, 2);
-        caught = true;
+        if (!invincible)
+        {
+            Destroy(gameObject, 1);
+            GameObject effect = Instantiate(catchEffect, this.gameObject.transform.position, Quaternion.Euler(-90, 0, 0));
+            Destroy(effect, 2);
+            caught = true;
+        }
     }
 }

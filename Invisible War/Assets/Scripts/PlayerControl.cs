@@ -27,7 +27,7 @@ public class PlayerControl : MonoBehaviour
     public bool isGround;
     public float jumpSpeed = 5;
     public Camera playerCamera;
-    [SerializeField] private MouseLook m_MouseLook;
+    [SerializeField] private MouseLook m_MouseLook = null;
 
     // Start is called before the first frame update
     void Start()
@@ -123,9 +123,8 @@ public class PlayerControl : MonoBehaviour
             if (playerID == "01")
             {
                 float distance = Vector3.Distance(enemy.position, transform.position);
-                if (distance < 100)
+                if (distance < 100 && !inTutorial)
                 {
-                    Debug.Log(distance);
                     indicatorCenter.gameObject.SetActive(false);
                 } else { 
                     indicatorCenter.gameObject.SetActive(true);
