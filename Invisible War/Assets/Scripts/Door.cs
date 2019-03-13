@@ -97,8 +97,15 @@ public class Door : MonoBehaviour
         {
             PlayerControl playerControl = other.gameObject.GetComponent<PlayerControl>();
             string playerID = playerControl == null ? "" : playerControl.playerID;
-            InteractOpen(playerID, direction, true);
-            InteractClose(playerID, direction, true);
+            if (requireKeyPress)
+            {
+                InteractOpen(playerID, direction, true);
+                InteractClose(playerID, direction, true);
+            }
+            else
+            {
+                InteractOpen(playerID, direction, false);
+            }
         }
     }
 
@@ -163,20 +170,19 @@ public class Door : MonoBehaviour
     }
     public void AnimateStateEnter()
     {
-        doorCollider.isTrigger = true;
+        //doorCollider.isTrigger = true;
     }
     public void AnimateStateExit(AnimatorStateInfo stateInfo)
     {
         if (stateInfo.IsName("OpeningPositive") || stateInfo.IsName("OpeningNegative"))
         {
-            Debug.Log("Set Opened");
             SetDoorAnimationStatus("Opened");
         }
         if (stateInfo.IsName("ClosingPositive") || stateInfo.IsName("ClosingNegative"))
         {
             SetDoorAnimationStatus("Closed");
         }
-        doorCollider.isTrigger = false;
+        //doorCollider.isTrigger = false;
 
     }
 }

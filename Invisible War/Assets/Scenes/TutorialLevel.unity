@@ -9977,6 +9977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823f08a23643f40bfb0d8251ef75a420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invincible: 0
   freeze_time: 5
   freezeEffect: {fileID: 0}
   hitEffect: {fileID: 0}
@@ -11888,6 +11889,21 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8401078571960820433, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636878690794587742, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 502.52783
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636878690794587742, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.28
+      objectReference: {fileID: 0}
     - target: {fileID: 6752135224384796239, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -11913,21 +11929,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.45
       objectReference: {fileID: 0}
-    - target: {fileID: 8401078571960820433, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+    - target: {fileID: 1927212607715009289, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
         type: 3}
-      propertyPath: m_Volume
-      value: 0.2
+      propertyPath: inTutorial
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7636878690794587742, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+    - target: {fileID: 1927212607715009289, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
         type: 3}
-      propertyPath: MaxDistance
-      value: 502.52783
-      objectReference: {fileID: 0}
-    - target: {fileID: 7636878690794587742, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.28
-      objectReference: {fileID: 0}
+      propertyPath: arrow
+      value: 
+      objectReference: {fileID: 1018654479}
     - target: {fileID: 4649321622305023112, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
         type: 3}
       propertyPath: m_Size.z
@@ -11988,16 +11999,6 @@ PrefabInstance:
       propertyPath: MaxDistance
       value: 480.4323
       objectReference: {fileID: 0}
-    - target: {fileID: 1927212607715009289, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
-        type: 3}
-      propertyPath: inTutorial
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1927212607715009289, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
-        type: 3}
-      propertyPath: arrow
-      value: 
-      objectReference: {fileID: 1018654479}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9db4e1a1a9e8845afb745b690f94b0f4, type: 3}
 --- !u!1 &722827878
@@ -15065,6 +15066,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2525873806087203755, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1810599643847214945, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: m_Name
@@ -15074,11 +15080,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2525873806087203755, guid: 53519003647cd3c43bd13748a3b93880,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8256369720806058884, guid: 53519003647cd3c43bd13748a3b93880, type: 3}
@@ -16584,6 +16585,11 @@ PrefabInstance:
     - target: {fileID: 9199124647016558750, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9199124647016558750, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: invincible
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8256369720747086075, guid: 53519003647cd3c43bd13748a3b93880,
@@ -38919,6 +38925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823f08a23643f40bfb0d8251ef75a420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invincible: 0
   freeze_time: 5
   freezeEffect: {fileID: 0}
   hitEffect: {fileID: 0}
