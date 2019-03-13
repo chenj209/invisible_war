@@ -16,17 +16,21 @@ public class PPSystem : MonoBehaviour
     private float curPTime;
     private Random rd;
     private PlayerStatus ps;
+    private List<GameObject> respawnList;
+    private int pointIdx;
+    private int pointNum;
     
     // Start is called before the first frame update
     void Start()
     {
-        disablePP();
-        rd = new Random();
-        pointList[rd.Next(0, 4)].SetActive(true);
+        ps = ghost.GetComponent<PlayerStatus>();
+
         curSTime = respawnTime;
         isPowerUp = false;
 
-        ps = ghost.GetComponent<PlayerStatus>();
+        disablePP();
+        rd = new Random();
+        respawn();
     }
 
     // Update is called once per frame
@@ -38,9 +42,8 @@ public class PPSystem : MonoBehaviour
             curSTime -= Time.deltaTime;
             if (curSTime <= 0)
             {
-                disablePP();
                 // Activate a new pp.
-                pointList[rd.Next(0, 4)].SetActive(true);
+                respawn();
                 curSTime = respawnTime;
             }
         } else
@@ -55,12 +58,26 @@ public class PPSystem : MonoBehaviour
         }
     }
 
+    // Respawn new power point.
+    void respawn()
+    {
+        if (pointNum > 0)
+        {
+            pointIdx = rd.Next(0, respawnList.Count);
+            respawnList[pointIdx].SetActive(true);
+            respawnList.RemoveAt(pointIdx);
+            pointNum --;
+        }
+    }
+
     // Disable all the powerpoint.
     void disablePP()
     {
         for (int i = 0; i < pointList.Length; i++)
         {
             pointList[i].SetActive(false);
+            pointNum = pointList.Length;
+            respawnList = new List<GameObject>(pointList);
         }
     }
 
