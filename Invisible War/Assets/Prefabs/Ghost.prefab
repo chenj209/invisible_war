@@ -448,7 +448,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 7479
+    m_Bits: 15671
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -661,6 +661,7 @@ MonoBehaviour:
   catchEffect: {fileID: 5645647692755290381, guid: 9e7ceda583ceb4604b661847ea6bbc22,
     type: 3}
   isHunter: 0
+  isTutorial: 0
 --- !u!114 &3334475576896513578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -983,10 +984,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1388203275000411078}
     m_Modifications:
-    - target: {fileID: 9500000, guid: 21da7cc5ef2424262b115a950fce4ad3, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 423b2fb8df7354a1e99d07d41d5086c9, type: 2}
+    - target: {fileID: 100000, guid: 21da7cc5ef2424262b115a950fce4ad3, type: 3}
+      propertyPath: m_Name
+      value: ghostttttttmove
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 21da7cc5ef2424262b115a950fce4ad3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1043,10 +1044,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 21da7cc5ef2424262b115a950fce4ad3, type: 3}
-      propertyPath: m_Name
-      value: ghostttttttmove
-      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 21da7cc5ef2424262b115a950fce4ad3, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 423b2fb8df7354a1e99d07d41d5086c9, type: 2}
     - target: {fileID: 2300000, guid: 21da7cc5ef2424262b115a950fce4ad3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

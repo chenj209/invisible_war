@@ -18,6 +18,9 @@ public class UISpiner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(transform.position * 2 - camera.transform.position);
+        if (transform != null && camera != null)
+        {
+            transform.LookAt(transform.position * 2 - camera.transform.position);
+        }
     }
 }
