@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 using Random = System.Random;
 
 public class PPSystem : MonoBehaviour
@@ -12,6 +12,9 @@ public class PPSystem : MonoBehaviour
     public bool isPowerUp;
     public GameObject ghost;
     public GameObject hunter;
+    public float blinkTime;
+    public Image exchangeArrow;
+    public Image[] screenEffect;
 
     private float curSTime;
     private float curPTime;
@@ -21,6 +24,8 @@ public class PPSystem : MonoBehaviour
     private List<GameObject> respawnList;
     private int pointIdx;
     private int pointNum;
+    private bool isBlinking;
+    private float blinkTimer;
     
     // Start is called before the first frame update
     void Start()
@@ -30,6 +35,8 @@ public class PPSystem : MonoBehaviour
 
         curSTime = respawnTime;
         isPowerUp = false;
+        isBlinking = false;
+        blinkTimer = 0;
 
         disablePP();
         rd = new Random();
@@ -53,13 +60,25 @@ public class PPSystem : MonoBehaviour
         {
             // Power up is activated.
             curPTime -= Time.deltaTime;
-            if (curPTime <= 0)
+            if (curPTime <= blinkTime)
             {
+                isBlinking = true;
+                StartCoroutine(Blink());
                 isPowerUp = false;
                 curSTime = respawnTime;
                 gps.invincible = false;
                 hps.invincible = true;
             }
+        }
+
+        if (isBlinking)
+        {
+            blinkTimer += Time.deltaTime;
+        }
+        if (blinkTimer >= blinkTime)
+        {
+            isBlinking = false;
+            blinkTimer = 0;
         }
     }
 
@@ -88,10 +107,28 @@ public class PPSystem : MonoBehaviour
 
     public void pUActivate()
     {
+        isBlinking = true;
+        StartCoroutine(Blink());
         disablePP();
         isPowerUp = true;
         curPTime = powerUpTime;
         gps.invincible = true;
         hps.invincible = false;
+    }
+
+    public IEnumerator Blink()
+    {
+        while (isBlinking)
+        {
+            exchangeArrow.enabled = true;
+            yield return new WaitForSeconds(0.5f);
+            exchangeArrow.enabled = false;
+            yield return new WaitForSeconds(0.5f);
+        }
+        exchangeArrow.enabled = false;
+        for (int i = 0; i < screenEffect.Length; i++)
+        {
+            screenEffect[i].enabled = !screenEffect[i].enabled;
+        }
     }
 }
