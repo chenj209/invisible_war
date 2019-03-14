@@ -11,11 +11,13 @@ public class PPSystem : MonoBehaviour
     public float powerUpTime;
     public bool isPowerUp;
     public GameObject ghost;
+    public GameObject hunter;
 
     private float curSTime;
     private float curPTime;
     private Random rd;
-    private PlayerStatus ps;
+    private PlayerStatus gps;
+    private PlayerStatus hps;
     private List<GameObject> respawnList;
     private int pointIdx;
     private int pointNum;
@@ -23,7 +25,8 @@ public class PPSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ps = ghost.GetComponent<PlayerStatus>();
+        gps = ghost.GetComponent<PlayerStatus>();
+        hps = hunter.GetComponent<PlayerStatus>();
 
         curSTime = respawnTime;
         isPowerUp = false;
@@ -54,6 +57,8 @@ public class PPSystem : MonoBehaviour
             {
                 isPowerUp = false;
                 curSTime = respawnTime;
+                gps.invincible = false;
+                hps.invincible = true;
             }
         }
     }
@@ -86,7 +91,7 @@ public class PPSystem : MonoBehaviour
         disablePP();
         isPowerUp = true;
         curPTime = powerUpTime;
-        ps.invincible = true;
-        Debug.Log(ps.invincible);
+        gps.invincible = true;
+        hps.invincible = false;
     }
 }
