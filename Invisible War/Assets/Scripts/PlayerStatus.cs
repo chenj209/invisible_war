@@ -28,6 +28,7 @@ public class PlayerStatus : MonoBehaviour
     public GameObject catchEffect;
     public bool isHunter;
     private bool firstTime = true;
+    public bool isTutorial;
     private void Start()
     {
         cameraEffect = GetComponentInChildren<CameraShootEffect>() as CameraShootEffect;
@@ -77,6 +78,10 @@ public class PlayerStatus : MonoBehaviour
                 playerRenderer.material = ghost_material;
                 if (hitEffect && !isHunter)
                 hitEffect.enabled = true;
+                if (isTutorial)
+                {
+                    TutorialStateController.HunterShootDone = true;
+                }
             } else
             {
                 Hit = false;
@@ -125,7 +130,6 @@ public class PlayerStatus : MonoBehaviour
     {
         if (!invincible)
         {
-            Debug.Log("YES");
             Destroy(gameObject, 1);
             GameObject effect = Instantiate(catchEffect, this.gameObject.transform.position, Quaternion.Euler(-90, 0, 0));
             Destroy(effect, 2);

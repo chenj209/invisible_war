@@ -17,6 +17,7 @@ public class TutorialStateController : MonoBehaviour
     public static bool GhostTutDone = false;
     public static bool HunterCatchDone = false;
     public static bool HunterShootDone = false;
+    public static bool HunterFreezeDone = false;
     public static bool GhostFreezeDone = false;
 
     public GameObject hunter;
@@ -94,7 +95,7 @@ public class TutorialStateController : MonoBehaviour
         }
 
         // for player1
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.M))
         {
             if (player1State == "rule1")
             {

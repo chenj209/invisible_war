@@ -26,7 +26,7 @@ public class PPSystem : MonoBehaviour
     private int pointNum;
     private bool isBlinking;
     private float blinkTimer;
-    
+    private bool firstTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +36,7 @@ public class PPSystem : MonoBehaviour
         curSTime = respawnTime;
         isPowerUp = false;
         isBlinking = false;
+        firstTime = true;
         blinkTimer = 0;
 
         disablePP();
@@ -56,18 +57,26 @@ public class PPSystem : MonoBehaviour
                 respawn();
                 curSTime = respawnTime;
             }
+            firstTime = true;
+
         } else
         {
             // Power up is activated.
             curPTime -= Time.deltaTime;
-            if (curPTime <= blinkTime)
+            if (curPTime <= blinkTime && firstTime)
             {
                 isBlinking = true;
                 StartCoroutine(Blink());
+                firstTime = false;
+            }
+            if (curPTime <= 0)
+            {
                 isPowerUp = false;
                 curSTime = respawnTime;
                 gps.invincible = false;
                 hps.invincible = true;
+                PlayerControl pc = ghost.GetComponent<PlayerControl>();
+                pc.moveForce /= 1.5f;
             }
         }
 
@@ -114,6 +123,8 @@ public class PPSystem : MonoBehaviour
         curPTime = powerUpTime;
         gps.invincible = true;
         hps.invincible = false;
+        PlayerControl pc = ghost.GetComponent<PlayerControl>();
+        pc.moveForce *= 1.5f;
     }
 
     public IEnumerator Blink()

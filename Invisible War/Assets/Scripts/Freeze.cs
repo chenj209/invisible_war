@@ -130,6 +130,7 @@ public class Freeze : MonoBehaviour
                 if (catchability)
                     catchability.enabled = false;
                 catcher.GetComponent<PlayerStatus>().GetFreezed();
+                TutorialStateController.HunterFreezeDone = true;
             }
         }else if (!inTutorial)
         {

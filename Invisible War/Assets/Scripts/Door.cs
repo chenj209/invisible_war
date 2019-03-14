@@ -43,6 +43,18 @@ public class Door : MonoBehaviour
                     openable = false;
                 }
             }
+            else if (doorID == 3)
+            {
+                if (TutorialStateController.HunterFreezeDone)
+                {
+                    openable = true;
+                    TutorialStateController.HunterTutThree = true;
+                }
+                else
+                {
+                    openable = false;
+                }
+            }
             else if (doorID == 7)
             {
                 if (TutorialStateController.HunterShootDone)

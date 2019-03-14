@@ -58,7 +58,6 @@ public class CatchGhost : MonoBehaviour
     {
         if (other.gameObject.tag == "Player") 
         {
-            Debug.Log("YES");
             ghost = other.gameObject;
         }
     }
