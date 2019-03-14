@@ -8,6 +8,7 @@ public class CatchGhost : MonoBehaviour
     public bool inTutorial;
     public GameObject arrow;
     public Animator catchArm;
+    public bool isGhost;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,7 @@ public class CatchGhost : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.C))// catch
+        if ((Input.GetKey(KeyCode.C) && !isGhost) || (Input.GetButtonDown("GhostCatch") && isGhost))// catch
         {
             if (catchArm)
             {
@@ -48,7 +49,8 @@ public class CatchGhost : MonoBehaviour
         else
         {
             ghost = null;
-            catchArm.SetBool("catch", false);
+            if (catchArm)
+                catchArm.SetBool("catch", false);
         }
     }
 
@@ -56,6 +58,7 @@ public class CatchGhost : MonoBehaviour
     {
         if (other.gameObject.tag == "Player") 
         {
+            Debug.Log("YES");
             ghost = other.gameObject;
         }
     }

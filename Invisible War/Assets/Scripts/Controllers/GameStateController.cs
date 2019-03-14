@@ -76,7 +76,15 @@ public class GameStateController : MonoBehaviour
         if (caught && !roundOver)
         {
             StopAllCoroutines();
-            StartCoroutine(Win(1));
+            PlayerStatus ps1 = hunter.GetComponent<PlayerStatus>();
+            if (ps1.invincible)
+            {
+                StartCoroutine(Win(1));
+            }
+            else
+            {
+                StartCoroutine(Win(2));
+            }
         }
     }
 
