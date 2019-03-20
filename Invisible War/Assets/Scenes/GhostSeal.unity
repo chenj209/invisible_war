@@ -8677,6 +8677,7 @@ GameObject:
   - component: {fileID: 680344702}
   - component: {fileID: 680344701}
   - component: {fileID: 680344700}
+  - component: {fileID: 680344704}
   m_Layer: 0
   m_Name: Seal07
   m_TagString: Untagged
@@ -8752,11 +8753,24 @@ Transform:
   m_GameObject: {fileID: 680344699}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 2.781}
-  m_LocalScale: {x: 0.9999999, y: 1.0000021, z: 0.9999999}
+  m_LocalScale: {x: 0.9999999, y: 0.18133038, z: 0.9999999}
   m_Children: []
   m_Father: {fileID: 1992208639}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &680344704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680344699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e975632b2207d4941843b1095e418f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sealSys: {fileID: 1992208637}
 --- !u!1 &683439037
 GameObject:
   m_ObjectHideFlags: 0
@@ -8843,6 +8857,7 @@ GameObject:
   - component: {fileID: 712164142}
   - component: {fileID: 712164141}
   - component: {fileID: 712164140}
+  - component: {fileID: 712164144}
   m_Layer: 0
   m_Name: Seal08
   m_TagString: Untagged
@@ -8918,11 +8933,24 @@ Transform:
   m_GameObject: {fileID: 712164139}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.206, y: 0, z: 2.7810001}
-  m_LocalScale: {x: 0.9999999, y: 1.0000021, z: 0.9999999}
+  m_LocalScale: {x: 0.9999999, y: 0.18133038, z: 0.9999999}
   m_Children: []
   m_Father: {fileID: 1992208639}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &712164144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712164139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e975632b2207d4941843b1095e418f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sealSys: {fileID: 1992208637}
 --- !u!1 &748764439
 GameObject:
   m_ObjectHideFlags: 0
@@ -8935,6 +8963,7 @@ GameObject:
   - component: {fileID: 748764442}
   - component: {fileID: 748764441}
   - component: {fileID: 748764440}
+  - component: {fileID: 748764444}
   m_Layer: 0
   m_Name: Seal01
   m_TagString: Untagged
@@ -9010,11 +9039,24 @@ Transform:
   m_GameObject: {fileID: 748764439}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.18133, z: 1}
   m_Children: []
   m_Father: {fileID: 1992208639}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &748764444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748764439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e975632b2207d4941843b1095e418f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sealSys: {fileID: 1992208637}
 --- !u!1 &751559972
 GameObject:
   m_ObjectHideFlags: 0
@@ -9027,6 +9069,7 @@ GameObject:
   - component: {fileID: 751559975}
   - component: {fileID: 751559974}
   - component: {fileID: 751559973}
+  - component: {fileID: 751559977}
   m_Layer: 0
   m_Name: Seal06
   m_TagString: Untagged
@@ -9102,11 +9145,24 @@ Transform:
   m_GameObject: {fileID: 751559972}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.206, y: 0, z: 1.5539999}
-  m_LocalScale: {x: 0.9999999, y: 1.0000021, z: 0.9999999}
+  m_LocalScale: {x: 0.9999999, y: 0.18133038, z: 0.9999999}
   m_Children: []
   m_Father: {fileID: 1992208639}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &751559977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751559972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e975632b2207d4941843b1095e418f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sealSys: {fileID: 1992208637}
 --- !u!1001 &765949576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9857,6 +9913,7 @@ GameObject:
   - component: {fileID: 946175936}
   - component: {fileID: 946175935}
   - component: {fileID: 946175934}
+  - component: {fileID: 946175938}
   m_Layer: 0
   m_Name: Seal02
   m_TagString: Untagged
@@ -9932,11 +9989,24 @@ Transform:
   m_GameObject: {fileID: 946175933}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1.554}
-  m_LocalScale: {x: 0.9999999, y: 1.0000021, z: 0.9999999}
+  m_LocalScale: {x: 0.9999999, y: 0.18133038, z: 0.9999999}
   m_Children: []
   m_Father: {fileID: 1992208639}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &946175938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946175933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e975632b2207d4941843b1095e418f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sealSys: {fileID: 1992208637}
 --- !u!1 &1003558425
 GameObject:
   m_ObjectHideFlags: 0
@@ -10740,6 +10810,7 @@ GameObject:
   - component: {fileID: 1119696294}
   - component: {fileID: 1119696293}
   - component: {fileID: 1119696292}
+  - component: {fileID: 1119696296}
   m_Layer: 0
   m_Name: Seal03
   m_TagString: Untagged
@@ -10815,11 +10886,24 @@ Transform:
   m_GameObject: {fileID: 1119696291}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1.307}
-  m_LocalScale: {x: 0.9999999, y: 1.0000021, z: 0.9999999}
+  m_LocalScale: {x: 0.9999999, y: 0.18133038, z: 0.9999999}
   m_Children: []
   m_Father: {fileID: 1992208639}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1119696296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119696291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e975632b2207d4941843b1095e418f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sealSys: {fileID: 1992208637}
 --- !u!1001 &1120491651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15905,6 +15989,9 @@ MonoBehaviour:
   - {fileID: 680344699}
   - {fileID: 712164139}
   ghost: {fileID: 1447882107}
+  sealNum: 5
+  destoryTime: 5
+  allDestroyed: 0
   resetTimer: 5
 --- !u!4 &1992208639
 Transform:
@@ -15914,7 +16001,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1992208637}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -151.4, y: -23.4, z: -265.07}
+  m_LocalPosition: {x: -151.4, y: -26, z: -265.07}
   m_LocalScale: {x: 22.34299, y: 0.8455481, z: 22.34299}
   m_Children:
   - {fileID: 748764443}
@@ -16480,6 +16567,7 @@ GameObject:
   - component: {fileID: 2089260970}
   - component: {fileID: 2089260969}
   - component: {fileID: 2089260968}
+  - component: {fileID: 2089260972}
   m_Layer: 0
   m_Name: Seal05
   m_TagString: Untagged
@@ -16555,11 +16643,24 @@ Transform:
   m_GameObject: {fileID: 2089260967}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.2060001, y: 0, z: 0}
-  m_LocalScale: {x: 0.9999999, y: 1.0000021, z: 0.9999999}
+  m_LocalScale: {x: 0.9999999, y: 0.18133038, z: 0.9999999}
   m_Children: []
   m_Father: {fileID: 1992208639}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2089260972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089260967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e975632b2207d4941843b1095e418f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sealSys: {fileID: 1992208637}
 --- !u!1 &2103136449
 GameObject:
   m_ObjectHideFlags: 0
@@ -16740,6 +16841,7 @@ GameObject:
   - component: {fileID: 2143724023}
   - component: {fileID: 2143724022}
   - component: {fileID: 2143724021}
+  - component: {fileID: 2143724025}
   m_Layer: 0
   m_Name: Seal04
   m_TagString: Untagged
@@ -16815,11 +16917,24 @@ Transform:
   m_GameObject: {fileID: 2143724020}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.238, y: 0, z: -1.188}
-  m_LocalScale: {x: 0.9999999, y: 1.0000021, z: 0.9999999}
+  m_LocalScale: {x: 0.9999999, y: 0.18133038, z: 0.9999999}
   m_Children: []
   m_Father: {fileID: 1992208639}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2143724025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143724020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e975632b2207d4941843b1095e418f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sealSys: {fileID: 1992208637}
 --- !u!1001 &2242881469588595748
 PrefabInstance:
   m_ObjectHideFlags: 0
