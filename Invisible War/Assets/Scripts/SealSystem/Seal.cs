@@ -42,7 +42,6 @@ public class Seal : MonoBehaviour
         // Check is the collision object the ghost.
         if (collision.gameObject == ghost)
         {
-            Debug.Log(curTime);
             // Check is the ghost press the unlockseal button.
             if (Input.GetButton("Unlock"))
             {
