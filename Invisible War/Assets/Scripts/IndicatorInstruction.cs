@@ -60,7 +60,7 @@ public class IndicatorInstruction : MonoBehaviour
                 }
                 else
                 {
-                    instruction.text = "The Pin Tells You The Direction Of\n Where The Ghost Is";
+                    instruction.text = "The Pin Tells You The Direction Of\n Where The Ghost Is. It Will Disappear \nIf You Are Too Close To The Ghost";
                 }
             }
             //else if (timer > 2 && timer < 5)
@@ -76,6 +76,7 @@ public class IndicatorInstruction : MonoBehaviour
                 panel.SetActive(false);
                 timer = 0f;
                 showText = false;
+                if (pc)
                 pc.enabled = true;
             }
        
@@ -119,7 +120,6 @@ public class IndicatorInstruction : MonoBehaviour
         {
             if (other.gameObject.tag == "Player" && firstTime)
             {
-    
                 showText = true;
                 firstTime = false;
                 pc = other.GetComponent<PlayerControl>();

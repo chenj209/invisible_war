@@ -72,6 +72,7 @@ public class CatchGhost : MonoBehaviour
 
     private void Catch(GameObject player)
     {
+        if (player)
         player.GetComponent<PlayerStatus>().Caught();
     }
 }
