@@ -11,6 +11,7 @@ public class CatchInstruction : MonoBehaviour
     public Text instruction;
     public int tutNum;
     public GameObject hunter;
+    public GameObject indicator;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +44,11 @@ public class CatchInstruction : MonoBehaviour
                 TutorialStateController.BlockSceneFn(true, 3, "huntercd");
                 firstTimeTwo = false;
             }
-           
+            
+            if (tutNum == 3 && !other.gameObject.name.EndsWith("Bot"))
+            {
+                indicator.SetActive(false);
+            }
         }
     }
 

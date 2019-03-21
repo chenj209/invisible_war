@@ -258,7 +258,7 @@ MonoBehaviour:
   show: 1
   ghost: {fileID: 1051427511}
   arrow: {fileID: 1876616964}
-  directionArrow: {fileID: 0}
+  directionArrow: {fileID: 1597320884}
   isGhost: 0
 --- !u!65 &35680156
 BoxCollider:
@@ -1213,7 +1213,7 @@ MonoBehaviour:
   show: 1
   ghost: {fileID: 1051427511}
   arrow: {fileID: 1702825594}
-  directionArrow: {fileID: 0}
+  directionArrow: {fileID: 599703467}
   isGhost: 1
 --- !u!65 &154289735
 BoxCollider:
@@ -10343,7 +10343,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -125.9, y: -53.2}
+  m_AnchoredPosition: {x: -125.9, y: -53.19995}
   m_SizeDelta: {x: 1500, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &549365487
@@ -10882,6 +10882,7 @@ MonoBehaviour:
   instruction: {fileID: 898120665}
   tutNum: 3
   hunter: {fileID: 788146552}
+  indicator: {fileID: 1597320884}
 --- !u!65 &632412365
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23059,7 +23060,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1661691310
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23077,7 +23078,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 788.98, y: -13.405029}
+  m_AnchoredPosition: {x: 988, y: -13.405029}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1661691311
@@ -32305,6 +32306,7 @@ MonoBehaviour:
   instruction: {fileID: 898120665}
   tutNum: 2
   hunter: {fileID: 0}
+  indicator: {fileID: 0}
 --- !u!65 &2084471242
 BoxCollider:
   m_ObjectHideFlags: 0

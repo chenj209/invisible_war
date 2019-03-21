@@ -34,7 +34,7 @@ public class IndicatorInstruction : MonoBehaviour
         if (showText && show)
         {
             timer += Time.deltaTime;
-            if (timer < 3.5)
+            if (timer < 2)
             {
                 panel.SetActive(true);
                 blinking = true;
@@ -51,7 +51,7 @@ public class IndicatorInstruction : MonoBehaviour
                     instruction.text = "A Ghost Location Indicator Showed\n Up In the Top Left Corner!";
                 }
             }
-            else if (timer > 3.5 && timer < 6)
+            else if (timer > 2 && timer < 6)
             {
                 arrow.enabled = false;
                 if (isGhost)
@@ -154,6 +154,7 @@ public class IndicatorInstruction : MonoBehaviour
         if (other.gameObject.tag == "Player" && show)
         {
             Indicator.SetActive(true);
+            directionArrow.SetActive(true);
         }
         else if (other.gameObject.tag == "Player" && !show)
         {
