@@ -13,13 +13,14 @@ public class TutorialStateController : MonoBehaviour
     public static bool GhostTutOne = false;
     public static bool GhostTutTwo = false;
     public static bool GhostTutThree = false;
+    public static bool GhostTutFour = false;
     public static bool HunterTutDone = false;
     public static bool GhostTutDone = false;
     public static bool HunterCatchDone = false;
     public static bool HunterShootDone = false;
     public static bool HunterFreezeDone = false;
     public static bool GhostFreezeDone = false;
-
+    public static bool GhostDestroyDone = true;
     public GameObject hunter;
     public GameObject ghost;
     public Canvas canvas;
@@ -188,6 +189,11 @@ public class TutorialStateController : MonoBehaviour
             player2State = "tutorial3";
         }
         else if (player2State == "tutorial3" && GhostTutThree)
+        {
+            StartCoroutine(PopUp("Enter Tutorial4", p2S));
+            player2State = "tutorial4";
+        }
+        else if (player2State == "tutorial4" && GhostTutFour)
         {
             player2State = "stand by";
             if (player1State != "stand by")

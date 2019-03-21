@@ -42,7 +42,7 @@ public class Catcher : MonoBehaviour
         }
         
         
-        if (Vector3.Distance(transform.position, pointOne.transform.position) < 1)
+        if (Vector3.Distance(transform.position, pointOne.transform.position) < 2)
         {
             moveToP2 = true;
             moveToP1 = false;
@@ -51,7 +51,7 @@ public class Catcher : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, pointTwo.transform.position, speed);
         }
-        if (Vector3.Distance(transform.position, pointTwo.transform.position) < 1)
+        if (Vector3.Distance(transform.position, pointTwo.transform.position) < 2)
         {
             moveToP1 = true;
             moveToP2 = false;
