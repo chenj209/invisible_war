@@ -15,6 +15,8 @@ public class SealSystem : MonoBehaviour
     public float destoryTime;
     // This flag indicate that all the seals has been destoryed.
     public bool allDestroyed;
+    // This flag is for tutorial.
+    public bool isTut;
 
     private Random rand;
     private int sealLeft;
@@ -77,13 +79,22 @@ public class SealSystem : MonoBehaviour
     {
         sealLeft--;
 
-        sealsUI[sealLeft - 1].SetActive(false);
-
-        // Check if all the seals got destroyed.
-        if (sealLeft == 1)
+        if (!isTut)
         {
-            allDestroyed = true;
-            Debug.Log("Enough seals destroyed!");
+            sealsUI[sealLeft - 1].SetActive(false);
+            // Check if all the seals got destroyed.
+            if (sealLeft == 1)
+            {
+                allDestroyed = true;
+                Debug.Log("Enough seals destroyed!");
+            }
+        } else
+        {
+            if (sealLeft == 0)
+            {
+                allDestroyed = true;
+                Debug.Log("Enough seals destroyed!");
+            }
         }
     }
 }

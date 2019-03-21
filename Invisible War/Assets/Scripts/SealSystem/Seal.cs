@@ -57,7 +57,6 @@ public class Seal : MonoBehaviour
                 } else
                 {
                     curTime -= Time.deltaTime;
-                    // TODO: Add a progress Bar to the UI.
                     loadingBar.SetActive(true);
                     loadingBar.GetComponent<Image>().fillAmount = (destroyTime - curTime) / destroyTime;
                 }
