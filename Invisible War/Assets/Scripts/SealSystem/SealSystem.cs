@@ -8,6 +8,7 @@ public class SealSystem : MonoBehaviour
 {
     public List<GameObject> seals;
     public GameObject ghost;
+    public GameObject loadingBar;
     public int sealNum;
     // The time need that need to destory a seal in second.
     public float destoryTime;
@@ -70,10 +71,10 @@ public class SealSystem : MonoBehaviour
     {
         sealLeft--;
         // Check if all the seals got destroyed.
-        if (sealLeft == 0)
+        if (sealLeft == 1)
         {
             allDestroyed = true;
-            Debug.Log("All seals destroyed!");
+            Debug.Log("Enough seals destroyed!");
         }
     }
 }
