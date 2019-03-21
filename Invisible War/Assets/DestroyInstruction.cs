@@ -26,7 +26,7 @@ public class DestroyInstruction : MonoBehaviour
         if (other.gameObject.tag == "Player" && firstTime)
         {
             panel.SetActive(true);
-            instruction.text = "Press □ To Destroy\nThe Force Field Base";
+            instruction.text = "Move Close, Press □ To Destroy\nThe Force Field Base";
             firstTime = false;
         }
     }
