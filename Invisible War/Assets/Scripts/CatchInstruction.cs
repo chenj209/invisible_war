@@ -31,14 +31,16 @@ public class CatchInstruction : MonoBehaviour
             panel.SetActive(true);
             if (tutNum == 2 && firstTimeOne) {
                 instruction.text = "Look, Ghost!\n Move Close And Press C To Catch It ";
+                TutorialStateController.BlockSceneFn(true, 3, "");
                 firstTimeOne = false;
             }
-            else if (tutNum == 3 && firstTimeTwo)
+            else if (tutNum == 3 && firstTimeTwo && !other.gameObject.name.EndsWith("Bot"))
             {
                 panel.SetActive(true);
                 shooting st = hunter.GetComponent<shooting>();
                 st.enabled = true;
                 instruction.text = "Left Click To Fire Paintballs\n Hit Ghost To Track It!\n It Has 8s Cooldown";
+                TutorialStateController.BlockSceneFn(true, 3, "huntercd");
                 firstTimeTwo = false;
             }
            
@@ -53,7 +55,11 @@ public class CatchInstruction : MonoBehaviour
             if (tutNum == 3)
             {
                 panel.SetActive(true);
-                instruction.text = "Left Click To Fire Paintballs\n Hit Ghost To Track It!\n It Has 8s Cooldown";
+                if (firstTimeTwo && !other.gameObject.name.EndsWith("Bot"))
+                {
+                    instruction.text = "Left Click To Fire Paintballs\n Hit Ghost To Track It!\n It Has 8s Cooldown";
+                    TutorialStateController.BlockSceneFn(true, 3, "huntercd");
+                }
             }
            
         }

@@ -42,11 +42,12 @@ public class IndicatorInstruction : MonoBehaviour
 
                 if (isGhost)
                 {
-
+                    TutorialStateController.BlockSceneFn(false, 6, "ghostIndicator");
                     instruction.text = "A Hunter Location Indicator Showed\n Up In the Top Left Corner!";
                 }
                 else
                 {
+                    TutorialStateController.BlockSceneFn(true, 6, "hunterIndicator");
                     instruction.text = "A Ghost Location Indicator Showed\n Up In the Top Left Corner!";
                 }
             }

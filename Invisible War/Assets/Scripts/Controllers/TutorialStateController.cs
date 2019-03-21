@@ -44,9 +44,16 @@ public class TutorialStateController : MonoBehaviour
     private bool blinking1;
     private bool blinking2;
     private float timer1;
-    private float timer2;
+    public float timer2;
+    public Canvas blockHunter;
+    public Canvas blockGhost;
+    public Canvas HunterRadarCanvas;
+    public Canvas GhostRadarCanvas;
+    public Canvas HunterCdCanvas;
+    public Canvas GhostCdCanvas;
 
     private Animator an;
+    private static TutorialStateController instance;
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +74,7 @@ public class TutorialStateController : MonoBehaviour
         p2R.text = "Welcome to Invisible Tag!";
         DisablePlayers();
         HideTutorial();
+        instance = this;
     }
 
     // Update is called once per frame
@@ -203,8 +211,8 @@ public class TutorialStateController : MonoBehaviour
 
     private void HideTutorial()
     {
-        canvas.transform.GetChild(0).gameObject.SetActive(false);
-        canvas.transform.GetChild(1).gameObject.SetActive(false);
+        HunterCdCanvas.gameObject.SetActive(false);
+        GhostCdCanvas.gameObject.SetActive(false);
         tutorialCanvas.transform.GetChild(0).gameObject.SetActive(false);
         tutorialCanvas.transform.GetChild(1).gameObject.SetActive(false);
     }
@@ -213,12 +221,12 @@ public class TutorialStateController : MonoBehaviour
     {
         if (player == 1)
         {
-            canvas.transform.GetChild(1).gameObject.SetActive(true);
+            HunterCdCanvas.gameObject.SetActive(true);
             tutorialCanvas.transform.GetChild(0).gameObject.SetActive(true);
         }
         else if (player == 2)
         {
-            canvas.transform.GetChild(0).gameObject.SetActive(true);
+            GhostCdCanvas.gameObject.SetActive(true);
             tutorialCanvas.transform.GetChild(1).gameObject.SetActive(true);
         }
     }
@@ -271,12 +279,71 @@ public class TutorialStateController : MonoBehaviour
         }
     }
 
+
     IEnumerator PopUp(string state, Text text)
     {
         text.text = state;
         yield return new WaitForSeconds(delay);
         text.text = "";
     }
+
+    IEnumerator BlockScene(bool hunter, int delay, string type)
+    {
+        if (hunter)
+        {
+            instance.blockHunter.GetComponentInChildren<RawImage>().enabled = true;
+        }
+        else
+        {
+            instance.blockGhost.GetComponentInChildren<RawImage>().enabled = true;
+        }
+        switch(type)
+        {
+            case "hunterIndicator":
+                HunterRadarCanvas.sortingOrder = 1;
+                break;
+            case "ghostIndicator":
+                GhostRadarCanvas.sortingOrder = 1;
+                break;
+            case "huntercd":
+                HunterCdCanvas.sortingOrder = 1;
+                break;
+            case "ghostcd":
+                GhostCdCanvas.sortingOrder = 1;
+                break;
+        }
+        yield return new WaitForSeconds(delay);
+        if (hunter)
+        {
+            instance.blockHunter.GetComponentInChildren<RawImage>().enabled = false;
+        }
+        else
+        {
+            instance.blockGhost.GetComponentInChildren<RawImage>().enabled = false;
+        }
+        switch(type)
+        {
+            case "hunterIndicator":
+                HunterRadarCanvas.sortingOrder = -1;
+                break;
+            case "ghostIndicator":
+                GhostRadarCanvas.sortingOrder = -1;
+                break;
+            case "huntercd":
+                HunterCdCanvas.sortingOrder = -1;
+                break;
+            case "ghostcd":
+                GhostCdCanvas.sortingOrder = -1;
+                break;
+        }
+    }
+
+    public static void BlockSceneFn(bool hunter, int delay, string type)
+    {
+        instance.StartCoroutine(instance.BlockScene(hunter, delay, type));
+    }
+    
+
 
     IEnumerator Flash(string state, Text text)
     {

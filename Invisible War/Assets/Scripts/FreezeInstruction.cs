@@ -23,10 +23,11 @@ public class FreezeInstruction : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" && firstTime)
+        if (other.gameObject.tag == "Player" && firstTime && !other.gameObject.name.EndsWith("Bot"))
         {
             Freeze fz = ghost.GetComponent<Freeze>();
             fz.enabled = true;
+            TutorialStateController.BlockSceneFn(false, 5, "ghostcd");
             panel.SetActive(true);
             instruction.text = "Danger! Hunter Nearby!\n Press R2 To Freeze Him\n It Has 20s Cooldown";
             firstTime = false;
