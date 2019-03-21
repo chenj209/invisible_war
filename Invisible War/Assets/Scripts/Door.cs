@@ -82,6 +82,18 @@ public class Door : MonoBehaviour
                 {
                     openable = true;
                     TutorialStateController.GhostTutThree = true;
+                }
+                else
+                {
+                    openable = false;
+                }
+            }
+            else if (doorID == 14)
+            {
+                if (TutorialStateController.GhostDestroyDone)
+                {
+                    openable = true;
+                    TutorialStateController.GhostTutFour = true;
                     TutorialStateController.GhostTutDone = true;
                 }
                 else

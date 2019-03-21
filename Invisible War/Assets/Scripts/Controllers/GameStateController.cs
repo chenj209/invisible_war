@@ -30,6 +30,7 @@ public class GameStateController : MonoBehaviour
 
     void Start()
     {
+        caught = false;
         p1S.enabled = false;
         p2S.enabled = false;
         board.enabled = false;
