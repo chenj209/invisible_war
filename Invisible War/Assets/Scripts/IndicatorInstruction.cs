@@ -123,7 +123,10 @@ public class IndicatorInstruction : MonoBehaviour
                 showText = true;
                 firstTime = false;
                 pc = other.GetComponent<PlayerControl>();
-                pc.enabled = false;
+                if (pc)
+                {
+                    pc.enabled = false;
+                }
             }
         }
         else

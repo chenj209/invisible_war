@@ -27,6 +27,7 @@ public class CatchGhost : MonoBehaviour
             if (ghost != null)
             {
                 Catch(ghost);
+                ghost = null;
                 //Debug.Log("You got the hider");
                 if (inTutorial)
                 {
@@ -48,13 +49,20 @@ public class CatchGhost : MonoBehaviour
         }
         else
         {
-            ghost = null;
             if (catchArm)
                 catchArm.SetBool("catch", false);
         }
     }
 
     private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Player") 
+        {
+            ghost = other.gameObject;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player") 
         {

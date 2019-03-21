@@ -137,8 +137,11 @@ public class PlayerStatus : MonoBehaviour
         if (!invincible)
         {
             Destroy(gameObject, 1);
-            GameObject effect = Instantiate(catchEffect, this.gameObject.transform.position, Quaternion.Euler(-90, 0, 0));
-            Destroy(effect, 2);
+            if (catchEffect)
+            {
+                GameObject effect = Instantiate(catchEffect, this.gameObject.transform.position, Quaternion.Euler(-90, 0, 0));
+                Destroy(effect, 2);
+            }
             caught = true;
         }
     }

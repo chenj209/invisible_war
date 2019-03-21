@@ -171,7 +171,7 @@ public class PlayerControl : MonoBehaviour
             Physics.IgnoreCollision(collision.collider, this.gameObject.GetComponent<CapsuleCollider>());
         } else
         {
-            Debug.Log("player body" + collision.collider.gameObject.name);
+            //Debug.Log("player body" + collision.collider.gameObject.name);
         }
     }
 }
