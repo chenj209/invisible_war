@@ -29,7 +29,7 @@ public class FreezeInstruction : MonoBehaviour
             fz.enabled = true;
             TutorialStateController.BlockSceneFn(false, 5, "ghostcd");
             panel.SetActive(true);
-            instruction.text = "Danger! Hunter Nearby!\n Press R2 To Freeze Him\n It Has 20s Cooldown";
+            instruction.text = "When Indicator Turns Red\n Press R2 To Freeze Hunter\n It Has 20s Cooldown";
             firstTime = false;
         }
     }

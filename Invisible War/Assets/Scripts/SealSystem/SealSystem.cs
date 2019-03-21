@@ -7,7 +7,8 @@ using Random = System.Random;
 public class SealSystem : MonoBehaviour
 {
     public List<GameObject> seals;
-    public List<GameObject> sealsUI;
+    public List<GameObject> sealsUIG;
+    public List<GameObject> sealsUIH;
     public GameObject ghost;
     public GameObject loadingBar;
     public int sealNum;
@@ -15,6 +16,8 @@ public class SealSystem : MonoBehaviour
     public float destoryTime;
     // This flag indicate that all the seals has been destoryed.
     public bool allDestroyed;
+    // This flag is for tutorial.
+    public bool isTut;
 
     private Random rand;
     private int sealLeft;
@@ -62,7 +65,11 @@ public class SealSystem : MonoBehaviour
             totalSeals--;
         }
 
-        foreach (GameObject seal in sealsUI)
+        foreach (GameObject seal in sealsUIG)
+        {
+            seal.SetActive(true);
+        }
+        foreach (GameObject seal in sealsUIH)
         {
             seal.SetActive(true);
         }
@@ -77,13 +84,24 @@ public class SealSystem : MonoBehaviour
     {
         sealLeft--;
 
-        sealsUI[sealLeft - 1].SetActive(false);
-
-        // Check if all the seals got destroyed.
-        if (sealLeft == 1)
+        if (!isTut)
         {
-            allDestroyed = true;
-            Debug.Log("Enough seals destroyed!");
+            sealsUIG[sealLeft - 1].SetActive(false);
+            sealsUIH[sealLeft - 1].SetActive(false);
+            // Check if all the seals got destroyed.
+            if (sealLeft == 1)
+            {
+                allDestroyed = true;
+               // Debug.Log("Enough seals destroyed!");
+            }
+        } else
+        {
+            if (sealLeft == 0)
+            {
+                TutorialStateController.GhostDestroyDone = true;
+                allDestroyed = true;
+               // Debug.Log("Enough seals destroyed!");
+            }
         }
     }
 }
