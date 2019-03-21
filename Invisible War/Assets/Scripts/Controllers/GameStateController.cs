@@ -113,8 +113,12 @@ public class GameStateController : MonoBehaviour
         crosshair.enabled = false;
         hunter.GetComponent<PlayerControl>().enabled = false;
         hunter.GetComponent<shooting>().enabled = false;
-        ghost.GetComponent<PlayerControl>().enabled = false;
-        ghost.GetComponent<Freeze>().enabled = false;
+        if (ghost)
+        {
+            ghost.GetComponent<PlayerControl>().enabled = false;
+
+            ghost.GetComponent<Freeze>().enabled = false;
+        }
     }
 
     private void ActivePlayers()
