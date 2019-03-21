@@ -24,7 +24,7 @@ TagManager:
   - Environment
   - HunterBody
   - Powerup
-  - 
+  - BlockScene
   - 
   - 
   - 
@@ -43,6 +43,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BlockScene
+    uniqueID: 4090120549
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 3736878381
     locked: 0
