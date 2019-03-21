@@ -67,4 +67,9 @@ public class Seal : MonoBehaviour
             }
         }
     }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        loadingBar.SetActive(false);
+    }
 }
