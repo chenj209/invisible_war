@@ -29,6 +29,10 @@ public class PlayerStatus : MonoBehaviour
     public bool isHunter;
     private bool firstTime = true;
     public bool isTutorial;
+
+    public bool gethit = false;
+    public bool getfreezed = false;
+
     private void Start()
     {
         cameraEffect = GetComponentInChildren<CameraShootEffect>() as CameraShootEffect;
@@ -110,6 +114,7 @@ public class PlayerStatus : MonoBehaviour
     {
         //ps.Play();
         Hit = true;
+        gethit = true;
         PlayerControl pc = GetComponent<PlayerControl>();
         if (pc != null)
         {
@@ -120,6 +125,7 @@ public class PlayerStatus : MonoBehaviour
     public void GetFreezed()
     {
         freezed = true;
+        getfreezed = true;
     }
 
     public void setTransparent(bool flag)

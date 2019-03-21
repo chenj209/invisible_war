@@ -9,17 +9,10 @@ public class GameStateController : MonoBehaviour
 {
     public static int round = 3;
     private static int roundNum = 1;
-    public static int p1W = 0;
-    public static int p2W = 0;
     public int levelToLoad;
     public GameObject hunter;
     public GameObject ghost;
     public Image crosshair;
-    public Image scoreBoard;
-    public Text player1Score;
-    public Text player2Score;
-    public Text name;
-    public float scoreCD;
     private Animator an;
     private bool roundOver;
     public static bool caught = false;
@@ -39,15 +32,14 @@ public class GameStateController : MonoBehaviour
 
     private bool cdBool;
 
-    // Start is called before the first frame update
+    private ScoreController scoreController;
+    private PlayerStatus player1;
+    private PlayerStatus player2;
+
     void Start()
     {
         caught = false;
         roundOver = false;
-        scoreBoard.enabled = false;
-        name.enabled = false;
-        player1Score.enabled = false;
-        player2Score.enabled = false;
         cdUI1.enabled = false;
         cdUI2.enabled = false;
         cdUI3.enabled = false;
@@ -55,6 +47,9 @@ public class GameStateController : MonoBehaviour
         p1S.enabled = false;
         p2S.enabled = false;
         an = gameObject.GetComponent<Animator>();
+        scoreController = gameObject.GetComponent<ScoreController>();
+        player1 = hunter.GetComponent<PlayerStatus>();
+        player2 = ghost.GetComponent<PlayerStatus>();
         cdBool = false;
         StartCoroutine(GameLoop());
     }
@@ -86,19 +81,28 @@ public class GameStateController : MonoBehaviour
                 StartCoroutine(Win(2));
             }
         }
-    }
 
-    private void DisplayScore()
-    {
-        scoreBoard.enabled = true;
-        name.enabled = true;
-        player1Score.enabled = true;
-        player2Score.enabled = true;
-        player1Score.text = p1W.ToString();
-        player2Score.text = p2W.ToString();
-    }
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            if (scoreController.goToNext)
+            {
+                an.SetTrigger("FadeOut");
+            }
+        }
 
- 
+        // ghost gets 20 if hunter is freezed
+        if (player1.getfreezed)
+        {
+            scoreController.addScore(20, 2);
+            player1.getfreezed = false;
+        }
+        //hunter gets 20 if ghost is hit
+        if (player2.gethit)
+        {
+            scoreController.addScore(20,1);
+            player2.gethit = false;
+        }
+    }
 
     private IEnumerator GameLoop()
     {
@@ -115,12 +119,12 @@ public class GameStateController : MonoBehaviour
             cdBool = false;
             cdUI1.enabled = false;
             cdUI2.enabled = false;
-            p1W++;
+            scoreController.addScore(300, 1);
             yield return StartCoroutine(RoundEnd(1));
         }
         else
         {
-            p2W++;
+            scoreController.addScore(300, 2);
             yield return StartCoroutine(RoundEnd(2));
         }
 
@@ -130,9 +134,7 @@ public class GameStateController : MonoBehaviour
         }
         else
         {
-            DisplayScore();
-            yield return new WaitForSeconds(scoreCD);
-            an.SetTrigger("FadeOut");
+            scoreController.displayScoreBoard();
         }
     }
 
@@ -213,7 +215,6 @@ public class GameStateController : MonoBehaviour
         crosshair.enabled = false;
         hunter.GetComponent<PlayerControl>().enabled = false;
         hunter.GetComponent<shooting>().enabled = false;
-        //hunter.GetComponent<CatchPlayer>().enabled = false;
         ghost.GetComponent<PlayerControl>().enabled = false;
         ghost.GetComponent<Freeze>().enabled = false;
     }
@@ -223,7 +224,6 @@ public class GameStateController : MonoBehaviour
         crosshair.enabled = true;
         hunter.GetComponent<PlayerControl>().enabled = true;
         hunter.GetComponent<shooting>().enabled = true;
-        //hunter.GetComponent<CatchPlayer>().enabled = true;
         ghost.GetComponent<PlayerControl>().enabled = true;
         ghost.GetComponent<Freeze>().enabled = true;
     }
