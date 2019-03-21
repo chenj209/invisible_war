@@ -126,6 +126,9 @@ public class IndicatorInstruction : MonoBehaviour
                 if (pc)
                 {
                     pc.enabled = false;
+                } else
+                {
+                    Debug.Log(other.gameObject.name);
                 }
             }
         }

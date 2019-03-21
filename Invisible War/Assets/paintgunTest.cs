@@ -24,7 +24,7 @@ public class paintgunTest : MonoBehaviour
         }
         else
         {
-            //Debug.Log("gun" + collision.collider.gameObject.name);
+            Debug.Log("gun" + collision.collider.gameObject.name);
         }
     }
 }

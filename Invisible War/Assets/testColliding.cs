@@ -18,7 +18,7 @@ public class testColliding : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.gameObject.tag == "Player")
+        if (collision.collider.gameObject.tag == "Player" || collision.collider.gameObject.tag == "Gun")
         {
             Physics.IgnoreCollision(collision.collider, this.gameObject.GetComponent<CapsuleCollider>());
         }

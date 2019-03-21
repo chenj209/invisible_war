@@ -9,6 +9,7 @@ TagManager:
   - Environment
   - Fire
   - Hand
+  - Gun
   layers:
   - Default
   - TransparentFX
