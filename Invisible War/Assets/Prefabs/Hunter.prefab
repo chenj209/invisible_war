@@ -9980,6 +9980,8 @@ MonoBehaviour:
   catchEffect: {fileID: 0}
   isHunter: 0
   isTutorial: 0
+  gethit: 0
+  getfreezed: 0
 --- !u!136 &156757417103822894
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10301,7 +10303,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1514709280967777045}
   - component: {fileID: 727333868661933264}
-  - component: {fileID: 1749107518889979818}
+  - component: {fileID: 1856887294982629147}
   m_Layer: 0
   m_Name: PaintBallgun
   m_TagString: Untagged
@@ -10334,12 +10336,12 @@ CapsuleCollider:
   m_GameObject: {fileID: 6568582506610576949}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.10243991
   m_Height: 0.69893306
   m_Direction: 0
   m_Center: {x: 0.039642096, y: 0.038703084, z: 0.036786538}
---- !u!114 &1749107518889979818
+--- !u!114 &1856887294982629147
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10348,7 +10350,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6568582506610576949}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05df4356368ce4620b244059e159c93f, type: 3}
+  m_Script: {fileID: 11500000, guid: 78b5cbf7830ef60478d3e4fc43884bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &451153886096825525

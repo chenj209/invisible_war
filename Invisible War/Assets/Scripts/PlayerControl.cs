@@ -169,6 +169,9 @@ public class PlayerControl : MonoBehaviour
         if (collision.collider.gameObject.tag == "Player")
         {
             Physics.IgnoreCollision(collision.collider, this.gameObject.GetComponent<CapsuleCollider>());
+        } else
+        {
+            Debug.Log("player body" + collision.collider.gameObject.name);
         }
     }
 }

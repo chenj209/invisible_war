@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class PaintGunCollision : MonoBehaviour
 {
+    private void Start()
+    {
+        
+    }
+
+    private void Update()
+    {
+        
+    }
     // Start is called before the first frame update
     private void OnCollisionEnter(Collision collision)
     {
