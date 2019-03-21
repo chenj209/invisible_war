@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.UI;
+
 public class Seal : MonoBehaviour
 {
     public GameObject sealSys;
@@ -9,6 +11,7 @@ public class Seal : MonoBehaviour
     private SealSystem ss;
     private float destroyTime;
     private GameObject ghost;
+    private GameObject loadingBar;
     private float curTime;
 
     // Start is called before the first frame update
@@ -17,6 +20,9 @@ public class Seal : MonoBehaviour
         ss = sealSys.GetComponent<SealSystem>();
         destroyTime = ss.destoryTime;
         ghost = ss.ghost;
+        loadingBar = ss.loadingBar;
+
+        ResetSeal();
     }
 
     // Update is called once per frame
@@ -36,8 +42,7 @@ public class Seal : MonoBehaviour
         // Check is the collision object the ghost.
         if (collision.gameObject == ghost)
         {
-            // TODO: Add a progress Bar to the UI.
-
+            Debug.Log(curTime);
             // Check is the ghost press the unlockseal button.
             if (Input.GetButton("Unlock"))
             {
@@ -46,11 +51,19 @@ public class Seal : MonoBehaviour
                 {
                     // Destory itself and update to the SealSystem.
                     ss.destroy();
+                    loadingBar.SetActive(false);
+                    Debug.Log("Trigered");
                     gameObject.SetActive(false);
                 } else
                 {
                     curTime -= Time.deltaTime;
+                    // TODO: Add a progress Bar to the UI.
+                    loadingBar.SetActive(true);
+                    loadingBar.GetComponent<Image>().fillAmount = (destroyTime - curTime) / destroyTime;
                 }
+            } else
+            {
+                loadingBar.SetActive(false);
             }
         }
     }
