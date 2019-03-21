@@ -23,6 +23,9 @@ public class ScoreController : MonoBehaviour
     private bool display;
     public bool goToNext;
 
+    public Text dList1;
+    private Dictionary<string, int> list1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +39,7 @@ public class ScoreController : MonoBehaviour
         interval2 = countInterval;
         display = false;
         goToNext = false;
+
     }
 
     // Update is called once per frame
@@ -113,7 +117,7 @@ public class ScoreController : MonoBehaviour
         }
     }
 
-    public void addScore(int score,int player)
+    private void addScore(int score,int player)
     {
         if (player == 1)
         {
@@ -123,6 +127,21 @@ public class ScoreController : MonoBehaviour
         {
             score2 += score;
         }
+    }
+
+    public void Win(int player)
+    {
+        addScore(300, player);
+    }
+
+    public void FreezePoint()
+    {
+        addScore(20, 2);
+    }
+
+    public void HitPoint()
+    {
+        addScore(20, 1);
     }
 
     public void displayScoreBoard()
