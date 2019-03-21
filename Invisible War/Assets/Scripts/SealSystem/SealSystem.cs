@@ -7,7 +7,8 @@ using Random = System.Random;
 public class SealSystem : MonoBehaviour
 {
     public List<GameObject> seals;
-    public List<GameObject> sealsUI;
+    public List<GameObject> sealsUIG;
+    public List<GameObject> sealsUIH;
     public GameObject ghost;
     public GameObject loadingBar;
     public int sealNum;
@@ -64,7 +65,11 @@ public class SealSystem : MonoBehaviour
             totalSeals--;
         }
 
-        foreach (GameObject seal in sealsUI)
+        foreach (GameObject seal in sealsUIG)
+        {
+            seal.SetActive(true);
+        }
+        foreach (GameObject seal in sealsUIH)
         {
             seal.SetActive(true);
         }
@@ -81,7 +86,8 @@ public class SealSystem : MonoBehaviour
 
         if (!isTut)
         {
-            sealsUI[sealLeft - 1].SetActive(false);
+            sealsUIG[sealLeft - 1].SetActive(false);
+            sealsUIH[sealLeft - 1].SetActive(false);
             // Check if all the seals got destroyed.
             if (sealLeft == 1)
             {
