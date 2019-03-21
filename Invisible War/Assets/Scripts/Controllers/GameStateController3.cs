@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameStateController1 : MonoBehaviour
+public class GameStateController3 : MonoBehaviour
 {
     public static int round = 3;
     private static int roundNum = 1;
@@ -32,12 +32,20 @@ public class GameStateController1 : MonoBehaviour
 
     private bool cdBool;
 
-    private ScoreController scoreController;
-    private PlayerStatus player1;
-    private PlayerStatus player2;
+    public Image scoreBoard;
+    public Text name;
+    public Text Player1Score;
+    public Text Player2Score;
+    public float scoreCD;
+    public static int p1w;
+    public static int p2w;
 
     void Start()
     {
+        scoreBoard.enabled = false;
+        name.enabled = false;
+        Player1Score.enabled = false;
+        Player2Score.enabled = false;
         caught = false;
         roundOver = false;
         cdUI1.enabled = false;
@@ -47,9 +55,6 @@ public class GameStateController1 : MonoBehaviour
         p1S.enabled = false;
         p2S.enabled = false;
         an = gameObject.GetComponent<Animator>();
-        scoreController = gameObject.GetComponent<ScoreController>();
-        player1 = hunter.GetComponent<PlayerStatus>();
-        player2 = ghost.GetComponent<PlayerStatus>();
         cdBool = false;
         StartCoroutine(GameLoop());
     }
@@ -81,27 +86,6 @@ public class GameStateController1 : MonoBehaviour
                 StartCoroutine(Win(2));
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            if (scoreController.goToNext)
-            {
-                an.SetTrigger("FadeOut");
-            }
-        }
-
-        // ghost gets 20 if hunter is freezed
-        if (player1.getfreezed)
-        {
-            scoreController.FreezePoint();
-            player1.getfreezed = false;
-        }
-        //hunter gets 20 if ghost is hit
-        if (player2.gethit)
-        {
-            scoreController.HitPoint();
-            player2.gethit = false;
-        }
     }
 
     private IEnumerator GameLoop()
@@ -119,12 +103,12 @@ public class GameStateController1 : MonoBehaviour
             cdBool = false;
             cdUI1.enabled = false;
             cdUI2.enabled = false;
-            scoreController.Win(1);
+            p1w++;
             yield return StartCoroutine(RoundEnd(1));
         }
         else
         {
-            scoreController.Win(2);
+            p2w++;
             yield return StartCoroutine(RoundEnd(2));
         }
 
@@ -134,8 +118,20 @@ public class GameStateController1 : MonoBehaviour
         }
         else
         {
-            scoreController.displayScoreBoard();
+            DisplayScore();
+            yield return new WaitForSeconds(scoreCD);
+            an.SetTrigger("FadeOut");
         }
+    }
+
+    private void DisplayScore()
+    {
+        scoreBoard.enabled = true;
+        name.enabled = true;
+        Player1Score.enabled = true;
+        Player2Score.enabled = true;
+        Player1Score.text = p1w.ToString();
+        Player2Score.text = p2w.ToString();
     }
 
     private IEnumerator RoundStart()
@@ -148,7 +144,8 @@ public class GameStateController1 : MonoBehaviour
         cdBool = false;
         cdUI3.enabled = false;
         cdUI4.enabled = false;
-        string roundName = "Round " + roundNum;
+        //string roundName = "Round " + roundNum;
+        string roundName = "Game Start";
         StartCoroutine(PopUp(roundName, p1S));
         StartCoroutine(PopUp(roundName, p2S));
     }
