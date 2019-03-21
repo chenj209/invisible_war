@@ -86,14 +86,15 @@ public class SealSystem : MonoBehaviour
             if (sealLeft == 1)
             {
                 allDestroyed = true;
-                Debug.Log("Enough seals destroyed!");
+               // Debug.Log("Enough seals destroyed!");
             }
         } else
         {
             if (sealLeft == 0)
             {
+                TutorialStateController.GhostDestroyDone = true;
                 allDestroyed = true;
-                Debug.Log("Enough seals destroyed!");
+               // Debug.Log("Enough seals destroyed!");
             }
         }
     }
