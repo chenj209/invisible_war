@@ -20,7 +20,7 @@ public class TutorialStateController : MonoBehaviour
     public static bool HunterShootDone = false;
     public static bool HunterFreezeDone = false;
     public static bool GhostFreezeDone = false;
-    public static bool GhostDestroyDone = true;
+    public static bool GhostDestroyDone = false;
     public GameObject hunter;
     public GameObject ghost;
     public Canvas canvas;
@@ -101,15 +101,14 @@ public class TutorialStateController : MonoBehaviour
             if (player1State == "rule1")
             {
                 p1R.text = "This is a player versus player game." +
-                    "Your goal is to catch the invisible ghost " +
-                    "controlled by the other player in the arena " +
-                    "within two minutes time limit.";
+                    "Your character is a Hunter who set up a force field in a house " +
+                    "that can trap the Ghost";
                 player1State = "rule2";
             }
             else if (player1State == "rule2")
             {
-                p1R.text = "There are total three rounds and the player " +
-                    "who wins the most rounds will win the game.";
+                p1R.text = "There are total five power bases that power up the force filed." +
+                    "Your goal is to catch the Ghost before it destroys four of them.";
                 player1State = "rule3";
             }
             else if (player1State == "rule3")
@@ -157,15 +156,14 @@ public class TutorialStateController : MonoBehaviour
             if (player2State == "rule1")
             {
                 p2R.text = "This is a player versus player game." +
-                    "Your goal is to avoid being caught by the invisible hunter " +
-                    "controlled by the other player in the arena " +
-                    "for two minutes.";
+                    "Your character is a Ghost who is trapped inside a force field set up by the Hunter";
+                  
                 player2State = "rule2";
             }
             else if (player2State == "rule2")
             {
-                p2R.text = "There are total three rounds and the player " +
-                    "who wins the most rounds will win the game.";
+                p2R.text = "There are total five power bases that power up the force filed." +
+                           "Your goal is to avoid getting caught by the Hunter while destroy four of them.";
                 player2State = "rule3";
             }
             else if (player2State == "rule3")

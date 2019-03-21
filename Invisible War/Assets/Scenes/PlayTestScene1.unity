@@ -6291,7 +6291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400056, guid: 42c5443074f424e148478717168d0913, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.65
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 400056, guid: 42c5443074f424e148478717168d0913, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6955,7 +6955,7 @@ MonoBehaviour:
   ghost: {fileID: 1447882107}
   loadingBar: {fileID: 445376703}
   sealNum: 5
-  destoryTime: 5
+  destoryTime: 2.5
   allDestroyed: 0
   isTut: 0
   resetTimer: 5
