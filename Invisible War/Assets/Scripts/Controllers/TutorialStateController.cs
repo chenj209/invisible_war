@@ -332,6 +332,7 @@ public class TutorialStateController : MonoBehaviour
                 break;
             case "ghostcd":
                 GhostCdCanvas.sortingOrder = 1;
+                GhostRadarCanvas.sortingOrder = 1;
                 break;
         }
         yield return new WaitForSeconds(delay);
@@ -356,6 +357,7 @@ public class TutorialStateController : MonoBehaviour
                 break;
             case "ghostcd":
                 GhostCdCanvas.sortingOrder = -1;
+                GhostRadarCanvas.sortingOrder = -1;
                 break;
         }
     }
