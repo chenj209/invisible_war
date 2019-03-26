@@ -64,7 +64,7 @@ public class shooting : MonoBehaviour
     {
         decalPool.ClearParticles();
         ParticleSystem.MainModule psMain = particleLauncher.main;
-        particleLauncher.Emit(10);
+        particleLauncher.Emit(30);
         cdImage.fillAmount = 1;
         sources[0].PlayOneShot(Fire_Sound, 1f);
         On_CoolDown = true;

@@ -170,5 +170,12 @@ public class PlayerControl : MonoBehaviour
         {
             Physics.IgnoreCollision(collision.collider, this.gameObject.GetComponent<CapsuleCollider>());
         }
+        if (playerID == "02")
+        {
+            if (collision.collider.gameObject.tag == "Furniture")
+            {
+                Physics.IgnoreCollision(collision.collider, this.gameObject.GetComponent<CapsuleCollider>());
+            }
+        }
     }
 }

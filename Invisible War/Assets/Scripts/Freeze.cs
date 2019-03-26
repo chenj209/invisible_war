@@ -101,8 +101,8 @@ public class Freeze : MonoBehaviour
         On_CoolDown = true;
         if (sources[0])
         sources[0].PlayOneShot(freezeSound, 1f);
-        freezeEffect.SetActive(false);
-        freezeEffect.SetActive(true);
+        GameObject freezeEffectObj = Instantiate(freezeEffect, gameObject.transform.position, Quaternion.identity);
+        Destroy(freezeEffectObj, 6);
         if (inTutorial && !bot)
         {
             if (Vector3.Distance(catcher.transform.position, transform.position) < 60)
