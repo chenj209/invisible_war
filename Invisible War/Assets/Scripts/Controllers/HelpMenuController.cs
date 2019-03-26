@@ -7,6 +7,8 @@ public class HelpMenuController : MonoBehaviour
 {
     public GameObject hunterPanel;
     public GameObject ghostPanel;
+    public Text text1;
+    public Text text2;
     public GameObject blink1;
     public GameObject blink2;
     private bool blinking1;
@@ -63,8 +65,9 @@ public class HelpMenuController : MonoBehaviour
             }
             else
             {
-                blink1.transform.GetChild(0).gameObject.SetActive(false);
-                blink1.GetComponent<Text>().text = "Waiting for Player2";
+                blink1.SetActive(false);
+                text1.text = "Waiting for Player2";
+                blink1 = text1.gameObject;
             }
         }
 
@@ -93,8 +96,9 @@ public class HelpMenuController : MonoBehaviour
             }
             else
             {
-                blink2.transform.GetChild(0).gameObject.SetActive(false);
-                blink2.GetComponent<Text>().text = "Waiting for Player1";
+                blink2.SetActive(false);
+                text2.text = "Waiting for Player1";
+                blink2 = text2.gameObject;
             }
         }
     }
