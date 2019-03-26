@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class Freeze : MonoBehaviour
 {
     public Image cdImage;
-    public float Freeze_CD;
     private bool On_CoolDown = false;
     public GameObject freezeEffect;
     public AudioClip freezeSound;
@@ -23,8 +22,8 @@ public class Freeze : MonoBehaviour
         {
             cdImage.fillAmount = 0;
         }
-        timerBot = 5;
-        timerNonBot = 5;
+        timerBot = GameConfig.instance.freezeEffectDuration;
+        timerNonBot = GameConfig.instance.freezeEffectDuration;
         sources = gameObject.GetComponents<AudioSource>();
     }
 
@@ -46,7 +45,7 @@ public class Freeze : MonoBehaviour
         {
             if (!bot)
             {
-                cdImage.fillAmount -= 1 / Freeze_CD * Time.deltaTime;
+                cdImage.fillAmount -= 1 / GameConfig.instance.freezeCoolDown * Time.deltaTime;
                 PlayerControl hunter = catcher.GetComponent<PlayerControl>();
               
                 if (!hunter.enabled && !inTutorial)

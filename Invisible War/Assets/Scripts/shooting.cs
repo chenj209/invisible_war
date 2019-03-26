@@ -13,7 +13,6 @@ public class shooting : MonoBehaviour
     private bool Pressed = false;
     private AudioSource[] sources;
     private string playerID;
-    public float Fire_CD = 30.0f;
     private bool On_CoolDown = false;
     // Start is called before the first frame update
     void Start()
@@ -27,6 +26,7 @@ public class shooting : MonoBehaviour
         //Vector2 oldPosition = rectTransform.anchoredPosition;
         //rectTransform.anchoredPosition = new Vector2(oldPosition.x - Screen.width * 0.25f, oldPosition.y - Screen.height*0.1f);
         crosshair.transform.position = new Vector3((float)(Screen.width * 0.49 / 2), Screen.height/2,crosshair.transform.position.z);
+        particleLauncher.startLifetime = GameConfig.instance.paintgunShootDistance;
     }
 
     // Update is called once per frame
@@ -46,7 +46,7 @@ public class shooting : MonoBehaviour
 
         if (On_CoolDown)
         {
-            cdImage.fillAmount -= 1 / Fire_CD * Time.deltaTime;
+            cdImage.fillAmount -= 1 / GameConfig.instance.paintgunCooldown * Time.deltaTime;
             if (cdImage.fillAmount<=0)
             {
                 On_CoolDown = false;
@@ -64,7 +64,7 @@ public class shooting : MonoBehaviour
     {
         decalPool.ClearParticles();
         ParticleSystem.MainModule psMain = particleLauncher.main;
-        particleLauncher.Emit(30);
+        particleLauncher.Emit(GameConfig.instance.paintgunBulletsCount);
         cdImage.fillAmount = 1;
         sources[0].PlayOneShot(Fire_Sound, 1f);
         On_CoolDown = true;

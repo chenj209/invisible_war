@@ -7,13 +7,12 @@ public class PlayerStatus : MonoBehaviour
 {
     private ParticleSystem ps;
     public bool invincible = false;
-    private float Visible_Time = 5.0f;
-    public float freeze_time = 5.0f;
     //public GameObject freezeEffect;
     public Image freezeEffect;
     public Image hitEffect;
     public AudioClip shiveringOne;
-    private float remaining_freeze_time = 5.0f;
+    private float Visible_Time;
+    private float remaining_freeze_time;
     private bool Hit = false;
     private bool freezed = false;
     private bool showTransparent = false;
@@ -39,7 +38,8 @@ public class PlayerStatus : MonoBehaviour
         playerRenderer = gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
         playerRenderer.enabled = false;
         sources = gameObject.GetComponents<AudioSource>();
-
+        Visible_Time = GameConfig.instance.paintgunEffectDuration;
+        remaining_freeze_time = GameConfig.instance.freezeEffectDuration;
     }
 
 
@@ -70,7 +70,7 @@ public class PlayerStatus : MonoBehaviour
                     //freezeEffect.SetActive(false);
                     freezeEffect.enabled = false;
                 }
-                remaining_freeze_time = freeze_time;
+                remaining_freeze_time = GameConfig.instance.freezeEffectDuration;
                 playerRenderer.material = transparent_material;
                 freezed = false;
                 firstTime = true;
@@ -95,7 +95,7 @@ public class PlayerStatus : MonoBehaviour
                 {
                     cameraEffect.start = false;
                 }
-                Visible_Time = 5.0f;
+                Visible_Time = GameConfig.instance.paintgunEffectDuration;
             }
             if (caught)
             {
