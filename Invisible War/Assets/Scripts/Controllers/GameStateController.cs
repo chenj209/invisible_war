@@ -7,37 +7,49 @@ using UnityEngine.UI;
 
 public class GameStateController : MonoBehaviour
 {
+    public static int round = 3;
+    private static int roundNum = 1;
     public int levelToLoad;
     public GameObject hunter;
     public GameObject ghost;
+    public GameObject sealSystem;
     public Image crosshair;
     private Animator an;
+    private bool roundOver;
     public static bool caught = false;
-    public GameObject sealSystem;
-    private SealSystem ss;
-    private PlayerStatus ps;
 
     public Text p1S;
     public Text p2S;
     public float delay;
+
     public Text cdUI3;
     public Text cdUI4;
     public float startCD;
     public float endCD;
+
     private bool cdBool;
-    public Image board;
-    public Text result;
+
+    public Image scoreBoard;
+    public Text name;
+    public Text Player1Score;
+    public Text Player2Score;
+    public float scoreCD;
+    public static int p1w;
+    public static int p2w;
 
     void Start()
     {
+        scoreBoard.enabled = false;
+        name.enabled = false;
+        Player1Score.enabled = false;
+        Player2Score.enabled = false;
         caught = false;
+        roundOver = false;
+        cdUI3.enabled = true;
+        cdUI4.enabled = true;
         p1S.enabled = false;
         p2S.enabled = false;
-        board.enabled = false;
-        result.enabled = false;
         an = gameObject.GetComponent<Animator>();
-        ss = sealSystem.GetComponent<SealSystem>();
-        ps = hunter.GetComponent<PlayerStatus>();
         cdBool = true;
         DisablePlayers();
     }
@@ -56,45 +68,21 @@ public class GameStateController : MonoBehaviour
                 Game();
             }
         }
-
-        //hunter wins
-        if (caught)
+        if (!roundOver)
         {
-            if (ps.invincible)
+            PlayerStatus ps1 = hunter.GetComponent<PlayerStatus>();
+            SealSystem ss = sealSystem.GetComponent<SealSystem>();
+            if (caught && ps1.invincible)
             {
+                StopAllCoroutines();
                 StartCoroutine(Win(1));
             }
+            if (ss.allDestroyed)
+            {
+                StopAllCoroutines();
+                StartCoroutine(Win(2));
+            }
         }
-        //ghost wins
-        if (ss.allDestroyed)
-        {
-            StartCoroutine(Win(2));
-        }
-    }
-
-    IEnumerator Win(int player)
-    {
-        DisablePlayers();
-        board.enabled = true;
-        result.enabled = true;
-        if (player == 1)
-        {
-            result.text = "Hunter Wins";
-        }
-        else
-        {
-            result.text = "Ghost Wins";
-        }
-        yield return new WaitForSeconds(endCD);
-        an.SetTrigger("FadeOut");
-    }
-
-    private void StandBy()
-    {
-        startCD -= Time.deltaTime;
-        int tl = (int)(startCD + 1);
-        cdUI3.text = tl.ToString();
-        cdUI4.text = tl.ToString();
     }
 
     private void Game()
@@ -107,18 +95,63 @@ public class GameStateController : MonoBehaviour
         StartCoroutine(PopUp("Game Start", p2S));
     }
 
+    IEnumerator Win(int winner)
+    {
+        DisablePlayers();
+        roundOver = true;
+        if (winner == 1)
+        {
+            p1w++;
+            StartCoroutine(PopUp("You Win", p1S));
+            StartCoroutine(PopUp("You Lose", p2S));
+        }
+        else
+        {
+            p2w++;
+            StartCoroutine(PopUp("You Win", p2S));
+            StartCoroutine(PopUp("You Lose", p1S));
+        }
+        round--;
+        roundNum++;
+        yield return new WaitForSeconds(delay);
+
+        if (round >= 1)
+        {
+            Application.LoadLevel(Application.loadedLevel);
+        }
+        else
+        {
+            DisplayScore();
+            yield return new WaitForSeconds(scoreCD);
+            an.SetTrigger("FadeOut");
+        }
+    }
+
+    private void DisplayScore()
+    {
+        scoreBoard.enabled = true;
+        name.enabled = true;
+        Player1Score.enabled = true;
+        Player2Score.enabled = true;
+        Player1Score.text = p1w.ToString();
+        Player2Score.text = p2w.ToString();
+    }
+
+    void StandBy()
+    {
+        startCD -= Time.deltaTime;
+        int tl = (int)(startCD + 1);
+        cdUI3.text = tl.ToString();
+        cdUI4.text = tl.ToString();
+    }
 
     private void DisablePlayers()
     {
         crosshair.enabled = false;
         hunter.GetComponent<PlayerControl>().enabled = false;
         hunter.GetComponent<shooting>().enabled = false;
-        if (ghost)
-        {
-            ghost.GetComponent<PlayerControl>().enabled = false;
-
-            ghost.GetComponent<Freeze>().enabled = false;
-        }
+        ghost.GetComponent<PlayerControl>().enabled = false;
+        ghost.GetComponent<Freeze>().enabled = false;
     }
 
     private void ActivePlayers()
