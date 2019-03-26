@@ -13,6 +13,7 @@ public class PlayerControl : MonoBehaviour
     public Animator moveAnimator;
     public GameObject HunterHelpMenu;
     public GameObject GhostHelpMenu;
+    public Text GhostStatus;
     public enum MovePattern
     {
         Walking,
@@ -140,19 +141,38 @@ public class PlayerControl : MonoBehaviour
         {
             if (playerID == "01")
             {
-                float distance = Vector3.Distance(enemy.position, transform.position);
-                if (distance < 100 && !inTutorial)
+                if (GameConfig.instance.enableHunterIndicator)
                 {
-                    indicatorCenter.gameObject.SetActive(false);
-                } else { 
-                    indicatorCenter.gameObject.SetActive(true);
+                    float distance = Vector3.Distance(enemy.position, transform.position);
+                    if (!GameConfig.instance.hunterIndicatorNearBy)
+                    {
+                        if (distance < 100 && !inTutorial)
+                        {
+                            GhostStatus.text = "              Ghost\n             NearBy!";
+                            indicatorCenter.gameObject.SetActive(false);
+                        }
+                        else
+                        {
+                            GhostStatus.text = "              Ghost\n         Out Of Range";
+                            indicatorCenter.gameObject.SetActive(true);
+                        }
+
+                    }
+                    else
+                    {
+                        GhostStatus.text = "              Ghost\n           Direction";
+                    }
+                    Vector3 difference = enemy.position - transform.position;
+                    Vector3 faceDirection = transform.forward;
+                    Vector2 face2D = new Vector2(faceDirection.x, faceDirection.z);
+                    Vector2 difference2D = new Vector2(difference.x, difference.z);
+                    float rotateDegree = Vector2.SignedAngle(face2D, difference2D);
+                    indicatorCenter.transform.localEulerAngles = new Vector3(0, 0, rotateDegree);
                 }
-                Vector3 difference = enemy.position - transform.position;
-                Vector3 faceDirection = transform.forward;
-                Vector2 face2D = new Vector2(faceDirection.x, faceDirection.z);
-                Vector2 difference2D = new Vector2(difference.x, difference.z);
-                float rotateDegree = Vector2.SignedAngle(face2D, difference2D);
-                indicatorCenter.transform.localEulerAngles = new Vector3(0, 0, rotateDegree);
+                else
+                {
+                    indicator.gameObject.SetActive(false);
+                }
             }
             else if (playerID == "02")
             {
@@ -187,6 +207,13 @@ public class PlayerControl : MonoBehaviour
         if (collision.collider.gameObject.tag == "Player")
         {
             Physics.IgnoreCollision(collision.collider, this.gameObject.GetComponent<CapsuleCollider>());
+        }
+        if (playerID == "02")
+        {
+            if (collision.collider.gameObject.tag == "Furniture")
+            {
+                Physics.IgnoreCollision(collision.collider, this.gameObject.GetComponent<CapsuleCollider>());
+            }
         }
     }
 }
