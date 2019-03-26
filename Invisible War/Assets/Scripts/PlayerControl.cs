@@ -127,7 +127,7 @@ public class PlayerControl : MonoBehaviour
                 {
                     indicatorCenter.gameObject.SetActive(false);
                 } else { 
-                    indicatorCenter.gameObject.SetActive(true);
+                    //indicatorCenter.gameObject.SetActive(true);
                 }
                 Vector3 difference = enemy.position - transform.position;
                 Vector3 faceDirection = transform.forward;
