@@ -125,7 +125,7 @@ public class PlayerControl : MonoBehaviour
                 float distance = Vector3.Distance(enemy.position, transform.position);
                 if (distance < 100 && !inTutorial)
                 {
-                    //indicatorCenter.gameObject.SetActive(false);
+                    indicatorCenter.gameObject.SetActive(false);
                 } else { 
                     indicatorCenter.gameObject.SetActive(true);
                 }
