@@ -11,6 +11,8 @@ public class PlayerControl : MonoBehaviour
     public GameObject indicator;
     public bool inTutorial;
     public Animator moveAnimator;
+    public GameObject HunterHelpMenu;
+    public GameObject GhostHelpMenu;
     public enum MovePattern
     {
         Walking,
@@ -42,7 +44,23 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        RotateView();
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            HunterHelpMenu.SetActive(true);
+        }
+        if (Input.GetKeyUp(KeyCode.G))
+        {
+            HunterHelpMenu.SetActive(false);
+        }
+        if (Input.GetButtonDown("GhostHelp"))
+        {
+            GhostHelpMenu.SetActive(true);
+        }
+        if (Input.GetButtonUp("GhostHelp"))
+        {
+            GhostHelpMenu.SetActive(false);
+        }
+            RotateView();
         if (Input.GetButton("Running" + playerID))
         {
             moveMode = MovePattern.Running;

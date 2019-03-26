@@ -79,6 +79,8 @@ public class HelpMenuController : MonoBehaviour
                     blink2.SetActive(false);
                     hunterPanel.SetActive(false);
                     ghostPanel.SetActive(false);
+                    text1.enabled = false;
+                    text2.enabled = false;
                     gsc.enabled = true;
                 }
                 else
@@ -110,6 +112,8 @@ public class HelpMenuController : MonoBehaviour
                     blink2.SetActive(false);
                     hunterPanel.SetActive(false);
                     ghostPanel.SetActive(false);
+                    text1.enabled = false;
+                    text2.enabled = false;
                     gsc.enabled = true;
                 }
                 else

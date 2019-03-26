@@ -18,7 +18,7 @@ public class CatchGhost : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKey(KeyCode.C) && !isGhost) || (Input.GetButtonDown("GhostCatch") && isGhost))// catch
+        if ((Input.GetKey(KeyCode.C) && !isGhost))// catch
         {
             if (catchArm)
             {
