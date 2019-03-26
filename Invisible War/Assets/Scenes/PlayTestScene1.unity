@@ -6368,6 +6368,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Furniture
       objectReference: {fileID: 0}
+    - target: {fileID: 100020, guid: 42c5443074f424e148478717168d0913, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
+    - target: {fileID: 100022, guid: 42c5443074f424e148478717168d0913, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     - target: {fileID: 100036, guid: 42c5443074f424e148478717168d0913, type: 3}
       propertyPath: m_TagString
       value: Furniture
