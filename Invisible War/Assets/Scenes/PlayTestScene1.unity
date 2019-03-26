@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -19687,8 +19687,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hunterPanel: {fileID: 2007800362}
   ghostPanel: {fileID: 1982215038}
-  blink1: {fileID: 1509309682}
-  blink2: {fileID: 395600447}
+  blink1: {fileID: 1677413081}
+  blink2: {fileID: 121512718}
   hunter: {fileID: 1578733160}
   ghost: {fileID: 1447882107}
   crosshair: {fileID: 1374376794}
