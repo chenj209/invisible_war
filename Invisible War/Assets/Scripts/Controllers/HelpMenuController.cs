@@ -24,81 +24,100 @@ public class HelpMenuController : MonoBehaviour
     public GameObject ghost;
     public Image crosshair;
 
+    private void Awake()
+    {
+        gsc = gameObject.GetComponent<GameStateController>();
+        if (gsc.GetRoundNum() == 1)
+        {
+            gsc.enabled = false;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        player1Ready = false;
-        player2Ready = false;
-        timer1 = 0.5f;
-        timer2 = 0.5f;
-        blinking1 = true;
-        blinking2 = true;
-        gsc = gameObject.GetComponent<GameStateController>();
-        DisablePlayers();
+        if (gsc.GetRoundNum() == 1)
+        {
+            player1Ready = false;
+            player2Ready = false;
+            timer1 = 0.5f;
+            timer2 = 0.5f;
+            blinking1 = true;
+            blinking2 = true;
+            DisablePlayers();
+        }
+        else
+        {
+            hunterPanel.SetActive(false);
+            ghostPanel.SetActive(false);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        // for player1
-        if (blinking1)
+        if (gsc.GetRoundNum() == 1)
         {
-            timer1 -= Time.deltaTime;
-        }
-        if (timer1 <= 0)
-        {
-            blink1.SetActive(!blink1.active);
-            timer1 += 0.5f;
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            player1Ready = true;
-            if (player2Ready)
+            // for player1
+            if (blinking1)
             {
-                blinking1 = false;
-                blinking2 = false;
-                blink1.SetActive(false);
-                blink2.SetActive(false);
-                hunterPanel.SetActive(false);
-                ghostPanel.SetActive(false);
-                gsc.enabled = true;
+                timer1 -= Time.deltaTime;
             }
-            else
+            if (timer1 <= 0)
             {
-                blink1.SetActive(false);
-                text1.text = "Waiting for Player2";
-                blink1 = text1.gameObject;
+                blink1.SetActive(!blink1.active);
+                timer1 += 0.5f;
             }
-        }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                player1Ready = true;
+                if (player2Ready)
+                {
+                    blinking1 = false;
+                    blinking2 = false;
+                    blink1.SetActive(false);
+                    blink2.SetActive(false);
+                    hunterPanel.SetActive(false);
+                    ghostPanel.SetActive(false);
+                    gsc.enabled = true;
+                }
+                else
+                {
+                    blink1.SetActive(false);
+                    text1.text = "Waiting for Player2";
+                    blink1 = text1.gameObject;
+                }
+            }
 
-        // for player2
-        if (blinking2)
-        {
-            timer2 -= Time.deltaTime;
-        }
-        if (timer2 <= 0)
-        {
-            blink2.SetActive(!blink2.active);
-            timer2 += 0.5f;
-        }
-        if (Input.GetButtonDown("Continue"))
-        {
-            player2Ready = true;
-            if (player1Ready)
+            // for player2
+            if (blinking2)
             {
-                blinking1 = false;
-                blinking2 = false;
-                blink1.SetActive(false);
-                blink2.SetActive(false);
-                hunterPanel.SetActive(false);
-                ghostPanel.SetActive(false);
-                gsc.enabled = true;
+                timer2 -= Time.deltaTime;
             }
-            else
+            if (timer2 <= 0)
             {
-                blink2.SetActive(false);
-                text2.text = "Waiting for Player1";
-                blink2 = text2.gameObject;
+                blink2.SetActive(!blink2.active);
+                timer2 += 0.5f;
+            }
+            if (Input.GetButtonDown("Continue"))
+            {
+                player2Ready = true;
+                if (player1Ready)
+                {
+                    blinking1 = false;
+                    blinking2 = false;
+                    blink1.SetActive(false);
+                    blink2.SetActive(false);
+                    hunterPanel.SetActive(false);
+                    ghostPanel.SetActive(false);
+                    gsc.enabled = true;
+                }
+                else
+                {
+                    blink2.SetActive(false);
+                    text2.text = "Waiting for Player1";
+                    blink2 = text2.gameObject;
+                }
             }
         }
     }

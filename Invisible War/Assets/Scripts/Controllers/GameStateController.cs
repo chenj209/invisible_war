@@ -175,4 +175,9 @@ public class GameStateController : MonoBehaviour
     {
         SceneManager.LoadScene(levelToLoad);
     }
+
+    public int GetRoundNum()
+    {
+        return roundNum;
+    }
 }
