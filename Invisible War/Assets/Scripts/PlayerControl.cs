@@ -14,6 +14,12 @@ public class PlayerControl : MonoBehaviour
     public GameObject HunterHelpMenu;
     public GameObject GhostHelpMenu;
     public Text GhostStatus;
+    private bool firstTimeInRange = true;
+    public UIFader hunterInstruction;
+    public Text hunterInstructionText;
+    private bool fadeoutFirst = true;
+    public Image crosshair;
+
     public enum MovePattern
     {
         Walking,
@@ -45,6 +51,14 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (playerID == "01")
+        {
+            if (hunterInstruction.FadeInOver && fadeoutFirst && inTutorial)
+            {
+                fadeoutFirst = false;
+                StartCoroutine(FadeOut());
+            }
+        }
         if (Input.GetKeyDown(KeyCode.G))
         {
             HunterHelpMenu.SetActive(true);
@@ -91,6 +105,17 @@ public class PlayerControl : MonoBehaviour
     private void FixedUpdate()
     {
         m_MouseLook.UpdateCursorLock();
+    }
+
+    IEnumerator FadeOut()
+    {
+
+        yield return new WaitForSeconds(10);
+
+        hunterInstruction.FadeOut();
+        yield return new WaitForSeconds(1);
+        crosshair.enabled = true;
+        gameObject.GetComponent<shooting>().enabled = true;
     }
 
     private void move()
@@ -146,10 +171,18 @@ public class PlayerControl : MonoBehaviour
                     float distance = Vector3.Distance(enemy.position, transform.position);
                     if (!GameConfig.instance.hunterIndicatorNearBy)
                     {
-                        if (distance < 100 && !inTutorial)
+                        if (distance < 100)
                         {
                             GhostStatus.text = "              Ghost\n             NearBy!";
+
                             indicatorCenter.gameObject.SetActive(false);
+                            if (inTutorial && firstTimeInRange)
+                            {
+                                firstTimeInRange = false;
+                                hunterInstructionText.text = "Fire the paintball gun to your estimated direction. The ghost will become visible to you when you hit it.";
+                                hunterInstruction.FadeIn();
+
+                            }
                         }
                         else
                         {

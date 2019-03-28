@@ -14,6 +14,12 @@ public class shooting : MonoBehaviour
     private AudioSource[] sources;
     private string playerID;
     private bool On_CoolDown = false;
+    public bool inTutorial;
+    public UIFader hunterInstruction;
+    public Text hunterInstructionText;
+    public GameObject huntershootingEffect;
+    private bool firstTimeshoot = true;
+    private bool fadeoutfirst = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +38,12 @@ public class shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (hunterInstruction.FadeInOver && fadeoutfirst && inTutorial)
+        {
+            fadeoutfirst = false;
+            StartCoroutine(FadeOut());
+        }
+        
         if (Input.GetButtonDown("Fire" + playerID) && !Pressed)
         {
             Pressed = true;
@@ -59,9 +71,26 @@ public class shooting : MonoBehaviour
             // crosshair.gameObject.SetActive(true);
         }
     }
+    IEnumerator FadeOut()
+    {
+
+        yield return new WaitForSeconds(6);
+
+        hunterInstruction.FadeOut();
+        huntershootingEffect.SetActive(false);
+        crosshair.enabled = true;
+    }
 
     void Shooting()
     {
+        if (inTutorial && firstTimeshoot)
+        {
+            firstTimeshoot = false;
+            crosshair.enabled = false;
+            hunterInstructionText.text = "Bottom left icon is your shooting cooldown.";
+            hunterInstruction.FadeIn();
+            huntershootingEffect.SetActive(true);
+        }
         decalPool.ClearParticles();
         ParticleSystem.MainModule psMain = particleLauncher.main;
         particleLauncher.Emit(GameConfig.instance.paintgunBulletsCount);
