@@ -42,7 +42,6 @@ public class Seal : MonoBehaviour
                     ss.destroy();
                     SealDestroyInstruction.SetActive(false);
                     loadingBar.SetActive(false);
-                    Debug.Log("Trigered");
                     gameObject.SetActive(false);
                 }
                 else
