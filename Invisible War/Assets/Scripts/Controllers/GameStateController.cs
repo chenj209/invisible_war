@@ -37,14 +37,24 @@ public class GameStateController : MonoBehaviour
     public static int p1w;
     public static int p2w;
 
+
     public bool Intutorial;
     public UIFader hunterInstruction;
     public GameObject hunterIndicatorEffect;
     public Text hunterInstructionText;
     private bool fadeoutFirst = true;
 
+    public static int winner = -1;
+    public static string chosenAbility;
+    private RandomAbilityController1 rac1;
+
+
     void Start()
     {
+        if (chosenAbility!="")
+        {
+            Debug.Log(chosenAbility);
+        }
         scoreBoard.enabled = false;
         name.enabled = false;
         Player1Score.enabled = false;
@@ -56,6 +66,7 @@ public class GameStateController : MonoBehaviour
         p1S.enabled = false;
         p2S.enabled = false;
         an = gameObject.GetComponent<Animator>();
+        rac1 = gameObject.GetComponent<RandomAbilityController1>();
         cdBool = true;
         DisablePlayers();
     }
@@ -126,11 +137,12 @@ public class GameStateController : MonoBehaviour
         hunterInstruction.FadeOut();
     }
 
-    IEnumerator Win(int winner)
+    IEnumerator Win(int player)
     {
         DisablePlayers();
+        winner = player;
         roundOver = true;
-        if (winner == 1)
+        if (player == 1)
         {
             p1w++;
             StartCoroutine(PopUp("You Win", p1S));
@@ -148,7 +160,7 @@ public class GameStateController : MonoBehaviour
 
         if (round >= 1)
         {
-            Application.LoadLevel(Application.loadedLevel);
+            rac1.enabled = true;
         }
         else
         {
@@ -181,8 +193,11 @@ public class GameStateController : MonoBehaviour
         crosshair.enabled = false;
         hunter.GetComponent<PlayerControl>().enabled = false;
         hunter.GetComponent<shooting>().enabled = false;
-        ghost.GetComponent<PlayerControl>().enabled = false;
-        ghost.GetComponent<Freeze>().enabled = false;
+        if (ghost)
+        {
+            ghost.GetComponent<PlayerControl>().enabled = false;
+            ghost.GetComponent<Freeze>().enabled = false;
+        }
     }
 
     private void ActivePlayers()
@@ -210,5 +225,30 @@ public class GameStateController : MonoBehaviour
     public int GetRoundNum()
     {
         return roundNum;
+    }
+
+    public int GetWinner()
+    {
+        return winner;
+    }
+
+    public bool GetRoundOver()
+    {
+        return roundOver;
+    }
+
+    public int GetRound()
+    {
+        return round;
+    }
+
+    public void ReceiveAbility(string ability)
+    {
+        chosenAbility = ability;
+    }
+
+    private void ApplyAbility()
+    {
+
     }
 }
