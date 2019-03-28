@@ -30,7 +30,7 @@ public class ParticleLauncher : MonoBehaviour
                 decal.transform.Rotate(Vector3.up, Random.Range(0, 360), Space.Self);
 
                 decal.transform.SetParent(other.transform);
-                Destroy(decal, 5);
+                Destroy(decal, GameConfig.instance.paintgunEffectDuration);
                 if (other.GetComponent<PlayerStatus>() != null)
                 {
                     other.GetComponent<PlayerStatus>().GetHit();

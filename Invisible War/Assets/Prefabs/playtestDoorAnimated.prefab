@@ -88,7 +88,7 @@ MeshCollider:
   m_GameObject: {fileID: 2297748294935963489}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -197,7 +197,7 @@ Animator:
   m_GameObject: {fileID: 3057738439770809172}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1a11abdce4f7b4f60b54bbd02ab9b0b1, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -266,3 +266,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   decalPool: {fileID: 0}
   doorID: 0
+  requireKeyPress: 0
+  doorCollider: {fileID: 0}
