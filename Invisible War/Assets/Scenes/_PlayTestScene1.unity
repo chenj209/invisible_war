@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641287, b: 0.5748173, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10879,6 +10879,17 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5786811841577171577, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+        type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5786811841577171577, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5eea39a908e2b46e791b49b446831b2e,
+        type: 3}
     - target: {fileID: 4741706698230658229, guid: 9db4e1a1a9e8845afb745b690f94b0f4,
         type: 3}
       propertyPath: m_Layer
@@ -20227,6 +20238,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4991018573817924312, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4991018573817924312, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8256369720747086077, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: m_Layer
@@ -20546,16 +20567,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4991018573817924312, guid: 53519003647cd3c43bd13748a3b93880,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4991018573817924312, guid: 53519003647cd3c43bd13748a3b93880,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4410147567921629537, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
@@ -24345,6 +24356,10 @@ MonoBehaviour:
   Player1Score: {fileID: 2036010450}
   Player2Score: {fileID: 2132983411}
   scoreCD: 3
+  Intutorial: 0
+  hunterInstruction: {fileID: 0}
+  hunterIndicatorEffect: {fileID: 0}
+  hunterInstructionText: {fileID: 0}
 --- !u!4 &1638324864
 Transform:
   m_ObjectHideFlags: 0
@@ -29648,6 +29663,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701ae68efee0a41ea87543d514a5475a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hunter: {fileID: 1578733160}
+  Ghost: {fileID: 1447882107}
   hunterTransparent: 1
   hunterSpeed: 35
   hunterJumpSpeed: 13
@@ -29655,19 +29672,24 @@ MonoBehaviour:
   hunterCameraVerticalSpeed: 2
   enableHunterIndicator: 1
   hunterIndicatorNearBy: 0
-  paintgunCooldown: 10
+  paintgunCooldown: 1
   paintgunEffectDuration: 5
-  paintgunShootDistance: Infinity
+  paintgunShootDistance: 60
   paintgunBulletsCount: 30
+  paintgunStopGhostAction: 0
   ghostTransparent: 1
   ghostSpeed: 30
   ghostJumpSpeed: 13
   ghostCameraHorizontalSpeed: 2
   ghostCameraVerticalSpeed: 0
   enableGhostIndicator: 1
-  freezeCoolDown: 30
-  freezeEffectDuration: 10
-  freezeDistance: 5
+  freezeCoolDown: 60
+  freezeEffectDuration: 5
+  freezeDistance: 50
+  freezeBlockScreen: 1
+  freezeBlockScreenSprite: {fileID: 21300000, guid: 2e8b2bcf27ee24051b50912b167c76b5,
+    type: 3}
+  freezeEffectObj: {fileID: 216253505}
 --- !u!4 &2081727029
 Transform:
   m_ObjectHideFlags: 0
