@@ -53,10 +53,13 @@ public class PlayerControl : MonoBehaviour
     {
         if (playerID == "01")
         {
-            if (hunterInstruction.FadeInOver && fadeoutFirst && inTutorial)
+            if (inTutorial)
             {
-                fadeoutFirst = false;
-                StartCoroutine(FadeOut());
+                if (hunterInstruction.FadeInOver && fadeoutFirst)
+                {
+                    fadeoutFirst = false;
+                    StartCoroutine(FadeOut());
+                }
             }
         }
         if (Input.GetKeyDown(KeyCode.G))

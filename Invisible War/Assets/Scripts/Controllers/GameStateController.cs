@@ -74,10 +74,12 @@ public class GameStateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hunterInstruction.FadeInOver && fadeoutFirst && Intutorial)
-        {
-            fadeoutFirst = false;
-            StartCoroutine(FadeOut());
+       if (Intutorial){
+            if (hunterInstruction.FadeInOver && fadeoutFirst)
+            {
+                fadeoutFirst = false;
+                StartCoroutine(FadeOut());
+            }
         }
         if (cdBool)
         {

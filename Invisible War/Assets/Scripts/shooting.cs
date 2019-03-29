@@ -38,12 +38,13 @@ public class shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hunterInstruction.FadeInOver && fadeoutfirst && inTutorial)
-        {
-            fadeoutfirst = false;
-            StartCoroutine(FadeOut());
+        if (inTutorial) { 
+            if (hunterInstruction.FadeInOver && fadeoutfirst)
+            {
+                fadeoutfirst = false;
+                StartCoroutine(FadeOut());
+            }
         }
-        
         if (Input.GetButtonDown("Fire" + playerID) && !Pressed)
         {
             Pressed = true;
