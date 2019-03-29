@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class RandomAbilityController1 : MonoBehaviour
 {
-    private List<string> hunterAbilities = new List<string>() { "Speed Up", "Shorten Colddown", "Inhance Indicator" };
-    private List<string> ghostAbilities = new List<string>() { "Speed Up", "Shorten Colddown", "Increase Freeze Time"};
+    private List<string> hunterAbilities = new List<string>() { "Speed Up", "Shorten Cooldown", "Inhance Indicator" };
+    private List<string> ghostAbilities = new List<string>() { "Speed Up", "Shorten Coolown", "Increase Freeze Time"};
     public GameObject hunterPanel;
     public GameObject ghostPanel;
     private bool isShown;

@@ -37,16 +37,20 @@ public class GameStateController : MonoBehaviour
     public static int p1w;
     public static int p2w;
 
-    public static int winner = -1;
-    public static string chosenAbility;
+
+    public bool Intutorial;
+    public UIFader hunterInstruction;
+    public GameObject hunterIndicatorEffect;
+    public Text hunterInstructionText;
+    private bool fadeoutFirst = true;
+
+    public static List<int> winners = new List<int>();
+    public static List<string> chosenAbilities = new List<string>();
     private RandomAbilityController1 rac1;
+    public GameConfig gc;
 
     void Start()
     {
-        if (chosenAbility!="")
-        {
-            Debug.Log(chosenAbility);
-        }
         scoreBoard.enabled = false;
         name.enabled = false;
         Player1Score.enabled = false;
@@ -60,12 +64,20 @@ public class GameStateController : MonoBehaviour
         an = gameObject.GetComponent<Animator>();
         rac1 = gameObject.GetComponent<RandomAbilityController1>();
         cdBool = true;
+        ApplyAbility();
         DisablePlayers();
     }
 
     // Update is called once per frame
     void Update()
     {
+       if (Intutorial){
+            if (hunterInstruction.FadeInOver && fadeoutFirst)
+            {
+                fadeoutFirst = false;
+                StartCoroutine(FadeOut());
+            }
+        }
         if (cdBool)
         {
             if (startCD >= 0)
@@ -96,18 +108,38 @@ public class GameStateController : MonoBehaviour
 
     private void Game()
     {
-        ActivePlayers();
-        cdUI3.enabled = false;
-        cdUI4.enabled = false;
-        cdBool = false;
-        StartCoroutine(PopUp("Game Start", p1S));
-        StartCoroutine(PopUp("Game Start", p2S));
+        if (!Intutorial)
+        {
+            ActivePlayers();
+            cdUI3.enabled = false;
+            cdUI4.enabled = false;
+            cdBool = false;
+            StartCoroutine(PopUp("Game Start", p1S));
+            StartCoroutine(PopUp("Game Start", p2S));
+        }
+        else
+        {
+            cdUI3.enabled = false;
+            cdUI4.enabled = false;
+            cdBool = false;
+            hunterIndicatorEffect.SetActive(true);
+            hunterInstruction.FadeIn();
+        }
+    }
+
+    IEnumerator FadeOut()
+    {
+
+        yield return new WaitForSeconds(8);
+        hunter.GetComponent<PlayerControl>().enabled = true;
+        hunterIndicatorEffect.SetActive(false);
+        hunterInstruction.FadeOut();
     }
 
     IEnumerator Win(int player)
     {
         DisablePlayers();
-        winner = player;
+        winners.Add(player);
         roundOver = true;
         if (player == 1)
         {
@@ -196,7 +228,14 @@ public class GameStateController : MonoBehaviour
 
     public int GetWinner()
     {
-        return winner;
+        if (winners.Count>=1)
+        {
+            return winners[winners.Count - 1];
+        }
+        else
+        {
+            return -1;
+        }
     }
 
     public bool GetRoundOver()
@@ -211,11 +250,54 @@ public class GameStateController : MonoBehaviour
 
     public void ReceiveAbility(string ability)
     {
-        chosenAbility = ability;
+        chosenAbilities.Add(ability);
     }
 
     private void ApplyAbility()
     {
-
+        for (int i = 0;i<roundNum-1;i++)
+        {
+            if (winners[i] == 1)//ghost gets ability
+            {
+                switch (chosenAbilities[i])
+                {
+                    case "Speed Up":
+                        Debug.Log("Apply Ghost Speed Up");
+                        gc.ghostSpeed *= 1.1f;
+                        Debug.Log(gc.ghostSpeed);
+                        break;
+                    case "Shorten Cooldown":
+                        Debug.Log("Apply Ghost Shorten Cooldown");
+                        gc.paintgunCooldown /= 1.1f;
+                        break;
+                    case "Increase Freeze Time":
+                        Debug.Log("Apply Ghost Increase Freeze Time");
+                        gc.freezeEffectDuration *= 1.1f;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else if (winners[i] == 2)//hunter gets ability
+            {
+                switch (chosenAbilities[i])
+                {
+                    case "Speed Up":
+                        Debug.Log("Apply Hunter Speed Up");
+                        gc.hunterSpeed *= 1.1f;
+                        break;
+                    case "Shorten Cooldown":
+                        Debug.Log("Apply Hunter Shorten Cooldown");
+                        gc.freezeCoolDown /= 1.1f;
+                        break;
+                    case "Inhance Indicator":
+                        Debug.Log("Apply Hunter Inhance Indicator");
+                        gc.disappearRange /= 1.1f;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
     }
 }

@@ -25618,6 +25618,11 @@ MonoBehaviour:
   Player1Score: {fileID: 2036010450}
   Player2Score: {fileID: 2132983411}
   scoreCD: 3
+  Intutorial: 0
+  hunterInstruction: {fileID: 0}
+  hunterIndicatorEffect: {fileID: 0}
+  hunterInstructionText: {fileID: 0}
+  gc: {fileID: 2081727028}
 --- !u!4 &1638324864
 Transform:
   m_ObjectHideFlags: 0
@@ -31223,6 +31228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701ae68efee0a41ea87543d514a5475a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hunter: {fileID: 1578733160}
+  Ghost: {fileID: 1447882107}
   hunterTransparent: 1
   hunterSpeed: 35
   hunterJumpSpeed: 13
@@ -31230,19 +31237,25 @@ MonoBehaviour:
   hunterCameraVerticalSpeed: 2
   enableHunterIndicator: 1
   hunterIndicatorNearBy: 0
-  paintgunCooldown: 10
+  disappearRange: 100
+  paintgunCooldown: 1
   paintgunEffectDuration: 5
-  paintgunShootDistance: Infinity
+  paintgunShootDistance: 60
   paintgunBulletsCount: 30
+  paintgunStopGhostAction: 0
   ghostTransparent: 1
   ghostSpeed: 30
   ghostJumpSpeed: 13
   ghostCameraHorizontalSpeed: 2
   ghostCameraVerticalSpeed: 0
   enableGhostIndicator: 1
-  freezeCoolDown: 30
-  freezeEffectDuration: 10
-  freezeDistance: 5
+  freezeCoolDown: 60
+  freezeEffectDuration: 5
+  freezeDistance: 50
+  freezeBlockScreen: 1
+  freezeBlockScreenSprite: {fileID: 21300000, guid: 2e8b2bcf27ee24051b50912b167c76b5,
+    type: 3}
+  freezeEffectObj: {fileID: 216253505}
 --- !u!4 &2081727029
 Transform:
   m_ObjectHideFlags: 0

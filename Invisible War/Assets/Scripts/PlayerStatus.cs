@@ -13,7 +13,7 @@ public class PlayerStatus : MonoBehaviour
     public AudioClip shiveringOne;
     private float Visible_Time;
     private float remaining_freeze_time;
-    private bool Hit = false;
+    public bool Hit = false;
     private bool freezed = false;
     private bool showTransparent = false;
     private bool caught = false;
@@ -32,11 +32,12 @@ public class PlayerStatus : MonoBehaviour
     public bool gethit = false;
     public bool getfreezed = false;
 
+
     private void Start()
     {
         cameraEffect = GetComponentInChildren<CameraShootEffect>() as CameraShootEffect;
         playerRenderer = gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
-        playerRenderer.enabled = false;
+        resetPlayerTransparency();
         sources = gameObject.GetComponents<AudioSource>();
         Visible_Time = GameConfig.instance.paintgunEffectDuration;
         remaining_freeze_time = GameConfig.instance.freezeEffectDuration;
@@ -104,8 +105,7 @@ public class PlayerStatus : MonoBehaviour
         }
         else
         {
-            playerRenderer.enabled = false;
-            playerRenderer.material = transparent_material;
+            resetPlayerTransparency();
         }
 
     }
@@ -141,5 +141,16 @@ public class PlayerStatus : MonoBehaviour
             Destroy(effect, 2);
             caught = true;
         }
+    }
+    private void resetPlayerTransparency()
+    {
+        if (isHunter)
+        {
+            playerRenderer.enabled = !GameConfig.instance.hunterTransparent;
+        } else
+        {
+            playerRenderer.enabled = !GameConfig.instance.ghostTransparent;
+        }
+        playerRenderer.material = transparent_material;
     }
 }

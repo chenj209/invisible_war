@@ -14,6 +14,12 @@ public class PlayerControl : MonoBehaviour
     public GameObject HunterHelpMenu;
     public GameObject GhostHelpMenu;
     public Text GhostStatus;
+    private bool firstTimeInRange = true;
+    public UIFader hunterInstruction;
+    public Text hunterInstructionText;
+    private bool fadeoutFirst = true;
+    public Image crosshair;
+
     public enum MovePattern
     {
         Walking,
@@ -22,13 +28,11 @@ public class PlayerControl : MonoBehaviour
     };
     public MovePattern moveMode;
 
-    public float moveForce = 5;
 
     private Rigidbody playerBody;
     HealthBar healthbar;
 
     public bool isGround;
-    public float jumpSpeed = 5;
     public Camera playerCamera;
     [SerializeField] private MouseLook m_MouseLook = null;
 
@@ -45,6 +49,17 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (playerID == "01")
+        {
+            if (inTutorial)
+            {
+                if (hunterInstruction.FadeInOver && fadeoutFirst)
+                {
+                    fadeoutFirst = false;
+                    StartCoroutine(FadeOut());
+                }
+            }
+        }
         if (Input.GetKeyDown(KeyCode.G))
         {
             HunterHelpMenu.SetActive(true);
@@ -79,10 +94,11 @@ public class PlayerControl : MonoBehaviour
         else isGround = Physics.Raycast(transform.position, -transform.up, 10.0f);
         if (isGround && Input.GetButton("Jump" + playerID))
         {
-            //playerBody.velocity += transform.up * jumpSpeed;
-            //playerBody.AddRelativeForce(Vector3.up * jumpSpeed);
             Vector3 vel = playerBody.velocity;
-            vel.y = jumpSpeed;
+            if (playerID == "01")
+                vel.y = GameConfig.instance.hunterJumpSpeed;
+            else
+                vel.y = GameConfig.instance.ghostJumpSpeed;
             playerBody.velocity = vel;
         }
         updateIndicator();
@@ -93,9 +109,28 @@ public class PlayerControl : MonoBehaviour
         m_MouseLook.UpdateCursorLock();
     }
 
+    IEnumerator FadeOut()
+    {
+
+        yield return new WaitForSeconds(10);
+
+        hunterInstruction.FadeOut();
+        yield return new WaitForSeconds(1);
+        crosshair.enabled = true;
+        gameObject.GetComponent<shooting>().enabled = true;
+    }
+
     private void move()
     {
-        float moveSpeed = moveForce;
+        float moveForce; 
+        if (playerID == "01")
+        {
+            moveForce = GameConfig.instance.hunterSpeed; 
+        } else 
+        {
+            moveForce = GameConfig.instance.ghostSpeed; 
+        }
+        float moveSpeed;
         switch (moveMode) {
             case MovePattern.Walking:
                 moveSpeed = moveForce;
@@ -105,6 +140,9 @@ public class PlayerControl : MonoBehaviour
                 break;
             case MovePattern.Sneaking:
                 moveSpeed = .6f * moveForce;
+                break;
+            default:
+                moveSpeed = moveForce;
                 break;
         }
 
@@ -146,10 +184,18 @@ public class PlayerControl : MonoBehaviour
                     float distance = Vector3.Distance(enemy.position, transform.position);
                     if (!GameConfig.instance.hunterIndicatorNearBy)
                     {
-                        if (distance < 100 && !inTutorial)
+                        if (distance < GameConfig.instance.disappearRange)
                         {
                             GhostStatus.text = "              Ghost\n             NearBy!";
+
                             indicatorCenter.gameObject.SetActive(false);
+                            if (inTutorial && firstTimeInRange)
+                            {
+                                firstTimeInRange = false;
+                                hunterInstructionText.text = "Fire the paintball gun to your estimated direction. The ghost will become visible to you when you hit it.";
+                                hunterInstruction.FadeIn();
+
+                            }
                         }
                         else
                         {

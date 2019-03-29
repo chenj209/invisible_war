@@ -15,6 +15,7 @@ public class Seal : MonoBehaviour
     private GameObject loadingBar;
     private float curTime;
     private bool destroying = false;
+    private PlayerStatus ghostStatus;
 
     // Start is called before the first frame update
     void Start()
@@ -22,8 +23,8 @@ public class Seal : MonoBehaviour
         ss = sealSys.GetComponent<SealSystem>();
         destroyTime = ss.destoryTime;
         ghost = ss.ghost;
+        ghostStatus = ghost.GetComponent<PlayerStatus>();
         loadingBar = ss.loadingBar;
-
         ResetSeal();
     }
 
@@ -33,30 +34,34 @@ public class Seal : MonoBehaviour
         if (destroying)
         {
             // Check is the ghost press the unlockseal button.
-            if (Input.GetButton("Unlock"))
+            if (!GameConfig.instance.paintgunStopGhostAction || !ghostStatus.Hit)
             {
-                // CountDown for the unlock process.
-                if (curTime <= 0)
+                if (Input.GetButton("Unlock"))
                 {
-                    // Destory itself and update to the SealSystem.
-                    ss.destroy();
-                    SealDestroyInstruction.SetActive(false);
-                    loadingBar.SetActive(false);
-                    Debug.Log("Trigered");
-                    gameObject.SetActive(false);
+                    // CountDown for the unlock process.
+                    if (curTime <= 0)
+                    {
+                        // Destory itself and update to the SealSystem.
+                        ss.destroy();
+                        SealDestroyInstruction.SetActive(false);
+                        loadingBar.SetActive(false);
+                        gameObject.SetActive(false);
+                    }
+                    else
+                    {
+                        curTime -= Time.deltaTime;
+                        loadingBar.SetActive(true);
+                        loadingBar.GetComponent<Image>().fillAmount = (destroyTime - curTime) / destroyTime;
+                    }
                 }
                 else
                 {
-                    curTime -= Time.deltaTime;
-                    loadingBar.SetActive(true);
-                    loadingBar.GetComponent<Image>().fillAmount = (destroyTime - curTime) / destroyTime;
+                    loadingBar.SetActive(false);
                 }
-            }
-            else
+            } else
             {
                 loadingBar.SetActive(false);
             }
-
         }
 
     }
