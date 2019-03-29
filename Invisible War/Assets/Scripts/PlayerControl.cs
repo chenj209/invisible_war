@@ -184,7 +184,7 @@ public class PlayerControl : MonoBehaviour
                     float distance = Vector3.Distance(enemy.position, transform.position);
                     if (!GameConfig.instance.hunterIndicatorNearBy)
                     {
-                        if (distance < 100)
+                        if (distance < GameConfig.instance.disappearRange)
                         {
                             GhostStatus.text = "              Ghost\n             NearBy!";
 

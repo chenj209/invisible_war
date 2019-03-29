@@ -17,6 +17,7 @@ public class GameConfig : MonoBehaviour
     public float hunterCameraVerticalSpeed = 2.0f;
     public bool enableHunterIndicator = true;
     public bool hunterIndicatorNearBy = false;
+    public float disappearRange = 100;
     public float paintgunCooldown = 1.0f;
     public float paintgunEffectDuration = 5.0f;
     public float paintgunShootDistance = 60.0f;
