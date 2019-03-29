@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641287, b: 0.5748173, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -20227,6 +20227,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4991018573817924312, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4991018573817924312, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8256369720747086077, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: m_Layer
@@ -20546,16 +20556,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4991018573817924312, guid: 53519003647cd3c43bd13748a3b93880,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4991018573817924312, guid: 53519003647cd3c43bd13748a3b93880,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4410147567921629537, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
@@ -29648,6 +29648,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701ae68efee0a41ea87543d514a5475a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hunter: {fileID: 1578733160}
+  Ghost: {fileID: 1447882107}
   hunterTransparent: 1
   hunterSpeed: 35
   hunterJumpSpeed: 13
@@ -29659,6 +29661,7 @@ MonoBehaviour:
   paintgunEffectDuration: 5
   paintgunShootDistance: Infinity
   paintgunBulletsCount: 30
+  paintgunStopGhostAction: 0
   ghostTransparent: 1
   ghostSpeed: 30
   ghostJumpSpeed: 13
@@ -29668,6 +29671,10 @@ MonoBehaviour:
   freezeCoolDown: 30
   freezeEffectDuration: 10
   freezeDistance: 5
+  freezeBlockScreen: 0
+  freezeBlockScreenSprite: {fileID: 21300000, guid: 2e8b2bcf27ee24051b50912b167c76b5,
+    type: 3}
+  freezeEffectObj: {fileID: 216253505}
 --- !u!4 &2081727029
 Transform:
   m_ObjectHideFlags: 0
