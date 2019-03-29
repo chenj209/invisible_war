@@ -13,7 +13,7 @@ public class PlayerStatus : MonoBehaviour
     public AudioClip shiveringOne;
     private float Visible_Time;
     private float remaining_freeze_time;
-    private bool Hit = false;
+    public bool Hit = false;
     private bool freezed = false;
     private bool showTransparent = false;
     private bool caught = false;
