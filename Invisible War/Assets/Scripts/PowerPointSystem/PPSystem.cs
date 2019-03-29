@@ -75,8 +75,7 @@ public class PPSystem : MonoBehaviour
                 curSTime = respawnTime;
                 gps.invincible = false;
                 hps.invincible = true;
-                PlayerControl pc = ghost.GetComponent<PlayerControl>();
-                pc.moveForce /= 1.5f;
+                GameConfig.instance.ghostSpeed /= 1.5f;
             }
         }
 
@@ -123,8 +122,7 @@ public class PPSystem : MonoBehaviour
         curPTime = powerUpTime;
         gps.invincible = true;
         hps.invincible = false;
-        PlayerControl pc = ghost.GetComponent<PlayerControl>();
-        pc.moveForce *= 1.5f;
+        GameConfig.instance.ghostSpeed *= 1.5f;
     }
 
     public IEnumerator Blink()

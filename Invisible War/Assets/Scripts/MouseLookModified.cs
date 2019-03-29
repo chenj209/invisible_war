@@ -5,14 +5,14 @@ using UnityStandardAssets.CrossPlatformInput;
 [Serializable]
 public class MouseLook
 {
-    public float XSensitivity = 2f;
-    public float YSensitivity = 2f;
     public bool clampVerticalRotation = true;
     public float MinimumX = -90F;
     public float MaximumX = 90F;
     public bool smooth;
     public float smoothTime = 5f;
     public bool lockCursor = true;
+    private float XSensitivity;   
+    private float YSensitivity;   
 
 
     private Quaternion m_CharacterTargetRot;
@@ -25,6 +25,14 @@ public class MouseLook
         m_CharacterTargetRot = character.localRotation;
         m_CameraTargetRot = camera.localRotation;
         playerID = playerID_;
+        if (playerID == "01")
+        {
+            XSensitivity = GameConfig.instance.hunterCameraHorizontalSpeed;
+            YSensitivity = GameConfig.instance.hunterCameraVerticalSpeed;
+        } else {
+            XSensitivity = GameConfig.instance.ghostCameraHorizontalSpeed;
+            YSensitivity = GameConfig.instance.ghostCameraVerticalSpeed;
+        }
     }
 
 

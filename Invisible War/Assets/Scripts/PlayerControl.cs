@@ -14,6 +14,7 @@ public class PlayerControl : MonoBehaviour
     public GameObject HunterHelpMenu;
     public GameObject GhostHelpMenu;
     public Text GhostStatus;
+
     public enum MovePattern
     {
         Walking,
@@ -22,13 +23,11 @@ public class PlayerControl : MonoBehaviour
     };
     public MovePattern moveMode;
 
-    public float moveForce = 5;
 
     private Rigidbody playerBody;
     HealthBar healthbar;
 
     public bool isGround;
-    public float jumpSpeed = 5;
     public Camera playerCamera;
     [SerializeField] private MouseLook m_MouseLook = null;
 
@@ -79,10 +78,11 @@ public class PlayerControl : MonoBehaviour
         else isGround = Physics.Raycast(transform.position, -transform.up, 10.0f);
         if (isGround && Input.GetButton("Jump" + playerID))
         {
-            //playerBody.velocity += transform.up * jumpSpeed;
-            //playerBody.AddRelativeForce(Vector3.up * jumpSpeed);
             Vector3 vel = playerBody.velocity;
-            vel.y = jumpSpeed;
+            if (playerID == "01")
+                vel.y = GameConfig.instance.hunterJumpSpeed;
+            else
+                vel.y = GameConfig.instance.ghostJumpSpeed;
             playerBody.velocity = vel;
         }
         updateIndicator();
@@ -95,7 +95,15 @@ public class PlayerControl : MonoBehaviour
 
     private void move()
     {
-        float moveSpeed = moveForce;
+        float moveForce; 
+        if (playerID == "01")
+        {
+            moveForce = GameConfig.instance.hunterSpeed; 
+        } else 
+        {
+            moveForce = GameConfig.instance.ghostSpeed; 
+        }
+        float moveSpeed;
         switch (moveMode) {
             case MovePattern.Walking:
                 moveSpeed = moveForce;
@@ -105,6 +113,9 @@ public class PlayerControl : MonoBehaviour
                 break;
             case MovePattern.Sneaking:
                 moveSpeed = .6f * moveForce;
+                break;
+            default:
+                moveSpeed = moveForce;
                 break;
         }
 

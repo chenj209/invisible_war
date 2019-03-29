@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameConfig : MonoBehaviour
 {
     public static GameConfig instance = null;
+    public GameObject Hunter;
+    public GameObject Ghost;
 
     // Hunter ability config
     public bool hunterTransparent = true;
@@ -18,6 +21,7 @@ public class GameConfig : MonoBehaviour
     public float paintgunEffectDuration = 5.0f;
     public float paintgunShootDistance = 60.0f;
     public int paintgunBulletsCount = 30;
+    public bool paintgunStopGhostAction = false;
 
     // Ghost ability config
     public bool ghostTransparent = true;
@@ -28,7 +32,10 @@ public class GameConfig : MonoBehaviour
     public bool enableGhostIndicator = true;
     public float freezeCoolDown = 60.0f;
     public float freezeEffectDuration = 5.0f;
-    public float freezeDistance = 5.0f;
+    public float freezeDistance = 50.0f;
+    public bool freezeBlockScreen = false;
+    public Sprite freezeBlockScreenSprite;
+    public Image freezeEffectObj;
 
     // Start is called before the first frame update
     void Awake()
@@ -37,6 +44,14 @@ public class GameConfig : MonoBehaviour
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
+    }
+
+    private void Start()
+    {
+        if (freezeBlockScreen)
+        {
+            freezeEffectObj.sprite = freezeBlockScreenSprite;
+        }
     }
 
     // Update is called once per frame

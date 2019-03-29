@@ -135,7 +135,7 @@ public class Freeze : MonoBehaviour
             }
         }else if (!inTutorial)
         {
-            if (Vector3.Distance(catcher.transform.position, transform.position) < 50)
+            if (Vector3.Distance(catcher.transform.position, transform.position) < GameConfig.instance.freezeDistance)
             {
                 PlayerControl hunter = catcher.GetComponent<PlayerControl>();
                 hunter.enabled = false;
