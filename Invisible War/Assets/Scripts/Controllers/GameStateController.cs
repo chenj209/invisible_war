@@ -37,9 +37,17 @@ public class GameStateController : MonoBehaviour
     public static int p1w;
     public static int p2w;
 
+
+    public bool Intutorial;
+    public UIFader hunterInstruction;
+    public GameObject hunterIndicatorEffect;
+    public Text hunterInstructionText;
+    private bool fadeoutFirst = true;
+
     public static int winner = -1;
     public static string chosenAbility;
     private RandomAbilityController1 rac1;
+
 
     void Start()
     {
@@ -66,6 +74,13 @@ public class GameStateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       if (Intutorial){
+            if (hunterInstruction.FadeInOver && fadeoutFirst)
+            {
+                fadeoutFirst = false;
+                StartCoroutine(FadeOut());
+            }
+        }
         if (cdBool)
         {
             if (startCD >= 0)
@@ -96,12 +111,32 @@ public class GameStateController : MonoBehaviour
 
     private void Game()
     {
-        ActivePlayers();
-        cdUI3.enabled = false;
-        cdUI4.enabled = false;
-        cdBool = false;
-        StartCoroutine(PopUp("Game Start", p1S));
-        StartCoroutine(PopUp("Game Start", p2S));
+        if (!Intutorial)
+        {
+            ActivePlayers();
+            cdUI3.enabled = false;
+            cdUI4.enabled = false;
+            cdBool = false;
+            StartCoroutine(PopUp("Game Start", p1S));
+            StartCoroutine(PopUp("Game Start", p2S));
+        }
+        else
+        {
+            cdUI3.enabled = false;
+            cdUI4.enabled = false;
+            cdBool = false;
+            hunterIndicatorEffect.SetActive(true);
+            hunterInstruction.FadeIn();
+        }
+    }
+
+    IEnumerator FadeOut()
+    {
+
+        yield return new WaitForSeconds(8);
+        hunter.GetComponent<PlayerControl>().enabled = true;
+        hunterIndicatorEffect.SetActive(false);
+        hunterInstruction.FadeOut();
     }
 
     IEnumerator Win(int player)
