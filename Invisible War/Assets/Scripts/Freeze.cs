@@ -11,10 +11,12 @@ public class Freeze : MonoBehaviour
     public AudioClip freezeSound;
     private AudioSource[] sources;
     public GameObject catcher;
+    public GameObject freezeInstruction;
     public bool inTutorial;
     public bool bot;
     private float timerBot;
     private float timerNonBot;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,17 @@ public class Freeze : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (inTutorial)
+        {
+            if (Vector3.Distance(catcher.transform.position, transform.position) < GameConfig.instance.freezeDistance)
+            {
+                freezeInstruction.SetActive(true);
+            }
+            else
+            {
+                freezeInstruction.SetActive(false);
+            }
+        }
         if (!bot)
         {
             if (Input.GetButton("Fire02") || Input.GetKey(KeyCode.P))
@@ -104,49 +117,49 @@ public class Freeze : MonoBehaviour
         freezePosition.y = -14.6f;
         GameObject freezeEffectObj = Instantiate(freezeEffect, freezePosition, Quaternion.identity);
         Destroy(freezeEffectObj, 6);
-        if (inTutorial && !bot)
+        //if (inTutorial && !bot)
+        //{
+        //    if (Vector3.Distance(catcher.transform.position, transform.position) < 60)
+        //    {
+        //        Catcher hunter = catcher.GetComponent<Catcher>();
+        //        shooting huntershoot = catcher.GetComponent<shooting>();
+        //        if (huntershoot)
+        //            huntershoot.enabled = false;
+        //        CatchGhost catchability = catcher.GetComponentInChildren<CatchGhost>();
+        //        if (catchability)
+        //            catchability.enabled = false;
+        //        hunter.stopRunning();
+        //        catcher.GetComponent<PlayerStatus>().GetFreezed();
+        //    }
+        //}else if (inTutorial && bot)
+        //{
+        //    if (Vector3.Distance(catcher.transform.position, transform.position) < 100)
+        //    {
+        //        PlayerControl hunter = catcher.GetComponent<PlayerControl>();
+        //        hunter.enabled = false;
+        //        shooting huntershoot = catcher.GetComponent<shooting>();
+        //        if (huntershoot)
+        //            huntershoot.enabled = false;
+        //        CatchGhost catchability = catcher.GetComponentInChildren<CatchGhost>();
+        //        if (catchability)
+        //            catchability.enabled = false;
+        //        catcher.GetComponent<PlayerStatus>().GetFreezed();
+        //        TutorialStateController.HunterFreezeDone = true;
+        //    }
+        //}else if (!inTutorial)
+        //{
+        if (Vector3.Distance(catcher.transform.position, transform.position) < GameConfig.instance.freezeDistance)
         {
-            if (Vector3.Distance(catcher.transform.position, transform.position) < 60)
-            {
-                Catcher hunter = catcher.GetComponent<Catcher>();
-                shooting huntershoot = catcher.GetComponent<shooting>();
-                if (huntershoot)
-                    huntershoot.enabled = false;
-                CatchGhost catchability = catcher.GetComponentInChildren<CatchGhost>();
-                if (catchability)
-                    catchability.enabled = false;
-                hunter.stopRunning();
-                catcher.GetComponent<PlayerStatus>().GetFreezed();
-            }
-        }else if (inTutorial && bot)
-        {
-            if (Vector3.Distance(catcher.transform.position, transform.position) < 100)
-            {
-                PlayerControl hunter = catcher.GetComponent<PlayerControl>();
-                hunter.enabled = false;
-                shooting huntershoot = catcher.GetComponent<shooting>();
-                if (huntershoot)
-                    huntershoot.enabled = false;
-                CatchGhost catchability = catcher.GetComponentInChildren<CatchGhost>();
-                if (catchability)
-                    catchability.enabled = false;
-                catcher.GetComponent<PlayerStatus>().GetFreezed();
-                TutorialStateController.HunterFreezeDone = true;
-            }
-        }else if (!inTutorial)
-        {
-            if (Vector3.Distance(catcher.transform.position, transform.position) < GameConfig.instance.freezeDistance)
-            {
-                PlayerControl hunter = catcher.GetComponent<PlayerControl>();
-                hunter.enabled = false;
-                shooting huntershoot = catcher.GetComponent<shooting>();
-                if (huntershoot)
-                    huntershoot.enabled = false;
-                CatchGhost catchability = catcher.GetComponentInChildren<CatchGhost>();
-                if (catchability)
-                    catchability.enabled = false;
-                catcher.GetComponent<PlayerStatus>().GetFreezed();
-            }
+            PlayerControl hunter = catcher.GetComponent<PlayerControl>();
+            hunter.enabled = false;
+            shooting huntershoot = catcher.GetComponent<shooting>();
+            if (huntershoot)
+                huntershoot.enabled = false;
+            CatchGhost catchability = catcher.GetComponentInChildren<CatchGhost>();
+            if (catchability)
+                catchability.enabled = false;
+            catcher.GetComponent<PlayerStatus>().GetFreezed();
         }
+        
     }
 }

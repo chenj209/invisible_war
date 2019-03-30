@@ -28,7 +28,9 @@ public class PlayerStatus : MonoBehaviour
     public bool isHunter;
     private bool firstTime = true;
     public bool isTutorial;
-
+    public GameObject ghost;
+    public GameObject catchInstruction;
+    public GameObject playercamera;
     public bool gethit = false;
     public bool getfreezed = false;
 
@@ -49,6 +51,16 @@ public class PlayerStatus : MonoBehaviour
         if (Hit || freezed || showTransparent || caught)
         {
             playerRenderer.enabled = true;
+            if (isHunter && isTutorial)
+            {
+                Vector3 screenPoint = playercamera.GetComponent<Camera>().WorldToViewportPoint(ghost.transform.position);
+                bool onScreen = screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;
+
+                if (onScreen && (showTransparent || Hit))
+                {
+                    catchInstruction.SetActive(true);
+                }
+            }
             if (freezed && remaining_freeze_time > 0)
             {
                 if (freezeEffect && isHunter)
@@ -73,6 +85,7 @@ public class PlayerStatus : MonoBehaviour
                 }
                 remaining_freeze_time = GameConfig.instance.freezeEffectDuration;
                 playerRenderer.material = transparent_material;
+                
                 freezed = false;
                 firstTime = true;
             }
@@ -147,6 +160,10 @@ public class PlayerStatus : MonoBehaviour
         if (isHunter)
         {
             playerRenderer.enabled = !GameConfig.instance.hunterTransparent;
+            if (playerRenderer.enabled == false && isTutorial)
+            {
+                catchInstruction.SetActive(false);
+            }
         } else
         {
             playerRenderer.enabled = !GameConfig.instance.ghostTransparent;

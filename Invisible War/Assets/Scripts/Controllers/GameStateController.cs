@@ -42,6 +42,9 @@ public class GameStateController : MonoBehaviour
     public UIFader hunterInstruction;
     public GameObject hunterIndicatorEffect;
     public Text hunterInstructionText;
+    public UIFader ghostInstruction;
+    public GameObject ghostIndicatorEffect;
+    public Text ghostInstructionText;
     private bool fadeoutFirst = true;
 
     public static List<int> winners = new List<int>();
@@ -124,6 +127,8 @@ public class GameStateController : MonoBehaviour
             cdBool = false;
             hunterIndicatorEffect.SetActive(true);
             hunterInstruction.FadeIn();
+            ghostIndicatorEffect.SetActive(true);
+            ghostInstruction.FadeIn();
         }
     }
 
@@ -132,8 +137,12 @@ public class GameStateController : MonoBehaviour
 
         yield return new WaitForSeconds(8);
         hunter.GetComponent<PlayerControl>().enabled = true;
+        ghost.GetComponent<PlayerControl>().enabled = true;
+        ghost.GetComponent<Freeze>().enabled = true;
         hunterIndicatorEffect.SetActive(false);
+        ghostIndicatorEffect.SetActive(false);
         hunterInstruction.FadeOut();
+        ghostInstruction.FadeOut();
     }
 
     IEnumerator Win(int player)
