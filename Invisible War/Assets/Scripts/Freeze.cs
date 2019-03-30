@@ -12,11 +12,17 @@ public class Freeze : MonoBehaviour
     private AudioSource[] sources;
     public GameObject catcher;
     public GameObject freezeInstruction;
+    public GameObject freezeInstructionEffect;
+    public UIFader ghostInstruction;
+    public Text ghostInstructionText;
+    public GameObject indicatorEffect;
     public bool inTutorial;
     public bool bot;
     private float timerBot;
     private float timerNonBot;
-
+    private bool firstimeFreeze = true;
+    private bool fadeoutFirst = true;
+    private bool fadeinOver = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,11 +43,20 @@ public class Freeze : MonoBehaviour
             if (Vector3.Distance(catcher.transform.position, transform.position) < GameConfig.instance.freezeDistance)
             {
                 freezeInstruction.SetActive(true);
+                indicatorEffect.SetActive(true);
             }
             else
             {
                 freezeInstruction.SetActive(false);
+                indicatorEffect.SetActive(false);
             }
+            
+            if (fadeinOver && fadeoutFirst)
+            {
+                fadeoutFirst = false;
+                StartCoroutine(FadeOut());
+            }
+            
         }
         if (!bot)
         {
@@ -49,6 +64,14 @@ public class Freeze : MonoBehaviour
             {
                 if (!On_CoolDown)
                 {
+                    if (firstimeFreeze && inTutorial)
+                    {
+                        firstimeFreeze = false;
+                        ghostInstructionText.text = "Bottom right icon is your freeze cooldown.";
+                        ghostInstruction.FadeIn();
+                        fadeinOver = true;
+                        freezeInstructionEffect.SetActive(true);
+                    }
                     Skill();
                 }
 
@@ -103,6 +126,15 @@ public class Freeze : MonoBehaviour
 
             }
         }
+    }
+
+    IEnumerator FadeOut()
+    {
+
+        yield return new WaitForSeconds(6);
+        ghostInstruction.FadeOut();
+        freezeInstructionEffect.SetActive(false);
+
     }
 
     public void Skill()

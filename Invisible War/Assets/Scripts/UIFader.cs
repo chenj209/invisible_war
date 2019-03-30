@@ -9,7 +9,9 @@ public class UIFader : MonoBehaviour
     public bool FadeInOver = false;
     public void FadeIn()
     {
+       
         FadeInOver = false;
+        
         StartCoroutine(FadeCanvasGroup(uiElement, uiElement.alpha, 1));
     }
 
@@ -32,7 +34,12 @@ public class UIFader : MonoBehaviour
 
             cg.alpha = currentValue;
 
-            if (end - 1 < 0.0000001 && cg.alpha - 1 < 0.0000001) FadeInOver = true;
+            if (end - 1 < 0.0000001 && cg.alpha - 1 < 0.0000001)
+            {
+                
+                 FadeInOver = true;
+                
+            }
             yield return new WaitForEndOfFrame();
         }
     }

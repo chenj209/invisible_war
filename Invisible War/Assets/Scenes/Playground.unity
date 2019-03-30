@@ -5694,7 +5694,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 50217019}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Eff_Heal_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6117,7 +6117,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 93084548}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eff_Heal_1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8914,7 +8914,7 @@ GameObject:
   - component: {fileID: 225824268}
   - component: {fileID: 225824270}
   - component: {fileID: 225824269}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: glitter1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15469,109 +15469,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 316308968}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &321391508
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 321391509}
-  - component: {fileID: 321391513}
-  - component: {fileID: 321391512}
-  - component: {fileID: 321391511}
-  - component: {fileID: 321391510}
-  m_Layer: 5
-  m_Name: Ghost Instruction
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &321391509
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321391508}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.000055644592}
-  m_LocalScale: {x: 0.4952204, y: 0.19131558, z: 1}
-  m_Children:
-  - {fileID: 1865564991}
-  m_Father: {fileID: 1756032345}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 604, y: 8}
-  m_SizeDelta: {x: 800, y: 450}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &321391510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321391508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11a366ad99fd9434d884ee7ed6e91327, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiElement: {fileID: 321391511}
-  FadeInOver: 0
---- !u!225 &321391511
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321391508}
-  m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
---- !u!114 &321391512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321391508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.50787646, g: 0.7904175, b: 0.9528302, a: 0.392}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
---- !u!222 &321391513
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321391508}
-  m_CullTransparentMesh: 0
 --- !u!1 &324168669
 GameObject:
   m_ObjectHideFlags: 0
@@ -17186,7 +17083,7 @@ GameObject:
   - component: {fileID: 394159808}
   - component: {fileID: 394159810}
   - component: {fileID: 394159809}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ring2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22021,7 +21918,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 414496435}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eff_Heal_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22575,7 +22472,7 @@ GameObject:
   - component: {fileID: 443376063}
   - component: {fileID: 443376065}
   - component: {fileID: 443376064}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: glitter1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30276,7 +30173,7 @@ GameObject:
   - component: {fileID: 636166266}
   - component: {fileID: 636166268}
   - component: {fileID: 636166267}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: glitter1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39554,7 +39451,7 @@ GameObject:
   - component: {fileID: 982705501}
   - component: {fileID: 982705503}
   - component: {fileID: 982705502}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: par2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44763,7 +44660,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1034222525}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Eff_Heal_1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45020,7 +44917,7 @@ GameObject:
   - component: {fileID: 1054190583}
   - component: {fileID: 1054190585}
   - component: {fileID: 1054190584}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ring2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49890,7 +49787,7 @@ GameObject:
   - component: {fileID: 1085623007}
   - component: {fileID: 1085623009}
   - component: {fileID: 1085623008}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: par1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55436,7 +55333,7 @@ GameObject:
   - component: {fileID: 1135709962}
   - component: {fileID: 1135709964}
   - component: {fileID: 1135709963}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: par1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67475,6 +67372,109 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.20979027, y: 0.45658353, z: 0.11181988}
   m_Center: {x: -0.6341119, y: -0.047073472, z: 0.13160089}
+--- !u!1 &1320246410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1320246411}
+  - component: {fileID: 1320246415}
+  - component: {fileID: 1320246414}
+  - component: {fileID: 1320246413}
+  - component: {fileID: 1320246412}
+  m_Layer: 5
+  m_Name: Ghost Instruction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1320246411
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320246410}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000055644592}
+  m_LocalScale: {x: 0.4952204, y: 0.19131558, z: 1}
+  m_Children:
+  - {fileID: 1919776558}
+  m_Father: {fileID: 1756032345}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 604, y: 8}
+  m_SizeDelta: {x: 800, y: 450}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1320246412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320246410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11a366ad99fd9434d884ee7ed6e91327, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiElement: {fileID: 1320246413}
+  FadeInOver: 0
+--- !u!225 &1320246413
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320246410}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1320246414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320246410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.50787646, g: 0.7904175, b: 0.9528302, a: 0.392}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1320246415
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320246410}
+  m_CullTransparentMesh: 0
 --- !u!1001 &1324855994
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68362,12 +68362,12 @@ PrefabInstance:
         type: 3}
       propertyPath: hunterInstruction
       value: 
-      objectReference: {fileID: 321391510}
+      objectReference: {fileID: 1320246412}
     - target: {fileID: 8256369720806058887, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: hunterInstructionText
       value: 
-      objectReference: {fileID: 1865564992}
+      objectReference: {fileID: 1919776559}
     - target: {fileID: 8256369720806058883, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: m_Mesh
@@ -68529,6 +68529,26 @@ PrefabInstance:
       propertyPath: freezeInstruction
       value: 
       objectReference: {fileID: 1279137276}
+    - target: {fileID: 3334475576896513578, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: ghostInstruction
+      value: 
+      objectReference: {fileID: 1320246412}
+    - target: {fileID: 3334475576896513578, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: ghostInstructionText
+      value: 
+      objectReference: {fileID: 1919776559}
+    - target: {fileID: 3334475576896513578, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: freezeInstructionEffect
+      value: 
+      objectReference: {fileID: 93084547}
+    - target: {fileID: 3334475576896513578, guid: 53519003647cd3c43bd13748a3b93880,
+        type: 3}
+      propertyPath: indicatorEffect
+      value: 
+      objectReference: {fileID: 414496434}
     - target: {fileID: 8999682606231572659, guid: 53519003647cd3c43bd13748a3b93880,
         type: 3}
       propertyPath: m_Name
@@ -69242,7 +69262,7 @@ GameObject:
   - component: {fileID: 1386684961}
   - component: {fileID: 1386684963}
   - component: {fileID: 1386684962}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ring3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76491,7 +76511,7 @@ GameObject:
   - component: {fileID: 1519964024}
   - component: {fileID: 1519964026}
   - component: {fileID: 1519964025}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ring3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83287,9 +83307,9 @@ MonoBehaviour:
   hunterInstruction: {fileID: 1995140379}
   hunterIndicatorEffect: {fileID: 50217018}
   hunterInstructionText: {fileID: 1386873535}
-  ghostInstruction: {fileID: 321391510}
+  ghostInstruction: {fileID: 1320246412}
   ghostIndicatorEffect: {fileID: 414496434}
-  ghostInstructionText: {fileID: 1865564992}
+  ghostInstructionText: {fileID: 1919776559}
   gc: {fileID: 0}
 --- !u!4 &1638324864
 Transform:
@@ -83851,7 +83871,7 @@ GameObject:
   - component: {fileID: 1664026083}
   - component: {fileID: 1664026085}
   - component: {fileID: 1664026084}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: glitter1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88819,7 +88839,7 @@ GameObject:
   - component: {fileID: 1683910223}
   - component: {fileID: 1683910225}
   - component: {fileID: 1683910224}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ring1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94011,7 +94031,7 @@ GameObject:
   - component: {fileID: 1708287822}
   - component: {fileID: 1708287824}
   - component: {fileID: 1708287823}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ring3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99673,7 +99693,7 @@ RectTransform:
   - {fileID: 1723964217}
   - {fileID: 1995140378}
   - {fileID: 1279137277}
-  - {fileID: 321391509}
+  - {fileID: 1320246411}
   - {fileID: 683439038}
   - {fileID: 737823945}
   - {fileID: 476389185}
@@ -99763,7 +99783,7 @@ GameObject:
   - component: {fileID: 1762579667}
   - component: {fileID: 1762579669}
   - component: {fileID: 1762579668}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ring2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104594,7 +104614,7 @@ GameObject:
   - component: {fileID: 1772537758}
   - component: {fileID: 1772537760}
   - component: {fileID: 1772537759}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: par2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110989,86 +111009,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1863798358}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1865564990
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1865564991}
-  - component: {fileID: 1865564993}
-  - component: {fileID: 1865564992}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1865564991
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865564990}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.7065258, y: 8.164857, z: 1}
-  m_Children: []
-  m_Father: {fileID: 321391509}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13, y: 19}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1865564992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865564990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: e8c2362b79d5a4df1879301878de6f64, type: 3}
-    m_FontSize: 9
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 56
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: Top Right icon is the hunter indicator. Green means you are safe, while
-    red means hunter nearby and you are in danger!
---- !u!222 &1865564993
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865564990}
-  m_CullTransparentMesh: 0
 --- !u!1 &1866029399
 GameObject:
   m_ObjectHideFlags: 0
@@ -111833,6 +111773,86 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e930b5ae71558847974e723376416f8, type: 3}
+--- !u!1 &1919776557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1919776558}
+  - component: {fileID: 1919776560}
+  - component: {fileID: 1919776559}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1919776558
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919776557}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.7065258, y: 8.164857, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1320246411}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -13, y: 19}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1919776559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919776557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: e8c2362b79d5a4df1879301878de6f64, type: 3}
+    m_FontSize: 9
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 56
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Top Right icon is the hunter indicator. Green means you are safe, while
+    red means hunter nearby and you are in danger!
+--- !u!222 &1919776560
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919776557}
+  m_CullTransparentMesh: 0
 --- !u!1 &1921519039
 GameObject:
   m_ObjectHideFlags: 0
@@ -111844,7 +111864,7 @@ GameObject:
   - component: {fileID: 1921519040}
   - component: {fileID: 1921519042}
   - component: {fileID: 1921519041}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: par1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116538,7 +116558,7 @@ GameObject:
   - component: {fileID: 1925610889}
   - component: {fileID: 1925610891}
   - component: {fileID: 1925610890}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: par2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121430,7 +121450,7 @@ GameObject:
   - component: {fileID: 1939323719}
   - component: {fileID: 1939323721}
   - component: {fileID: 1939323720}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ring1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126087,7 +126107,7 @@ GameObject:
   - component: {fileID: 1941773090}
   - component: {fileID: 1941773092}
   - component: {fileID: 1941773091}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ring3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132008,7 +132028,7 @@ GameObject:
   - component: {fileID: 2008225726}
   - component: {fileID: 2008225728}
   - component: {fileID: 2008225727}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ring1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137510,7 +137530,7 @@ GameObject:
   - component: {fileID: 2055274499}
   - component: {fileID: 2055274501}
   - component: {fileID: 2055274500}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ring1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142462,7 +142482,7 @@ GameObject:
   - component: {fileID: 2074689197}
   - component: {fileID: 2074689199}
   - component: {fileID: 2074689198}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ring2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147409,7 +147429,7 @@ GameObject:
   - component: {fileID: 2080284147}
   - component: {fileID: 2080284149}
   - component: {fileID: 2080284148}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: par1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152107,7 +152127,7 @@ MonoBehaviour:
   enableGhostIndicator: 1
   freezeCoolDown: 30
   freezeEffectDuration: 10
-  freezeDistance: 25
+  freezeDistance: 30
   freezeBlockScreen: 0
   freezeBlockScreenSprite: {fileID: 0}
   freezeEffectObj: {fileID: 0}

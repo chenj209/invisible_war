@@ -117,7 +117,14 @@ public class PlayerControl : MonoBehaviour
         hunterInstruction.FadeOut();
         yield return new WaitForSeconds(1);
         crosshair.enabled = true;
-        gameObject.GetComponent<shooting>().enabled = true;
+        if (playerID == "01")
+        {
+            if (!gameObject.GetComponent<PlayerStatus>().getfreezed)
+            {
+                gameObject.GetComponent<shooting>().enabled = true;
+            }
+        }
+
     }
 
     private void move()
