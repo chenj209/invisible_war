@@ -61,7 +61,7 @@ public class Freeze : MonoBehaviour
                 cdImage.fillAmount -= 1 / GameConfig.instance.freezeCoolDown * Time.deltaTime;
                 PlayerControl hunter = catcher.GetComponent<PlayerControl>();
               
-                if (!hunter.enabled && !inTutorial)
+                if (!hunter.enabled)
                 {
                     timerNonBot -= Time.deltaTime;
                     if (timerNonBot < 0)
