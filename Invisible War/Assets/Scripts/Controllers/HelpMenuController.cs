@@ -101,7 +101,7 @@ public class HelpMenuController : MonoBehaviour
                 blink2.SetActive(!blink2.active);
                 timer2 += 0.5f;
             }
-            if (Input.GetButtonDown("Continue"))
+            if (Input.GetButtonDown("Continue") || Input.GetKeyDown(KeyCode.L))
             {
                 player2Ready = true;
                 if (player1Ready)
