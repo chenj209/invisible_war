@@ -16,7 +16,7 @@ public class Freeze : MonoBehaviour
     public bool bot;
     private float timerBot;
     private float timerNonBot;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +51,7 @@ public class Freeze : MonoBehaviour
                 {
                     Skill();
                 }
-            
+
             }
         }
         if (On_CoolDown)
@@ -62,6 +62,7 @@ public class Freeze : MonoBehaviour
                 PlayerControl hunter = catcher.GetComponent<PlayerControl>();
               
                 if (!hunter.enabled)
+
                 {
                     timerNonBot -= Time.deltaTime;
                     if (timerNonBot < 0)
@@ -99,7 +100,7 @@ public class Freeze : MonoBehaviour
                         timerBot = 5;
                     }
                 }
-                
+
             }
         }
     }
@@ -114,9 +115,9 @@ public class Freeze : MonoBehaviour
         if (sources[0])
         sources[0].PlayOneShot(freezeSound, 1f);
         Vector3 freezePosition = gameObject.transform.position;
-        freezePosition.y = -14.6f;
+        freezePosition.y = -25.0f;
         GameObject freezeEffectObj = Instantiate(freezeEffect, freezePosition, Quaternion.identity);
-        Destroy(freezeEffectObj, 6);
+        //Destroy(freezeEffectObj, 6);
         //if (inTutorial && !bot)
         //{
         //    if (Vector3.Distance(catcher.transform.position, transform.position) < 60)
@@ -160,6 +161,6 @@ public class Freeze : MonoBehaviour
                 catchability.enabled = false;
             catcher.GetComponent<PlayerStatus>().GetFreezed();
         }
-        
+
     }
 }
