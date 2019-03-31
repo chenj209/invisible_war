@@ -24,8 +24,10 @@ public class SealSystem : MonoBehaviour
     private int sealLeft;
 
     // For test purpose.
+    /*
     public float resetTimer;
     private float curTime;
+    */
 
     // Start is called before the first frame update.
     void Start()
@@ -34,7 +36,9 @@ public class SealSystem : MonoBehaviour
         ResetSys();
 
         // For test purpose.
+        /*
         curTime = resetTimer;
+        */
     }
 
     // Update is called once per frame
