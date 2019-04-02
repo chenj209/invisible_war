@@ -96,7 +96,7 @@ public class GameStateController : MonoBehaviour
         {
             PlayerStatus ps1 = hunter.GetComponent<PlayerStatus>();
             SealSystem ss = sealSystem.GetComponent<SealSystem>();
-            if (caught && ps1.invincible)
+            if (caught && ps1.invincible && !Intutorial)
             {
                 StopAllCoroutines();
                 StartCoroutine(Win(1));
