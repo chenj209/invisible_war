@@ -50,7 +50,6 @@ public class GameStateController : MonoBehaviour
     public static List<int> winners = new List<int>();
     public static List<string> chosenAbilities = new List<string>();
     private RandomAbilityController1 rac1;
-    public GameConfig gc;
 
     public bool gamestart = true;
 
@@ -68,11 +67,8 @@ public class GameStateController : MonoBehaviour
         p2S.enabled = false;
         an = gameObject.GetComponent<Animator>();
         cdBool = true;
-        if (gc)
-        {
-            rac1 = gameObject.GetComponent<RandomAbilityController1>();
-            ApplyAbility();
-        }
+        rac1 = gameObject.GetComponent<RandomAbilityController1>();
+        //ApplyAbility();
         DisablePlayers();
     }
 
@@ -289,28 +285,31 @@ public class GameStateController : MonoBehaviour
     public void ReceiveAbility(string ability)
     {
         chosenAbilities.Add(ability);
+        ApplyAbility();
     }
 
     private void ApplyAbility()
     {
+        Debug.Log("Applying ablity");
         for (int i = 0;i<roundNum-1;i++)
         {
+            Debug.Log("here" + i);
             if (winners[i] == 1)//ghost gets ability
             {
+                Debug.Log("winner hunter" + chosenAbilities[i]);
                 switch (chosenAbilities[i])
                 {
                     case "Speed Up":
                         Debug.Log("Apply Ghost Speed Up");
-                        gc.ghostSpeed *= 1.1f;
-                        Debug.Log(gc.ghostSpeed);
+                        GameConfig.instance.ghostSpeed *= GameConfig.instance.abilityModifier;
                         break;
                     case "Shorten Cooldown":
                         Debug.Log("Apply Ghost Shorten Cooldown");
-                        gc.paintgunCooldown /= 1.1f;
+                        GameConfig.instance.paintgunCooldown /= GameConfig.instance.abilityModifier;
                         break;
                     case "Increase Freeze Time":
                         Debug.Log("Apply Ghost Increase Freeze Time");
-                        gc.freezeEffectDuration *= 1.1f;
+                        GameConfig.instance.freezeEffectDuration *= GameConfig.instance.abilityModifier;
                         break;
                     default:
                         break;
@@ -318,19 +317,20 @@ public class GameStateController : MonoBehaviour
             }
             else if (winners[i] == 2)//hunter gets ability
             {
+                Debug.Log("winner ghost, " + chosenAbilities[i]);
                 switch (chosenAbilities[i])
                 {
                     case "Speed Up":
                         Debug.Log("Apply Hunter Speed Up");
-                        gc.hunterSpeed *= 1.1f;
+                        GameConfig.instance.hunterSpeed *= GameConfig.instance.abilityModifier;
                         break;
                     case "Shorten Cooldown":
                         Debug.Log("Apply Hunter Shorten Cooldown");
-                        gc.freezeCoolDown /= 1.1f;
+                        GameConfig.instance.freezeCoolDown /= GameConfig.instance.abilityModifier;
                         break;
                     case "Inhance Indicator":
                         Debug.Log("Apply Hunter Inhance Indicator");
-                        gc.disappearRange /= 1.1f;
+                        GameConfig.instance.disappearRange /= GameConfig.instance.abilityModifier;
                         break;
                     default:
                         break;

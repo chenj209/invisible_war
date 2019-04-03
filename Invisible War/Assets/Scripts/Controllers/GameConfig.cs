@@ -9,6 +9,8 @@ public class GameConfig : MonoBehaviour
     public GameObject Hunter;
     public GameObject Ghost;
 
+    public float abilityModifier = 1.5f;
+
     // Hunter ability config
     public bool hunterTransparent = true;
     public float hunterSpeed = 35.0f;
@@ -23,6 +25,7 @@ public class GameConfig : MonoBehaviour
     public float paintgunShootDistance = 60.0f;
     public int paintgunBulletsCount = 30;
     public bool paintgunStopGhostAction = false;
+    public float hunterSelectAblitySensitivity = 5.0f;
 
     // Ghost ability config
     public bool ghostTransparent = true;
