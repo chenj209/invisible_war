@@ -5961,7 +5961,7 @@ MonoBehaviour:
     m_LineSpacing: 1.5
   m_Text: 'Use left joystick to select
 
-    Press to       confirm selection'
+    Press        to confirm selection'
 --- !u!222 &90533947
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7742,7 +7742,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -168, y: -87}
+  m_AnchoredPosition: {x: -184.9, y: -87}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &187807809
@@ -11553,7 +11553,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -163, y: -85}
+  m_AnchoredPosition: {x: -180.9, y: -85}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &461666046
@@ -38839,7 +38839,7 @@ MonoBehaviour:
     m_LineSpacing: 1.5
   m_Text: 'Use left joystick to select
 
-    Press to       confirm selection'
+    Press        to confirm selection'
 --- !u!222 &1949401077
 CanvasRenderer:
   m_ObjectHideFlags: 0
