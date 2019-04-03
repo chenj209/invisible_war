@@ -58,6 +58,7 @@ public class RandomAbilityController1 : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             getRandomInt(usedIntegers);
+            panel.transform.GetChild(i + 1).GetChild(0).GetComponent<Text>().text = abilities[usedIntegers[i]];
             switch (abilities[usedIntegers[i]])
             {
                 case "Speed Up":
