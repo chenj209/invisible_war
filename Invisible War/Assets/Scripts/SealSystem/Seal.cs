@@ -8,6 +8,8 @@ public class Seal : MonoBehaviour
 {
     public GameObject sealSys;
     public GameObject SealDestroyInstruction;
+    public GameObject sealOn;
+    public GameObject animat;
 
     private SealSystem ss;
     private float destroyTime;
@@ -45,22 +47,28 @@ public class Seal : MonoBehaviour
                         ss.destroy();
                         SealDestroyInstruction.SetActive(false);
                         loadingBar.SetActive(false);
+                        this.animat.SetActive(false);
+                        // gameObject.SetActive(false);
+                        this.sealOn.SetActive(true);
                         gameObject.SetActive(false);
                     }
                     else
                     {
                         curTime -= Time.deltaTime;
                         loadingBar.SetActive(true);
+                        this.animat.SetActive(true);
                         loadingBar.GetComponent<Image>().fillAmount = (destroyTime - curTime) / destroyTime;
                     }
                 }
                 else
                 {
                     loadingBar.SetActive(false);
+                    this.animat.SetActive(false);
                 }
             } else
             {
                 loadingBar.SetActive(false);
+                this.animat.SetActive(false);
             }
         }
 
@@ -69,6 +77,7 @@ public class Seal : MonoBehaviour
     public void ResetSeal()
     {
         curTime = destroyTime;
+        this.sealOn.SetActive(false);
     }
 
     public void DestroySeal(bool destroyable)
@@ -80,5 +89,6 @@ public class Seal : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         loadingBar.SetActive(false);
+        this.animat.SetActive(false);
     }
 }
