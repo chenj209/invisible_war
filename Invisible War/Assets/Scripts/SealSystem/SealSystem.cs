@@ -19,7 +19,8 @@ public class SealSystem : MonoBehaviour
     public bool allDestroyed;
     // This flag is for tutorial.
     public bool isTut;
-
+    public GameObject hunterEffect;
+    public GameObject ghostEffect;
     private Random rand;
     private int sealLeft;
 
@@ -55,11 +56,11 @@ public class SealSystem : MonoBehaviour
         int totalSeals = seals.Count;
         foreach (GameObject seal in seals)
         {
-            Seal s = seal.GetComponent<Seal>();
-            s.ResetSeal();
             if (rand.Next(totalSeals) < activeSeals)
             {
                 // This seal is picked as activate.
+                Seal s = seal.GetComponent<Seal>();
+                s.ResetSeal();
                 seal.SetActive(true);
                 activeSeals--;
             } else
@@ -95,31 +96,33 @@ public class SealSystem : MonoBehaviour
     public void destroy()
     {
         sealLeft--;
-
+        if (isTut)
+        {
+            hunterEffect.SetActive(true);
+            ghostEffect.SetActive(true);
+            StartCoroutine(DisableEffect());
+        }
         sealsUI[5 - sealLeft - 1].SetActive(false);
         sealsUI[5 - sealLeft].SetActive(true);
 
-        if (!isTut)
-        {
-            /*
-            sealsUIG[sealLeft - 1].SetActive(false);
-            sealsUIH[sealLeft - 1].SetActive(false);
-            */
+       
+        /*
+        sealsUIG[sealLeft - 1].SetActive(false);
+        sealsUIH[sealLeft - 1].SetActive(false);
+        */
 
-            // Check if all the seals got destroyed.
-            if (sealLeft == 1)
-            {
-                allDestroyed = true;
-               // Debug.Log("Enough seals destroyed!");
-            }
-        } else
+        // Check if all the seals got destroyed.
+        if (sealLeft == 1)
         {
-            if (sealLeft == 0)
-            {
-                TutorialStateController.GhostDestroyDone = true;
-                allDestroyed = true;
-               // Debug.Log("Enough seals destroyed!");
-            }
+            allDestroyed = true;
+           // Debug.Log("Enough seals destroyed!");
         }
+    
+    }
+    IEnumerator DisableEffect()
+    {
+        yield return new WaitForSeconds(6);
+        ghostEffect.SetActive(false);
+        hunterEffect.SetActive(false);
     }
 }

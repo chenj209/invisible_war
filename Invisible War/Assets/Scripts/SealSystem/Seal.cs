@@ -43,7 +43,7 @@ public class Seal : MonoBehaviour
                     // CountDown for the unlock process.
                     if (curTime <= 0)
                     {
-                        // Destory itself and update to the SealSystem.
+                        // Destory itself and update to the SealSystem
                         ss.destroy();
                         SealDestroyInstruction.SetActive(false);
                         loadingBar.SetActive(false);
@@ -91,4 +91,5 @@ public class Seal : MonoBehaviour
         loadingBar.SetActive(false);
         this.animat.SetActive(false);
     }
+
 }
