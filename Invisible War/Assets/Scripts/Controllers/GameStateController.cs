@@ -303,6 +303,10 @@ public class GameStateController : MonoBehaviour
                     case "Speed Up":
                         Debug.Log("Apply Ghost Speed Up");
                         GameConfig.instance.ghostSpeed *= GameConfig.instance.abilityModifier;
+                        if (GameConfig.instance.ghostSpeed > 80)
+                        {
+                            GameConfig.instance.ghostSpeed = 80;
+                        }
                         break;
                     case "Shorten Cooldown":
                         Debug.Log("Apply Ghost Shorten Cooldown");
@@ -324,6 +328,10 @@ public class GameStateController : MonoBehaviour
                     case "Speed Up":
                         Debug.Log("Apply Hunter Speed Up");
                         GameConfig.instance.hunterSpeed *= GameConfig.instance.abilityModifier;
+                        if (GameConfig.instance.hunterSpeed > 80)
+                        {
+                            GameConfig.instance.hunterSpeed = 80;
+                        }
                         break;
                     case "Shorten Cooldown":
                         Debug.Log("Apply Hunter Shorten Cooldown");
