@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -25872,7 +25872,7 @@ MonoBehaviour:
   delay: 1
   cdUI3: {fileID: 1087198877}
   cdUI4: {fileID: 2088592260}
-  startCD: 5
+  startCD: 0
   endCD: 5
   scoreBoard: {fileID: 737823946}
   name: {fileID: 476389186}
@@ -31509,7 +31509,7 @@ MonoBehaviour:
   ghostCameraHorizontalSpeed: 2
   ghostCameraVerticalSpeed: 0
   enableGhostIndicator: 1
-  freezeCoolDown: 60
+  freezeCoolDown: 1
   freezeEffectDuration: 5
   freezeDistance: 50
   freezeBlockScreen: 1

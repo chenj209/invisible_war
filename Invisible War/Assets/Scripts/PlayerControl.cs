@@ -60,11 +60,11 @@ public class PlayerControl : MonoBehaviour
                 }
             }
         }
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.G) || Input.GetButton("HunterHelp"))
         {
             HunterHelpMenu.SetActive(true);
         }
-        if (Input.GetKeyUp(KeyCode.G))
+        if (Input.GetKeyUp(KeyCode.G) || !Input.GetButton("HunterHelp"))
         {
             HunterHelpMenu.SetActive(false);
         }
@@ -132,13 +132,13 @@ public class PlayerControl : MonoBehaviour
 
     private void move()
     {
-        float moveForce; 
+        float moveForce;
         if (playerID == "01")
         {
-            moveForce = GameConfig.instance.hunterSpeed; 
-        } else 
+            moveForce = GameConfig.instance.hunterSpeed;
+        } else
         {
-            moveForce = GameConfig.instance.ghostSpeed; 
+            moveForce = GameConfig.instance.ghostSpeed;
         }
         float moveSpeed;
         switch (moveMode) {
