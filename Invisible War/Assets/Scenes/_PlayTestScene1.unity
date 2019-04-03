@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10201,8 +10201,8 @@ MonoBehaviour:
   m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: HorizontalAll
-  m_VerticalAxis: VerticalAll
+  m_HorizontalAxis: Horizontal02
+  m_VerticalAxis: Vertical02
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
@@ -10683,7 +10683,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 404771534}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5783fc8e3f6c465f974e63cbb37cf40, type: 3}
+  m_Script: {fileID: 11500000, guid: f2088de76b31d4f53b5bc8055baf8d40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &413023580 stripped
@@ -40567,7 +40567,7 @@ MonoBehaviour:
   paintgunShootDistance: 60
   paintgunBulletsCount: 30
   paintgunStopGhostAction: 1
-  hunterSelectAblitySensitivity: 5
+  hunterSelectAblitySensitivity: 0.5
   ghostTransparent: 1
   ghostSpeed: 30
   ghostJumpSpeed: 13
