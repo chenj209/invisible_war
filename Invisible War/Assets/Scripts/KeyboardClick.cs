@@ -23,15 +23,21 @@ public class KeyboardClick : MonoBehaviour
             Button b = EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
             b.onClick.Invoke();
         }
-        if (Input.GetKeyDown(KeyCode.W) && selected > 1)
+        if (Input.GetKeyDown(KeyCode.A) && selected > 1)
         {
             selected--;
             transform.GetChild(selected).GetComponent<Button>().Select();
         }
-        if (Input.GetKeyDown(KeyCode.S) && selected < 3)
+        if (Input.GetKeyDown(KeyCode.D) && selected < 3)
         {
             selected++;
             transform.GetChild(selected).GetComponent<Button>().Select();
         }
+        if (Input.GetButtonDown("HunterContinue"))
+        {
+            Button b = EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
+            b.onClick.Invoke();
+        }
+
     }
 }

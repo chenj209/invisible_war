@@ -52,6 +52,8 @@ public class GameStateController : MonoBehaviour
     private RandomAbilityController1 rac1;
     public GameConfig gc;
 
+    public bool gamestart = true;
+
     void Start()
     {
         scoreBoard.enabled = false;
@@ -77,7 +79,7 @@ public class GameStateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (cdBool)
+        if (cdBool && gamestart)
         {
             if (startCD >= 0)
             {
@@ -194,6 +196,12 @@ public class GameStateController : MonoBehaviour
         else
         {
             DisplayScore();
+            round = 3;
+            roundNum = 1;
+            p1w = 0;
+            p2w = 0;
+            winners = new List<int>();
+            chosenAbilities = new List<string>();
             yield return new WaitForSeconds(scoreCD);
             an.SetTrigger("FadeOut");
         }

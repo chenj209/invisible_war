@@ -7,13 +7,15 @@ using UnityEngine.UI;
 public class RandomAbilityController1 : MonoBehaviour
 {
     private List<string> hunterAbilities = new List<string>() { "Speed Up", "Shorten Cooldown", "Inhance Indicator" };
-    private List<string> ghostAbilities = new List<string>() { "Speed Up", "Shorten Coolown", "Increase Freeze Time"};
+    private List<string> ghostAbilities = new List<string>() { "Speed Up", "Shorten Cooldown", "Increase Freeze Time"};
     public GameObject hunterPanel;
     public GameObject ghostPanel;
     private bool isShown;
     private GameStateController gsc;
     public int winner;
     public string chosenAbility;
+
+    public Sprite[] abilitiesSP;
 
     // Start is called before the first frame update
     void Start()
@@ -56,7 +58,23 @@ public class RandomAbilityController1 : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             getRandomInt(usedIntegers);
-            panel.transform.GetChild(i + 1).GetChild(0).GetComponent<Text>().text = abilities[usedIntegers[i]];
+            switch (abilities[usedIntegers[i]])
+            {
+                case "Speed Up":
+                    panel.transform.GetChild(i + 1).GetComponent<Image>().sprite = abilitiesSP[3];
+                    break;
+                case "Shorten Cooldown":
+                    panel.transform.GetChild(i + 1).GetComponent<Image>().sprite = abilitiesSP[0]; 
+                    break;
+                case "Increase Freeze Time":
+                    panel.transform.GetChild(i + 1).GetComponent<Image>().sprite = abilitiesSP[2];
+                    break;
+                case "Inhance Indicator":
+                    panel.transform.GetChild(i + 1).GetComponent<Image>().sprite = abilitiesSP[1];
+                    break;
+                default:
+                    break;
+            }
         }
     }
 

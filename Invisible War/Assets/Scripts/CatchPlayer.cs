@@ -12,14 +12,14 @@ public class CatchPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         GameObject player = DetectItem();
-        if (Input.GetKeyDown(KeyCode.C))// catch
+        if (Input.GetKeyDown(KeyCode.C) || Input.GetButton("Catch"))// catch
         {
             if(player != null)
             {
@@ -44,9 +44,9 @@ public class CatchPlayer : MonoBehaviour
     {
         RaycastHit hit;
         GameObject target;
-        if(camPos == null) 
+        if(camPos == null)
         {
-            return null; 
+            return null;
         }
         if (Physics.SphereCast(camPos.position, sphereRadius, camPos.TransformDirection(Vector3.forward), out hit, distance))
         {
@@ -59,7 +59,7 @@ public class CatchPlayer : MonoBehaviour
         if (target.tag == "Player")
         {
             //Debug.Log("get ghost");
-         
+
             return target;
         }
         return null;

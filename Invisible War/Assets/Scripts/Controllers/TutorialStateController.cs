@@ -96,7 +96,7 @@ public class TutorialStateController : MonoBehaviour
         }
 
         // for player1
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.M) || Input.GetButton("HunterContinue"))
         {
             if (player1State == "rule1")
             {
@@ -157,7 +157,7 @@ public class TutorialStateController : MonoBehaviour
             {
                 p2R.text = "This is a player versus player game." +
                     "Your character is a Ghost who is trapped inside a force field set up by the Hunter";
-                  
+
                 player2State = "rule2";
             }
             else if (player2State == "rule2")
