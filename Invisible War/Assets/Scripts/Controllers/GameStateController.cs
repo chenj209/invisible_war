@@ -65,22 +65,18 @@ public class GameStateController : MonoBehaviour
         p1S.enabled = false;
         p2S.enabled = false;
         an = gameObject.GetComponent<Animator>();
-        rac1 = gameObject.GetComponent<RandomAbilityController1>();
         cdBool = true;
-        ApplyAbility();
+        if (gc)
+        {
+            rac1 = gameObject.GetComponent<RandomAbilityController1>();
+            ApplyAbility();
+        }
         DisablePlayers();
     }
 
     // Update is called once per frame
     void Update()
     {
-       if (Intutorial){
-            if (hunterInstruction.FadeInOver && fadeoutFirst)
-            {
-                fadeoutFirst = false;
-                StartCoroutine(FadeOut());
-            }
-        }
         if (cdBool)
         {
             if (startCD >= 0)
@@ -92,6 +88,14 @@ public class GameStateController : MonoBehaviour
                 Game();
             }
         }
+        if (Intutorial){
+            if (hunterInstruction.FadeInOver && fadeoutFirst)
+            {
+                fadeoutFirst = false;
+                StartCoroutine(FadeOut());
+            }
+        }
+        
         if (!roundOver)
         {
             PlayerStatus ps1 = hunter.GetComponent<PlayerStatus>();
@@ -110,7 +114,7 @@ public class GameStateController : MonoBehaviour
                 }
                 else
                 {
-                    
+                    an.SetTrigger("FadeOut");
                 }
             }
         }
