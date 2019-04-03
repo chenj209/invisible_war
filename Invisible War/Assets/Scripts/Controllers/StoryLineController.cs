@@ -79,23 +79,23 @@ public class StoryLineController : MonoBehaviour
         yield return new WaitForSeconds(duration);
         if (background.color.a > 0)
         {
-            background.color = new Color(background.color.r, background.color.b, background.color.g, background.color.a - Time.deltaTime / (duration * 2));
+            background.color = new Color(background.color.r, background.color.b, background.color.g, background.color.a - Time.deltaTime / duration *2);
         }
         if (storyline1.color.a > 0)
         {
-            storyline1.color = new Color(storyline1.color.r, storyline1.color.b, storyline1.color.g, storyline1.color.a - Time.deltaTime / duration);
+            storyline1.color = new Color(storyline1.color.r, storyline1.color.b, storyline1.color.g, storyline1.color.a - Time.deltaTime / duration * 2);
         }
         if (storyline2.color.a > 0)
         {
-            storyline2.color = new Color(storyline2.color.r, storyline2.color.b, storyline2.color.g, storyline2.color.a - Time.deltaTime / duration);
+            storyline2.color = new Color(storyline2.color.r, storyline2.color.b, storyline2.color.g, storyline2.color.a - Time.deltaTime / duration * 2);
         }
         if (storyline3.color.a > 0)
         {
-            storyline3.color = new Color(storyline3.color.r, storyline3.color.b, storyline3.color.g, storyline3.color.a - Time.deltaTime / duration);
+            storyline3.color = new Color(storyline3.color.r, storyline3.color.b, storyline3.color.g, storyline3.color.a - Time.deltaTime / duration * 2);
         }
         if (storyline4.color.a > 0)
         {
-            storyline4.color = new Color(storyline4.color.r, storyline4.color.b, storyline4.color.g, storyline4.color.a - Time.deltaTime / duration);
+            storyline4.color = new Color(storyline4.color.r, storyline4.color.b, storyline4.color.g, storyline4.color.a - Time.deltaTime / duration * 2);
         }
         else
         {

@@ -196,6 +196,12 @@ public class GameStateController : MonoBehaviour
         else
         {
             DisplayScore();
+            round = 3;
+            roundNum = 1;
+            p1w = 0;
+            p2w = 0;
+            winners = new List<int>();
+            chosenAbilities = new List<string>();
             yield return new WaitForSeconds(scoreCD);
             an.SetTrigger("FadeOut");
         }
