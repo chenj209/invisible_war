@@ -65,22 +65,18 @@ public class GameStateController : MonoBehaviour
         p1S.enabled = false;
         p2S.enabled = false;
         an = gameObject.GetComponent<Animator>();
-        rac1 = gameObject.GetComponent<RandomAbilityController1>();
         cdBool = true;
-        ApplyAbility();
+        if (gc)
+        {
+            rac1 = gameObject.GetComponent<RandomAbilityController1>();
+            ApplyAbility();
+        }
         DisablePlayers();
     }
 
     // Update is called once per frame
     void Update()
     {
-       if (Intutorial){
-            if (hunterInstruction.FadeInOver && fadeoutFirst)
-            {
-                fadeoutFirst = false;
-                StartCoroutine(FadeOut());
-            }
-        }
         if (cdBool)
         {
             if (startCD >= 0)
@@ -92,6 +88,14 @@ public class GameStateController : MonoBehaviour
                 Game();
             }
         }
+        if (Intutorial){
+            if (hunterInstruction.FadeInOver && fadeoutFirst)
+            {
+                fadeoutFirst = false;
+                StartCoroutine(FadeOut());
+            }
+        }
+        
         if (!roundOver)
         {
             PlayerStatus ps1 = hunter.GetComponent<PlayerStatus>();
@@ -103,8 +107,15 @@ public class GameStateController : MonoBehaviour
             }
             if (ss.allDestroyed)
             {
-                StopAllCoroutines();
-                StartCoroutine(Win(2));
+                if (!Intutorial)
+                {
+                    StopAllCoroutines();
+                    StartCoroutine(Win(2));
+                }
+                else
+                {
+                    StartCoroutine(FinalFadeOut());
+                }
             }
         }
     }
@@ -136,13 +147,23 @@ public class GameStateController : MonoBehaviour
     {
 
         yield return new WaitForSeconds(8);
+        hunterInstruction.FadeOut();
+        ghostInstruction.FadeOut();
         hunter.GetComponent<PlayerControl>().enabled = true;
         ghost.GetComponent<PlayerControl>().enabled = true;
         ghost.GetComponent<Freeze>().enabled = true;
         hunterIndicatorEffect.SetActive(false);
         ghostIndicatorEffect.SetActive(false);
-        hunterInstruction.FadeOut();
-        ghostInstruction.FadeOut();
+        
+    }
+
+    IEnumerator FinalFadeOut()
+    {
+        DisablePlayers();
+        scoreBoard.enabled = true;
+        name.enabled = true;
+        yield return new WaitForSeconds(4);
+        an.SetTrigger("FadeOut");
     }
 
     IEnumerator Win(int player)

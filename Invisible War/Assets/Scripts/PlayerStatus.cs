@@ -35,8 +35,9 @@ public class PlayerStatus : MonoBehaviour
     public bool gethit = false;
     public bool getfreezed = false;
     private bool firstimeCaught = true;
-    public CanvasGroup hunterInstruction;
-    public Text hunterInstructionText;
+    public GameObject hunterWinInfo;
+    public GameObject hunterInstrcution;
+    public CanvasGroup hunterCG;
 
     private void Start()
     {
@@ -164,16 +165,24 @@ public class PlayerStatus : MonoBehaviour
                 if (firstimeCaught)
                 {
                     firstimeCaught = false;
-                    hunterInstructionText.color = Color.blue;
-                    hunterInstructionText.text = "Congratulation, you just caught the ghost! Now keep practicing before the main game starts!";
-                    hunterInstruction.alpha = 1;
-
+               
+                    StartCoroutine(showInstruction());
                 }
                 GameObject effect = Instantiate(catchEffect, this.gameObject.transform.position, Quaternion.Euler(-90, 0, 0));
                 Destroy(effect, 2);
                 ghost.transform.position = ghostRespawnPoint.position;
             }
         }
+    }
+
+    IEnumerator showInstruction()
+    {
+        hunterInstrcution.SetActive(false);
+        hunterWinInfo.SetActive(true);
+        yield return new WaitForSeconds(4);
+        hunterWinInfo.SetActive(false);
+        hunterCG.alpha = 0;
+        hunterInstrcution.SetActive(true);
     }
     private void resetPlayerTransparency()
     {

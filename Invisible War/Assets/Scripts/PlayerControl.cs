@@ -112,9 +112,12 @@ public class PlayerControl : MonoBehaviour
     IEnumerator FadeOut()
     {
 
-        yield return new WaitForSeconds(10);
-
-        hunterInstruction.FadeOut();
+        yield return new WaitForSeconds(8.5f);
+        if (hunterInstruction.isActiveAndEnabled)
+        {
+            hunterInstruction.FadeOut();
+            hunterInstruction.FadeInOver = false;
+        }
         yield return new WaitForSeconds(1);
         crosshair.enabled = true;
         if (playerID == "01")
