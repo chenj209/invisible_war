@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641287, b: 0.5748173, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6478,7 +6478,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: b0d16ff641824b2458371f4cf803ecc6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6f56a1837e793452bbfcfe87514c3f68, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10159,7 +10159,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9ff480eed89e4924ea25a69a1e374bc5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c8ab676e4da6745e6a4b37e26f8c3ef6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -40791,7 +40791,7 @@ MonoBehaviour:
   enableHunterIndicator: 1
   hunterIndicatorNearBy: 0
   disappearRange: 100
-  paintgunCooldown: 1
+  paintgunCooldown: 10
   paintgunEffectDuration: 5
   paintgunShootDistance: 60
   paintgunBulletsCount: 30
@@ -40805,7 +40805,7 @@ MonoBehaviour:
   enableGhostIndicator: 1
   freezeCoolDown: 30
   freezeEffectDuration: 5
-  freezeDistance: 50
+  freezeDistance: 30
   freezeBlockScreen: 0
   freezeBlockScreenSprite: {fileID: 21300000, guid: 2e8b2bcf27ee24051b50912b167c76b5,
     type: 3}
