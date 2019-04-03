@@ -96,14 +96,15 @@ public class SealSystem : MonoBehaviour
     {
         sealLeft--;
 
+        sealsUI[5 - sealLeft - 1].SetActive(false);
+        sealsUI[5 - sealLeft].SetActive(true);
+
         if (!isTut)
         {
             /*
             sealsUIG[sealLeft - 1].SetActive(false);
             sealsUIH[sealLeft - 1].SetActive(false);
             */
-            sealsUI[5 - sealLeft - 1].SetActive(false);
-            sealsUI[5 - sealLeft].SetActive(true);
 
             // Check if all the seals got destroyed.
             if (sealLeft == 1)
