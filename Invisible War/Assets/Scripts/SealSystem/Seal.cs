@@ -68,6 +68,7 @@ public class Seal : MonoBehaviour
             } else
             {
                 loadingBar.SetActive(false);
+                SealDestroyInstruction.SetActive(false);
                 this.animat.SetActive(false);
             }
         }

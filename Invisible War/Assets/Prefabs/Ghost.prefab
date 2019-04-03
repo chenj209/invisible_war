@@ -183,7 +183,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6125125412071167959}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.28399998, y: 0.11499989, z: -1.51}
+  m_LocalPosition: {x: 0.28399998, y: -0.18, z: 0.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8256369720747086074}
@@ -619,14 +619,13 @@ MonoBehaviour:
   HunterHelpMenu: {fileID: 0}
   GhostHelpMenu: {fileID: 0}
   GhostStatus: {fileID: 0}
+  hunterInstruction: {fileID: 0}
+  hunterInstructionText: {fileID: 0}
+  crosshair: {fileID: 0}
   moveMode: 0
-  moveForce: 5
   isGround: 0
-  jumpSpeed: 2000
   playerCamera: {fileID: 8256369720747086072}
   m_MouseLook:
-    XSensitivity: 2
-    YSensitivity: 2
     clampVerticalRotation: 1
     MinimumX: -90
     MaximumX: 90
@@ -665,6 +664,7 @@ MonoBehaviour:
   freezeEffect: {fileID: 0}
   hitEffect: {fileID: 0}
   shiveringOne: {fileID: 0}
+  Hit: 0
   iced_material: {fileID: 2100000, guid: e0a483b190dbd4ec8a8a6ed5ed49d88c, type: 2}
   transparent_material: {fileID: 2100000, guid: 920ac673fe41a4d33938634d300e8474,
     type: 2}
@@ -674,8 +674,15 @@ MonoBehaviour:
     type: 3}
   isHunter: 0
   isTutorial: 0
+  ghost: {fileID: 0}
+  catchInstruction: {fileID: 0}
+  playercamera: {fileID: 0}
+  ghostRespawnPoint: {fileID: 0}
   gethit: 0
   getfreezed: 0
+  hunterWinInfo: {fileID: 0}
+  hunterInstrcution: {fileID: 0}
+  hunterCG: {fileID: 0}
 --- !u!114 &3334475576896513578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -693,6 +700,11 @@ MonoBehaviour:
     type: 3}
   freezeSound: {fileID: 8300000, guid: d218310b448301d4e9ec417cc6ee3814, type: 3}
   catcher: {fileID: 0}
+  freezeInstruction: {fileID: 0}
+  freezeInstructionEffect: {fileID: 0}
+  ghostInstruction: {fileID: 0}
+  ghostInstructionText: {fileID: 0}
+  indicatorEffect: {fileID: 0}
   inTutorial: 0
   bot: 0
 --- !u!82 &8736880798937734785

@@ -68,7 +68,7 @@ public class GameStateController : MonoBehaviour
         an = gameObject.GetComponent<Animator>();
         cdBool = true;
         rac1 = gameObject.GetComponent<RandomAbilityController1>();
-        //ApplyAbility();
+        ApplyAbility();
         DisablePlayers();
     }
 
@@ -286,7 +286,7 @@ public class GameStateController : MonoBehaviour
     public void ReceiveAbility(string ability)
     {
         chosenAbilities.Add(ability);
-        ApplyAbility();
+        //ApplyAbility();
     }
 
     private void ApplyAbility()
@@ -306,7 +306,7 @@ public class GameStateController : MonoBehaviour
                         break;
                     case "Shorten Cooldown":
                         Debug.Log("Apply Ghost Shorten Cooldown");
-                        GameConfig.instance.paintgunCooldown /= GameConfig.instance.abilityModifier;
+                        GameConfig.instance.freezeCoolDown /= GameConfig.instance.abilityModifier;
                         break;
                     case "Increase Freeze Time":
                         Debug.Log("Apply Ghost Increase Freeze Time");
@@ -327,11 +327,11 @@ public class GameStateController : MonoBehaviour
                         break;
                     case "Shorten Cooldown":
                         Debug.Log("Apply Hunter Shorten Cooldown");
-                        GameConfig.instance.freezeCoolDown /= GameConfig.instance.abilityModifier;
+                        GameConfig.instance.paintgunCooldown /= GameConfig.instance.abilityModifier;
                         break;
                     case "Inhance Indicator":
                         Debug.Log("Apply Hunter Inhance Indicator");
-                        GameConfig.instance.disappearRange /= GameConfig.instance.abilityModifier;
+                        GameConfig.instance.hunterIndicatorNearBy = true;
                         break;
                     default:
                         break;

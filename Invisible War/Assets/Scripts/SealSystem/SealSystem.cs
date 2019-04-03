@@ -56,11 +56,11 @@ public class SealSystem : MonoBehaviour
         int totalSeals = seals.Count;
         foreach (GameObject seal in seals)
         {
+            Seal s = seal.GetComponent<Seal>();
+            s.ResetSeal();
             if (rand.Next(totalSeals) < activeSeals)
             {
-                // This seal is picked as activate.
-                Seal s = seal.GetComponent<Seal>();
-                s.ResetSeal();
+                // This seal is picked as activate. 
                 seal.SetActive(true);
                 activeSeals--;
             } else
