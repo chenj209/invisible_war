@@ -10201,8 +10201,8 @@ MonoBehaviour:
   m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal02
-  m_VerticalAxis: Vertical02
+  m_HorizontalAxis: HorizontalAll
+  m_VerticalAxis: VerticalAll
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
@@ -10683,7 +10683,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 404771534}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2088de76b31d4f53b5bc8055baf8d40, type: 3}
+  m_Script: {fileID: 11500000, guid: e5783fc8e3f6c465f974e63cbb37cf40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &413023580 stripped
