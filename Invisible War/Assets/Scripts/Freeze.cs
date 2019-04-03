@@ -91,7 +91,7 @@ public class Freeze : MonoBehaviour
                     if (timerNonBot < 0)
                     {
                         hunter.enabled = true;
-                        timerNonBot = 5;
+                        timerNonBot = GameConfig.instance.freezeEffectDuration;
                         shooting huntershoot = catcher.GetComponent<shooting>();
                         if (huntershoot)
                             huntershoot.enabled = true;
@@ -120,7 +120,7 @@ public class Freeze : MonoBehaviour
                         CatchGhost catchability = catcher.GetComponentInChildren<CatchGhost>();
                         if (catchability)
                             catchability.enabled = true;
-                        timerBot = 5;
+                        timerBot = GameConfig.instance.freezeEffectDuration;
                     }
                 }
 
