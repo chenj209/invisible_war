@@ -30184,7 +30184,7 @@ MonoBehaviour:
   storyline3: {fileID: 1103389910}
   storyline4: {fileID: 1718461704}
   background: {fileID: 1005514194}
-  duration: 1
+  duration: 3
 --- !u!1001 &1644598920
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39080,7 +39080,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1982215039
 RectTransform:
   m_ObjectHideFlags: 0
@@ -39472,7 +39472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2007800363
 RectTransform:
   m_ObjectHideFlags: 0
