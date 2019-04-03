@@ -75,9 +75,12 @@ public class shooting : MonoBehaviour
     IEnumerator FadeOut()
     {
 
-        yield return new WaitForSeconds(6);
-
-        hunterInstruction.FadeOut();
+        yield return new WaitForSeconds(4);
+        if (hunterInstruction.isActiveAndEnabled)
+        {
+            hunterInstruction.FadeOut();
+            hunterInstruction.FadeInOver = false;
+        }
         huntershootingEffect.SetActive(false);
         crosshair.enabled = true;
     }

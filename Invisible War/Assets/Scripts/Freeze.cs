@@ -131,10 +131,10 @@ public class Freeze : MonoBehaviour
     IEnumerator FadeOut()
     {
 
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(4);
+        ghostInstruction.FadeInOver = false;
         ghostInstruction.FadeOut();
         freezeInstructionEffect.SetActive(false);
-
     }
 
     public void Skill()

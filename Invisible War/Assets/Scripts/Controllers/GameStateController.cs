@@ -103,8 +103,15 @@ public class GameStateController : MonoBehaviour
             }
             if (ss.allDestroyed)
             {
-                StopAllCoroutines();
-                StartCoroutine(Win(2));
+                if (!Intutorial)
+                {
+                    StopAllCoroutines();
+                    StartCoroutine(Win(2));
+                }
+                else
+                {
+                    
+                }
             }
         }
     }
@@ -136,13 +143,14 @@ public class GameStateController : MonoBehaviour
     {
 
         yield return new WaitForSeconds(8);
+        hunterInstruction.FadeOut();
+        ghostInstruction.FadeOut();
         hunter.GetComponent<PlayerControl>().enabled = true;
         ghost.GetComponent<PlayerControl>().enabled = true;
         ghost.GetComponent<Freeze>().enabled = true;
         hunterIndicatorEffect.SetActive(false);
         ghostIndicatorEffect.SetActive(false);
-        hunterInstruction.FadeOut();
-        ghostInstruction.FadeOut();
+        
     }
 
     IEnumerator Win(int player)
