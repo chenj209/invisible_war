@@ -162,7 +162,7 @@ public class GameStateController : MonoBehaviour
         DisablePlayers();
         scoreBoard.enabled = true;
         name.enabled = true;
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(4);
         an.SetTrigger("FadeOut");
     }
 
