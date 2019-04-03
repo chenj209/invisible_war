@@ -23,7 +23,7 @@ public class HelpMenuController : MonoBehaviour
     public GameObject hunter;
     public GameObject ghost;
     public Image crosshair;
-
+    public GameObject sealCounter;
     private void Awake()
     {
         gsc = gameObject.GetComponent<GameStateController>();
@@ -68,7 +68,7 @@ public class HelpMenuController : MonoBehaviour
                 blink1.SetActive(!blink1.active);
                 timer1 += 0.5f;
             }
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("HunterContinue"))
             {
                 player1Ready = true;
                 if (player2Ready)
@@ -82,6 +82,7 @@ public class HelpMenuController : MonoBehaviour
                     text1.enabled = false;
                     text2.enabled = false;
                     gsc.enabled = true;
+                    sealCounter.SetActive(true);
                 }
                 else
                 {
@@ -115,6 +116,7 @@ public class HelpMenuController : MonoBehaviour
                     text1.enabled = false;
                     text2.enabled = false;
                     gsc.enabled = true;
+                    sealCounter.SetActive(true);
                 }
                 else
                 {
