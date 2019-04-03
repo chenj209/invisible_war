@@ -114,7 +114,7 @@ public class GameStateController : MonoBehaviour
                 }
                 else
                 {
-                    an.SetTrigger("FadeOut");
+                    StartCoroutine(FinalFadeOut());
                 }
             }
         }
@@ -155,6 +155,15 @@ public class GameStateController : MonoBehaviour
         hunterIndicatorEffect.SetActive(false);
         ghostIndicatorEffect.SetActive(false);
         
+    }
+
+    IEnumerator FinalFadeOut()
+    {
+        DisablePlayers();
+        scoreBoard.enabled = true;
+        name.enabled = true;
+        yield return new WaitForSeconds(8);
+        an.SetTrigger("FadeOut");
     }
 
     IEnumerator Win(int player)
