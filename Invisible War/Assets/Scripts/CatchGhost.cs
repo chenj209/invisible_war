@@ -12,13 +12,13 @@ public class CatchGhost : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKey(KeyCode.C) && !isGhost))// catch
+        if (((Input.GetKey(KeyCode.C) || Input.GetButton("Catch")) && !isGhost))// catch
         {
             if (catchArm)
             {
@@ -56,7 +56,7 @@ public class CatchGhost : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Player") 
+        if (other.gameObject.tag == "Player")
         {
             ghost = other.gameObject;
         }
