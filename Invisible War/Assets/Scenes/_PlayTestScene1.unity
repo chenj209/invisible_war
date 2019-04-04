@@ -40571,7 +40571,7 @@ MonoBehaviour:
   ghostTransparent: 1
   ghostSpeed: 30
   ghostJumpSpeed: 13
-  ghostCameraHorizontalSpeed: 2
+  ghostCameraHorizontalSpeed: 3
   ghostCameraVerticalSpeed: 2
   enableGhostIndicator: 1
   freezeCoolDown: 30
