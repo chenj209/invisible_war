@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GhostInteractionInstruction : MonoBehaviour
 {
+    public GameObject loadingBar;
+
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Seal")
@@ -19,6 +21,7 @@ public class GhostInteractionInstruction : MonoBehaviour
         {
             Seal sealScript = other.GetComponent<Seal>();
             sealScript.DestroySeal(false);
+            loadingBar.SetActive(false);
         }
     }
 }

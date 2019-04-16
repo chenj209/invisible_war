@@ -72,6 +72,10 @@ public class Seal : MonoBehaviour
                 this.animat.SetActive(false);
             }
         }
+        else
+        {
+            this.animat.SetActive(false);
+        }
 
     }
 
@@ -92,5 +96,4 @@ public class Seal : MonoBehaviour
         loadingBar.SetActive(false);
         this.animat.SetActive(false);
     }
-
 }
