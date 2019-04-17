@@ -20,7 +20,7 @@ public class StoryLineController : MonoBehaviour
     private bool shown;
     private float timer;
     private bool storylineBegin;
-    
+    private bool firstime = true;
   
     void Awake()
     {
@@ -43,7 +43,7 @@ public class StoryLineController : MonoBehaviour
     {
         if (gsc.GetRoundNum() == 1 && !HunterTutPage.activeSelf)
         {
-            if (Input.GetButtonDown("Continue"))
+            if (Input.GetButtonDown("HunterStart") || Input.GetButtonDown("Start"))
             {
                 storylineBegin = true;
                 startPage.SetActive(false);
@@ -122,9 +122,13 @@ public class StoryLineController : MonoBehaviour
         }
         else
         {
-            background.enabled = false;
-            HunterTutPage.SetActive(true);
-            GhostTutPage.SetActive(true);
+            if (firstime)
+            {
+                background.enabled = false;
+                HunterTutPage.SetActive(true);
+                GhostTutPage.SetActive(true);
+                firstime = false;
+            }
         }
     }
 }
