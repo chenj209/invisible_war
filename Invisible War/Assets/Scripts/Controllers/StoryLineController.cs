@@ -11,10 +11,17 @@ public class StoryLineController : MonoBehaviour
     public Text storyline4;
     public Image background;
     public float duration;
+    public Image startButton;
+    public GameObject startPage;
+    public GameObject HunterTutPage;
+    public GameObject GhostTutPage;
 
     private GameStateController gsc;
     private bool shown;
+    private float timer;
+    private bool storylineBegin;
     
+  
     void Awake()
     {
         gsc = GetComponent<GameStateController>();
@@ -27,17 +34,36 @@ public class StoryLineController : MonoBehaviour
             storyline2.enabled = true;
             storyline3.enabled = true;
             storyline4.enabled = true;
+            storylineBegin = false;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gsc.GetRoundNum() == 1 && !gsc.gamestart)
+        if (gsc.GetRoundNum() == 1 && !HunterTutPage.activeSelf)
         {
+            if (Input.GetButtonDown("Continue"))
+            {
+                storylineBegin = true;
+                startPage.SetActive(false);
+            }
+            if (!storylineBegin)
+            {
+                timer -= Time.deltaTime;
+            }
+            if (timer <= 0)
+            {
+                startButton.enabled = !startButton.enabled;
+                timer += 0.5f;
+            }
+
             if (!shown)
             {
-                StartCoroutine(StoryIn());
+                if (storylineBegin)
+                {
+                    StartCoroutine(StoryIn());
+                }
 
             }
             else
@@ -77,10 +103,7 @@ public class StoryLineController : MonoBehaviour
     IEnumerator StoryOut()
     {
         yield return new WaitForSeconds(duration);
-        if (background.color.a > 0)
-        {
-            background.color = new Color(background.color.r, background.color.b, background.color.g, background.color.a - Time.deltaTime / duration *2);
-        }
+
         if (storyline1.color.a > 0)
         {
             storyline1.color = new Color(storyline1.color.r, storyline1.color.b, storyline1.color.g, storyline1.color.a - Time.deltaTime / duration * 2);
@@ -99,7 +122,9 @@ public class StoryLineController : MonoBehaviour
         }
         else
         {
-            gsc.gamestart = true;
+            background.enabled = false;
+            HunterTutPage.SetActive(true);
+            GhostTutPage.SetActive(true);
         }
     }
 }
