@@ -5739,7 +5739,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 139, y: -1.0000458}
+  m_AnchoredPosition: {x: 157, y: -1.0000458}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &53400114
@@ -12124,7 +12124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &361019392
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14732,7 +14732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &471580965
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16890,7 +16890,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 8400000, guid: 33fc496f636a94148871cd03200f166d, type: 2}
+  m_Texture: {fileID: 8400000, guid: a5015e92748666648946e4e3fb816db7, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -16905,27 +16905,25 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 578234088}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: a5c78a45aa6fe2c4da13af8e4b9b5c13, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 3888270f8a26817458c85fba7caf8304, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: 33fc496f636a94148871cd03200f166d, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: a5015e92748666648946e4e3fb816db7, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: _MainTex
   m_RenderMode: 2
-  m_AspectRatio: 2
+  m_AspectRatio: 5
   m_DataSource: 0
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
-  m_TargetAudioSources:
-  - {fileID: 0}
-  m_DirectAudioVolumes:
-  - 1
+  m_TargetAudioSources: []
+  m_DirectAudioVolumes: []
   m_Url: 
-  m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 01
-  m_ControlledAudioTrackCount: 1
+  m_EnabledAudioTracks: 
+  m_DirectAudioMutes: 
+  m_ControlledAudioTrackCount: 0
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
   m_Looping: 1
@@ -17159,7 +17157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &600102360
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25443,7 +25441,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 8400000, guid: 33fc496f636a94148871cd03200f166d, type: 2}
+  m_Texture: {fileID: 8400000, guid: 7c5b2bdb039564b4aba376e4cc12af1a, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -25458,27 +25456,25 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805641473}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: a5c78a45aa6fe2c4da13af8e4b9b5c13, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 7acd8f4e3aa8f1c4bb08630cf2ffdf11, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: 33fc496f636a94148871cd03200f166d, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 7c5b2bdb039564b4aba376e4cc12af1a, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: _MainTex
   m_RenderMode: 2
-  m_AspectRatio: 2
+  m_AspectRatio: 5
   m_DataSource: 0
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
-  m_TargetAudioSources:
-  - {fileID: 0}
-  m_DirectAudioVolumes:
-  - 1
+  m_TargetAudioSources: []
+  m_DirectAudioVolumes: []
   m_Url: 
-  m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 01
-  m_ControlledAudioTrackCount: 1
+  m_EnabledAudioTracks: 
+  m_DirectAudioMutes: 
+  m_ControlledAudioTrackCount: 0
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
   m_Looping: 1
@@ -28475,7 +28471,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1020427771
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30124,7 +30120,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 88, y: -1}
+  m_AnchoredPosition: {x: 112, y: -1}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1105105678
@@ -37674,7 +37670,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1464840485
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41995,21 +41991,50 @@ MonoBehaviour:
   GhostMechTitle: {fileID: 374837489}
   HunterLeftImage: {fileID: 734574315}
   HunterRightImage: {fileID: 482408080}
+  GhostLeftImage: {fileID: 1105105678}
+  GhostRightImage: {fileID: 53400114}
   CatchImage: {fileID: 21300000, guid: fa4982bc77fb73a478b4c9f20e19013b, type: 3}
   ShootImage: {fileID: 21300000, guid: f1cd2738f20a67c4c9dbbaffdf74808f, type: 3}
   FreezeImage: {fileID: 21300000, guid: f1cd2738f20a67c4c9dbbaffdf74808f, type: 3}
   RitualImage: {fileID: 21300000, guid: fa4982bc77fb73a478b4c9f20e19013b, type: 3}
   LeftJoystick: {fileID: 21300000, guid: 461d536fb7b24154ea2ac04d67477bd9, type: 3}
+  HunterMove: {fileID: 8400000, guid: 7c5b2bdb039564b4aba376e4cc12af1a, type: 2}
+  HunterIndicator: {fileID: 8400000, guid: 26c6d1c79afaf304d88f699926a2c8d9, type: 2}
+  HunterCatch: {fileID: 8400000, guid: 37f952eb7728219479169e26977eb9fd, type: 2}
+  HunterRitual: {fileID: 8400000, guid: fbd3497c61be30644b8e115c133dfe80, type: 2}
+  HunterShoot: {fileID: 8400000, guid: 34049949062d9c34d9adc02f0ad0afa1, type: 2}
+  GhostMove: {fileID: 8400000, guid: a5015e92748666648946e4e3fb816db7, type: 2}
+  GhostIndicator: {fileID: 8400000, guid: ba1f3f3d9c90f8a4b849282a0dd20b3d, type: 2}
+  GhostFreeze: {fileID: 8400000, guid: b84805353bd405e439f3800e7e0b5cda, type: 2}
+  GhostRitual: {fileID: 8400000, guid: 9e7e64df0e42de648ac45dbcd55b82c4, type: 2}
+  GhostCaught: {fileID: 8400000, guid: 8ef250a9d6732f444bbb2bf698545604, type: 2}
+  HunterVideo: {fileID: 805641475}
+  GhostVideo: {fileID: 578234090}
+  HunterVideoPlayer: {fileID: 805641476}
+  GhostVideoPlayer: {fileID: 578234091}
+  HunterMoveClip: {fileID: 32900000, guid: 7acd8f4e3aa8f1c4bb08630cf2ffdf11, type: 3}
+  HunterIndicatorClip: {fileID: 32900000, guid: 3ea045249e484bf459063b6484686b5e,
+    type: 3}
+  HunterCatchClip: {fileID: 32900000, guid: 88069767ecf6cc14cb5dfd5b34b68e66, type: 3}
+  HunterRitualClip: {fileID: 32900000, guid: 7858df53bf1d0f146831b0e7f2ccea15, type: 3}
+  HunterShootClip: {fileID: 32900000, guid: 9200694ccb24fd944b2c6078d59ecbc7, type: 3}
+  GhostMoveClip: {fileID: 32900000, guid: 3888270f8a26817458c85fba7caf8304, type: 3}
+  GhostIndicatorClip: {fileID: 32900000, guid: c20987581fcfeea43b48381a03232d72, type: 3}
+  GhostFreezeClip: {fileID: 32900000, guid: 4a6c4a169f817ed4ebb5b59b47dd61cf, type: 3}
+  GhostRitualClip: {fileID: 32900000, guid: fd0acb9bc74576e43b44803333ce1577, type: 3}
+  GhostCaughtClip: {fileID: 32900000, guid: 9bb15b29f28c3ba42af8937fbc2f57f5, type: 3}
   HunterExplaination: {fileID: 1448523624}
   GhostExplaination: {fileID: 1842421327}
   HunterContinue: {fileID: 439813577}
   GhostContinue: {fileID: 1662923956}
   HunterBack: {fileID: 1433893665}
   GhostBack: {fileID: 2082116663}
-  HunterNav: {fileID: 307946929}
-  GhostNav: {fileID: 1675343348}
-  HunterLoadingScreen: {fileID: 0}
-  GhostLoadingScreen: {fileID: 0}
+  HunterNav: {fileID: 361019391}
+  GhostNav: {fileID: 471580964}
+  HunterLoadingScreen: {fileID: 1464840484}
+  GhostLoadingScreen: {fileID: 1020427770}
+  HunterReady: {fileID: 1226563114}
+  GhostReady: {fileID: 1941590555}
 --- !u!1001 &1644598920
 PrefabInstance:
   m_ObjectHideFlags: 0
