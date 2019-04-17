@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0030333183, g: 0.0029001348, b: 0.0031394102, a: 1}
+  m_IndirectSpecularColor: {r: 0.0030914273, g: 0.0028998726, b: 0.0032021, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5643,6 +5643,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamp_ON (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 135264, guid: 7d5fac0efe938994aba24a88ba9c3057, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     - target: {fileID: 475434, guid: 7d5fac0efe938994aba24a88ba9c3057, type: 3}
       propertyPath: m_LocalPosition.x
       value: 26.2
@@ -6252,6 +6256,10 @@ PrefabInstance:
     - target: {fileID: 1193804665522800, guid: 04cc30b424fd1844890712af6f7fe514, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967294
+      objectReference: {fileID: 0}
+    - target: {fileID: 1193804665522800, guid: 04cc30b424fd1844890712af6f7fe514, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     - target: {fileID: 4106527896434018, guid: 04cc30b424fd1844890712af6f7fe514, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7315,6 +7323,10 @@ PrefabInstance:
     - target: {fileID: 135264, guid: 7d5fac0efe938994aba24a88ba9c3057, type: 3}
       propertyPath: m_Name
       value: Lamp_ON
+      objectReference: {fileID: 0}
+    - target: {fileID: 135264, guid: 7d5fac0efe938994aba24a88ba9c3057, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     - target: {fileID: 475434, guid: 7d5fac0efe938994aba24a88ba9c3057, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8893,6 +8905,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RFAIPP_Chandelier_1
       objectReference: {fileID: 0}
+    - target: {fileID: 1888137914947942, guid: 6ddddf0ff6e54e2499624ff60e5f3550, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     - target: {fileID: 4111058509535102, guid: 6ddddf0ff6e54e2499624ff60e5f3550, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.6266694
@@ -9105,7 +9121,7 @@ GameObject:
   - component: {fileID: 198687757}
   m_Layer: 0
   m_Name: Pot (Missing Prefab)
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9616,7 +9632,7 @@ GameObject:
   - component: {fileID: 219213576}
   m_Layer: 0
   m_Name: Point Light (15)
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10045,6 +10061,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamp_ON (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 135264, guid: 7d5fac0efe938994aba24a88ba9c3057, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     - target: {fileID: 475434, guid: 7d5fac0efe938994aba24a88ba9c3057, type: 3}
       propertyPath: m_LocalPosition.x
       value: 100.2
@@ -10447,6 +10467,10 @@ PrefabInstance:
     - target: {fileID: 135264, guid: 7d5fac0efe938994aba24a88ba9c3057, type: 3}
       propertyPath: m_Name
       value: Lamp_ON (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 135264, guid: 7d5fac0efe938994aba24a88ba9c3057, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     - target: {fileID: 475434, guid: 7d5fac0efe938994aba24a88ba9c3057, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12604,6 +12628,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967294
       objectReference: {fileID: 0}
+    - target: {fileID: 1193804665522800, guid: 04cc30b424fd1844890712af6f7fe514, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     - target: {fileID: 4106527896434018, guid: 04cc30b424fd1844890712af6f7fe514, type: 3}
       propertyPath: m_LocalPosition.x
       value: -157.76
@@ -12841,6 +12869,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 016148205d3f90a41a2aca73cfa10a91, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 016148205d3f90a41a2aca73cfa10a91, type: 3}
       propertyPath: m_LocalPosition.x
       value: -150.5
@@ -13000,6 +13032,10 @@ PrefabInstance:
     - target: {fileID: 1698738104575242, guid: 6b97ddfa5d6f8b246af44ace27347bdc, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967294
+      objectReference: {fileID: 0}
+    - target: {fileID: 1698738104575242, guid: 6b97ddfa5d6f8b246af44ace27347bdc, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     - target: {fileID: 4156133368212626, guid: 6b97ddfa5d6f8b246af44ace27347bdc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13796,6 +13832,10 @@ PrefabInstance:
     - target: {fileID: 1957976018148254, guid: b65ef34a17009fc4b9c6776307b0446e, type: 3}
       propertyPath: m_Name
       value: RFAIPP_Sconce_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957976018148254, guid: b65ef34a17009fc4b9c6776307b0446e, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     - target: {fileID: 4026057476649836, guid: b65ef34a17009fc4b9c6776307b0446e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15488,6 +15528,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sofa_2
       objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: 4be90c5d9ce40a648bb37474c93d9c02, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: 4be90c5d9ce40a648bb37474c93d9c02, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.1992
@@ -15725,7 +15769,7 @@ GameObject:
   - component: {fileID: 525977731}
   m_Layer: 0
   m_Name: Photo_Frame (Missing Prefab)
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15869,6 +15913,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 821da9cb1c989dd489ae524930f6bb0f, type: 3}
       propertyPath: m_Name
       value: rack_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 821da9cb1c989dd489ae524930f6bb0f, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 821da9cb1c989dd489ae524930f6bb0f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16631,6 +16679,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 57b6dc825e12041e7bb9ab6776dead50, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 57b6dc825e12041e7bb9ab6776dead50, type: 3}
       propertyPath: m_LocalPosition.x
       value: 185.99
@@ -16929,6 +16981,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: da23fa25b9dfc46fcbff265d5d3e0765, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: da23fa25b9dfc46fcbff265d5d3e0765, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     - target: {fileID: 100030, guid: da23fa25b9dfc46fcbff265d5d3e0765, type: 3}
       propertyPath: m_IsActive
@@ -17425,6 +17481,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RFAIPP_Fridge
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 47801085321d5a44799e57600f586d8e, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 47801085321d5a44799e57600f586d8e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -82.01
@@ -17681,6 +17741,10 @@ PrefabInstance:
     - target: {fileID: 1493361667712518, guid: e8ff5cda4a951cc498ae6b8e2bee5196, type: 3}
       propertyPath: m_Name
       value: RFAIPP_Kitchen_Table_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493361667712518, guid: e8ff5cda4a951cc498ae6b8e2bee5196, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     - target: {fileID: 4824007971484606, guid: e8ff5cda4a951cc498ae6b8e2bee5196, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17948,7 +18012,7 @@ GameObject:
   - component: {fileID: 668281395}
   m_Layer: 0
   m_Name: Tap (Missing Prefab)
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17977,6 +18041,10 @@ PrefabInstance:
     - target: {fileID: 1957976018148254, guid: b65ef34a17009fc4b9c6776307b0446e, type: 3}
       propertyPath: m_Name
       value: RFAIPP_Sconce_1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957976018148254, guid: b65ef34a17009fc4b9c6776307b0446e, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     - target: {fileID: 4026057476649836, guid: b65ef34a17009fc4b9c6776307b0446e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25199,7 +25267,7 @@ GameObject:
   - component: {fileID: 807656239}
   m_Layer: 0
   m_Name: Plate (Missing Prefab)
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25732,7 +25800,7 @@ GameObject:
   - component: {fileID: 839072205}
   m_Layer: 0
   m_Name: bdroom 2
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27091,6 +27159,10 @@ PrefabInstance:
     - target: {fileID: 1406017423275122, guid: 8707309ab37b2984c9ce0d256e6cf5d1, type: 3}
       propertyPath: m_Name
       value: RFAIPP_Chandelier_3 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406017423275122, guid: 8707309ab37b2984c9ce0d256e6cf5d1, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     - target: {fileID: 4595748776342474, guid: 8707309ab37b2984c9ce0d256e6cf5d1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28989,6 +29061,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RFAIPP_Lamp
       objectReference: {fileID: 0}
+    - target: {fileID: 1769376851354596, guid: e7adc5ad67fb9704588ebc686c5e59e4, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     - target: {fileID: 4051099914249012, guid: e7adc5ad67fb9704588ebc686c5e59e4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 187.09
@@ -29212,7 +29288,7 @@ GameObject:
   - component: {fileID: 1090324644}
   m_Layer: 0
   m_Name: Cutlery (Missing Prefab)
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30203,7 +30279,7 @@ GameObject:
   - component: {fileID: 1135328747}
   m_Layer: 0
   m_Name: Pan (Missing Prefab)
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32473,6 +32549,10 @@ PrefabInstance:
     - target: {fileID: 1579191195130184, guid: 4ec7cbbb457362e4ca991988a91793b9, type: 3}
       propertyPath: m_Name
       value: RFAIPP_Chandelier_7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1579191195130184, guid: 4ec7cbbb457362e4ca991988a91793b9, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     - target: {fileID: 4568534766984928, guid: 4ec7cbbb457362e4ca991988a91793b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -35520,6 +35600,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RFAIPP_Chandelier_2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1578233314806844, guid: 78d0443a3c14b6d4db9103d21b155498, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     - target: {fileID: 4656910842398590, guid: 78d0443a3c14b6d4db9103d21b155498, type: 3}
       propertyPath: m_LocalPosition.x
       value: 72.23
@@ -36960,6 +37044,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: house structure (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: c52c6c8fbdf3b47f3bdf1ab9575f24ff, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: c52c6c8fbdf3b47f3bdf1ab9575f24ff, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20
@@ -37378,6 +37466,10 @@ PrefabInstance:
     - target: {fileID: 1975959190090480, guid: eca000ab44c908d4dab395f654753038, type: 3}
       propertyPath: m_Name
       value: Magic fire pro red
+      objectReference: {fileID: 0}
+    - target: {fileID: 1975959190090480, guid: eca000ab44c908d4dab395f654753038, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     - target: {fileID: 4335282639064450, guid: eca000ab44c908d4dab395f654753038, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39233,6 +39325,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: living room tv
       objectReference: {fileID: 0}
+    - target: {fileID: 100026, guid: 42c5443074f424e148478717168d0913, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     - target: {fileID: 100028, guid: 42c5443074f424e148478717168d0913, type: 3}
       propertyPath: m_TagString
       value: Furniture
@@ -39256,6 +39352,10 @@ PrefabInstance:
     - target: {fileID: 100030, guid: 42c5443074f424e148478717168d0913, type: 3}
       propertyPath: m_Name
       value: living room carpet
+      objectReference: {fileID: 0}
+    - target: {fileID: 100030, guid: 42c5443074f424e148478717168d0913, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     - target: {fileID: 100032, guid: 42c5443074f424e148478717168d0913, type: 3}
       propertyPath: m_TagString
@@ -39385,9 +39485,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100058, guid: 42c5443074f424e148478717168d0913, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     - target: {fileID: 100060, guid: 42c5443074f424e148478717168d0913, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100060, guid: 42c5443074f424e148478717168d0913, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     - target: {fileID: 100062, guid: 42c5443074f424e148478717168d0913, type: 3}
       propertyPath: m_TagString
@@ -40518,6 +40626,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967294
       objectReference: {fileID: 0}
+    - target: {fileID: 1193804665522800, guid: 04cc30b424fd1844890712af6f7fe514, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     - target: {fileID: 4106527896434018, guid: 04cc30b424fd1844890712af6f7fe514, type: 3}
       propertyPath: m_LocalPosition.x
       value: -157.7
@@ -41143,7 +41255,7 @@ MonoBehaviour:
   crosshair: {fileID: 1374376794}
   p1S: {fileID: 1488492535}
   p2S: {fileID: 92247621}
-  delay: 1
+  delay: 5
   cdUI3: {fileID: 1087198877}
   cdUI4: {fileID: 2088592260}
   startCD: 5
@@ -42577,6 +42689,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RFAIPP_Sofa_2
       objectReference: {fileID: 0}
+    - target: {fileID: 1879919383078682, guid: 35842ccafedceef488882a9fa2694c2f, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     - target: {fileID: 4191384537315094, guid: 35842ccafedceef488882a9fa2694c2f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 209.3
@@ -43032,6 +43148,10 @@ PrefabInstance:
     - target: {fileID: 1578233314806844, guid: 78d0443a3c14b6d4db9103d21b155498, type: 3}
       propertyPath: m_Name
       value: RFAIPP_Chandelier_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578233314806844, guid: 78d0443a3c14b6d4db9103d21b155498, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     - target: {fileID: 4656910842398590, guid: 78d0443a3c14b6d4db9103d21b155498, type: 3}
       propertyPath: m_LocalPosition.x
@@ -44429,6 +44549,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamp_ON (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 135264, guid: 7d5fac0efe938994aba24a88ba9c3057, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     - target: {fileID: 475434, guid: 7d5fac0efe938994aba24a88ba9c3057, type: 3}
       propertyPath: m_LocalPosition.x
       value: 54.09
@@ -44690,7 +44814,7 @@ GameObject:
   - component: {fileID: 1838074539}
   m_Layer: 0
   m_Name: Tea_Pot (Missing Prefab)
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44723,6 +44847,10 @@ PrefabInstance:
     - target: {fileID: 1698738104575242, guid: 6b97ddfa5d6f8b246af44ace27347bdc, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967294
+      objectReference: {fileID: 0}
+    - target: {fileID: 1698738104575242, guid: 6b97ddfa5d6f8b246af44ace27347bdc, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     - target: {fileID: 4156133368212626, guid: 6b97ddfa5d6f8b246af44ace27347bdc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -50415,6 +50543,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967294
       objectReference: {fileID: 0}
+    - target: {fileID: 1193804665522800, guid: 04cc30b424fd1844890712af6f7fe514, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     - target: {fileID: 4106527896434018, guid: 04cc30b424fd1844890712af6f7fe514, type: 3}
       propertyPath: m_LocalPosition.x
       value: -144.4
@@ -50658,6 +50790,10 @@ PrefabInstance:
     - target: {fileID: 1406017423275122, guid: 8707309ab37b2984c9ce0d256e6cf5d1, type: 3}
       propertyPath: m_Name
       value: RFAIPP_Chandelier_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406017423275122, guid: 8707309ab37b2984c9ce0d256e6cf5d1, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     - target: {fileID: 4595748776342474, guid: 8707309ab37b2984c9ce0d256e6cf5d1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -51808,6 +51944,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967294
       objectReference: {fileID: 0}
+    - target: {fileID: 1193804665522800, guid: 04cc30b424fd1844890712af6f7fe514, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     - target: {fileID: 4106527896434018, guid: 04cc30b424fd1844890712af6f7fe514, type: 3}
       propertyPath: m_LocalPosition.x
       value: -169.35
@@ -52111,6 +52251,10 @@ PrefabInstance:
     - target: {fileID: 1193804665522800, guid: 04cc30b424fd1844890712af6f7fe514, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967294
+      objectReference: {fileID: 0}
+    - target: {fileID: 1193804665522800, guid: 04cc30b424fd1844890712af6f7fe514, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     - target: {fileID: 4106527896434018, guid: 04cc30b424fd1844890712af6f7fe514, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52593,7 +52737,7 @@ GameObject:
   - component: {fileID: 2031523727}
   m_Layer: 0
   m_Name: Oven (Missing Prefab)
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53992,6 +54136,10 @@ PrefabInstance:
     - target: {fileID: 1758041348806450, guid: 2e05038adc96e6549b82db939cde341d, type: 3}
       propertyPath: m_Name
       value: RFAIPP_Dining_Table_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758041348806450, guid: 2e05038adc96e6549b82db939cde341d, type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     - target: {fileID: 4066513020378278, guid: 2e05038adc96e6549b82db939cde341d, type: 3}
       propertyPath: m_LocalPosition.x
