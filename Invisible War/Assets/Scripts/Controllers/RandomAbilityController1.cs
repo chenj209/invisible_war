@@ -10,6 +10,8 @@ public class RandomAbilityController1 : MonoBehaviour
     private List<string> ghostAbilities = new List<string>() { "Speed Up", "Shorten Cooldown", "Increase Freeze Time"};
     public GameObject hunterPanel;
     public GameObject ghostPanel;
+    public GameObject ghostWaiting;
+    public GameObject hunterWaiting;
     private bool isShown;
     private GameStateController gsc;
     public int winner;
@@ -40,11 +42,13 @@ public class RandomAbilityController1 : MonoBehaviour
                 if (winner == 1)
                 {
                     ghostPanel.SetActive(true);
+                    hunterWaiting.SetActive(true);
                     GetRandomAbilities(ghostAbilities, ghostPanel);
                 }
                 else if (winner == 2)
                 {
                     hunterPanel.SetActive(true);
+                    ghostWaiting.SetActive(true);
                     GetRandomAbilities(hunterAbilities, hunterPanel);
                 }
                 isShown = true;
