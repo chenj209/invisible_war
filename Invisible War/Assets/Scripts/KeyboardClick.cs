@@ -22,7 +22,7 @@ public class KeyboardClick : MonoBehaviour
     {
         bool selectInputRight = Input.GetAxis("Horizontal01") > GameConfig.instance.hunterSelectAblitySensitivity;
         bool selectInputLeft = Input.GetAxis("Horizontal01") < -GameConfig.instance.hunterSelectAblitySensitivity;
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("HunterContinue"))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("HunterStart"))
         {
             Button b = EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
             b.onClick.Invoke();

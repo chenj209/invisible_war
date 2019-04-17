@@ -68,26 +68,51 @@ public class TutorialNavigation : MonoBehaviour
     private bool ghostReady;
     private bool hunterLastPage;
     private bool ghostLastPage;
+    private bool gameStart;
+    private float htimer = 0f;
+    private float gtimer = 0f;
 
-    void Start()
+    void Awake()
     {
         gsc = GetComponent<GameStateController>();
-        HunterPageNum = 0;
-        GhostPageNum = 0;
-        gsc.gamestart = false;
-        hcpressed = false;
-        hbpressed = false;
-        gcpressed = false;
-        gbpressed = false;
-        hunterReady = false;
-        ghostReady = false;
-        hunterLastPage = false;
-        ghostLastPage = false;
+        if (gsc.GetRoundNum() == 1)
+        {
+            HunterPageNum = 0;
+            GhostPageNum = 0;
+            gsc.gamestart = false;
+            hcpressed = false;
+            hbpressed = false;
+            gcpressed = false;
+            gbpressed = false;
+            hunterReady = false;
+            ghostReady = false;
+            hunterLastPage = false;
+            ghostLastPage = false;
+            gameStart = false;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (HunterLoadingScreen.activeSelf)
+        {
+            htimer -= Time.deltaTime;
+        }
+        if (htimer <= 0)
+        {
+            HunterReady.enabled = !HunterReady.enabled;
+            htimer += 0.5f;
+        }
+        if (GhostLoadingScreen.activeSelf)
+        {
+            gtimer -= Time.deltaTime;
+        }
+        if (gtimer <= 0)
+        {
+            GhostReady.enabled = !GhostReady.enabled;
+            gtimer += 0.5f;
+        }
         if (Input.GetAxis("HunterContinue") > 0 || Input.GetKeyDown(KeyCode.H))
         {
             if (!hcpressed)
@@ -356,12 +381,18 @@ public class TutorialNavigation : MonoBehaviour
         {
             gbpressed = false;
         }
+
+        //if (gameStart)
+        //{
+        //    gsc.gamestart = true;
+        //}
     }
 
     IEnumerator startGame()
     {
         yield return new WaitForSeconds(5);
         gsc.gamestart = true;
+        gameStart = true;
         HunterLoadingScreen.SetActive(false);
         GhostLoadingScreen.SetActive(false);
         GhostNav.SetActive(false);

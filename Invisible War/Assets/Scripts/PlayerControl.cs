@@ -60,22 +60,22 @@ public class PlayerControl : MonoBehaviour
                 }
             }
         }
-        if (Input.GetKeyDown(KeyCode.G) || Input.GetButton("HunterHelp"))
-        {
-            HunterHelpMenu.SetActive(true);
-        }
-        if (Input.GetKeyUp(KeyCode.G) || !Input.GetButton("HunterHelp"))
-        {
-            HunterHelpMenu.SetActive(false);
-        }
-        if (Input.GetButtonDown("GhostHelp"))
-        {
-            GhostHelpMenu.SetActive(true);
-        }
-        if (Input.GetButtonUp("GhostHelp"))
-        {
-            GhostHelpMenu.SetActive(false);
-        }
+        //if (Input.GetKeyDown(KeyCode.G) || Input.GetButton("HunterHelp"))
+        //{
+        //    HunterHelpMenu.SetActive(true);
+        //}
+        //if (Input.GetKeyUp(KeyCode.G) || !Input.GetButton("HunterHelp"))
+        //{
+        //    HunterHelpMenu.SetActive(false);
+        //}
+        //if (Input.GetButtonDown("GhostHelp"))
+        //{
+        //    GhostHelpMenu.SetActive(true);
+        //}
+        //if (Input.GetButtonUp("GhostHelp"))
+        //{
+        //    GhostHelpMenu.SetActive(false);
+        //}
             RotateView();
         if (Input.GetButton("Running" + playerID))
         {

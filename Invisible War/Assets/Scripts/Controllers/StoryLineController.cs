@@ -18,7 +18,7 @@ public class StoryLineController : MonoBehaviour
 
     private GameStateController gsc;
     private bool shown;
-    private float timer;
+    private float timer = 0f;
     private bool storylineBegin;
     private bool firstime = true;
   
@@ -35,6 +35,10 @@ public class StoryLineController : MonoBehaviour
             storyline3.enabled = true;
             storyline4.enabled = true;
             storylineBegin = false;
+        }
+        else
+        {
+            startPage.SetActive(false);
         }
     }
 

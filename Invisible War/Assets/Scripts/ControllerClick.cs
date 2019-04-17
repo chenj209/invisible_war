@@ -15,7 +15,7 @@ public class ControllerClick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Continue"))
+        if (Input.GetButtonDown("Start"))
         {
             Button b = EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
             b.onClick.Invoke();
