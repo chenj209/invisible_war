@@ -365,6 +365,7 @@ public class TutorialNavigation : MonoBehaviour
                     GhostMechTitle.text = "Complete Ritual :";
                     GhostExplaination.text = "Complete 4 out of 5 rituals to win";
                     GhostLeftImage.enabled = true;
+                    GhostContinue.text = "Continue";
                     GhostLeftImage.sprite = RitualImage;
                     GhostVideo.texture = GhostRitual;
                     GhostVideoPlayer.clip = GhostRitualClip;
